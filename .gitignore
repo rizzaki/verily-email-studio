@@ -1,0 +1,13 @@
+.venv/
+server/
+__pycache__/
+*.pyc
+.env
+requirements.txt
+alternative-mcp-formats.json
+mailgun-mcp-config.json
+JSON_FIX_GUIDE.md
+MAILGUN_MCP_SETUP.md
+REMOVE_MAILGUN_MCP.md
+QUICK_START.md
+.DS_Store
