@@ -123,7 +123,7 @@ input,textarea,select { font:inherit; color:inherit; }
 .seg-btn { font-size:var(--text-xs); font-weight:600; padding:3px 12px; border-radius:var(--r-sm); color:var(--text-3); transition:background var(--t-fast),color var(--t-fast),box-shadow var(--t-fast); }
 .seg-btn.active { background:var(--surface); color:var(--text); box-shadow:var(--shadow-sm); }
 .canvas-scroll { flex:1; height:0; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; padding:var(--sp-8) var(--sp-5); }
-#canvas { width:600px; margin:0 auto; background:var(--surface); border-radius:var(--r-2xl); box-shadow:var(--shadow-canvas); min-height:400px; position:relative; overflow:hidden; transition:width var(--t-mid); }
+#canvas { width:600px; margin:0 auto; background:var(--surface); border-radius:42px; border:1px solid rgba(0,0,0,0.08); box-shadow:var(--shadow-canvas); min-height:400px; position:relative; overflow:hidden; transition:width var(--t-mid); }
 #canvas.mobile { width:375px; }
 .canvas-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--sp-12) var(--sp-8); gap:var(--sp-4); text-align:center; min-height:300px; }
 .canvas-empty-icon { width:52px; height:52px; border-radius:16px; background:var(--accent-light); display:flex; align-items:center; justify-content:center; animation:spin-slow 8s linear infinite; }
@@ -958,7 +958,7 @@ document.addEventListener('keydown', (e) => {
 document.getElementById('preview-btn').addEventListener('click', () => {
   const modal = document.getElementById('preview-modal');
   const content = document.getElementById('preview-content');
-  const emailHtml = `<div style="font-family:Inter,Helvetica,sans-serif;max-width:600px;margin:0 auto">${blocks.map(b => renderBlock(b)).join('')}</div>`;
+  const emailHtml = `<div style="font-family:Inter,Helvetica,sans-serif;max-width:600px;margin:0 auto;border-radius:42px;border:1px solid rgba(0,0,0,0.08);overflow:hidden">${blocks.map(b => renderBlock(b)).join('')}</div>`;
   content.innerHTML = emailHtml;
   modal.classList.add('open');
 });
@@ -971,7 +971,7 @@ document.getElementById('preview-modal').addEventListener('click', (e) => {
 
 /* ─── Export (.eml) ───────────────────────────────────────────── */
 document.getElementById('export-btn').addEventListener('click', () => {
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Email</title></head><body style="margin:0;padding:0;background:#f2f2f7;font-family:Inter,Helvetica,sans-serif">${blocks.map(b => renderBlock(b)).join('')}</body></html>`;
+  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Email</title></head><body style="margin:0;padding:0;background:#f2f2f7;font-family:Inter,Helvetica,sans-serif"><div style="max-width:600px;margin:0 auto;border-radius:42px;border:1px solid rgba(0,0,0,0.08);overflow:hidden">${blocks.map(b => renderBlock(b)).join('')}</div></body></html>`;
   const subject = (blocks.find(b => b.type === 'header')?.data?.title) || 'Email';
   const eml = [
     'From: sender@example.com',
