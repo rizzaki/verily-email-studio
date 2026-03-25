@@ -253,6 +253,11 @@ input,textarea,select { font:inherit; color:inherit; }
       <div class="block-info"><div class="block-name">Header</div><div class="block-desc">Logo + title banner</div></div>
       <button class="block-add-btn" data-add-type="header" title="Add">+</button>
     </div>
+    <div class="block-item" data-block-type="notificationBadge">
+      <div class="block-icon bi-green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+      <div class="block-info"><div class="block-name">Notification badge</div><div class="block-desc">Mission / task label</div></div>
+      <button class="block-add-btn" data-add-type="notificationBadge" title="Add">+</button>
+    </div>
     <div class="block-item" data-block-type="banner">
       <div class="block-icon bi-violet"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 9h20"/></svg></div>
       <div class="block-info"><div class="block-name">Hero Banner</div><div class="block-desc">Headline + CTA</div></div>
@@ -365,9 +370,10 @@ let _canvasEmptyHTML = null;
 /* ─── Defaults ───────────────────────────────────────────────── */
 const DEFAULTS = {
   header:    { logoVisible:true, title:'' },
-  banner:    { eyebrow:'', headline:'Hi {{Participant Name}},', body:'Every survey you answer helps researchers learn about health. We really couldn\'t do it without you.\n\nWhat\'s next for you? Go to the Verily Me app to see what\'s waiting.', ctaText:'Go to Verily Me', ctaUrl:'#' },
+  notificationBadge: { label:'Mission Task Name', showIcon:true },
+  banner:    { eyebrow:'', headline:'Hi {{Participant Name}},', body:'Every survey you answer helps researchers learn about health. We really couldn\'t do it without you.\n\nWhat\'s next for you? Go to the Verily Me app to see what\'s waiting.', ctaText:'Go to Verily Me', ctaUrl:'#', contentAlign:'center' },
   body:      { heading:'Lorem ipsum dolor sit amet', paragraph:'• Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n• Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n• Lorem ipsum dolor sit amet. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-  image:     { src:'', alt:'GIF', caption:'', showCaption:false, height:280 },
+  image:     { src:'', alt:'GIF', caption:'', caption2:'', showCaption:false, height:280 },
   animation: { label:'Health Pulse Animation' },
   divider:   { text:'', showText:false },
   cta:       { headline:'Ready to take the next step?', subtitle:'Your care team is standing by.', ctaText:'Go to Verily Me', ctaUrl:'#' },
@@ -375,7 +381,7 @@ const DEFAULTS = {
   footer:    { showLinks:true, links:[{label:'Terms of use',url:'#'},{label:'Privacy Policy',url:'#'},{label:'Unsubscribe',url:'#'}], contactLabel:true, contactEmail:'support@verilyme.com', contactHours:'M–F, 8am–8pm EST, excluding Verily and federal holidays', disclaimers:'Disclaimer no superscript\nDisclaimer no superscript\nDisclaimer no superscript\n¹ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod\n² Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod', address:'This email was sent by: Verily Me.\n2999 Olympus Blvd, Ste 1000, Dallas, TX, 75019\n© 2025 Verily Me', legal:'' }
 };
 
-const LABELS = { header:'Header', banner:'Hero Banner', body:'Body Copy', image:'GIF', animation:'Animation', divider:'Divider', cta:'Call to Action', stat:'Health Stats', footer:'Footer' };
+const LABELS = { header:'Header', notificationBadge:'Notification badge', banner:'Hero Banner', body:'Body Copy', image:'GIF', animation:'Animation', divider:'Divider', cta:'Call to Action', stat:'Health Stats', footer:'Footer' };
 
 /* ─── History ────────────────────────────────────────────────── */
 function pushHistory() {
@@ -457,6 +463,138 @@ function ea(s) { return String(s||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;
 const ME_LOGO_DATA_URL = 'data:image/png;base64,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';
 const FOOTER_LOGO_DATA_URL = 'data:image/png;base64,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';
 const ME_LOGO_IMG = `<img src="${ME_LOGO_DATA_URL}" alt="me" height="36" style="display:block;object-fit:contain;background:transparent;">`;
+const ME_LOGO_OUTLOOK = `<img src="${ME_LOGO_DATA_URL}" alt="me" width="108" height="36" border="0" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">`;
+const FOOTER_LOGO_OUTLOOK = `<img src="${FOOTER_LOGO_DATA_URL}" alt="Verily Me" width="160" height="28" border="0" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;">`;
+
+function outlookRow(bg, pad, align, inner) {
+  const a = align || 'left';
+  return `<tr><td bgcolor="${bg}" align="${a}" style="padding:${pad};font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1c1c1e;mso-line-height-rule:exactly;-webkit-text-size-adjust:100%;">${inner}</td></tr>`;
+}
+
+/** Table-based blocks for Outlook / Windows Mail (Word HTML engine) — preview + export only */
+function renderBlockOutlook(b) {
+  const d = b.data;
+  switch (b.type) {
+    case 'header': {
+      const logo = d.logoVisible!==false ? `<div align="center">${ME_LOGO_OUTLOOK}</div>` : '';
+      const title = d.title ? `<div style="font-size:13px;font-weight:400;color:#888888;margin-top:8px;text-align:center;line-height:1.4;mso-line-height-rule:exactly;">${eh(d.title)}</div>` : '';
+      return `<tr><td bgcolor="#ffffff" align="center" style="padding:32px 40px 28px;border-bottom:1px solid #f0f0f0;font-family:Arial,Helvetica,sans-serif;">${logo}${title}</td></tr>`;
+    }
+    case 'notificationBadge': {
+      const bell = `<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1b7a3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`;
+      const pill = d.showIcon!==false
+        ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr><td bgcolor="#eaf5ee" style="padding:8px 16px;border:1px solid #b8dfc3;border-radius:999px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="middle" style="padding-right:12px;">${bell}</td><td valign="middle" style="font-size:15px;font-weight:600;color:#1c1c1e;font-family:Arial,Helvetica,sans-serif;mso-line-height-rule:exactly;">${eh(d.label)}</td></tr></table></td></tr></table>`
+        : `<div style="font-size:15px;font-weight:600;color:#1c1c1e;text-align:center;font-family:Arial,Helvetica,sans-serif;">${eh(d.label)}</div>`;
+      return `<tr><td bgcolor="#ffffff" align="center" style="padding:12px 40px 16px;font-family:Arial,Helvetica,sans-serif;">${pill}</td></tr>`;
+    }
+    case 'banner': {
+      const ta = d.contentAlign === 'left' ? 'left' : 'center';
+      const bodyAlign = d.contentAlign === 'left' ? 'left' : 'center';
+      const eyebrow = d.eyebrow ? `<div style="font-size:11px;font-weight:700;color:#888888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;text-align:${ta};">${eh(d.eyebrow)}</div>` : '';
+      const head = `<div style="font-family:Arial,Helvetica,sans-serif;font-size:28px;font-weight:700;color:#1c1c1e;margin-bottom:20px;line-height:1.25;text-align:${ta};mso-line-height-rule:exactly;">${eh(d.headline)}</div>`;
+      const bodyP = (d.body||'').split('\n').map(l=>l.trim()?`<p style="margin:0 0 12px;font-size:15px;color:#444444;line-height:1.65;mso-line-height-rule:exactly;text-align:${bodyAlign};">${eh(l)}</p>`:'').join('');
+      const body = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="${bodyAlign}" style="padding:0 8px;"><table role="presentation" width="440" cellpadding="0" cellspacing="0" border="0" style="max-width:440px;width:100%;" align="${bodyAlign}"><tr><td style="font-size:15px;color:#444444;line-height:1.65;mso-line-height-rule:exactly;text-align:${bodyAlign};">${bodyP}</td></tr></table></td></tr></table>`;
+      const cta = d.ctaText ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="margin-top:28px;"><tr><td align="center"><table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td bgcolor="#1c1c1e" style="border-radius:9999px;mso-padding-alt:13px 32px;"><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;padding:13px 32px;font-size:15px;font-weight:500;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">${eh(d.ctaText)}</a></td></tr></table></td></tr></table>` : '';
+      return outlookRow('#ffffff', '36px 40px 32px', ta, eyebrow + head + body + cta);
+    }
+    case 'body': {
+      const heading = d.heading ? `<div style="font-family:Arial,Helvetica,sans-serif;font-size:22px;font-weight:600;color:#1c1c1e;margin-bottom:24px;text-align:center;line-height:1.3;mso-line-height-rule:exactly;">${eh(d.heading)}</div>` : '';
+      const lines = (d.paragraph||'').split('\n');
+      const iconColors = ['#4a4fa8','#c4872a','#c04040'];
+      const iconSvgs = [
+        `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+        `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>`,
+        `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`
+      ];
+      let iconIdx = 0;
+      let rowsHtml = lines.map(line => {
+        const isBullet = line.startsWith('• ') || line.startsWith('- ');
+        if (isBullet) {
+          const text = line.replace(/^[•\-]\s*/, '');
+          const boldMatch = text.match(/^([^.]+\.\s*)(.*)/s);
+          const boldPart = boldMatch ? boldMatch[1] : text;
+          const restPart = boldMatch ? boldMatch[2] : '';
+          const color = iconColors[iconIdx % 3];
+          const icon = iconSvgs[iconIdx % 3];
+          iconIdx++;
+          return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;"><tr><td width="44" valign="top" style="width:44px;padding:2px 16px 0 0;">` +
+            `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="44" height="44"><tr><td width="44" height="44" align="center" valign="middle" bgcolor="${color}" style="width:44px;height:44px;border-radius:22px;">${icon}</td></tr></table></td>` +
+            `<td valign="top" style="font-size:15px;color:#1c1c1e;line-height:1.65;mso-line-height-rule:exactly;"><strong>${eh(boldPart)}</strong>${eh(restPart)}</td></tr></table>`;
+        }
+        if (line.trim()) return `<div style="font-size:15px;color:#3a3a3c;line-height:1.7;margin-bottom:10px;mso-line-height-rule:exactly;">${eh(line)}</div>`;
+        return '';
+      }).join('');
+      const fallback = rowsHtml || `<div style="font-size:15px;color:#3a3a3c;line-height:1.7;mso-line-height-rule:exactly;">${eh(d.paragraph||'')}</div>`;
+      return outlookRow('#ffffff', '32px 40px 36px', 'left', heading + fallback);
+    }
+    case 'image': {
+      const h = parseInt(d.height)||240;
+      const circleSize = Math.min(h - 40, 200);
+      const imgContent = d.src
+        ? `<img src="${ea(d.src)}" alt="${ea(d.alt||'')}" width="${circleSize}" height="${circleSize}" border="0" style="display:block;width:${circleSize}px;height:${circleSize}px;border-radius:50%;border:0;">`
+        : `<table role="presentation" width="${circleSize}" height="${circleSize}" cellpadding="0" cellspacing="0" border="0"><tr><td width="${circleSize}" height="${circleSize}" bgcolor="#d4e8f0" align="center" valign="middle" style="border-radius:50%;">&#160;</td></tr></table>`;
+      const cap1 = d.showCaption && d.caption ? `<div style="margin-top:12px;font-size:12px;color:#888888;text-align:center;">${eh(d.caption)}</div>` : '';
+      const cap2 = d.showCaption && d.caption2 ? `<div style="margin-top:8px;font-size:12px;color:#636366;text-align:center;line-height:1.5;mso-line-height-rule:exactly;">${eh(d.caption2)}</div>` : '';
+      const inner = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:${Math.max(20,(h-circleSize)/2)}px 40px;" bgcolor="#f0f7f5">${imgContent}${cap1}${cap2}</td></tr></table>`;
+      return outlookRow('#f0f7f5', '0', 'center', inner);
+    }
+    case 'animation': {
+      const staticSvg = `<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:0 auto;"><path d="M0 30 Q15 10 30 30 Q45 50 60 30 Q75 10 90 30 Q105 50 120 30" stroke="#1b7a3e" stroke-width="2.5" fill="none"/><circle cx="60" cy="30" r="5" fill="#1b7a3e"/></svg>`;
+      const lbl = `<div style="font-size:13px;color:#636366;margin-top:12px;font-weight:500;text-align:center;">${eh(d.label)}</div>`;
+      return outlookRow('#ffffff', '36px 40px', 'center', staticSvg + lbl);
+    }
+    case 'divider': {
+      const rule = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 40px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td height="1" bgcolor="#d8d8dc" style="height:1px;line-height:1px;font-size:1px;">&#160;</td></tr></table></td></tr></table>`;
+      const txt = d.showText && d.text ? `<div style="text-align:center;padding:12px 40px;font-size:12px;font-weight:600;color:#aeaeb2;letter-spacing:0.04em;">${eh(d.text)}</div>` : '';
+      return outlookRow('#ffffff', '0', 'left', rule + txt);
+    }
+    case 'cta': {
+      const cta = d.ctaText ? `<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-top:4px;"><tr><td bgcolor="#1c1c1e" style="mso-padding-alt:13px 32px;"><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;padding:13px 32px;font-size:15px;font-weight:500;color:#ffffff;text-decoration:none;font-family:Arial,Helvetica,sans-serif;">${eh(d.ctaText)}</a></td></tr></table>` : '';
+      const inner = `<div style="font-family:Arial,Helvetica,sans-serif;font-size:21px;font-weight:700;color:#1c1c1e;margin-bottom:10px;line-height:1.3;text-align:center;mso-line-height-rule:exactly;">${eh(d.headline)}</div>` +
+        `<div style="font-size:14px;color:#636366;margin-bottom:24px;line-height:1.6;text-align:center;mso-line-height-rule:exactly;">${eh(d.subtitle)}</div>` + cta;
+      return outlookRow('#ffffff', '36px 40px', 'center', inner);
+    }
+    case 'stat': {
+      const cols = [['v1','l1'],['v2','l2'],['v3','l3']].map(([v,l],i) =>
+        `<td width="33%" align="center" valign="top" style="width:33%;padding:16px;${i<2?'border-right:1px solid #eaeaea;':''}">` +
+        `<div style="font-family:Arial,Helvetica,sans-serif;font-size:26px;font-weight:700;color:#1b7a3e;line-height:1.1;mso-line-height-rule:exactly;">${eh(d[v]||'')}</div>` +
+        `<div style="font-size:12px;color:#636366;margin-top:6px;line-height:1.4;mso-line-height-rule:exactly;">${eh(d[l]||'')}</div></td>`).join('');
+      const inner = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>${cols}</tr></table>`;
+      return outlookRow('#ffffff', '28px 32px', 'center', inner);
+    }
+    case 'footer': {
+      const rawLinks = Array.isArray(d.links) ? d.links : (d.links||'').split(',').map(l=>l.trim()).filter(Boolean);
+      const linkItems = rawLinks.length ? rawLinks : [{label:'Terms of use',url:'#'},{label:'Privacy Policy',url:'#'},{label:'Unsubscribe',url:'#'}];
+      const normalizedLinks = linkItems.map(l => typeof l === 'object' ? l : {label:l, url:'#'});
+      const disclaimers = (d.disclaimers||'').split('\n').map(s=>s.trim()).filter(Boolean);
+      const address = d.address || 'This email was sent by: Verily Me.\n2999 Olympus Blvd, Ste 1000, Dallas, TX, 75019\n\u00a9 2025 Verily Me';
+      const logo = `<div style="margin-bottom:14px;">${FOOTER_LOGO_OUTLOOK}</div>`;
+      const contact = d.contactLabel!==false ? `<div style="font-size:13px;font-weight:700;color:#1c1c1e;margin-bottom:4px;">Questions?</div>` +
+        `<div style="font-size:13px;color:#1c1c1e;margin-bottom:2px;">Email: <a href="mailto:${ea(d.contactEmail||'support@verilyme.com')}" style="color:#1c1c1e;text-decoration:underline;">${eh(d.contactEmail||'support@verilyme.com')}</a></div>` +
+        `<div style="font-size:13px;color:#1c1c1e;">${eh(d.contactHours||'M–F, 8am–8pm EST, excluding Verily and federal holidays')}</div>` : '';
+      const divRule = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:16px 0;"><tr><td height="1" bgcolor="#c8c8c0" style="height:1px;line-height:1px;font-size:1px;">&#160;</td></tr></table>`;
+      const links = normalizedLinks.length ? `<div align="center" style="margin-bottom:16px;">${normalizedLinks.map((l,i)=>`${i>0?'<span style="color:#636366;margin:0 8px;">|</span>':''}<a href="${ea(l.url||'#')}" style="font-size:12px;color:#1c1c1e;text-decoration:underline;">${eh(l.label)}</a>`).join('')}</div>` : '';
+      const disc = disclaimers.length ? disclaimers.map(dis => `<div style="font-size:11px;color:#555555;line-height:1.6;margin-bottom:3px;mso-line-height-rule:exactly;">${eh(dis)}</div>`).join('') : '';
+      const addr = `<div style="font-size:11px;color:#555555;line-height:1.7;mso-line-height-rule:exactly;white-space:pre-line;">${eh(address)}</div>`;
+      return outlookRow('#e8e8e0', '28px 36px 24px', 'left', logo + contact + divRule + links + disc + addr);
+    }
+    default:
+      return outlookRow('#f9f9fb', '20px', 'center', `<span style="color:#aeaeb2;">${eh(b.type)}</span>`);
+  }
+}
+
+function buildOutlookEmailTables(blocks) {
+  const rows = blocks.map(renderBlockOutlook).join('');
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#f2f2f7;"><tr><td align="center" style="padding:16px 12px;font-family:Arial,Helvetica,sans-serif;">` +
+    `<!--[if mso]><table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="border:1px solid #dedede;"><![endif]-->` +
+    `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:100%;max-width:600px;border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;border:1px solid #dedede;background-color:#ffffff;">${rows}</table>` +
+    `<!--[if mso]></td></tr></table><![endif]--></td></tr></table>`;
+}
+
+function buildOutlookEmailDocument(blocks) {
+  const bodyInner = buildOutlookEmailTables(blocks);
+  return `<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="x-apple-disable-message-reformatting"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no"/><title>Email</title><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--><style type="text/css">body{margin:0!important;padding:0!important;}table,td{border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;}img{border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;}a{text-decoration:underline;color:#1c1c1e;}</style></head><body style="margin:0;padding:0;background-color:#f2f2f7;">${bodyInner}</body></html>`;
+}
 
 function renderBlock(b) {
   const d = b.data;
@@ -469,14 +607,27 @@ function renderBlock(b) {
         ${d.title ? `<div style="font-family:'Inter',sans-serif;font-size:13px;font-weight:400;color:#888;margin-top:8px;letter-spacing:0.01em">${eh(d.title)}</div>` : ''}
       </div>`;
 
+    // ── NOTIFICATION BADGE: pill with bell + mission label (Figma Notification Type Badge) ─
+    case 'notificationBadge': {
+      const bellSvg = `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1b7a3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`;
+      const inner = d.showIcon!==false
+        ? `<div style="display:inline-flex;align-items:center;gap:12px;background:#eaf5ee;border:1px solid rgba(27,122,62,0.25);border-radius:999px;padding:8px 16px"><span style="flex-shrink:0;display:flex">${bellSvg}</span><span style="font-size:15px;font-weight:600;color:#1c1c1e;font-family:Inter,sans-serif">${eh(d.label)}</span></div>`
+        : `<div style="font-size:15px;font-weight:600;color:#1c1c1e;font-family:Inter,sans-serif">${eh(d.label)}</div>`;
+      return `<div style="background:#ffffff;padding:12px 40px 16px;text-align:center">${inner}</div>`;
+    }
+
     // ── BANNER: white bg, large greeting heading + body + black pill CTA ─
-    case 'banner': return `
-      <div style="background:#ffffff;padding:40px 48px 36px;text-align:center;">
+    case 'banner': {
+      const ta = d.contentAlign === 'left' ? 'left' : 'center';
+      const bodyMx = d.contentAlign === 'left' ? 'margin-left:0;margin-right:auto' : 'margin-left:auto;margin-right:auto';
+      return `
+      <div style="background:#ffffff;padding:40px 48px 36px;text-align:${ta};">
         ${d.eyebrow ? `<div style="font-size:11px;font-weight:700;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px">${eh(d.eyebrow)}</div>` : ''}
         <div style="font-family:'Poppins',sans-serif;font-size:30px;font-weight:700;color:#1c1c1e;margin-bottom:20px;line-height:1.2;letter-spacing:-0.02em">${eh(d.headline)}</div>
-        <div style="font-size:15px;color:#444;line-height:1.65;margin-bottom:14px;max-width:440px;margin-left:auto;margin-right:auto">${(d.body||'').split('\n').map(l=>l.trim()?`<p style="margin:0 0 12px">${eh(l)}</p>`:``).join('')}</div>
-        ${d.ctaText ? `<div style="margin-top:28px"><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#1c1c1e;color:#fff;font-size:15px;font-weight:500;padding:13px 32px;border-radius:9999px;text-decoration:none;letter-spacing:0.01em">${eh(d.ctaText)}</a></div>` : ''}
+        <div style="font-size:15px;color:#444;line-height:1.65;margin-bottom:14px;max-width:440px;${bodyMx}">${(d.body||'').split('\n').map(l=>l.trim()?`<p style="margin:0 0 12px">${eh(l)}</p>`:``).join('')}</div>
+        ${d.ctaText ? `<div style="margin-top:28px;text-align:center"><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#1c1c1e;color:#fff;font-size:15px;font-weight:500;padding:13px 32px;border-radius:9999px;text-decoration:none;letter-spacing:0.01em">${eh(d.ctaText)}</a></div>` : ''}
       </div>`;
+    }
 
     // ── BODY: section heading + icon-row feature list ───────────────
     case 'body': return `
@@ -528,6 +679,7 @@ function renderBlock(b) {
       return `<div style="background:linear-gradient(180deg,#ffffff 0%,#e8f5f2 40%,#e8f5f2 70%,#ffffff 100%);padding:${Math.max(20,(h-circleSize)/2)}px 40px;text-align:center;">
         <div style="display:inline-block;border-radius:50%;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,0.08)">${imgContent}</div>
         ${d.showCaption && d.caption ? `<div style="margin-top:12px;font-size:12px;color:#888;text-align:center">${eh(d.caption)}</div>` : ''}
+        ${d.showCaption && d.caption2 ? `<div style="margin-top:8px;font-size:12px;color:#636366;text-align:center;line-height:1.5">${eh(d.caption2)}</div>` : ''}
       </div>`;
     }
 
@@ -868,6 +1020,10 @@ function FTog(label, key, checked) {
 function FColor(label, key, val) {
   return `<div class="field-row"><label class="field-lbl">${label}</label><div class="color-row"><div class="color-swatch"><input type="color" data-f="${key}" value="${val||'#1b7a3e'}"></div><input class="field-in" type="text" data-f="${key}" value="${ea(val||'')}"></div></div>`;
 }
+function FSelect(label, key, val, options) {
+  const opts = options.map(o => `<option value="${ea(o.v)}"${String(val||'')===String(o.v)?' selected':''}>${eh(o.t)}</option>`).join('');
+  return `<div class="field-row"><label class="field-lbl">${label}</label><select class="field-in" data-f="${key}">${opts}</select></div>`;
+}
 
 function buildFields(blk) {
   const d = blk.data;
@@ -877,15 +1033,19 @@ function buildFields(blk) {
     case 'header':
       h = sec('Content', FTog('Show logo','logoVisible',d.logoVisible!==false)+F('Tagline (optional)','title',d.title));
       break;
+    case 'notificationBadge':
+      h = sec('Content', F('Label','label',d.label)+FTog('Show bell icon','showIcon',d.showIcon!==false));
+      break;
     case 'banner':
-      h = sec('Content', F('Eyebrow label','eyebrow',d.eyebrow)+F('Headline','headline',d.headline)+FTA('Body text','body',d.body)+F('Button text','ctaText',d.ctaText)+F('Button URL','ctaUrl',d.ctaUrl));
+      h = sec('Layout', FSelect('Text alignment','contentAlign',d.contentAlign||'center',[{v:'center',t:'Center'},{v:'left',t:'Left'}]))
+        + sec('Content', F('Eyebrow label','eyebrow',d.eyebrow)+F('Headline','headline',d.headline)+FTA('Body text','body',d.body)+F('Button text','ctaText',d.ctaText)+F('Button URL','ctaUrl',d.ctaUrl));
       break;
     case 'body':
       h = sec('Content', F('Heading','heading',d.heading)+FTA('Paragraph','paragraph',d.paragraph));
       break;
     case 'image':
       h = sec('GIF', `<div class="field-row"><label class="field-lbl">Upload GIF</label><input type="file" accept="image/gif,.gif" data-gif-upload class="field-in" style="padding:6px 8px;"></div>`+F('Or GIF URL','src',d.src,'text','placeholder="https://…"')+F('Alt text','alt',d.alt)+F('Height (px)','height',d.height,'number','min="60" max="600"'))
-        + sec('Caption', FTog('Show caption','showCaption',d.showCaption)+F('Caption text','caption',d.caption));
+        + sec('Caption', FTog('Show caption','showCaption',d.showCaption)+F('Caption text','caption',d.caption)+F('Secondary caption','caption2',d.caption2));
       break;
     case 'animation':
       h = sec('Settings', F('Label text','label',d.label));
@@ -957,7 +1117,7 @@ document.addEventListener('keydown', (e) => {
 document.getElementById('preview-btn').addEventListener('click', () => {
   const modal = document.getElementById('preview-modal');
   const content = document.getElementById('preview-content');
-  const emailHtml = `<div style="font-family:Inter,Helvetica,sans-serif;max-width:600px;margin:0 auto;border-radius:42px;border:1px solid rgba(0,0,0,0.08);overflow:hidden">${blocks.map(b => renderBlock(b)).join('')}</div>`;
+  const emailHtml = `<div style="font-family:Arial,Helvetica,sans-serif;max-width:600px;margin:0 auto;border-radius:42px;border:1px solid rgba(0,0,0,0.08);overflow:hidden">${buildOutlookEmailTables(blocks)}</div>`;
   content.innerHTML = emailHtml;
   modal.classList.add('open');
 });
@@ -970,7 +1130,7 @@ document.getElementById('preview-modal').addEventListener('click', (e) => {
 
 /* ─── Export (.eml) ───────────────────────────────────────────── */
 document.getElementById('export-btn').addEventListener('click', () => {
-  const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Email</title></head><body style="margin:0;padding:0;background:#f2f2f7;font-family:Inter,Helvetica,sans-serif"><div style="max-width:600px;margin:0 auto;border-radius:42px;border:1px solid rgba(0,0,0,0.08);overflow:hidden">${blocks.map(b => renderBlock(b)).join('')}</div></body></html>`;
+  const html = buildOutlookEmailDocument(blocks);
   const subject = (blocks.find(b => b.type === 'header')?.data?.title) || 'Email';
   const eml = [
     'From: sender@example.com',
