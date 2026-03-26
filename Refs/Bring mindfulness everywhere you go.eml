@@ -1,0 +1,1567 @@
+Delivered-To: rzaki60@gmail.com
+Received: by 2002:a05:622a:5b90:b0:505:de47:d9f2 with SMTP id ec16csp3751249qtb;
+        Thu, 5 Feb 2026 11:10:04 -0800 (PST)
+X-Received: by 2002:a05:622a:48a:b0:4ff:c876:bda4 with SMTP id d75a77b69052e-506398aba59mr2627261cf.24.1770318603879;
+        Thu, 05 Feb 2026 11:10:03 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1770318603; cv=none;
+        d=google.com; s=arc-20240605;
+        b=a1CbXJm8SqslG4qUYKBZ89QqxxTUz0BKsCEPmzgCWf3mfXSk3xrrSMgGXudL/Z5fwW
+         L/N0Avd5B7Bkgh07kfNOXWHFneikWNZeoSRWTzndA1VhYBpNcbpZFqAguRIYlzt9+1ny
+         Qxm2dQIk7BhpeOh+hapKypKP8dykZuAJxfO1nqtmJoquCv0slNyVFZUuxBkAYlCPigAW
+         1ce7UZwbiEGr2/Y0gmHAFk2OhMiYiRkm3kqtUR2SaJUWF5C4kEmNWPG1wfjmSY+NS3Of
+         lrKDtgUIVw3yk6fskpFAteuw66Hf+ZVa3VpIqDZH/C0H5wHbCXjI/X7KxLVdQw/bKAgS
+         uRug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:reply-to:subject
+         :message-id:mime-version:from:date:dkim-signature:dkim-signature;
+        bh=+8Y0r3kgVJF7q7HlLVuRrzGLiG4/Qe2xm8jJlg4D94Q=;
+        fh=w2ap4rqQ3CVex65plOh129sBl+w+2O7VqcfpnYx794M=;
+        b=cPQE1XI+OXtYjUB9RxROz0n0S87MzUxMbT0AgnxPhnLyS+8pYR0xYtnaSmev40O1t+
+         FHKUoYZLONtZdtzp0sWGruQKDnSntV5afF1c0sDHCwCEUvVCt/hm6AFL2HAyXlloAT/+
+         e4l63hb84wdBDrcqPT+45qr66LGoh1ymJsujdSszYYAuaKiWeHULUEqCyoUPo4Wl6bvP
+         kVcV6Ch/EbJH0TfDtoZLYW2psmwyVbEnB7qaP023q4EXPRYGeQfFFa5Vh06IEAq6ihhh
+         1ocQRmXjbcKTx6WxAZyfAEoeAHDDi9DJdNH1FQ86G+qJh7VrzVOUumRHPJcnbrNUfCmt
+         EcFw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.headspace.com header.s=s1 header.b="bggLm3y/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ABWgzPE0;
+       spf=pass (google.com: domain of bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com designates 167.89.3.94 as permitted sender) smtp.mailfrom="bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.headspace.com
+Return-Path: <bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com>
+Received: from o639.em.message.headspace.com (o639.em.message.headspace.com. [167.89.3.94])
+        by mx.google.com with ESMTPS id d75a77b69052e-50639401f82si2580311cf.471.2026.02.05.11.10.03
+        for <rzaki60@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 05 Feb 2026 11:10:03 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com designates 167.89.3.94 as permitted sender) client-ip=167.89.3.94;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.headspace.com header.s=s1 header.b="bggLm3y/";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ABWgzPE0;
+       spf=pass (google.com: domain of bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com designates 167.89.3.94 as permitted sender) smtp.mailfrom="bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.headspace.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=info.headspace.com;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; bh=+8Y0r3kgVJF7q7HlLVuRrzGLiG4/Qe2xm8jJlg4D94Q=;
+	b=bggLm3y/hwUQ372XCVAijqhiQEYcdblQYTzf/NrfAcEYZ6iHLTyhy/uHM7yru+vCSNcA
+	+InvbPhmtZlVKIJZWMTXJe49veUB232A7IwmA5rurlOTJynq1TjQj8F7qqdpzJRQ/QR1GY
+	H/aDtM25t3Sn9OxpV/jG3V6Oxz6KFKLtgJIKfDBHOE11Ohc+whVElo4AxtZL64gCMy84h8
+	Yt94irtnYf4Ok1dZbPOnHsyPE2/WZ/L4PXmCz5Tg8x4l9IGiSZe1UwsloZq0N5orxlZ9Ck
+	MMLAK7REuNUj4UA1j7ZM3vep9+lKWz5MiKD7bUrfN7TqU8oklweo2ckkUI85JQ5g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=+8Y0r3kgVJF7q7HlLVuRrzGLiG4/Qe2xm8jJlg4D94Q=;
+	b=ABWgzPE02rteYpJB44diBtutzntr6Z6i1/hSHkDSwv9oPlMTbcOQuUObdt/hQqj/Ups2
+	UuGNDHLujHZm4J7eINLhdTPwdvT0lP+0uwzJVmxhNeiDQD5+KBiazlBkua2nUcD4B/VW3f
+	HIgoN2rUwJVBp6BUWUc+lERlbqPhKIZ8I=
+Received: by recvd-canary-5f78457f5c-tmjgt with SMTP id recvd-canary-5f78457f5c-tmjgt-1-6984EB0B-6E
+	2026-02-05 19:10:03.291320382 +0000 UTC m=+4309437.412003560
+Received: from NTk1MjExMw (unknown)
+	by geopod-ismtpd-69 (SG) with HTTP
+	id sKFEdfeaTQmgEkpPcGd9tg
+	Thu, 05 Feb 2026 19:10:03.282 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=2bc9b9f077d12f1bc673c37ec2ab987239fd78376a46f623c787e757828d
+Date: Thu, 05 Feb 2026 19:10:03 +0000 (UTC)
+From: Headspace <members@info.headspace.com>
+Mime-Version: 1.0
+Message-ID: <sKFEdfeaTQmgEkpPcGd9tg@geopod-ismtpd-69>
+Subject: Bring mindfulness everywhere you go
+Reply-To: no-reply-cx@headspace.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2F02=2Eemailinboundprocessing=2Ecom=2Fenc=5Fuser=2Flist=5Funsubscri?=
+ =?us-ascii?Q?be=3Fd=3D%241%24gnxgm9zaIFUKzumkKvHjtw%3D%3?=
+ =?us-ascii?Q?D%24LvfsMMrXU3EHc8fx0kMoyUTAnnwFQSgEpxe?=
+ =?us-ascii?Q?q630IGTuR6hq9XObtO2BNVpfP%0ALqeVV0s53kO?=
+ =?us-ascii?Q?DJiJXyt31w9xKswk2OLkLqpEpaOiY8F7e%2Fe9%?=
+ =?us-ascii?Q?2BSmC1uajn8UvM%0A910MmZa0kNw1Bc1%2BpmiP?=
+ =?us-ascii?Q?TwYU6KPd2TFBrV53wTCM2%2BK%2FFXRIoxLrDGW?=
+ =?us-ascii?Q?g%2BKdW%0AuehdE84aH5mOrxXT%2BX3oGBQhhqm?=
+ =?us-ascii?Q?aKgdS90IKclgrdVDXnR3FXIYk1P356m9a%0AU6J?=
+ =?us-ascii?Q?5VmJfyuQp6Ej7T8dnKaK7%2Bj%2BbdnowyC5kEM?=
+ =?us-ascii?Q?i2n3IY7HHIfPOGwIPDRw0i%0A8U6MVNQtaFW5lB?=
+ =?us-ascii?Q?jpUx2asvxAG737L7yZFZNWSgOAynmswpO3Y8G11?=
+ =?us-ascii?Q?eyT1cLl%0AAAEEj8F8uP8JGQN%2BST5YpuM3&1=3D?=
+ =?us-ascii?Q?1=3E=2C=3Cmailto=3A4=5Fm9wdxwm8huxug1o76mhin6q9nu?=
+ =?us-ascii?Q?gld0uo546f5kjjdzyuztlbpaunun=40unsubscrib?=
+ =?us-ascii?Q?e-02=2Eemailinboundprocessing=2Ecom=3Fsubject?=
+ =?us-ascii?Q?=3DUnsubscribe%20pnrcgsq1c70b7v9kzgeekx3d?=
+ =?us-ascii?Q?w7z4q4pnjhnwovcfd&body=3DDO=5FNOT=5FDELETE-14?=
+ =?us-ascii?Q?ew4ckvae2snv65mfefh0zk6oqjqarmx1moy1ztj?=
+ =?us-ascii?Q?tcrpck2auclixrurhaudcdm1z1cwrf5cms1dhdg?=
+ =?us-ascii?Q?t-DO=5FNOT=5FDELETE=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Ed7TODBiRWlZny=2FGoMiJpTYqNHYFbmi9EQTzQFvMS1KZyI6DJ6PaegiyGy?=
+ =?us-ascii?Q?KZztqTyjUXi0lCf7IIzCK=2FfaQgaxV0SIRCg80dH?=
+ =?us-ascii?Q?EqfxBJBJz2OsBZkiWydWkyF4LnVAuHaDKMR2uH1?=
+ =?us-ascii?Q?cXceDeZVlKGgk7rs25oisoQpZ70gnCYL7HmJssJ?=
+ =?us-ascii?Q?9OXB8eMDJ=2FLun+bxKC8guoJJGfucFiT4QRv8Gas?=
+ =?us-ascii?Q?8JDOAsRa2GJiQ1gC+5bhxNiyVmE5By=2FgrfJTZtL?= =?us-ascii?Q?B2Ba?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDrjDW6011yC6XOo?=
+ =?us-ascii?Q?3uya5MX5hs388ulUv1iBigYWzoqYkGxwRxuNwkb?=
+ =?us-ascii?Q?EQqWs4GlaM9BUBTFGU4L7HBj=2FWM0neNro4+8D+K?=
+ =?us-ascii?Q?B0sSj6B1dXXWnRLuzhE5GnAsJhsl9btCW8=2FdXWR?=
+ =?us-ascii?Q?xMRYqd0AuYy5wGE3Vgd7au883AkunEbrpR1zgVh?=
+ =?us-ascii?Q?lUYpwbxjVik9ZquT6TbQZU+qEkaWbKGsPe5BxCg?=
+ =?us-ascii?Q?R6L4PKcr00i4U8tIf3158+=2F6vR7rSF=2FlC0Ieezz?=
+ =?us-ascii?Q?iyc7RtMCz4kJtE7d=2Fbbg69DvJ6pWyhhlKv5csoN?=
+ =?us-ascii?Q?+zyI47KCsJ1QmwvWqFgS6u+5LFY4GKbyKdikxu6?=
+ =?us-ascii?Q?ym4zRdjcMC3IXOf6XB2jQgwuzmChdZrQlz62EOV?=
+ =?us-ascii?Q?OG3MRgo7Po+q6Rvs84FAgj01yqLi2a=2FbAYDmqW3?=
+ =?us-ascii?Q?18dAAzy2Ep4ZBwsIDXLMF2qaWu+CvddzqcVLGry?=
+ =?us-ascii?Q?RjAMeJk9CIGFj8dHbRO60ddMPPg8z6eP3t3o0wD?=
+ =?us-ascii?Q?f4QtNN337pu4MZUmPxNZiY9mY1tXN1=2FNo5YYcXO?=
+ =?us-ascii?Q?W=2FetaQhRTDdgyQraWNv6LUJ3nyI=2FWyN7PA=3D=3D?=
+To: rzaki60@gmail.com
+X-Entity-ID: u001.pKQQt7yJEuPVWy3ua/faWg==
+
+--2bc9b9f077d12f1bc673c37ec2ab987239fd78376a46f623c787e757828d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Collections and coaching for all of life=E2=80=99s moments
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C
+Headspace ( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRJYCPM7znhg4-2BToYAsecJnfLsCBfm3QbuCGCXQ8M8-2BmtZgK2wV-2B9yBQph5c=
+RyK2BvA-3D-3DAXpR_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSD=
+FICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeur=
+cxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC=
+6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVN=
+iuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B=
+0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-=
+2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCp=
+uXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJ=
+YzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6Q=
+Qs4oqtukJ-2BDUSsqpRH8c6QCmorQtHUn368QZ-2FsMkN8fNcE-2BJBcfrjqJNf0aPyd6j9MVKh=
+iJYsk1qmqKOJZKgfC2nRBelcj2QFpOE60U8ILJO64OAHLaDCqWEyqtojaeN3t1u688E5CG0jM2I=
+o4-2Bun )
+Mindfulness for every little (and big) thing           Explore
+Headspace=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABacCdVEgHAWLautyjPJNwd4GCQYKeYDbFCh1DU-2BTpt-2FZDw-3D-3=
+D7t94_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FEx=
+Lhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9=
+Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3=
+CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NO=
+F-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm=
+0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75Pk=
+VR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBw=
+RyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpO=
+lj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6S83Ly-2BwXo9a=
+LzooJ2wnqmuD4y38aBreZmUge5tOPsWqFFEzX3lB3H-2F1yaefLiuXmyn5vjR1h-2FMWwu5VXVC=
+PEA2pNK3tnveXjDjGll0VueWuQvt15xpR1HYK-2FC3z8LqeCToRSXnl79OOGSTJpRU2tjj )
+Whether you=E2=80=99re brushing your teeth, commuting to work, or getting
+ready for bed, there=E2=80=99s always a way to bring mindfulness into
+your day. Check out these collections that can help you make
+everyday moments a little happier.          Watch now=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABacCdVEgHAWLautyjPJNwd4Gs8-2BcLNMd2Wpmwo-2BMhhLMRw-3D-3=
+DUBy7_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FEx=
+Lhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9=
+Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3=
+CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NO=
+F-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm=
+0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75Pk=
+VR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBw=
+RyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpO=
+lj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6Qz4x6O9EtlbKe=
+ZEa3tKuYwUSZm70ZV2nTser0T38hS3uo6ru-2BaGXsnChHknVXEcOAKavqTq18ahKpA0cjxeAUd=
+KEeAbObbmNysnd70uEhR13Lc5CR2-2BmfDZbEEOSo-2FrWeNpmSE6gSAv4TJebXXyUbw )
+Mindfulness at Work
+Learn how to bring more focus, creativity, and compassion
+to work.
+Check it out =C2=BB=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABaemudFkb-2BSKKRe49KxKASHScWvxcT-2FKb-2BLjet2WtW0N-2Ft3=
+AG0ay-2FVRmL5lqJbKBQ9U-3DBIeF_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZe=
+ON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr=
+69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6Jl=
+EJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVP=
+vMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBR=
+lJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4=
+hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21Xz=
+M2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoY=
+MlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLN=
+xy0BEzu7Po6SOLfbB7kr6BJBVahmOF987QgwO0lhowMIMl2ErnhgRwjpiWfyZHWA8IOX7cZXh55=
+y6wpwpqJFf-2FN9d6ysIbdtQA-2BSgpEv1V8hXN261hHAJ62Ng-2FiU7c2Fd0DgB4j5-2Ft1zjr=
+K4uamDlTVL-2FeEXcGWVH )
+                                        Mindful Money
+Explore meditations and advice on financial stress, mindful
+spending, budgeting, and more.
+Check it out =C2=BB=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABadlrHtTtUVIKxt5FsJUBaLkCagx061us-2F-2FgE34TiXvomt4XM31=
+SA3-2Ba71KHbvxE6Ug-3D-huI_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZ=
+T31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4c=
+zmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkF=
+id7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZ=
+USXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy=
+7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WR=
+WXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL=
+02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0B=
+Ezu7Po6TZo0NFn7diA0OUd15hqNrWO66wpzmukqE4rkWCTAsR5H8hmeng-2FXaNJNU6FnEEFlby=
+tIBnnI38BUmPjBwB2O2uMij77v1hV3a3hczbnAeuyrA3qhwLV2NIh6TQrey3-2FZudsnbBJNhHQ=
+7AGn-2BIzPUpN )
+                                        New and Popular
+See what=E2=80=99s top of mind for the global Headspace community.
+Check it out =C2=BB=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABad3VSkBQEKVPQHPlNmqxsrzwFxc8pdVV-2BvNPMfRBzGdPQ-3D-3Dm=
+WJt_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLh=
+or1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Kn=
+ak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CX=
+Z5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-=
+2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0f=
+OEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR=
+9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRy=
+zHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj=
+94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6Q00-2Bqbj3Rh2Y1=
+H31TsrGRVb9NVBWK7cRjZk-2BqhKnMhThEv3DoPAehOWYUT0s3YJ-2BnkFZ7nFjHtTOQhPyyS3F=
+FYnD5Ir-2Bu5y7HwfbM8LthnEB0RW0KRAquZKnedyCmS2FMVlnHAGAN0NKd-2BnFkSGPNh )
+Coaching
+Chat with a Headspace coach to manage stress, set goals, and
+build healthy habits.
+Book a session =C2=BB=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABae6mIajemyq1UQBbKO-2FvS6KGNeEVKOyq6hCKXZnGSpXFw-3D-3D9=
+CCM_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLh=
+or1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Kn=
+ak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CX=
+Z5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-=
+2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0f=
+OEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR=
+9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRy=
+zHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj=
+94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6SXj5m-2FnFua33J=
+PVOhHv6nm9byx-2B0571YjuVEupIVvGQd2qea6hWS9GI0P5EQIj8dDB6WVuu4-2FjzoDJJL8-2B=
+mNiVt5vV4TPij4cWEZkPAWUx3wXnL3g9mAXBEyUPQCCdag-2FF62UJI9AH5AWCI7VNsrj6 )
+Live Events
+Take a look at the schedule and join a virtual, live meditation.
+Save your spot =C2=BB=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RIKW88ptl9Zy3YZOpwetzS8kn8Ws85FvhfaqbnI-2B8w-2B7U1kIJiS2hYzpvK1fizYLS7opwvw=
+pFkSgorjpXYt0MYo-3Dzi2x_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMK=
+KbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT3=
+1TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czm=
+sIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid=
+7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUS=
+XyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7o=
+g2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWX=
+Ls6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02=
+rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEz=
+u7Po6QbwMCLQwi4ldkZlJCO7mKGmxt0-2BwBQSbTsAyqleJ-2B50mcDFdNKtAqYX5vaI-2FRP22=
+UaWorRiugl5CiKacgvtEyTsoh4S1WeKDJIjOqlhvG7fW8lXm03He4cR-2BHBSFLQGwplelFkPUE=
+vNZnVUfPWt8Ti )
+Have a question? Visit our FAQ page=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RFfwQM1Rus7OLZTrqZC0Gg-2Fdkt8LhYI8Nq3cxl-2BLSDL0PyQ0iGuIlohar-2BVuh2trRg-3D=
+-3D6vCc_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2F=
+ExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oW=
+C9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2=
+B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9=
+NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2=
+Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75=
+PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPil=
+BwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50Eajk=
+pOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6TAZ7doqpYhp=
+nyFzo5A8Smb9oLlFMEO0De0cSmtLANHzLlM-2B0dIrdT6inMgGHxdYDkKPOJOT8yO-2BowZZ4BI=
+PLRjwI9J9-2FVypgLNZ9WujP3IhXvUOLAJJddlBQcTaXojlu71tCdyEKrChlDXSuSFtW0h ).
+TikTok ( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoH=
+CZlhidCROrjaW1HydmbW006JxuBPwtWjPJfspbOafYniYJIy2FnXsWelKpNO1TbSp-2F48jNM8g=
+-3D-3DTje__oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj=
+-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL=
+9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFY=
+S-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ=
+0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrg=
+v-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCA=
+I75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2Bw=
+PilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50E=
+ajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6R5BQvovA=
+ocP8M8gSY2d1BdYnHmnKJNDaWoNzrKiLDG-2FJ7-2BlUZkdvFNl-2F6xYRXp7sMV6x-2FSZr2EL=
+yqGXUY79txSczKaqZSC-2BAuL5xN7FXgg82xXYVI2YzeP5zhBki-2FRZadxZmdMYs4LyXzZl9bO=
+a2Ec )
+Instagram ( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRONVxK0bzUPNhp8Zp-2BsQvkhgnxUCTU0zNryxiDbVh8aC2s9wHyriy6OLZs7s67g=
+9TA-3D-3Dy4gf_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICI=
+Soj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYv=
+THL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKY=
+BFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLO=
+rhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCR=
+Jrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMm=
+aCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-=
+2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa=
+50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6QgGTB=
+VSxq89KDaXFI3zk8NeFstTvu-2FM5FF5TDeRDenYnc8iJieNR3ynKu1TBi3xU3Ntg2-2FcEKg-2=
+FSlXnJ0NyQ5aIf86IttP0KKGQzwvTKF5Q7Oj0zK9Je5GU3FdY1ukcN4OM2tDu4apCXQ7199pe0k=
+3 )  Linkedin=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RLxStHSVfP8nBjdUkR8bqYk8t7NkhVQFrU0WfThN-2B7wU8kz578H59K4RlmtUTyNgDrwpE-2FI=
+Rz8DKS3z6utlNROq67dZxjRtChVzlUk0Wx4kfLU4q_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s=
+1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZW=
+JWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRh=
+OdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4=
+sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1=
+hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNz=
+jXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorp=
+CBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkji=
+MYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkq=
+z33Ry-2F7jLNxy0BEzu7Po6TRvGHT8avKz-2FlqpHfMxihTY-2Bdzs4zY5izrfKxT7BUCptqrjf=
+Zee31ySaHar31tGA5wmWYhfk548Iud5dLshSYGZ4z1-2BmRmep2150kPfMKgp8CUzmXIeIV8faQ=
+enTloo6GrzmohiKOU8zW-2BwjuogtS-2B )
+ Youtube=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.-2BfMiUse0piOirOCjgR=
+UWiL4yl-2BuPt8S2X8LF3SD6erjxZb7Xp0-2FUCjZBCmsucAskzrhyusvngLM7THEwg1k-2BKEK=
+NwClRzXETpeUkdjdMve4-3D6X7y_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON=
+7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69=
+aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ=
+4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvM=
+kFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJ=
+KZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hH=
+Wy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2=
+WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMl=
+YL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy=
+0BEzu7Po6S6DFR4QD12TtwO34-2BR7s7J4GEpXfGDdMjTFlOpxV41J1rV5Sc3BWj5-2B1twZ2Cr=
+iVgYiUBKVIzTfDzVKxqwntX9RjDs45lsRKyfJ4xYYHewytnYCoI7KdPOpaOoLNYQWi3Fm2aMu4U=
+sxH0niPP0BwCT )
+Headspace protects and processes your personal information in
+accordance with applicable law, as described in our Privacy
+Policy=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RJYCPM7znhg4-2BToYAsecJndbblCRYAKb5TuuWJTUERq-2F21uvGzKPifECC-2Fsbgmgsu3uN2=
+qABvZihHdwv7E6Znvo-3D8UJH_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZ=
+T31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4c=
+zmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkF=
+id7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZ=
+USXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy=
+7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WR=
+WXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL=
+02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0B=
+Ezu7Po6Q047rdMZX8UurFZnbD-2FOyG4p7fAmGaZGgFB6qTbKoYvVGAkZGXF5ulr2QotzjW0HYP=
+tEoH-2FfEmbDwOIyaoqFCobNF-2BIWLufr8tFaWZ7v6NqO1MnzMus6Bsj3WuBR2aiXkH4zOVqad=
+mVH9lsXtENHVG )
+ and Terms and Conditions=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RJYCPM7znhg4-2BToYAsecJnfsPLF7EELDMhUkNNsPlnM14obQk1-2BQsSih7Qeii2xvVdVuTMC=
+OZVCtYYDRKr6uFJE-3DymhN_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMK=
+KbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT3=
+1TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czm=
+sIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid=
+7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUS=
+XyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7o=
+g2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWX=
+Ls6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02=
+rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEz=
+u7Po6SsPYRmLyLezZMb0JMT-2BCDcHb47h2z6BQ1cJYR8TOJ7fmu5NGzS36FqNuq4WZdq-2FI0S=
+jGBo3f-2FCFhClP3zh1bbdXWAc0zVmQIVDm2vPlLwfMDCygACDFYloiIAPLOsVIf-2FYajdE1CW=
+qCvbRTZwaOI1m )
+.
+
+=C2=A9 2026 Headspace. All rights
+reserved.
+2417 Michigan Ave., Santa Monica, CA 90404
+Delaware Corporation State File #5271511
+Not a fan? Unsubscribe here ( https://links.info.headspace.com/ls/click?upn=
+=3Du001.CIwloPx8RcaoHCZlhidCRImw8PjAxz-2FHwVJbncN1EvcEFDCByMqgSSGtFCv0N734b=
+EvTd4NDJItvaU7L9ijUAfkmi-2FMaEaCNeAg8MnG9Foqk9UX8Lt0uqeEskrld4TTpA-2FTF0w9Y=
+Dz9SyU8cVycfjzFTqlN-2BTZ1cpezjwBFqoyIoXbpL-2FEGha0RG-2FcbswI4pksbJ0x-2FSX5S=
+Z9mmyruT9zN2YBJ9Pb8UpBIU2ihRLYnk6o92ned52-2FCLeprXSyqRd1-2BkwA9pRQPqI5WuKcK=
+A-2BkVOFzJTbnHUGA4IxhaeLmzF-2B0-2FTSkVD8VR7yCVMhTo-2B4KCpxCZ97MRhDazmGeMt6i=
+wySP-2BB26gydHEUuCL6o8VPT5G4csZ1y3e-2B-2B8ADBGIMarczmYhEZikhCSluBG0awJb1abq=
+VMyHCZsE5DImRkEycI0mh4qqUzeK6St8p-2BycYtiJa4u63iWSpqp05pom-2FzCcR185r8BpWBa=
+EBZmw6qOlZUEWWslvjJW7LBgmS-2BFaOpFNqogy8DV0fxX0bN1xLNB9SvMOUnff0hJqfNNb0Wao=
+bh5HJ6qMftpWpIKXTp-2Fp-2FMrXpn9EdX9jYMT5H7N-2FOs19zMIa1dl5CTNZyO3tGhH3qXKLp=
+aEAYUu0BBRunSf-2FHPRDRrX46XZO-2B-2BlMpZ5U1zwuKfJ7yJ9-2Fw-2FypaEVcqBIm6K0vuA=
+Lq6MhKMyKZG8CoxU5V9tDFOH-2FttvW9ig9rEiE5x9gxEg5gbgKTbNhJAGTloIS-2BhJoDrKO2u=
+MKdopeiYdmq4O-2B0C9MJFKnv9yoBGWhSYX3pVzjZBdRLgxWkYnYX25HCtA2ekrogX-2FQTIgrt=
+Bu1Ma6_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FE=
+xLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC=
+9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B=
+3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9N=
+OF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2F=
+m0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75P=
+kVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilB=
+wRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50Eajkp=
+Olj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6QLV8nBTVD0w0=
+-2FlcxmPvteR3aVx2GJgE-2F51g-2Byl8XotvLrxC3WtFWSfC54B8jaPRkgHbbLNcqhDuPr4b-2=
+FBz6LO6S-2FH41r-2FQ6-2FzroBKf2wAR3gknkIwutmozNX0OKWVJav8cEZl0AQRJRk-2Bnxon0=
+qdRD
+).
+--2bc9b9f077d12f1bc673c37ec2ab987239fd78376a46f623c787e757828d
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge">
+  <link rel=3D"icon" type=3D"image/png" href=3D"https://braze-images.com/ap=
+pboy/communication/assets/image_assets/images/64bfef6206def2004d52d298/orig=
+inal.png?1690300258">
+  <title>Headspace</title>
+  <style type=3D"text/css">
+  body {
+    height: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  div[style*=3D"margin: 16px 0"] {
+    margin: 0 !important;
+  }
+  div, button {
+    display: block !important;
+  }
+  table, td {
+    border-collapse: collapse !important;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+  }
+  img {
+    outline: none;
+    text-decoration: none;
+    -ms-interpolation-mode: bicubic;
+  }
+  a {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+  }
+  a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+  }
+  * {
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+  }
+  .ReadMsgBody, .ExternalClass {
+    width: 100%;
+  }
+  .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass fon=
+t, .ExternalClass td, .ExternalClass div {
+    line-height: 100%;
+  }
+  .gmail {
+    display: none !important;
+    width: 0 !important;
+  }
+  </style>
+  <style type=3D"text/css">
+  @media only screen and (max-width: 480px), only screen and (max-device-wi=
+dth: 480px) {
+    u + .body .full-wrap {
+      width:100% !important;
+      width:100vw !important;
+    }
+    .width440 {
+      width: 100% !important;
+    }
+  }
+  @media only screen and (max-width: 600px), only screen and (max-device-wi=
+dth: 600px) {
+    .hidden {
+      display: none !important;
+      width: 0 !important;
+    }
+    .widthFull {
+      width: 100% !important;
+    }
+    .width15 {
+      width: 15px !important;
+    }
+    .width85 {
+      width: 85px !important;
+    }
+    .width90 {
+      width: 90px !important;
+    }
+    .photo {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .heightAuto {
+      height: auto !important;
+    }
+    .photo90 {
+      width: 90px !important;
+      height: auto !important;
+    }
+    .center {
+      text-align: center !important;
+    }
+    .font42 {
+      font-size: 42px !important;
+      line-height: 44px !important;
+    }
+    .font34 {
+      font-size: 34px !important;
+      line-height: 36px !important;
+    }
+    .font28 {
+      font-size: 28px !important;
+      line-height: 30px !important;
+    }
+    .paddingRightLeft0 {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+    .paddingRightLeft10 {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+    .paddingRightLeft20 {
+      padding-right: 20px !important;
+      padding-left: 20px !important;
+    }
+    .paddingBottom20 {
+      padding-bottom: 20px !important;
+    }
+    .paddingBottom50 {
+      padding-bottom: 50px !important;
+    }
+  }
+  </style>
+  <!--[if gte mso 9]><xml>
+   <o:OfficeDocumentSettings>
+    <o:AllowPNG></o:AllowPNG>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+   </o:OfficeDocumentSettings>
+  </xml><![endif]-->
+</head>
+
+<body class=3D"body" bgcolor=3D"#E5E5E5" style=3D"margin:0; padding:0; widt=
+h:100% !important; background-color:#E5E5E5;">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Collections and coaching for all of life=E2=80=99s mome=
+nts</div>
+  <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentat=
+ion">
+    <tr>
+      <td style=3D"font-size:0; line-height:0; display:none !important;">
+        <div style=3D"display:none !important;">
+          =CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div align=3D"center" style=3D"background-color:#E5E5E5;">
+    <table class=3D"full-wrap widthFull" width=3D"600" style=3D"width:600px=
+;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation">
+      <tr>
+        <td align=3D"center" valign=3D"top">
+         =20
+          <!--Logo 17-->
+          <table bgcolor=3D"#FFCE00" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td class=3D"paddingRightLeft10" align=3D"left" valign=3D"top=
+" style=3D"font-family:'Headspace Apercu', 'Roboto', Arial, sans-serif; fon=
+t-size:14px; color:#FF7300; padding:40px 30px 10px 30px;"><a href=3D"https:=
+//links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRJYCPM7z=
+nhg4-2BToYAsecJnfLsCBfm3QbuCGCXQ8M8-2BmtZgK2wV-2B9yBQph5cRyK2BvA-3D-3D_5JK_=
+oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1V=
+EbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7Z=
+CmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0=
+gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-=
+2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQ=
+Nr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chp=
+P1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmu=
+Q-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vo=
+jkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6RdFPZ470W-2FS8gfamp=
+u0QhQwK1Q1n91-2B0Bc73x3adv5omDLJANOF5GMpTkQ5Jp2jAjpSjYnaOD3YScwCMflyhPzMDsH=
+AH2CiR-2FLVtwdXEjQ2uOMvyssiHO5KUarhEnMlAqEt-2FDrtQddYk-2BpU5k5x8vq" target=
+=3D"_blank" style=3D"color:#FF7300; text-decoration:underline;"><img src=3D=
+"https://braze-images.com/appboy/communication/assets/image_assets/images/6=
+5208237475b31004cf86d80/original.png?1696629303" alt=3D"Headspace" width=3D=
+"225" border=3D"0" style=3D"display:block;"></a></td>
+            </tr>
+          </table>
+         =20
+          <!--Headline 2-->
+          <table bgcolor=3D"#FFCE00" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td class=3D"paddingRightLeft20 font34" align=3D"left" valign=
+=3D"top" style=3D"font-family:'Headspace Apercu', 'Roboto', Arial, sans-ser=
+if; font-size:48px; mso-line-height-rule:exactly; line-height:50px; color:#=
+2D2C2B; padding:30px 40px 30px 40px;">
+                <strong>
+                  Mindfulness for every little (and big)&nbsp;thing
+                </strong>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Primary CTA - 1-->
+          <table bgcolor=3D"#FFCE00" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td class=3D"paddingRightLeft20" align=3D"left" valign=3D"top=
+" style=3D"padding:0 40px 50px 40px;">
+                <table class=3D"widthFull" width=3D"220" style=3D"width:220=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"center" valign=3D"middle" height=3D"52" bg=
+color=3D"#0061EF" style=3D"height:52px; font-family:'Headspace Apercu', 'Ro=
+boto', Arial, sans-serif; font-size:18px; mso-line-height-rule:exactly; lin=
+e-height:20px; color:#FFFFFE; padding:0 0 0 0; border-radius:26px;"><strong=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRI92e7yiiPVPrKLS8eaABacCdVEgHAWLautyjPJNwd4GCQYKeYDbFCh1DU-2BTpt-=
+2FZDw-3D-3Ddnec_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFI=
+CISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcx=
+YvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6p=
+KYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiu=
+LOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0q=
+CRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2B=
+MmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuX=
+y-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYz=
+Da50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6QOH=
+7a-2FZBcZE1LGywOOmfva3lTSCK0b17JAz8h6mpXvMousY9abQ75b-2Fu8NaFyscHfFgrg6Z6Mu=
+OxCvxUgxLKf9mFmBNUR-2FdPGCdFqdVgFERGwOEPkQB0eiKPP1ZYFsX2vKh0Z6f7m-2B3XR6YhA=
+TI3vQ" target=3D"_blank" style=3D"color:#FFFFFE; text-decoration:none; disp=
+lay:block; padding:16px 10px 16px 10px;">Explore Headspace</a></strong></td=
+>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Image - Full-->
+          <table bgcolor=3D"#FFCE00" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td align=3D"center" valign=3D"top" style=3D"font-family:'Hea=
+dspace Apercu', 'Roboto', Arial, sans-serif; font-size:14px; color:#FF7300;=
+ padding:0 0 0 0;"><a href=3D"https://links.info.headspace.com/ls/click?upn=
+=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABacCdVEgHAWLautyjPJNwd4Ge0G=
+oSCvxMs5ldR6H-2Fmt6Qg-3D-3DRDe8_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0c=
+ZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFv=
+vr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6=
+JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJT=
+VPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1E=
+BRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4g=
+O4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21=
+XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZ=
+oYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7j=
+LNxy0BEzu7Po6SxUR1qgGLJ-2FiSjblcqxtrdH-2BIWEh-2F7IuYiJJWT88WZJ8aJHugm5OOrQw=
+dt-2BmMtCT663mXIO5G1ggnoR7WJuy1ApNVag3saU12o-2FS0Sw3YI0eEUytOtFJGZozlEE8V-2=
+FaG4PAvOjCawpB5j6CqDIl8ag" target=3D"_blank" style=3D"color:#FF7300; text-d=
+ecoration:underline;"><img src=3D"https://braze-images.com/appboy/communica=
+tion/assets/image_assets/images/657c71089d6b110054edd765/original.png?17026=
+54216" alt=3D"" width=3D"600" border=3D"0" style=3D"display:block;" class=
+=3D"photo"></a></td>
+            </tr>
+          </table>
+         =20
+          <!--Body Copy-->
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td class=3D"paddingRightLeft20" align=3D"left" valign=3D"top=
+" style=3D"font-family:'Headspace Apercu', 'Roboto', Arial, sans-serif; fon=
+t-size:18px; mso-line-height-rule:exactly; line-height:30px; color:#63605D;=
+ padding:50px 40px 30px 40px;">
+                Whether you=E2=80=99re brushing your teeth, commuting to wo=
+rk, or getting ready for bed, there=E2=80=99s always a way to bring mindful=
+ness into your day. Check out these collections that can help you make ever=
+yday moments a little&nbsp;happier.
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Primary CTA - 1-->
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"t=
+op" style=3D"padding:0 40px 40px 40px;">
+                <table class=3D"widthFull" width=3D"220" style=3D"width:220=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"center" valign=3D"middle" height=3D"52" bg=
+color=3D"#0061EF" style=3D"height:52px; font-family:'Headspace Apercu', 'Ro=
+boto', Arial, sans-serif; font-size:18px; mso-line-height-rule:exactly; lin=
+e-height:20px; color:#FFFFFE; padding:0 0 0 0; border-radius:26px;"><strong=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRI92e7yiiPVPrKLS8eaABacCdVEgHAWLautyjPJNwd4Gs8-2BcLNMd2Wpmwo-2BMh=
+hLMRw-3D-3D5go9_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFI=
+CISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcx=
+YvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6p=
+KYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiu=
+LOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0q=
+CRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2B=
+MmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuX=
+y-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYz=
+Da50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6QY2=
+cpk-2Fut8NXkafFZ4yuVUOxpimje5z8t-2BcRSsPl5MHGLWxb6uhNLMVZGkQOu9uAzW9HQcCxVv=
+X2F6R4SQLPVGJe3myfCtpk9iTrhH-2BDldx9cD9I33wKfCMepjYYDkNr4z8bWnwrrbv6Lv-2BBU=
+9MejG" target=3D"_blank" style=3D"color:#FFFFFE; text-decoration:none; disp=
+lay:block; padding:16px 10px 16px 10px;">Watch now</a></strong></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td align=3D"center" valign=3D"top" style=3D"padding:0 0 40px=
+ 0;">
+                <table class=3D"widthFull" width=3D"520" style=3D"width:520=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"left" valign=3D"top">
+                      <table align=3D"left" class=3D"widthFull" width=3D"19=
+0" style=3D"width:190px; float:left;" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"130" align=3D"=
+left" valign=3D"middle" style=3D"height:130px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20 paddingBott=
+om20" align=3D"center" valign=3D"top" style=3D"font-family:'Apercu Pro', 'R=
+oboto', Arial, sans-serif; font-size:14px; color:#FF6700; padding:0 0 0 0;"=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRI92e7yiiPVPrKLS8eaABaemudFkb-2BSKKRe49KxKASHSAUK5EBaehfJUEdLyg80=
+6snNGPWNwlkV6901EtO3nl4I-3DGHws_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0c=
+ZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFv=
+vr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6=
+JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJT=
+VPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1E=
+BRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4g=
+O4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21=
+XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZ=
+oYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7j=
+LNxy0BEzu7Po6S-2FAekzF5DyBWfVRM2gYta0evrL3LOkNUrH4Mzd3bmd8aFwTVQLC9k-2BYxPg=
+22QyA5mjCgA50ZOjD9XiGTXOIU4LeuAaUu2eP2NCawOXf3UhjMQRfAVF6SdFnL74dXNTrOggtbm=
+Ac8ujkmnN-2FHcwTpw6" target=3D"_blank" style=3D"color:#FF6700; text-decorat=
+ion:underline;"><img src=3D"https://braze-images.com/appboy/communication/a=
+ssets/image_assets/images/657c7108002062004e725ce0/original.png?1702654216"=
+ alt=3D"" width=3D"190" border=3D"0" style=3D"display:block;"></a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--[if mso]>
+                      </td>
+                      <td align=3D"left" valign=3D"top">
+                      <![endif]-->
+                      <table align=3D"right" class=3D"widthFull" width=3D"3=
+00" style=3D"width:300px; float:right;" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"130" align=3D"=
+left" valign=3D"middle" style=3D"height:130px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20" align=3D"l=
+eft" valign=3D"top" style=3D"font-family:'Apercu Pro', 'Roboto', Arial, san=
+s-serif; font-size:18px; mso-line-height-rule:exactly; line-height:32px; co=
+lor:#3A3938; padding:0 0 0 0;">
+                                  <strong>Mindfulness at Work</strong>
+                                  <br>
+                                  Learn how to bring more focus, creativity=
+, and compassion to&nbsp;work.
+                                  <br>
+                                  <strong><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABaem=
+udFkb-2BSKKRe49KxKASHScWvxcT-2FKb-2BLjet2WtW0N-2Ft3AG0ay-2FVRmL5lqJbKBQ9U-3=
+Dy0MQ_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FEx=
+Lhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9=
+Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3=
+CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NO=
+F-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm=
+0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75Pk=
+VR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBw=
+RyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpO=
+lj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6QJITje44k2TGl=
+f1H923L0pM9X6JADH6MpcPSJYr4y9fNJdOddPkMYw4TvCNbWbTFCIb3LEyhk-2BsPwYUhDijviU=
+X7jA-2BzN4aF8w8sYE-2BtFD05zJKn3qC3yPKjbUFg-2FB7wQJx0v1lr-2FGnoMPjVOtxwTF" t=
+arget=3D"_blank" style=3D"color:#0061EF; text-decoration:none;">Check it ou=
+t&nbsp;=C2=BB</a></strong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td align=3D"center" valign=3D"top" style=3D"padding:0 0 40px=
+ 0;">
+                <table class=3D"widthFull" width=3D"520" style=3D"width:520=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"left" valign=3D"top">
+                      <table align=3D"left" class=3D"widthFull" width=3D"19=
+0" style=3D"width:190px; float:left;" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"160" align=3D"=
+left" valign=3D"middle" style=3D"height:160px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20 paddingBott=
+om20" align=3D"center" valign=3D"top" style=3D"font-family:'Apercu Pro', 'R=
+oboto', Arial, sans-serif; font-size:14px; color:#FF6700; padding:0 0 0 0;"=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRI92e7yiiPVPrKLS8eaABadlrHtTtUVIKxt5FsJUBaLkCagx061us-2F-2FgE34Ti=
+Xvomh2WpRMh-2F9salloT5-2B5C-2Fu0-3DNMk0_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1i=
+DTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJW=
+hJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOd=
+VfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sY=
+F6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hM=
+ofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjX=
+PCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCB=
+gTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMY=
+q1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz3=
+3Ry-2F7jLNxy0BEzu7Po6QK3lP-2ByLKkvf2iai1fmKXYjHSQpuEzLsN5kOmoif274kPFT-2BIv=
+uWP5dTlN9adpVkKxgnBdkUjl6xeM7B2S7qzoXKxuwLhibpQ3-2BLSMxP-2Ft4SVFKU-2F3bznXI=
+2xcoM88-2BrfhHFy6zTQIVBRCN36RD6oZ" target=3D"_blank" style=3D"color:#FF6700=
+; text-decoration:underline;"><img src=3D"https://braze-images.com/appboy/c=
+ommunication/assets/image_assets/images/657c7108e40a51004c610db9/original.p=
+ng?1702654216" alt=3D"" width=3D"190" border=3D"0" style=3D"display:block;"=
+></a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--[if mso]>
+                      </td>
+                      <td align=3D"left" valign=3D"top">
+                      <![endif]-->
+                      <table align=3D"right" class=3D"widthFull" width=3D"3=
+00" style=3D"width:300px; float:right;" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"160" align=3D"=
+left" valign=3D"middle" style=3D"height:160px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20" align=3D"l=
+eft" valign=3D"top" style=3D"font-family:'Apercu Pro', 'Roboto', Arial, san=
+s-serif; font-size:18px; mso-line-height-rule:exactly; line-height:32px; co=
+lor:#3A3938; padding:0 0 0 0;">
+                                  <strong>Mindful Money</strong>
+                                  <br>
+                                  Explore meditations and advice on financi=
+al stress, mindful spending, budgeting, and&nbsp;more.
+                                  <br>
+                                  <strong><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABadl=
+rHtTtUVIKxt5FsJUBaLkCagx061us-2F-2FgE34TiXvomt4XM31SA3-2Ba71KHbvxE6Ug-3Dof_=
+b_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor=
+1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak=
+7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5=
+o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2B=
+n-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOE=
+HQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9c=
+hpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzH=
+muQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94=
+vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6TZP10zUTeR6xoJlDY=
+cAcQ5AmruhQMfPv672y2G47jzmboTE951Nas-2F5ri6uDfDSufHRBYwfmiYV-2FKE6nmRhWh-2B=
+hqx0lFPSlipKJBteDdxHr-2BGO3CQUIrXf7MDyiFl3gihL8pBjmrvefMZqyq3xxYxH" target=
+=3D"_blank" style=3D"color:#0061EF; text-decoration:none;">Check it out&nbs=
+p;=C2=BB</a></strong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td align=3D"center" valign=3D"top" style=3D"padding:0 0 40px=
+ 0;">
+                <table class=3D"widthFull" width=3D"520" style=3D"width:520=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"left" valign=3D"top">
+                      <table align=3D"left" class=3D"widthFull" width=3D"19=
+0" style=3D"width:190px; float:left;" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"130" align=3D"=
+left" valign=3D"middle" style=3D"height:130px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20 paddingBott=
+om20" align=3D"center" valign=3D"top" style=3D"font-family:'Apercu Pro', 'R=
+oboto', Arial, sans-serif; font-size:14px; color:#FF6700; padding:0 0 0 0;"=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRI92e7yiiPVPrKLS8eaABad3VSkBQEKVPQHPlNmqxsrzbFUpT42S3Gul7uQJW98Q5=
+Q-3D-3D5WML_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISo=
+j-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTH=
+L9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBF=
+YS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrh=
+J0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJr=
+gv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaC=
+AI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2B=
+wPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50=
+EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6TE5phea=
+EDB-2BrZIRlDgdRBUosZyagr4V8yczcB4sCRdja9tF0Z8nv-2BkOsuelBiR9TFeKQF2EAkplPJZ=
+9q-2Ft39VFzXbspH-2FrSnhKRQaE0Ft4h1bBoTDJOodiyTB76z0FPhJHsBsQmkr7Rfo5mF2EWCG=
+k" target=3D"_blank" style=3D"color:#FF6700; text-decoration:underline;"><i=
+mg src=3D"https://braze-images.com/appboy/communication/assets/image_assets=
+/images/657c71089d6b11004bede8da/original.png?1702654216" alt=3D"" width=3D=
+"190" border=3D"0" style=3D"display:block;"></a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--[if mso]>
+                      </td>
+                      <td align=3D"left" valign=3D"top">
+                      <![endif]-->
+                      <table align=3D"right" class=3D"widthFull" width=3D"3=
+00" style=3D"width:300px; float:right;" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"130" align=3D"=
+left" valign=3D"middle" style=3D"height:130px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20" align=3D"l=
+eft" valign=3D"top" style=3D"font-family:'Apercu Pro', 'Roboto', Arial, san=
+s-serif; font-size:18px; mso-line-height-rule:exactly; line-height:32px; co=
+lor:#3A3938; padding:0 0 0 0;">
+                                  <strong>New and Popular</strong>
+                                  <br>
+                                  See what=E2=80=99s top of mind for the gl=
+obal Headspace community.
+                                  <br>
+                                  <strong><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABad3=
+VSkBQEKVPQHPlNmqxsrzwFxc8pdVV-2BvNPMfRBzGdPQ-3D-3D-tfm_oP8Jf99AY6CMFljWI6KU=
+Tl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9u=
+NYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgf=
+kXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg=
+2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7r=
+uuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2=
+Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE=
+5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sT=
+b-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrt=
+uqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6QXxy4wxgaw1X-2B6zilnd3ZifZrmGV5vgbQAd2e=
+gC1P-2BfIl5-2BvvJR7xFF2fxtPOkv6HvDJctDkBiFC51X8Ni3Hn5-2FrM7t8TbGqa4nAT6DsXT=
+gytLUAVoUmpJ-2BSC-2FhWhMBNz3tmxk2t4Siv6DowTp1B-2FI" target=3D"_blank" style=
+=3D"color:#0061EF; text-decoration:none;">Check it out&nbsp;=C2=BB</a></str=
+ong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td align=3D"center" valign=3D"top" style=3D"padding:0 0 40px=
+ 0;">
+                <table class=3D"widthFull" width=3D"520" style=3D"width:520=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"left" valign=3D"top">
+                      <table align=3D"left" class=3D"widthFull" width=3D"19=
+0" style=3D"width:190px; float:left;" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"160" align=3D"=
+left" valign=3D"middle" style=3D"height:160px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20 paddingBott=
+om20" align=3D"center" valign=3D"top" style=3D"font-family:'Apercu Pro', 'R=
+oboto', Arial, sans-serif; font-size:14px; color:#FF6700; padding:0 0 0 0;"=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRI92e7yiiPVPrKLS8eaABae6mIajemyq1UQBbKO-2FvS6KcBnTT16bhxmPdfL1ECd=
+OAw-3D-3DMbKb_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICI=
+Soj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYv=
+THL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKY=
+BFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLO=
+rhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCR=
+Jrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMm=
+aCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-=
+2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa=
+50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6RcuQQ=
+IColyPkWIXS2FWOh5qdfr63FMm0FkwXu-2FMWIEoO9SFH7n4BS5FXOz47KdKga-2BpKLqUNZtUZ=
+TXQi56doudD5JiHnREe8QSh0RGF-2BE0K9YdRbYiT7gKxeSLW8UE0QMtksphxxiz9mdFMwlhxwX=
+D" target=3D"_blank" style=3D"color:#FF6700; text-decoration:underline;"><i=
+mg src=3D"https://braze-images.com/appboy/communication/assets/image_assets=
+/images/657c7108b41ab2004bd399a5/original.png?1702654216" alt=3D"" width=3D=
+"190" border=3D"0" style=3D"display:block;"></a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--[if mso]>
+                      </td>
+                      <td align=3D"left" valign=3D"top">
+                      <![endif]-->
+                      <table align=3D"right" class=3D"widthFull" width=3D"3=
+00" style=3D"width:300px; float:right;" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"160" align=3D"=
+left" valign=3D"middle" style=3D"height:160px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20" align=3D"l=
+eft" valign=3D"top" style=3D"font-family:'Apercu Pro', 'Roboto', Arial, san=
+s-serif; font-size:18px; mso-line-height-rule:exactly; line-height:32px; co=
+lor:#3A3938; padding:0 0 0 0;">
+                                  <strong>Coaching</strong>
+                                  <br>
+                                  Chat with a Headspace coach to manage str=
+ess, set goals, and build healthy&nbsp;habits.
+                                  <br>
+                                  <strong><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABae6=
+mIajemyq1UQBbKO-2FvS6KGNeEVKOyq6hCKXZnGSpXFw-3D-3Do1nS_oP8Jf99AY6CMFljWI6KU=
+Tl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9u=
+NYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgf=
+kXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg=
+2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7r=
+uuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2=
+Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE=
+5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sT=
+b-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrt=
+uqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6TO2W1rn-2F1BTq9ENJKLYE2cMBWCIVCuhkHme1Z=
+5aye3X7tL-2BPqJrWdoYNinw-2Fg-2BjdPsOrBSxoe2pURozpjydSHRx-2FpEIv78kGIwuRj36V=
+fES6mrl-2BYWyf-2FvYcdhxw95s2zpKSZ0V89YHqWcBYQ87y1R" target=3D"_blank" style=
+=3D"color:#0061EF; text-decoration:none;">Book a session&nbsp;=C2=BB</a></s=
+trong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <table bgcolor=3D"#FFFFFE" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation">
+            <tr>
+              <td align=3D"center" valign=3D"top" style=3D"padding:0 0 40px=
+ 0;">
+                <table class=3D"widthFull" width=3D"520" style=3D"width:520=
+px;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation"=
+>
+                  <tr>
+                    <td align=3D"left" valign=3D"top">
+                      <table align=3D"left" class=3D"widthFull" width=3D"19=
+0" style=3D"width:190px; float:left;" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"130" align=3D"=
+left" valign=3D"middle" style=3D"height:130px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20 paddingBott=
+om20" align=3D"center" valign=3D"top" style=3D"font-family:'Apercu Pro', 'R=
+oboto', Arial, sans-serif; font-size:14px; color:#FF6700; padding:0 0 0 0;"=
+><a href=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRIKW88ptl9Zy3YZOpwetzS8kn8Ws85FvhfaqbnI-2B8w-2B7HtdQrqZm4Rry9GgEY=
+WiCMth70U1VpPlrzF1LnYJ5R20-3DG8_a_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df=
+0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BN=
+Fvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVH=
+R6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1H=
+JTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu=
+1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS=
+4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F=
+21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzU=
+UZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F=
+7jLNxy0BEzu7Po6SVtAWSBwk4QwJgtTaMPJFMf0mJSg1WCGkQJnZYWLOgzA0gsLu-2BG0Fiq3HI=
+mBKypENaTCOP-2Fr8wvUZwIpd-2BvF2wmUNnqaQUI2bk734gCVpldHwevbu0mNfqyLZSMdNhTyY=
+SH7w9YxDqsnK-2FlsR3n8y4" target=3D"_blank" style=3D"color:#FF6700; text-dec=
+oration:underline;"><img src=3D"https://braze-images.com/appboy/communicati=
+on/assets/image_assets/images/657c710895857e004b6fc7ab/original.png?1702654=
+216" alt=3D"" width=3D"190" border=3D"0" style=3D"display:block;"></a></td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                      <!--[if mso]>
+                      </td>
+                      <td align=3D"left" valign=3D"top">
+                      <![endif]-->
+                      <table align=3D"right" class=3D"widthFull" width=3D"3=
+00" style=3D"width:300px; float:right;" cellpadding=3D"0" cellspacing=3D"0"=
+ border=3D"0" role=3D"presentation">
+                        <tr>
+                          <td class=3D"heightAuto" height=3D"130" align=3D"=
+left" valign=3D"middle" style=3D"height:130px;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+                              <tr>
+                                <td class=3D"paddingRightLeft20" align=3D"l=
+eft" valign=3D"top" style=3D"font-family:'Apercu Pro', 'Roboto', Arial, san=
+s-serif; font-size:18px; mso-line-height-rule:exactly; line-height:32px; co=
+lor:#3A3938; padding:0 0 0 0;">
+                                  <strong>Live Events</strong>
+                                  <br>
+                                  Take a look at the schedule and join a vi=
+rtual, live meditation.
+                                  <br>
+                                  <strong><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRIKW88ptl9Zy3YZOpwetzS8k=
+n8Ws85FvhfaqbnI-2B8w-2B7U1kIJiS2hYzpvK1fizYLS7opwvwpFkSgorjpXYt0MYo-3DvCpe_=
+oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1V=
+EbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7Z=
+CmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0=
+gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-=
+2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQ=
+Nr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chp=
+P1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmu=
+Q-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vo=
+jkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6T-2Bnt-2BLlUKNsgpZr=
+9hZRXLHkZXoDZcHC8Ideh9TApXPGkKzMSYPv68wZ0jQYyBzW-2F20RbxLxeU6o7QINgGI-2BMTS=
+a29XJMleIljWen-2BvifqLWdPGYkKwZ5yoCJ9hlTj01GnhDkABnhcFx0uCLQJYwcB5" target=
+=3D"_blank" style=3D"color:#0061EF; text-decoration:none;">Save your spot&n=
+bsp;=C2=BB</a></strong>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+         =20
+          <!--Legal-->
+<table bgcolor=3D"#F9F4F2" width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" role=3D"presentation">
+  <tr>
+    <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"top" style=
+=3D"padding:50px 40px 50px 40px;">
+
+      <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" role=3D"presentation">
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"font-family:'Headspa=
+ce Apercu', 'Roboto', Arial, sans-serif; font-size:14px; mso-line-height-ru=
+le:exactly; line-height:18px; color:#2D2C2B; padding:0 0 30px 0;">
+            Have a question? Visit our <strong><a href=3D"https://links.inf=
+o.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRFfwQM1Rus7OLZTrqZC=
+0Gg-2Fdkt8LhYI8Nq3cxl-2BLSDL0PyQ0iGuIlohar-2BVuh2trRg-3D-3DCj0u_oP8Jf99AY6C=
+MFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8=
+rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpq=
+O0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2B=
+hm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ5=
+4QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7O=
+I8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUv=
+X5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj=
+6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP9=
+8QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6T4YllpgkU2DRAIATCRKGjy8jS598j6=
+J09nghDAq6Bft2OL2aATPi7EjeyQTrRnxMS3oo3ZR0N6DTDveVrettB9vQzLVmw470WQnrUAPcS=
+srfchPeZyy6YJi9E7-2BEYaJnQ025R7ib2aZkOvix88L7Fm" target=3D"_blank" style=3D=
+"color:#FF7300; text-decoration:none;">FAQ&nbsp;page</a></strong>.
+          </td>
+        </tr>
+      </table>
+
+      <table width=3D"160" style=3D"width:160px;" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation">
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"padding:0 0 30px 0;"=
+>
+            <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" role=3D"presentation" style=3D"border-collapse: separate !important=
+;">
+              <tr>
+                <td height=3D"0" align=3D"center" valign=3D"top" style=3D"h=
+eight:0; font-size:0; line-height:0; border-top:2px solid #E2DED9;">&nbsp;<=
+/td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" role=3D"presentation">
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"padding:0 0 30px 0;"=
+>
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D=
+"presentation">
+              <tr>
+                <td align=3D"center" valign=3D"top" style=3D"font-family:'H=
+eadspace Apercu', 'Roboto', Arial, sans-serif; font-size:14px; color:#2D2C2=
+B; padding:0 10px 0 10px;"><a href=3D"https://links.info.headspace.com/ls/c=
+lick?upn=3Du001.CIwloPx8RcaoHCZlhidCROrjaW1HydmbW006JxuBPwtWjPJfspbOafYniYJ=
+Iy2FnXsWelKpNO1TbSp-2F48jNM8g-3D-3DWbt1_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1i=
+DTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJW=
+hJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOd=
+VfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sY=
+F6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hM=
+ofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjX=
+PCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCB=
+gTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMY=
+q1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz3=
+3Ry-2F7jLNxy0BEzu7Po6TyZDc4iopXu27k7IrRJ7fqpgMLZu-2FCgX6CzuQWU271dgiuYja63c=
+EyJiRcqaSM47lUGHHtcQzWBCMQSiYSM80zZka3-2BEFPkVf3uW4fG78isihzVKXLEac0d88Gnbt=
+M-2F8QRe5BzY-2FuXPXRXcStJwoOz" target=3D"_blank" style=3D"color:#2D2C2B; te=
+xt-decoration:underline;"><img src=3D"https://braze-images.com/appboy/commu=
+nication/assets/image_assets/images/68fb997d0e9ae0006389a3b3/original.png?1=
+761319292" alt=3D"TikTok" width=3D"24" border=3D"0" style=3D"display:block;=
+"></a></td>
+                <td align=3D"center" valign=3D"top" style=3D"font-family:'H=
+eadspace Apercu', 'Roboto', Arial, sans-serif; font-size:14px; color:#2D2C2=
+B; padding:0 10px 0 10px;"><a href=3D"https://links.info.headspace.com/ls/c=
+lick?upn=3Du001.CIwloPx8RcaoHCZlhidCRONVxK0bzUPNhp8Zp-2BsQvkhgnxUCTU0zNryxi=
+DbVh8aC2s9wHyriy6OLZs7s67g9TA-3D-3DcaiW_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1i=
+DTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJW=
+hJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOd=
+VfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sY=
+F6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hM=
+ofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjX=
+PCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCB=
+gTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMY=
+q1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz3=
+3Ry-2F7jLNxy0BEzu7Po6Q09W085GvnEaw6XdzsaPvR29oB5Jr80gRNQkZBaonmkKdkhMzEvbL-=
+2FQRwby4VhEZNfxRd7bQbIDuucZhlxnUkfkP5DVCBWFOjPxSvbhHsQDVs4T6-2BaP-2FHoeRfj-=
+2BO7VX3hdSZFIpvnSPAI5wzXhe2EP" target=3D"_blank" style=3D"color:#2D2C2B; te=
+xt-decoration:underline;"><img src=3D"https://braze-images.com/appboy/commu=
+nication/assets/image_assets/images/64bfef62eed149005053bcf3/original.png?1=
+690300258" alt=3D"Instagram" width=3D"24" border=3D"0" style=3D"display:blo=
+ck;"></a></td>
+                <td align=3D"center" valign=3D"top" style=3D"font-family:'H=
+eadspace Apercu', 'Roboto', Arial, sans-serif; font-size:14px; color:#2D2C2=
+B; padding:0 10px 0 10px;"><a href=3D"https://links.info.headspace.com/ls/c=
+lick?upn=3Du001.CIwloPx8RcaoHCZlhidCRLxStHSVfP8nBjdUkR8bqYk8t7NkhVQFrU0WfTh=
+N-2B7wU8kz578H59K4RlmtUTyNgDrwpE-2FIRz8DKS3z6utlNROq67dZxjRtChVzlUk0Wx4kfNM=
+rH_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLho=
+r1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Kna=
+k7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ=
+5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2=
+Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fO=
+EHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9=
+chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyz=
+HmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj9=
+4vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6Rd5cloVxcvYsHdMA=
+ml1ALQa6vvAZeSYUMHRNyPQ4TNwdf9AXtwOVZIqX-2Bn5w7F84iDaof1TE13EmFPvT-2BV6Kz8N=
+CfBlSrSX281oFgmKuKv6O7-2BY7ZqpTX93x1iGxnGeQjcyhRcCAYSN-2FMcLiI92x9P" target=
+=3D"_blank" style=3D"color:#2D2C2B; text-decoration:underline;"><img src=3D=
+"https://braze-images.com/appboy/communication/assets/image_assets/images/6=
+8fb99774a72ae00649ee933/original.png?1761319287" alt=3D"Linkedin" width=3D"=
+24" border=3D"0" style=3D"display:block;"></a></td>
+                <td align=3D"center" valign=3D"top" style=3D"font-family:'H=
+eadspace Apercu', 'Roboto', Arial, sans-serif; font-size:14px; color:#2D2C2=
+B; padding:0 10px 0 10px;"><a href=3D"https://links.info.headspace.com/ls/c=
+lick?upn=3Du001.-2BfMiUse0piOirOCjgRUWiL4yl-2BuPt8S2X8LF3SD6erjxZb7Xp0-2FUC=
+jZBCmsucAskzrhyusvngLM7THEwg1k-2BKEKNwClRzXETpeUkdjdMve4-3DnP8x_oP8Jf99AY6C=
+MFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8=
+rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpq=
+O0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2B=
+hm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ5=
+4QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7O=
+I8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUv=
+X5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj=
+6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP9=
+8QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6SGOjTU3GT7TRspxrz21H8iQ8z681ds=
+JPtcJiNdLsVUkoRCVxi123LAkbVKLlOKiOqlcsWP8-2FFp4NrTWnU4-2BgBS5L0w6qLvE7uFELs=
+MtSLi3wB0F-2F4T-2BWliStHwUzQwbX80r0MtyfBUQ83yz-2FJLzspT" target=3D"_blank" =
+style=3D"color:#2D2C2B; text-decoration:underline;"><img src=3D"https://app=
+boy-images.com/appboy/communication/assets/image_assets/images/5db3640619b5=
+002682815327/original.png?1572037638" alt=3D"Youtube" width=3D"24" border=
+=3D"0" style=3D"display:block;"></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" role=3D"presentation">
+        <tr>
+          <td align=3D"center" valign=3D"top" style=3D"font-family:'Headspa=
+ce Apercu', 'Roboto', Arial, sans-serif; font-size:12px; mso-line-height-ru=
+le:exactly; line-height:18px; color:#9D9D9D; padding:0 0 0 0;">
+            Headspace protects and processes your personal information in a=
+ccordance with applicable law, as described in our <a href=3D"https://links=
+.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRJYCPM7znhg4-2B=
+ToYAsecJndbblCRYAKb5TuuWJTUERq-2F21uvGzKPifECC-2Fsbgmgsu3uN2qABvZihHdwv7E6Z=
+nvo-3DlatN_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj=
+-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL=
+9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFY=
+S-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ=
+0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrg=
+v-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCA=
+I75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2Bw=
+PilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50E=
+ajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6SmPA9qJJ=
+UHOVzfdCUZ7yvKD5VaNx9w0vDnxqBy25ieZqCZ30eHQIp09xLHpHEQc-2FEIUtDmYdj4zYB2xXd=
+7WUzZpLTbfvUqgAuB1Wz1OknPPbRb62PLY0mbGQaejlGu9n5McmT8tEdAM5alDvmIubBk" targ=
+et=3D"_blank" style=3D"color:#9D9D9D; text-decoration:underline;">Privacy P=
+olicy</a> and <a href=3D"https://links.info.headspace.com/ls/click?upn=3Du0=
+01.CIwloPx8RcaoHCZlhidCRJYCPM7znhg4-2BToYAsecJnfsPLF7EELDMhUkNNsPlnM14obQk1=
+-2BQsSih7Qeii2xvVdVuTMCOZVCtYYDRKr6uFJE-3DvKmj_oP8Jf99AY6CMFljWI6KUTl8t3WF5=
+0P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC=
+4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-=
+2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFYS-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4Y=
+Hirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27I=
+N4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrgv-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4b=
+ECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCAI75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvN=
+RnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2BwPilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObh=
+ZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50EajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2B=
+AaWkqz33Ry-2F7jLNxy0BEzu7Po6S2NMQhcHez-2FSh7IIHZfmbern5qLSkQXO-2BJwNag7ntZK=
+8gNer39Xn421xZBF6kkQgj-2FSD6i9T1SslFaF2Xs9fy6UdJBldw2wt7C7RPx7dOn-2Fvz15-2B=
+-2BersUAulVPJPJJaCIsoZ1TL1HRHrC9HP61fSTl" target=3D"_blank" style=3D"color:=
+#9D9D9D; text-decoration:underline;">Terms and Conditions</a>.
+            <br>
+            <br>
+            =C2=A9 2026 Headspace. All rights reserved.
+            <br>
+            2417 Michigan Ave., Santa Monica, CA&nbsp;90404
+            <br>
+            Delaware Corporation State File #5271511
+            <br>
+            Not a fan? <a href=3D"https://links.info.headspace.com/ls/click=
+?upn=3Du001.CIwloPx8RcaoHCZlhidCRImw8PjAxz-2FHwVJbncN1EvcEFDCByMqgSSGtFCv0N=
+734bEvTd4NDJItvaU7L9ijUAfkmi-2FMaEaCNeAg8MnG9Foqk9UX8Lt0uqeEskrld4TTpA-2FTF=
+0w9YDz9SyU8cVycfjzFTqlN-2BTZ1cpezjwBFqoyIoXbpL-2FEGha0RG-2FcbswI4pksbJ0x-2F=
+SX5SZ9mmyruT9zN2YBJ9Pb8UpBIU2ihRLYnk6o92ned52-2FCLeprXSyqRd1-2BkwA9pRQPqI5W=
+uKcKA-2BkVOFzJTbnHUGA4IxhaeLmzF-2B0-2FTSkVD8VR7yCVMhTo-2B4KCpxCZ97MRhDazmGe=
+Mt6iwySP-2BB26gydHEUuCL6o8VPT5G4csZ1y3e-2B-2B8ADBGIMarczmYhEZikhCSluBG0awJb=
+1abqVMyHCZsE5DImRkEycI0mh4qqUzeK6St8p-2BycYtiJa4u63iWSpqp05pom-2FzCcR185r8B=
+pWBaEBZmw6qOlZUEWWslvjJW7LBgmS-2BFaOpFNqogy8DV0fxX0bN1xLNB9SvMOUnff0hJqfNNb=
+0Waobh5HJ6qMftpWpIKXTp-2Fp-2FMrXpn9EdX9jYMT5H7N-2FOs19zMIa1dl5CTNZyO3tGhH3q=
+XKLpaEAYUu0BBRunSf-2FHPRDRrX46XZO-2B-2BlMpZ5U1zwuKfJ7yJ9-2Fw-2FypaEVcqBIm6K=
+0vuALq6MhKMyKZG8CoxU5V9tDFOH-2FttvW9ig9rEiE5x9gxEg5gbgKTbNhJAGTloIS-2BhJoDr=
+KO2uMKdopeiYdmq4O-2B0C9MJFKnv9yoBGWhSYX3pVzjZBdRLgxWkYnYX25HCtA2ekrogX-2FQT=
+IgrtBuVGZ9_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj=
+-2FExLhor1VEbPJ1LlCRq8rHZzFFW9uNYvqr2JC4MwZWJWhJH4BNFvvr69aZT31TBeurcxYvTHL=
+9oWC9Knak7ZCmW2ZkUgDpqO0005tkgfkXQOO3N-2FRRhOdVfEFVHR6JlEJ4czmsIE2HC6pKYBFY=
+S-2B3CXZ5o0gCqFiRHA-2Bhm63fBMpg2kKOXE4YHirc4sYF6Zk1HJTVPvMkFid7u1VVNiuLOrhJ=
+0B9NOF-2Bn-2F013pg5OQ54QIae7N7ruuXqH27IN4EH1hMofWimu1EBRlJKZUSXyR-2B0qCRJrg=
+v-2Fm0fOEHQNr4Hpvulb7OI8-2BBN-2Fny0bx4bECbNzjXPCP3sS4gO4hHWy7og2z2j-2BMmaCA=
+I75PkVR9chpP1rF-2FxIUvX5BtXg1rE5jtOtNvNRnorpCBgTQ-2F21XzM2WRWXLs6hCpuXy-2Bw=
+PilBwRyzHmuQ-2BL-2FABj6yA3qf6sTb-2BfObhZSkjiMYq1OlzUUZoYMlYL02rmCFtJYzDa50E=
+ajkpOlj94vojkDlTMBaAP98QdTvbmrtuqVTq-2BAaWkqz33Ry-2F7jLNxy0BEzu7Po6Tg3x6qf4=
+494-2B-2Bh79HXZz73s5XCQeKfZgJWchH9wFDtVMlYfwXrZTOSfvU1oMYCuEC1c2o9VeT9RhxDk=
+yed675AkGTu9VnMGO5p65sbrkbBERTor4FuhmUE2UxCNJO7PfarDxWdfJ9lJ-2Bc6wsOI7OAO" =
+target=3D"_blank" style=3D"color:#9D9D9D; text-decoration:underline;">Unsub=
+scribe&nbsp;here</a>.
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+         =20
+        </td>
+      </tr>
+    </table>
+  </div>
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+    <tr>
+      <td class=3D"hidden" style=3D"min-width:600px;">
+        <div class=3D"gmail" style=3D"white-space:nowrap; font:15px courier=
+; line-height:0;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &=
+nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;=
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbs=
+p;</div>
+      </td>
+    </tr>
+  </table>
+<img src=3D"https://links.info.headspace.com/wf/open?upn=3Du001.Q661MpjYViy=
+VqzQPRjrtRvk1egB4fY5a7G3xpm0VsbcQZTEv8vQL-2FeDU5Ynb0nRzRTNJIyl5UaqtxHVd5nJ3=
+Gx-2BjQ46BiRNs6OPaDtHk9R-2Bai6arD-2Fe05d3U8sCDZK4Ge3ri3K1v6ywJmtvRQKHxHyD3r=
+DTjT8Jh74PN5oaeLTjaCcVEmnwNm22FG3xgV1lSvHz6eU9FNo1RNz1vZ4EFaGT2zDnkn5LWO4W4=
+t6uzpytrc2kDMF6Af0pDuEOTwj3yDpR-2BOO-2BXed-2BocJrmCUujLRRfU9DcRUGPOcr-2FUVR=
+59mb5qwu0U2psfTUxt429BWd1MwlyAaf48c4tqr7aGY04goT-2FoJtdCInGWl3amMRyKoupSUJ5=
+tCfuZ2Ed52RjbBj0zUYeRcS-2BT4FpTOqCxzX9jwmzejYSNYHVfgSO11Wnix46lgv6-2Bszj3t4=
+qx3kO7rDK1JEGdVp1JYiaBPQmooTwR8n7kFMg7FnvKOPI-2BSC5ZX3JybytK59k-2FimTNK-2Bg=
+Iq37ZsqqsjSm4At7hDic0PAFxQp1URRN6T7W62h69aZZICqDCbzoOVSyQiob9j6PWDK-2Fkh-2F=
+dHq1ninTKuON3hP4HRj7xFYGZc3iACyPub5xWacGeyfVAXyWEGUkTNCjt-2BrKpUDu5AftcfG3v=
+1xhfdF77QezqRyX3gcllY3-2BWsnMTdmK4L56S4Q8Zf0VBeI1IPu079KiNcVcX-2BCYm9q1SMlz=
+FTCXFhU8192gDUKf1x1GqtRNV7SHEZtLchyU8XhGH6C2J" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;bor=
+der-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;m=
+argin-right:0 !important;margin-left:0 !important;padding-top:0 !important;=
+padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !impo=
+rtant;"/></body>
+</html>
+
+--2bc9b9f077d12f1bc673c37ec2ab987239fd78376a46f623c787e757828d--

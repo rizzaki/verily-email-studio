@@ -1,0 +1,2219 @@
+Delivered-To: rzaki60@gmail.com
+Received: by 2002:a05:622a:4e95:b0:509:172:59e3 with SMTP id dj21csp2018361qtb;
+        Tue, 10 Mar 2026 08:14:08 -0700 (PDT)
+X-Received: by 2002:a05:6214:1c0e:b0:89a:181a:80bd with SMTP id 6a1803df08f44-89a30aec96bmr232820236d6.55.1773155647160;
+        Tue, 10 Mar 2026 08:14:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1773155647; cv=none;
+        d=google.com; s=arc-20240605;
+        b=AjiVg+4QeJ+CjbJoDeNX82gFh47pTS+15VgVhdOr8tGeArsJLwze8u9v+Ar/yhNFnr
+         FfK55KkO96HTfOSB7eeYNzY1lD9dxxNGdk4+y5Y/eWOV6yUaZt6fM8YcLHTOYb1ytEwh
+         JQCBBbX4EcZ5fGrhSwpD0N5Z+ceDt+GUDHuIaS+wefGJ2z9x5BV+AYVuY+5ZCz9nJ1jL
+         Y8cL4JvvBmod5OBp/iQ6pK7xJwWed2Q5WMXdOLDPS9ZsIqnseaGIePBUiF9jIaBLZWvd
+         oYBlRRjNciATMp79+6e9x030Vn645CgeUIWP6phmUzjLAMtE7U/RpKEVe7bswKh5Xh/W
+         /uvg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:reply-to:subject
+         :message-id:mime-version:from:date:dkim-signature:dkim-signature;
+        bh=WaWz8Qp7lM3UIAwDOEZFSY1l5cz/AQH4ugF7OLvA3pk=;
+        fh=w2ap4rqQ3CVex65plOh129sBl+w+2O7VqcfpnYx794M=;
+        b=GdGNHYhUAgdQM2Za1lyCMJaMkc70Vl7oBYlrjMHrI59dZmBvd9vJ9dIHpCoRtgTNk0
+         g1/nbhX974GtohHQMybOSFSf4RDOb1I3ovTyHEOIlEAOn268bBpklGlblJKgLWU6l51T
+         +5i4UfKbGc34hsSgHl9GjUGgu+Vq53z1qeuKQibr0cIwGpZ8LbHt3kvLJibBV7BsPAwC
+         EH0VlegU6BFn+wFYpb1PY1zPd9IIoItHg8eUi9ywTVUkCugcNyh/JtjXgHp0ldppyBkS
+         5wM992ayX6ZIT31dA8QgqKlHspo04h74TBRUSTVyZhlcL2XZYy+tcxYyjMiy2rSZz1Ym
+         ziGQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.headspace.com header.s=s1 header.b=OM0h1Ytw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=he+JHgWm;
+       spf=pass (google.com: domain of bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com designates 167.89.3.82 as permitted sender) smtp.mailfrom="bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.headspace.com
+Return-Path: <bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com>
+Received: from o637.em.info.headspace.com (o637.em.info.headspace.com. [167.89.3.82])
+        by mx.google.com with ESMTPS id 6a1803df08f44-89a57d0a440si31014706d6.473.2026.03.10.08.14.06
+        for <rzaki60@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 10 Mar 2026 08:14:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com designates 167.89.3.82 as permitted sender) client-ip=167.89.3.82;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.headspace.com header.s=s1 header.b=OM0h1Ytw;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=he+JHgWm;
+       spf=pass (google.com: domain of bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com designates 167.89.3.82 as permitted sender) smtp.mailfrom="bounces+5952113-7a3a-rzaki60=gmail.com@em.info.headspace.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=info.headspace.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=info.headspace.com;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; bh=WaWz8Qp7lM3UIAwDOEZFSY1l5cz/AQH4ugF7OLvA3pk=;
+	b=OM0h1Ytw9JPCrre7gE2b5xOeI0+oHOolgVYVHIK3Jk6g//kya2ivUID8ZwynKQi01yz0
+	UqmsKiHpa33pdbBiQR8MR65JV88frxH9SMYyC7CSlWED6D3kfc7mDC11vw0nk8lm0SGgJY
+	LjeFockmhXaugwIBQYdHjk0iv9HDPMcDQOgqce8LsjFv3QaICrikjBf6H+qKGvMxsW8hE/
+	bXC7jJ/vSJioT8D+9Hyi7oO5vByS42O3t1C0acnfI0QRH//LFL9mtdp4i4YRYmC+oHxfsk
+	Eajsmm5DPAOtTgSrc0DArhU/PhNH/3zVjjnqwON5K7mNnA0YszyQU57bKw5GvndQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=WaWz8Qp7lM3UIAwDOEZFSY1l5cz/AQH4ugF7OLvA3pk=;
+	b=he+JHgWml21MfxHX3tjoFm1wuNhIc/krf4TvpN+0fGqU8v4upHv6xPsu80ElQf9SH76p
+	8d9Bc8cQQoYF+HWK1XlVUbYvl7WqJj4Rq1gzklx1coa1RXxMw8G6FF6TKjKuuHfXjn1niY
+	Q69W9I0JqTTYb1RLdWQ5NC4wMYenhS7D4=
+Received: by recvd-648fbc9b57-wsmnc with SMTP id recvd-648fbc9b57-wsmnc-1-69B0353E-66
+	2026-03-10 15:14:06.615196493 +0000 UTC m=+71933.160054089
+Received: from NTk1MjExMw (unknown)
+	by geopod-ismtpd-22 (SG) with HTTP
+	id ifbeXAADTIOfGgo6cT4trw
+	Tue, 10 Mar 2026 15:14:06.598 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=b08cc2bbf2f24535dfaecb451d46ea0401ab740170e0a95ec2858dc7221e
+Date: Tue, 10 Mar 2026 15:14:06 +0000 (UTC)
+From: Headspace <members@info.headspace.com>
+Mime-Version: 1.0
+Message-ID: <ifbeXAADTIOfGgo6cT4trw@geopod-ismtpd-22>
+Subject: =?UTF-8?B?8J+SpA==?= Wound up? Try a wind-down
+Reply-To: no-reply-cx@headspace.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2F02=2Eemailinboundprocessing=2Ecom=2Fenc=5Fuser=2Flist=5Funsubscri?=
+ =?us-ascii?Q?be=3Fd=3D%241%2489NbMIG%2Fe62nL1dv27EPuw%3D?=
+ =?us-ascii?Q?%3D%24Hul4hZpUMIMPmetZI2BpgwD%2BDGWNGHA?=
+ =?us-ascii?Q?muom74smhbfJkN8KC0kNInjZ8OiM3%0A8D5fX0q?=
+ =?us-ascii?Q?2piq9vm3iGcAAt8gOWWcxEb%2BkzAYL9geQXRsp?=
+ =?us-ascii?Q?yi%2ByoWx4CtujJbSf%0ADEwFGS%2BgvPaeuqkr?=
+ =?us-ascii?Q?eAu6ebJzhBM5BXEdcV8upwdxqgrcF17GqbAkwkZ?=
+ =?us-ascii?Q?xAptM%0ANNuWTVzn3BU%2Fd4P5QEYF3SeYaGLZS?=
+ =?us-ascii?Q?iV442kmLc%2FQ58GdIAOMNxizOYihr7kc%0AOW4?=
+ =?us-ascii?Q?8qF6%2Ba%2Fi5O5H89UVxfYIiNiiveI5w5oDpUx?=
+ =?us-ascii?Q?OFm4gENqzKpSj2Nned38xz%0A%2BIDQdTmPWh6o?=
+ =?us-ascii?Q?XDFvXlfVL3KIfFjxLAzXOk33%2BKU9HWKbjf8Wd?=
+ =?us-ascii?Q?gWOC4Xi1cVP%0A8Q7enTR5N0LC1IOkfKgaya%2F?=
+ =?us-ascii?Q?k&1=3D1=3E=2C=3Cmailto=3A4=5Fm9wdxwm8huxug1o76mhin7?=
+ =?us-ascii?Q?epu1fvdmwrzl3onuz1tugqc94rrgh9dy=40unsubs?=
+ =?us-ascii?Q?cribe-02=2Eemailinboundprocessing=2Ecom=3Fsub?=
+ =?us-ascii?Q?ject=3DUnsubscribe%20pnrcgsq1c70b7v9kzgee?=
+ =?us-ascii?Q?kx3dw7z4q4pnjhnwovcfd&body=3DDO=5FNOT=5FDELET?=
+ =?us-ascii?Q?E-14ewqmja79yg0olvq35vf8q2a83nuwf33ucwu?=
+ =?us-ascii?Q?rq5n53mr45d7wuaq056aqx8jz63pefuks5jtmx0?=
+ =?us-ascii?Q?d3sdp-DO=5FNOT=5FDELETE=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Ed7TODBiRWlZny=2FGoMiJpTYqNHYFbmi9EQTzQFvMS1KZyI6DJ6PaegiyGy?=
+ =?us-ascii?Q?KZztqTyjUXi0lCf7IIzCK=2FfaQgaxct02dWWZklL?=
+ =?us-ascii?Q?Q=2FY+L3ghE5CYzGzi0xnRmEwfvlvSDQ0G36KHKL6?=
+ =?us-ascii?Q?nS=2F+3k9MmQa=2FmWQ7ZzcIU+2ZGsUWESzk7mEWoaV?=
+ =?us-ascii?Q?PJHFkPsSzDeXVoynFdWmbatiX2X7CLEBVlEI+iX?=
+ =?us-ascii?Q?SXR63BUlyXBMafypOf2G+4rp7goqdg7gBS0hK6N?= =?us-ascii?Q?WwkA?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDrjDW6011yC6XOo?=
+ =?us-ascii?Q?3uya5MXxG1JHR40V1J4COGBbhVV0OlWlpS2Nhuv?=
+ =?us-ascii?Q?ISQzQzecnQSfzhc22cx9xj6IyJKeYEHJsRTCdS0?=
+ =?us-ascii?Q?9iEgVb4=2FBcGiq2YZuDCJdLpLeTNWlPimMGuvgM0?=
+ =?us-ascii?Q?5e=2FnQ=2FzVDm0H0ytB=2F8=2F6R6UC+HcwGaXBI8fHxcd?=
+ =?us-ascii?Q?FsBKAPbM7Ozl=2Fkicuz1zy0MQC1TADI9DPHL=2FEnC?=
+ =?us-ascii?Q?mX6Fspd2meXLLaLsZIksIr7vWfILZyjseDpsLAQ?=
+ =?us-ascii?Q?itVjS8X9Bp5K8HPbEQAmnkgSPD+kMh7cxLjQheP?=
+ =?us-ascii?Q?2ZzGG8Di+VluiHvExedO33IzGfYl2vFSgBKLGSQ?=
+ =?us-ascii?Q?TqWm9eSxJSosKeP+swF3e0yvxgyNm535FpMi7Uz?=
+ =?us-ascii?Q?qx+pi7M5FLx7DU77K+Y8vxCQpUYLhiIMoWic1xg?=
+ =?us-ascii?Q?EpDECSSrUOacfFKkMSwljBAu6kNqjCIZ+U9bWDx?=
+ =?us-ascii?Q?=2FL8WjzfVjs2ISKmZ7nHt1oXhmJDF6RQFuy2lSCQ?=
+ =?us-ascii?Q?2EJRnttW2z2jwRWgGsWHbuSosWNK8CvttkRdfg7?=
+ =?us-ascii?Q?t4RonjlnDyfirINqEOP5PYNlTj+46iwwGg=3D=3D?=
+To: rzaki60@gmail.com
+X-Entity-ID: u001.pKQQt7yJEuPVWy3ua/faWg==
+
+--b08cc2bbf2f24535dfaecb451d46ea0401ab740170e0a95ec2858dc7221e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Here=E2=80=99s how to wind down before bed     =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD Headspace Logo=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABafEkTkmqB2Mcc-2BBB0Pzp-2BS3mTWZHACZghpTTsdo-2FheHlA-3D=
+-3DHB6S_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KL=
+Eimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfP=
+GAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1=
+ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM91=
+7YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZ=
+o1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmh=
+X-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPx=
+s65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVW=
+QGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMI=
+PEo5-2FeGXfD4eQotjU29-2F475cBmYKh6Ca14vAu-2BWpRwiWwMWtbS-2B9dCTaEBukklGfGcO=
+QG-2FtRv17lBAi2iWjCCl9mi-2BIhINASKpjqjjra52T7vPjjGZaRhmCI0X-2FRrfSBhY-2FRj0=
+k39k-3D )
+Hit snooze on racing thoughts              Explore sleep tools to
+help you quiet the mind at bedtime.             Wind down now=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABacgg-2FtGHblYyOFF1uRNq0PXK9nVW5r4GDKOCksNDGreNQ-3D-3DU=
+HjG_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimn=
+u2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi=
+07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlh=
+z-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917Ydz=
+ymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mw=
+r-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2B=
+h5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65U=
+P3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGM=
+yZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5=
+-2FeGXfDEm-2FU0JTMvmoxbR9NInBtLKlQJVY1T1QKwPLFENUn1JLEMSCnSJpyy3hbBr02lpHjd=
+HDKaIh7as8hq4Fx1ZYZgnPy05EsspWQ7szdqtykWZL4UAxp-2FXAfdCIHqxgyoJgM-3D )
+Hi RIZWAN,
+
+It happens to the best of us: right as we try to fall asleep, a
+flood of thoughts comes rushing in. =E2=80=9CWhat=E2=80=99s on tomorrow=E2=
+=80=99s to-do
+list?=E2=80=9D =E2=80=9CWhat should I eat for lunch?=E2=80=9D =E2=80=9CDid =
+I say something
+embarrassing today?=E2=80=9D A wind-down meditation before bed can train
+your mind to slow down, so you can fall asleep faster =E2=80=94 and
+actually stay asleep.
+
+The Quiet Mental Chatter wind-down in the app is a great place
+to start. Give it a try tonight, and feel your mind let go of
+racing thoughts.             Try it now=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABacgg-2FtGHblYyOFF1uRNq0PXNqHOQ7ayNfHm-2BV3OAK3b3A-3D-3=
+DClws_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEi=
+mnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGA=
+Ki07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZI=
+lhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917Y=
+dzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1=
+mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-=
+2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs6=
+5UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQG=
+GMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPE=
+o5-2FeGXfCLJ5bZWlcrxWYwcV93hb0opfbThI9RCeAr89Ys5uDQhw-2Ft-2F0JZpBZz7JKE8o82=
+-2F-2BvU1YKx9Vf5gHrJZwaBsyZZyLy8T0eF0Wgu38-2FS04JfukEBp91h3lpycYJgGjeMqdg-3=
+D )
+Sleep on it                  Cat Marina            In this
+sleepcast, each boat in a quiet marina is home to a different
+sleepy cat.            Save for tonight=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RI92e7yiiPVPrKLS8eaABadMX8tpm-2BQzU9QpdboJoCWkM7Ch7HatW8bmjFukW87eDg-3D-3DZ=
+JIw_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimn=
+u2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi=
+07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlh=
+z-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917Ydz=
+ymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mw=
+r-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2B=
+h5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65U=
+P3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGM=
+yZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5=
+-2FeGXfB7xtius3Qp7gU4SXX7C1WmjbX7HzLgDDYqjWXLxKTGn93myKV7KHUyGwM7F4vvaai2gT=
+C-2BO9PfVeYrBJAraRimf0THIJp7l-2FnHXq1PiKXp5SO2kc40UVkylWl-2Flkp6xGo-3D )
+Tonight's tip        To get all of this week's sleep tools, make
+sure your push notifications are on.        Turn on notifications
+=C2=BB ( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoH=
+CZlhidCRI92e7yiiPVPrKLS8eaABaeOsjg4Nhbj2KGnY3UaReYbTsdzChhwXvfrbfb1VgHUJg-3=
+D-3DkTE0_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9K=
+LEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38Cf=
+PGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY=
+1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM9=
+17YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONm=
+Zo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrm=
+hX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDP=
+xs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPV=
+WQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWM=
+IPEo5-2FeGXfAgy6jGQsaZbkmHDGKpyjd0tb7SnujlU0F36xr-2BTZnQuzjpwjvbbPW5dK-2B38=
+Ra8bh22jYP1Aug-2F3s375IfUa6V2-2FHvjy8r26KZugmUEGEZiDYF4r0JRtw7XIcTIBEuWRMU-=
+3D )
+Have a question? Visit our FAQ page=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RFfwQM1Rus7OLZTrqZC0Gg-2FAgF6ihXL5FZcWa6-2FDXQfWPHJtHmuiqncc32KX-2BPEMsQ-3D=
+-3DlCnl_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KL=
+Eimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfP=
+GAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1=
+ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM91=
+7YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZ=
+o1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmh=
+X-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPx=
+s65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVW=
+QGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMI=
+PEo5-2FeGXfB4VECn6VbFz3pfmp43MIB7PpCmP97sarJJkTbD7Cit0XaXPfQw-2FRs1jryV0Qt4=
+eq6xv91bzSWx8cSze7VuvZ66rWbZE6pFo5md5v4QFH9G5KC0D5IiOvBwzV4auTF0l6o-3D ).
+TikTok ( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoH=
+CZlhidCROrjaW1HydmbW006JxuBPwuABY9LBJjTI-2Fmi-2BN-2BwKpnvj9tnoryHTgwZhvZ5Z7=
+mSkg-3D-3D8AK-_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFIC=
+ISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp=
+2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU=
+8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2v=
+kssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7=
+sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h3=
+6fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcle=
+YmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJ=
+loKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN=
+-2FWWMIPEo5-2FeGXfC9sxs5RAyWpS-2FPLyywJRk3Bo5lXj-2BYjR6tTtbRATnvJ9EY1uFdOew=
+yAm-2FmBI04UfohOy6WPwssr-2BMT3ASxPflUJGwsn8dcldtKge6LCBhjTacB0yQTD67AF1Q-2B=
+fkxH8gk-3D )
+Instagram ( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8Rc=
+aoHCZlhidCRONVxK0bzUPNhp8Zp-2BsQvkhgnxUCTU0zNryxiDbVh8aCViNV7-2Frw4c9QZdKXH=
+AAapw-3D-3DXTiS_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFI=
+CISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkO=
+p2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWR=
+U8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2=
+vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl=
+7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h=
+36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcl=
+eYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNE=
+JloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydf=
+N-2FWWMIPEo5-2FeGXfBRD-2B1pw6CMj-2B-2BubkGCouNeqF5qnJkTIEKb61Aw3DGMW2x3VknG=
+k3KPF9683iUz8q6sBS4A-2FcBx00pfiz16rN-2BXZqnhvoLWuhOTD4G6-2BX7-2FWPk7CJ9nbUS=
+4uHorS9L-2B2N4-3D )  LinkedIn=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RLxStHSVfP8nBjdUkR8bqYk8t7NkhVQFrU0WfThN-2B7wU8kz578H59K4RlmtUTyNgDhoysyD6-=
+2FN15qbUS017McRtrA0e00-2Bjyof3B-2B4rCBnNxBdxF_oP8Jf99AY6CMFljWI6KUTl8t3WF50=
+P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R=
+4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnk=
+GzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5D=
+H8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEv=
+jOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2=
+FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3=
+vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0=
+s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHv=
+in9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfC-2FZxhQr3e34x3aS33fgNy2CL=
+I4RbE5rLm2oJVxEzw5WyAodRDi4zpgAAIyRYANjn3BAy8-2F7JuOLC4p0O9rcZUeuV-2BEieL-2=
+BU3ImqZ5colrZtv2w6uznaUzrG3q9kCr0VHM-3D )
+ YouTube=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.-2BfMiUse0piOirOCjgR=
+UWiL4yl-2BuPt8S2X8LF3SD6erjxZb7Xp0-2FUCjZBCmsucAskAU2-2Fv1ffHyQUc-2FZw6NiaZ=
+giM7swxvWcEDVxLldTqXX4-3DWCjH_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZe=
+ON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2Bk=
+sO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw=
+42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsx=
+fayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzb=
+GwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-=
+2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFn=
+ppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2=
+BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV=
+1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfDp-2BisC59s-2B8E3q2wKDr0gZo6n-2F22JvpVHs5Z=
+YMe6JsG8W0b29nvCBLukaKGgUOot3La0brzlrl-2BaNYHHy-2F78nJSQvpHX3ZIRXWFd8fGUHcA=
+2V5FcMi0-2B6fQIbILwmuTZo-3D )
+Headspace protects and processes your personal information in
+accordance with applicable law, as described in our Privacy
+Policy=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RJYCPM7znhg4-2BToYAsecJndbblCRYAKb5TuuWJTUERq-2FKvQv-2BoEA0-2B2ChIq7L3L49RH=
+wc0Y39oqM5Xafzedk9Ws-3DqfgO_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON=
+7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO=
+-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42=
+io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfa=
+yY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGw=
+xWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2B=
+x61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnpp=
+X20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH=
+7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W=
+-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfDgpXqyxiP5Ft3l8FtwBFzz76FQg6MOBkfMuzxNv-2FqI=
+c5RUa05sEa4hGQpU1Ti6hSGBm6ihOd9Gqn14a63Ddg3RBaLbc7M8fhG7Ny-2F-2FQgj4wMhL-2B=
+UVMRF9jKm344HsBUrsLlhmZYgN7a-2Fwj0W649AP2 )
+ and Terms and Conditions=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RJYCPM7znhg4-2BToYAsecJnfsPLF7EELDMhUkNNsPlnM14obQk1-2BQsSih7Qeii2xvVdjAyW5=
+dovyFb-2BNDkCwkwlM-3Dhk1i_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2=
+B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io=
+0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY=
+-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxW=
+kHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx6=
+1f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX2=
+0mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7M=
+mWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2=
+B5f8ePLydfN-2FWWMIPEo5-2FeGXfAud4zCwImMMxeDYRn6oPPmM1K6k6EmQ2k6kiRyDA-2FAhb=
+9ulcbT13NCr5ZbECf1Yiw0-2FDwKXZNwmqF1kDbBWRV0gjP7qw0wDSTAf6gDFZtfPwElI7zPRzu=
+dLnJXt6lZnR-2BNSS5Q0-2BgHzseUAi9sBM7U )
+.
+
+=C2=A9 2026 Headspace. All
+rights reserved.
+595 Market St, San Francisco, CA 94105 United States=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RJYCPM7znhg4-2BToYAsecJnc-2FvtcjWXZAOdhLHhXIRlOZK3EdF9rfteh9gnhcAFex-2Fg-3D=
+-3D8CFy_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KL=
+Eimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfP=
+GAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1=
+ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM91=
+7YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZ=
+o1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmh=
+X-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPx=
+s65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVW=
+QGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMI=
+PEo5-2FeGXfAO5qsfM3Be7JmIswUB8syRz5BxAstWuQXpKifMvs99MDj-2FQ4ZJT14ucGGjogpS=
+Ah-2B-2FIp-2FDAoYG7-2F-2BAjZXrR1krdlQ2dif5-2B7Cppikvm4oFK-2BlauPdrlIyOcKydg=
+Z1KH4Kp0x49Idh46TAdDpL3ApUU )
+Delaware Corporation State File #5271511=20
+( https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidC=
+RJYCPM7znhg4-2BToYAsecJneqTDltzGu9a8T64BmHYDP89cTgTRvUe5RC5eIyI3O7Mw-3D-3DR=
+STo_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimn=
+u2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi=
+07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlh=
+z-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917Ydz=
+ymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mw=
+r-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2B=
+h5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65U=
+P3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGM=
+yZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5=
+-2FeGXfCOWAkhldjc-2FGezZvzSVQNZGl6epqjnLUBxSVMe5qPv2elcSp-2FcU1UsN74jlQgbzf=
+XDB4xrKq8qw-2FITStVqek3yl-2BdJ6v6cOzQIYreKICDU0b5q1Ak3QTuna2d5uv3ByP9jd9kvc=
+O7YEVW0wu3Y5QLm )
+Not a fan? Unsubscribe here ( https://links.info.headspace.com/ls/click?upn=
+=3Du001.CIwloPx8RcaoHCZlhidCRImw8PjAxz-2FHwVJbncN1EvcEFDCByMqgSSGtFCv0N734b=
+EvTd4NDJItvaU7L9ijUAfkmi-2FMaEaCNeAg8MnG9FooP50X-2BexbIse47axRJ1UX2FMDn2-2B=
+9xoo6Vv8rtAcVvT8T5Go1-2BTXt8BnG9LMyY-2Fc1uawALZA-2FB7ux4TUr-2Bb3K9vp5xFA9oa=
+ryXCGUf2yejt8fuo6EJfUkJvgsDftimEiWWUR7xRWAN-2BFJOtHrOOAZ9Bgo52kUQB0Xz5lcRSi=
+NQkfwrGNv2mEbsR8eu6MLO2d80lG-2BFyfeV57W-2FZOTvGLa6xxTogK4F-2Fj3hqUFboe1OIV0=
+DU-2BsxwuPadQ3go-2FWMukkfTZNYjxT2M45NVkhVDs6yWuDr0qQXf7055aTADswPnBPQWM608k=
+iVRLQvSpfEyX02askLtWCD3MrnDIpxYqNFvnX7P6tElT85PX0bnHZCEV10Cjy0sTkvn1DimejcD=
+M9t4zIAJDnKhxmdKlF3Lv3XrDg0ZBY05GnZmSZ-2Bw-2FljYW09cjDfiG6yJqDWsZtxBJkIj2YR=
+GNLPdsj8eOBNh-2FjaKEgGza5Uh5DIgKZRCMKsrHkVT0sMseymNql8Ma3MuS9e-2FqPGEBUz5x2=
+ZVwvlhP9dEYEvoxmgymbgwRiaKi0KW3pLodJvNern1xQu5-2Byze49q8a9lyq0qQTYE3mpbm-2B=
+kpttipy358RLkleUzojSq-2FI1X1q4d92CLJwiQ18ZHkfvDF0F3vDSQDnuDc-2B-2FYPJJR7D-2=
+BectiYN-2Bk88wpyMoMpA6noNkqSHB7GFMwMTXp-2Bp4ws-3D_H11_oP8Jf99AY6CMFljWI6KUT=
+l8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujo=
+PogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimof=
+DH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU=
+8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i=
+-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1=
+E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5=
+jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMth=
+P9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mv=
+wP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfBVaOeznLG1iO-2FnD1=
+TJHpt8tinUDk9cDJ0D1VYPke04FxdNTs-2Fj7FwhsOAtM-2B-2BZUv0yPbMBy9Y4Hha6E70c28D=
+xm0lfeGA9ZgDNj1IawvGoXU3JywmcY2qWSQ-2FiWzSbYeNU1njNYQqkADTu4JN0wikX
+).
+--b08cc2bbf2f24535dfaecb451d46ea0401ab740170e0a95ec2858dc7221e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" style=3D"te=
+xt-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust=
+: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge">
+  <link rel=3D"icon" type=3D"image/png" href=3D"https://braze-images.com/ap=
+pboy/communication/assets/image_assets/images/64bfef6206def2004d52d298/orig=
+inal.png?1690300258">
+  <title>Headspace</title>
+  <!--[if !mso]><!-->
+	<link rel=3D"preconnect" href=3D"https://fonts.googleapis.com">
+	<link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorigin=3D=
+"">
+=09
+	<!--<![endif]-->
+	<!--[if gte mso 9]>
+	<style type=3D"text/css" media=3D"all">
+		sup { font-size: 100% !important; }
+		table,tr,td,div,p,span,strong { font-family: Arial, sans-serif !important=
+; }
+	</style>
+	<![endif]-->
+=09
+ =20
+ =20
+  <!--[if gte mso 9]><xml>
+   <o:OfficeDocumentSettings>
+    <o:AllowPNG></o:AllowPNG>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+   </o:OfficeDocumentSettings>
+  </xml><![endif]-->
+<style>@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 400; font-stretch: =
+normal; font-display: swap; src: url('https://fonts.gstatic.com/s/roboto/v5=
+1/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf') format('truety=
+pe');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 700; font-stretch: =
+normal; font-display: swap; src: url('https://fonts.gstatic.com/s/roboto/v5=
+1/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf') format('truety=
+pe');
+}
+@font-face {
+font-family: 'Apercu-Regular'; font-style: normal; font-weight: 400; src: l=
+ocal('Apercu-Regular'), local('Apercu-Regular'), url(https://static.headspa=
+ce.com/fonts/apercu/apercu_regular.woff2) format('woff2');
+}
+@font-face {
+font-family: 'Apercu-Bold'; font-style: normal; font-weight: 700; src: loca=
+l('Apercu-Bold'), local('Apercu-Bold'), url(https://static.headspace.com/fo=
+nts/apercu/apercu_bold.woff2) format('woff2');
+}
+body {
+height: 100% !important; margin: 0 auto !important; padding: 0 !important; =
+width: 100% !important;
+}
+img {
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;
+}
+.ReadMsgBody {
+width: 100%;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+@media only screen and (max-width: 480px) {
+  u + .body .full-wrap {
+    width: 100vw !important;
+  }
+  .width440 {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  u + .body .full-wrap {
+    width: 100vw !important;
+  }
+  .width440 {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hidden {
+    display: none !important; width: 0 !important;
+  }
+  .show {
+    display: block !important; overflow: visible !important; max-width: inh=
+erit !important; max-height: inherit !important; visibility: visible !impor=
+tant;
+  }
+  .break {
+    display: block !important;
+  }
+  .widthFull {
+    width: 100% !important;
+  }
+  .width20 {
+    width: 20px !important;
+  }
+  .width85 {
+    width: 85px !important;
+  }
+  .width125 {
+    width: 125px !important;
+  }
+  .heightAuto {
+    height: auto !important;
+  }
+  .photo {
+    width: 100% !important; height: auto !important;
+  }
+  .photo20 {
+    width: 20px !important; height: auto !important;
+  }
+  .photo120 {
+    width: 120px !important; height: auto !important;
+  }
+  .center {
+    text-align: center !important;
+  }
+  .font48 {
+    font-size: 48px !important; line-height: 50px !important;
+  }
+  .font32 {
+    font-size: 32px !important; line-height: 34px !important;
+  }
+  .font22 {
+    font-size: 22px !important; line-height: 24px !important;
+  }
+  .font18 {
+    font-size: 18px !important; line-height: 30px !important;
+  }
+  .paddingTop40 {
+    padding-top: 40px !important;
+  }
+  .paddingRightLeft10 {
+    padding-right: 10px !important; padding-left: 10px !important;
+  }
+  .paddingRightLeft20 {
+    padding-right: 20px !important; padding-left: 20px !important;
+  }
+  .paddingBottom20 {
+    padding-bottom: 20px !important;
+  }
+  .paddingBottom40 {
+    padding-bottom: 40px !important;
+  }
+  .borderRadiusBottom {
+    border-radius: 15px 15px 0 0 !important;
+  }
+  .mobileBodyPadding16 {
+    padding-left: 16px !important; padding-right: 16px !important;
+  }
+}
+@media only screen and (max-device-width: 600px) {
+  .hidden {
+    display: none !important; width: 0 !important;
+  }
+  .show {
+    display: block !important; overflow: visible !important; max-width: inh=
+erit !important; max-height: inherit !important; visibility: visible !impor=
+tant;
+  }
+  .break {
+    display: block !important;
+  }
+  .widthFull {
+    width: 100% !important;
+  }
+  .width20 {
+    width: 20px !important;
+  }
+  .width85 {
+    width: 85px !important;
+  }
+  .width125 {
+    width: 125px !important;
+  }
+  .heightAuto {
+    height: auto !important;
+  }
+  .photo {
+    width: 100% !important; height: auto !important;
+  }
+  .photo20 {
+    width: 20px !important; height: auto !important;
+  }
+  .photo120 {
+    width: 120px !important; height: auto !important;
+  }
+  .center {
+    text-align: center !important;
+  }
+  .font48 {
+    font-size: 48px !important; line-height: 50px !important;
+  }
+  .font32 {
+    font-size: 32px !important; line-height: 34px !important;
+  }
+  .font22 {
+    font-size: 22px !important; line-height: 24px !important;
+  }
+  .font18 {
+    font-size: 18px !important; line-height: 30px !important;
+  }
+  .paddingTop40 {
+    padding-top: 40px !important;
+  }
+  .paddingRightLeft10 {
+    padding-right: 10px !important; padding-left: 10px !important;
+  }
+  .paddingRightLeft20 {
+    padding-right: 20px !important; padding-left: 20px !important;
+  }
+  .paddingBottom20 {
+    padding-bottom: 20px !important;
+  }
+  .paddingBottom40 {
+    padding-bottom: 40px !important;
+  }
+  .borderRadiusBottom {
+    border-radius: 15px 15px 0 0 !important;
+  }
+  .mobileBodyPadding16 {
+    padding-left: 16px !important; padding-right: 16px !important;
+  }
+}
+</style>
+</head>
+<body class=3D"body" bgcolor=3D"#E2DED9" style=3D"width: 100% !important; h=
+eight: 100% !important; text-size-adjust: none; -webkit-text-size-adjust: n=
+one; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-=
+smoothing: antialiased; margin: 0 auto; padding: 0;">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Here=E2=80=99s how to wind down before bed</div>
+  <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentat=
+ion" style=3D"border-collapse: collapse !important; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: no=
+ne; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-s=
+moothing: antialiased;">
+    <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: none; -m=
+oz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothi=
+ng: antialiased;">
+      <td style=3D"font-size: 0; line-height: 0; display: none !important; =
+border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-=
+size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: anti=
+aliased;">
+        <div style=3D"display: none !important; text-size-adjust: none; -we=
+bkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adj=
+ust: none; -webkit-font-smoothing: antialiased;">
+          =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD &nbsp; =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD &nbsp;=E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD &nbsp; =E2=80=87=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD &nbsp;
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div align=3D"center" style=3D"background-color: #E2DED9; display: block =
+!important; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-te=
+xt-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: a=
+ntialiased;">
+    <table class=3D"full-wrap widthFull" width=3D"600" style=3D"width: 600p=
+x; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-te=
+xt-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: a=
+ntialiased;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"prese=
+ntation">
+      <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: none; =
+-moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoot=
+hing: antialiased;">
+        <td align=3D"center" valign=3D"top" style=3D"border-collapse: colla=
+pse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adj=
+ust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms=
+-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+         =20
+          <!--Headspace Logo 1-->
+          <table bgcolor=3D"#1A0C54" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"t=
+op" style=3D"font-family: 'Apercu-Regular', Arial, sans-serif !important; f=
+ont-size: 14px; color: #FF7300; border-collapse: collapse !important; mso-t=
+able-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-te=
+xt-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: no=
+ne; -webkit-font-smoothing: antialiased; padding: 50px 40px 40px;"><a href=
+=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhi=
+dCRI92e7yiiPVPrKLS8eaABafEkTkmqB2Mcc-2BBB0Pzp-2BS3a5hJDfZp8OB6x92BTxVf0HPd9=
+ZfybK2He1RulpMMx2oGdy31xwATj4QV7Erf6Efw0t1VqGp2szhrVeyRXOJJisEdUbhApSfQSfRn=
+4CHP5Yh-2FpMP-2BR-2FWSQLBtNTXgIaEdoYmN-2BU5-2BJY8nScZi3jbf6zssFz13ksvT-2FHK=
+zyhSotjwcSBEpkLQHIIPiRRa5BE-2BXa8EBxRhZnU4TKTXf-2FNA60Q-3D-3D7Gg4_oP8Jf99AY=
+6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4t=
+dy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8=
+gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaV=
+QFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZ=
+NPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI72=
+1I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWj=
+utYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsal=
+zEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3p=
+jw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfBEBpg8=
+EA0sAMjMdlN89L-2BD3v8ONO3YP6vivI3f1kC5vB9iuVXkQqrRPVhv3Gj-2BXGXgsE-2B70D9Tn=
+ZpXxHermPprYUiZsOKmDo7Q3k4W-2Bb0aMwFiieHuRRXF03Kw5-2B2BzvZlPL8gy5EDRzhvytex=
+DXUM" target=3D"_blank" style=3D"color: #FF7300; text-decoration: underline=
+; outline: none; text-size-adjust: none; -webkit-text-size-adjust: none; -m=
+oz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothi=
+ng: antialiased;"><img src=3D"https://braze-images.com/appboy/communication=
+/assets/image_assets/images/695d2e650842b65733eccf21/original.png?176771440=
+5" alt=3D"Headspace Logo" width=3D"210" border=3D"0" style=3D"display: bloc=
+k; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; t=
+ext-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjus=
+t: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">=
+</a></td>
+            </tr>
+          </table>
+         =20
+          <!--Headline 2-->
+          <table bgcolor=3D"#1A0C54" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td class=3D"paddingRightLeft20 font32" align=3D"center" vali=
+gn=3D"top" style=3D"font-family: 'Apercu-Bold', Arial, sans-serif !importan=
+t; font-size: 48px; mso-line-height-rule: exactly; line-height: 50px; color=
+: #FFFFFE; border-collapse: collapse !important; mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none;=
+ -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoo=
+thing: antialiased; padding: 0 40px 20px;">
+                <strong style=3D"text-size-adjust: none; -webkit-text-size-=
+adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -web=
+kit-font-smoothing: antialiased;">
+                  Hit snooze on racing thoughts
+                </strong>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Body Copy (INTRO) - using inner wrapper so mobile class relia=
+bly overrides left/right -->
+          <table bgcolor=3D"#1A0C54" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <!-- keep original outer TD padding for top/bottom/background=
+ -->
+              <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"t=
+op" style=3D"font-family: 'Apercu-Regular', Arial, sans-serif !important; f=
+ont-size: 18px; mso-line-height-rule: exactly; line-height: 30px; color: #F=
+FFFFE; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -mo=
+z-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothin=
+g: antialiased; padding: 0 40px 30px;">
+                <!-- INNER wrapper TD holds left/right padding we will over=
+ride on mobile -->
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !impor=
+tant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none;=
+ -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size=
+-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td class=3D"mobileBodyPadding16" align=3D"center" styl=
+e=3D"padding-left: 40px; padding-right: 40px; border-collapse: collapse !im=
+portant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: no=
+ne; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-s=
+ize-adjust: none; -webkit-font-smoothing: antialiased;">
+                      Explore sleep tools to help you quiet the mind at bed=
+time.=C2=A0
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Primary CTA - 1-->
+          <table bgcolor=3D"#1A0C54" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"t=
+op" style=3D"border-collapse: collapse !important; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: non=
+e; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-sm=
+oothing: antialiased; padding: 0 40px 40px;">
+                <table class=3D"widthFull" width=3D"260" style=3D"width: 26=
+0px; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-=
+text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing:=
+ antialiased;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"pre=
+sentation">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td align=3D"center" valign=3D"middle" height=3D"52" bg=
+color=3D"#0061EF" style=3D"height: 52px; font-family: 'Apercu-Bold', Arial,=
+ sans-serif !important; font-size: 18px; mso-line-height-rule: exactly; lin=
+e-height: 20px; color: #FFFFFE; border-radius: 26px; border-collapse: colla=
+pse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adj=
+ust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms=
+-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding: 0;">=
+<strong style=3D"text-size-adjust: none; -webkit-text-size-adjust: none; -m=
+oz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothi=
+ng: antialiased;"><a href=3D"https://links.info.headspace.com/uni/ls/click?=
+upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABacgg-2FtGHblYyOFF1uRNq0=
+PX2lD5K8SfMvQu-2Fbmfv9zB9v62aNA2-2BvRbbLow14NyYt2xtnlMjG5ZT0JGXNHPo6oTSo-2B=
+N64-2BeToNUNUTi8JxKtYAO5ypgEtJrMJ2E5W2v4aOVlSO8fS4LvgY3Y7cbhD5RXm3hx5rODlVZ=
+O2qqZ7FB-2FAwNFvlbdXM7BNj-2FbPCMUUzDNlL-2FBMfIU5O0xWI9252xV2M6JqDsM7R22TCKu=
+frXDQ-3D-3DGNip_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFI=
+CISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkO=
+p2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWR=
+U8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2=
+vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl=
+7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h=
+36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcl=
+eYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNE=
+JloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydf=
+N-2FWWMIPEo5-2FeGXfC6WMlL4pAYRGHxiPOE-2BhhfZ9gI0css1-2FqtXPeUPG3ETo-2FmOwgp=
+hfXMkr5L3QD1MyAw8omK5i5XjDAFItv3pzBUmcngKsyn6RfU-2F3X7WtBXJnojBbzQyprvCsRCT=
+I9DfFp4N3-2FcnPlAioEKbQBsHvH6" target=3D"_blank" universal=3D"true" style=
+=3D"color: #FFFFFE; text-decoration: none; display: block; outline: none; t=
+ext-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjus=
+t: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; p=
+adding: 16px 10px;">Wind down now</a></strong></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Image - Full-->
+          <table bgcolor=3D"#281466" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td align=3D"center" valign=3D"top" style=3D"font-family: 'Ap=
+ercu-Regular', Arial, sans-serif !important; font-size: 14px; color: #FF730=
+0; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-te=
+xt-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: a=
+ntialiased; padding: 0;"><a href=3D"https://links.info.headspace.com/uni/ls=
+/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABacgg-2FtGHblYyOF=
+F1uRNq0PXP84FqZbAewp70zdMr0CBlUCma-2FuuME9wTMnjekp6xprEXmBBmXoJuUof7xub0-2B=
+JuPVqhUJOgOkcFiNpW7GIPqsF1GpdxKW5v-2BHg8WUGFJ4ooJUOaLhmxxJrBRuWQ34wo8f2MOqH=
+F1iO-2BfbP2y-2BigQWcpWxRYhkAFSqv3Suki0fQcd-2FZnbXzfAKDoqgjNE-2F-2FvDUvYzgVq=
+D5piEtFniwU2Lg-3D-3DMk4k_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DM=
+KKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B=
+6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0=
+ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-=
+2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWk=
+HqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61=
+f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20=
+mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7Mm=
+Wy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B=
+5f8ePLydfN-2FWWMIPEo5-2FeGXfDk39jhf5ZUQQZ3DZmIVFVdN7uS2qtFeDTxielHiywQPy6Uj=
+S5GPWW5Ep1iUJxREUJga2dyRXRi6RrdqIMXk7An-2FQ-2FavDFKCnO0BqC8NDQnnFVXfd4dkgW9=
+Qi5D-2Fq6Y0KWQClM5gJ3eBrKhfoZLYFAF" target=3D"_blank" universal=3D"true" st=
+yle=3D"color: #FF7300; text-decoration: underline; outline: none; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;"><img src=
+=3D"https://braze-images.com/appboy/communication/assets/image_assets/image=
+s/69a88f4679881b00634e4a5e/original.png?1772654406" alt=3D"" width=3D"600" =
+border=3D"0" style=3D"display: block; outline: none; text-decoration: none;=
+ -ms-interpolation-mode: bicubic; text-size-adjust: none; -webkit-text-size=
+-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -we=
+bkit-font-smoothing: antialiased;" class=3D"photo"></a></td>
+            </tr>
+          </table>
+         =20
+          <!--Body Copy (MAIN) - Hi ... -->
+          <table bgcolor=3D"#101340" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <!-- outer TD preserves top/bottom padding -->
+              <td class=3D"paddingRightLeft20" align=3D"left" valign=3D"top=
+" style=3D"font-family: 'Apercu-Regular', Arial, sans-serif !important; fon=
+t-size: 18px; mso-line-height-rule: exactly; line-height: 30px; color: #FFF=
+FFE; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-=
+text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing:=
+ antialiased; padding: 50px 40px 30px;">
+                <!-- inner wrapper TD for left/right padding which we overr=
+ide on mobile -->
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !impor=
+tant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none;=
+ -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size=
+-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td class=3D"mobileBodyPadding16" align=3D"left" style=
+=3D"padding-left: 40px; padding-right: 40px; border-collapse: collapse !imp=
+ortant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: non=
+e; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-si=
+ze-adjust: none; -webkit-font-smoothing: antialiased;">
+                      Hi RIZWAN,<br style=3D"text-size-adjust: none; -webki=
+t-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust=
+: none; -webkit-font-smoothing: antialiased;"><br style=3D"text-size-adjust=
+: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-te=
+xt-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                      It happens to the best of us: right as we try to fall=
+ asleep, a flood of thoughts comes rushing in. =E2=80=9CWhat=E2=80=99s on t=
+omorrow=E2=80=99s to-do list?=E2=80=9D =E2=80=9CWhat should I eat for lunch=
+?=E2=80=9D =E2=80=9CDid I say something embarrassing today?=E2=80=9D A wind=
+-down meditation before bed can train your mind to slow down, so you can fa=
+ll asleep faster =E2=80=94 and actually stay asleep.<br style=3D"text-size-=
+adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; =
+-ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;"><br style=
+=3D"text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-=
+adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialias=
+ed;">
+                      The Quiet Mental Chatter wind-down in the app is a gr=
+eat place to start. Give it a try tonight, and feel your mind let go of rac=
+ing thoughts.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Primary CTA - 1-->
+          <table bgcolor=3D"#101340" width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: c=
+ollapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"t=
+op" style=3D"border-collapse: collapse !important; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: non=
+e; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-sm=
+oothing: antialiased; padding: 0 40px 50px;">
+                <table class=3D"widthFull" width=3D"260" style=3D"width: 26=
+0px; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-=
+text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing:=
+ antialiased;" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"pre=
+sentation">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td align=3D"center" valign=3D"middle" height=3D"52" bg=
+color=3D"#0061EF" style=3D"height: 52px; font-family: 'Apercu-Bold', Arial,=
+ sans-serif !important; font-size: 18px; mso-line-height-rule: exactly; lin=
+e-height: 20px; color: #FFFFFE; border-radius: 26px; border-collapse: colla=
+pse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adj=
+ust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms=
+-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding: 0;">=
+<strong style=3D"text-size-adjust: none; -webkit-text-size-adjust: none; -m=
+oz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothi=
+ng: antialiased;"><a href=3D"https://links.info.headspace.com/uni/ls/click?=
+upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABacgg-2FtGHblYyOFF1uRNq0=
+PXtXkh0UybQ37N7nqLFrk7WV-2FSR1rjbql7X81xCMt7ZdibSJVHR6czx984BChZA4FdnZn6TI2=
+RcHgFpAr1PlyshPJejA6wK3nMTmzQfIXue2BropTXxcE7Utp2KMCf-2BwOgcj6wEkgxluYALhOO=
+gb9P4Zw4jXq0xkvxAYby6UiRqrFG27OTDsCO0QnFWvOGotOP2SuDjjiL4OKp9Rm3x15GiA-3D-3=
+DPJ3M_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEi=
+mnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGA=
+Ki07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZI=
+lhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917Y=
+dzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1=
+mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-=
+2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs6=
+5UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQG=
+GMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPE=
+o5-2FeGXfCS2MpbEhuZglH3wsz9rvETTxL7Ie39XvrHkTWPkOM1GjtTK6jjdEYU31c2z-2B1VSQ=
+Y6V08aY0M-2BrM6TQWUvjK9tejdUVsuzaYFdf5BWYb1yQARhQM3IMF-2BG-2Fa8mjp76vOHQNaz=
+I-2By-2F5R-2F5lr-2FNStGcZ" target=3D"_blank" universal=3D"true" style=3D"co=
+lor: #FFFFFE; text-decoration: none; display: block; outline: none; text-si=
+ze-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: non=
+e; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding=
+: 16px 10px;">Try it now</a></strong></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Module 4 - Grey Box 1-->
+          <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !important;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -web=
+kit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adju=
+st: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td align=3D"center" valign=3D"top" style=3D"border-collapse:=
+ collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-si=
+ze-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: non=
+e; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+
+                <table bgcolor=3D"#101340" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-colla=
+pse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; tex=
+t-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust:=
+ none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td class=3D"paddingRightLeft20" align=3D"center" valig=
+n=3D"top" style=3D"border-collapse: collapse !important; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjus=
+t: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-f=
+ont-smoothing: antialiased; padding: 0 40px 50px;">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: collaps=
+e !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjus=
+t: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-t=
+ext-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                        <tr style=3D"text-size-adjust: none; -webkit-text-s=
+ize-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; =
+-webkit-font-smoothing: antialiased;">
+                          <td bgcolor=3D"#2A2D55" align=3D"center" valign=
+=3D"top" style=3D"border-radius: 15px; border-collapse: collapse !important=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -we=
+bkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adj=
+ust: none; -webkit-font-smoothing: antialiased;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: col=
+lapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-a=
+djust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -=
+ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                              <tr style=3D"text-size-adjust: none; -webkit-=
+text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: =
+none; -webkit-font-smoothing: antialiased;">
+                                <td align=3D"center" valign=3D"top" style=
+=3D"border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-t=
+ext-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: =
+antialiased; padding: 50px 0;">
+                                 =20
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"border-collapse: collapse !important; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webk=
+it-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjus=
+t: none; -webkit-font-smoothing: antialiased; padding: 0 40px 30px;">
+                                        <table cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: collap=
+se !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adju=
+st: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-=
+text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                          <tr style=3D"text-size-adjust: no=
+ne; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-s=
+ize-adjust: none; -webkit-font-smoothing: antialiased;">
+                                            <td class=3D"width20" width=3D"=
+18" align=3D"left" valign=3D"bottom" style=3D"width: 18px; font-family: 'Ap=
+ercu-Regular', Arial, sans-serif !important; font-size: 14px; color: #FF730=
+0; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-te=
+xt-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: a=
+ntialiased; padding: 0;"><img src=3D"https://braze-images.com/appboy/commun=
+ication/assets/image_assets/images/69a878554e46b7006312ba39/original.png?17=
+72648533" alt=3D"" width=3D"18" border=3D"0" style=3D"display: block; outli=
+ne: none; text-decoration: none; -ms-interpolation-mode: bicubic; text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;" class=3D=
+"photo20"></td>
+                                            <td class=3D"font22" align=3D"c=
+enter" valign=3D"bottom" style=3D"font-family: 'Apercu-Bold', Arial, sans-s=
+erif !important; font-size: 32px; mso-line-height-rule: exactly; line-heigh=
+t: 34px; color: #FFFFFE; border-collapse: collapse !important; mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size=
+-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -we=
+bkit-font-smoothing: antialiased; padding: 0 5px;">
+                                              <strong style=3D"text-size-ad=
+just: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -m=
+s-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                                Sleep on it
+                                              </strong>
+                                            </td>
+                                            <td class=3D"width20" width=3D"=
+18" align=3D"right" valign=3D"bottom" style=3D"width: 18px; font-family: 'A=
+percu-Regular', Arial, sans-serif !important; font-size: 14px; color: #FF73=
+00; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-t=
+ext-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: =
+antialiased; padding: 0;"><img src=3D"https://braze-images.com/appboy/commu=
+nication/assets/image_assets/images/69a8787340f6a200632056f6/original.png?1=
+772648563" alt=3D"" width=3D"18" border=3D"0" style=3D"display: block; outl=
+ine: none; text-decoration: none; -ms-interpolation-mode: bicubic; text-siz=
+e-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none=
+; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;" class=
+=3D"photo20"></td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Regular', Arial, =
+sans-serif !important; font-size: 14px; color: #FF7300; border-collapse: co=
+llapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-=
+adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; =
+-ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding: 0=
+ 40px 30px;"><a href=3D"https://links.info.headspace.com/uni/ls/click?upn=
+=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaABadMX8tpm-2BQzU9QpdboJoCWk6=
+-2FeQnq8YdAEQ4Avc-2BIpEv2u-2FqhXgAvz7bh0kJS9paQtVFSo6mRFHDJ1WUD15o-2Fij7IgR=
+blYuLHgB-2By9Bdx1BoVZRFk-2B1C7W5GlnqB908pM3YQQsX1fgh-2FlAXMswDJ8tfqd8gU1399=
+Y1COqSEmtkAF7j19rKXPS4zJJOtOJ0x0c5YVzZ4WlQrE1g7Mxvbgwq6CBJW9avEHbKdWIlH3O0v=
+kQ-3D-3DnUoG_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICIS=
+oj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s=
+38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F=
+0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vks=
+sTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQ=
+gONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36f=
+wjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYm=
+WrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJlo=
+KTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2=
+FWWMIPEo5-2FeGXfDxKF9lXFJa4alpEsLIjtMlUzGiHG9EeiYlDy906QS2fXc7wELRIApRDn3Hi=
+kpe7w44xC4azGVS2lrAec1iGa0uI5BcXySb0jA3ECb02ODhR2d-2FrzKEaeS6jkDD06x8givtmR=
+MHBwhBXwWP1YHULKNO" target=3D"_blank" universal=3D"true" style=3D"color: #F=
+F7300; text-decoration: underline; outline: none; text-size-adjust: none; -=
+webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-a=
+djust: none; -webkit-font-smoothing: antialiased;"><img src=3D"https://braz=
+e-images.com/appboy/communication/assets/image_assets/images/69a89008c2718e=
+00635cb115/original.png?1772654599" alt=3D"" width=3D"326" border=3D"0" sty=
+le=3D"display: block; outline: none; text-decoration: none; -ms-interpolati=
+on-mode: bicubic; text-size-adjust: none; -webkit-text-size-adjust: none; -=
+moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smooth=
+ing: antialiased;" class=3D"photo"></a></td>
+                                    </tr>
+                                  </table>
+
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20 font2=
+2" align=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Regular', =
+Arial, sans-serif !important; font-size: 32px; mso-line-height-rule: exactl=
+y; line-height: 34px; color: #FFFFFE; border-collapse: collapse !important;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -web=
+kit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adju=
+st: none; -webkit-font-smoothing: antialiased; padding: 0 40px 20px;">
+                                        <strong style=3D"text-size-adjust: =
+none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text=
+-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                          Cat Marina
+                                        </strong>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <!-- Cat description: inner wrapper for l=
+eft/right padding -->
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Regular', Arial, =
+sans-serif !important; font-size: 18px; mso-line-height-rule: exactly; line=
+-height: 30px; color: #FFFFFE; border-collapse: collapse !important; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-tex=
+t-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: non=
+e; -webkit-font-smoothing: antialiased; padding: 0 40px 30px;">
+                                        <table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border=
+-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-a=
+djust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiase=
+d;">
+                                          <tr style=3D"text-size-adjust: no=
+ne; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-s=
+ize-adjust: none; -webkit-font-smoothing: antialiased;">
+                                            <td class=3D"mobileBodyPadding1=
+6" align=3D"center" style=3D"padding-left: 40px; padding-right: 40px; borde=
+r-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-=
+adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialias=
+ed;">
+                                              In this sleepcast, each boat =
+in a quiet marina is home to a different sleepy cat.
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"border-collapse: collapse !important; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webk=
+it-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjus=
+t: none; -webkit-font-smoothing: antialiased; padding: 0 40px;">
+                                        <table class=3D"widthFull" width=3D=
+"220" style=3D"width: 220px; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-=
+size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;=
+ -webkit-font-smoothing: antialiased;" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" role=3D"presentation">
+                                          <tr style=3D"text-size-adjust: no=
+ne; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-s=
+ize-adjust: none; -webkit-font-smoothing: antialiased;">
+                                            <td align=3D"center" valign=3D"=
+middle" height=3D"52" bgcolor=3D"#0061EF" style=3D"height: 52px; font-famil=
+y: 'Apercu-Bold', Arial, sans-serif !important; font-size: 18px; mso-line-h=
+eight-rule: exactly; line-height: 20px; color: #FFFFFE; border-radius: 26px=
+; border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-tex=
+t-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: an=
+tialiased; padding: 0;"><strong style=3D"text-size-adjust: none; -webkit-te=
+xt-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: no=
+ne; -webkit-font-smoothing: antialiased;"><a href=3D"https://links.info.hea=
+dspace.com/uni/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaA=
+BadMX8tpm-2BQzU9QpdboJoCWkxiSKrvez-2Futp8BB2wSMS6oGedbBFGnr4GPEe-2BVoNplwii=
+tavRTrCoNsPxDorieC47UqYGqTueKhsy6gWq-2BCgaV94EV7cWbRQHUJrjvnpGgLQj0uwIrU4Xw=
+f90WJP5XfoRG03lc8rzeMUOZupQSYYCJiDd4-2BWIVA2iXaI7eYGqQVnPbEcXJ8Szj5rKfMH-2B=
+y9Bg4YalptzZawMRTRkltX3ng-3D-3DjTHy_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4=
+df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2=
+F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-=
+2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70=
+tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LM=
+StnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsR=
+E3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZ=
+mGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltC=
+bSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI=
+-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfAj8tC1oci8bqX915z72y5XmXcADM0ejSMiWQ=
+8mbJD4xY6yJxk8ruSkTHBzpxcp6Ces074OJtZeFIG4So-2BDi0Jo3jygZM1Z7VOCWYbJORYG9Ls=
+a9x2-2BP50Snec9VHiOo9pH7AQ5KTeU1-2BOpuv7qEKYw" target=3D"_blank" universal=
+=3D"true" style=3D"color: #FFFFFE; text-decoration: none; display: block; o=
+utline: none; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-=
+text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing:=
+ antialiased; padding: 16px 10px;">Save for tonight</a></strong></td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+               =20
+              </td>
+            </tr>
+          </table>
+         =20
+          <!--Rounded Box-->
+          <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !important;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -web=
+kit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adju=
+st: none; -webkit-font-smoothing: antialiased;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td align=3D"center" valign=3D"top" style=3D"border-collapse:=
+ collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-si=
+ze-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: non=
+e; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+
+                <table bgcolor=3D"#101340" width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-colla=
+pse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; tex=
+t-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust:=
+ none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td class=3D"paddingRightLeft20" align=3D"center" valig=
+n=3D"top" style=3D"border-collapse: collapse !important; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjus=
+t: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-f=
+ont-smoothing: antialiased; padding: 0 40px 50px;">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: collaps=
+e !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjus=
+t: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-t=
+ext-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                        <tr style=3D"text-size-adjust: none; -webkit-text-s=
+ize-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; =
+-webkit-font-smoothing: antialiased;">
+                          <td bgcolor=3D"#2A2D55" align=3D"center" valign=
+=3D"top" style=3D"border-radius: 15px; border-collapse: collapse !important=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -we=
+bkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adj=
+ust: none; -webkit-font-smoothing: antialiased;">
+                            <table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: col=
+lapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-a=
+djust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -=
+ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                              <tr style=3D"text-size-adjust: none; -webkit-=
+text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: =
+none; -webkit-font-smoothing: antialiased;">
+                                <td align=3D"center" valign=3D"top" style=
+=3D"border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-t=
+ext-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: =
+antialiased; padding: 50px 0;">
+
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Regular', Arial, =
+sans-serif !important; font-size: 14px; color: #FF7300; border-collapse: co=
+llapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-=
+adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; =
+-ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding: 0=
+ 40px 30px;"><img src=3D"https://braze-images.com/appboy/communication/asse=
+ts/image_assets/images/69a8789d9304560063a66cd4/original.png?1772648605" al=
+t=3D"" width=3D"104" border=3D"0" style=3D"display: block; outline: none; t=
+ext-decoration: none; -ms-interpolation-mode: bicubic; text-size-adjust: no=
+ne; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-s=
+ize-adjust: none; -webkit-font-smoothing: antialiased;"></td>
+                                    </tr>
+                                  </table>
+                                 =20
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Bold', Arial, san=
+s-serif !important; font-size: 22px; mso-line-height-rule: exactly; line-he=
+ight: 24px; color: #FFFFFE; border-collapse: collapse !important; mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-s=
+ize-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; =
+-webkit-font-smoothing: antialiased; padding: 0 40px 20px;">
+                                        <strong style=3D"text-size-adjust: =
+none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text=
+-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                          Tonight's tip
+                                        </strong>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Regular', Arial, =
+sans-serif !important; font-size: 18px; mso-line-height-rule: exactly; line=
+-height: 30px; color: #FFFFFE; border-collapse: collapse !important; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-tex=
+t-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: non=
+e; -webkit-font-smoothing: antialiased; padding: 0 80px 20px;">
+                                        To get all of this week's sleep too=
+ls, make sure your push notifications are&nbsp;on.
+                                      </td>
+                                    </tr>
+                                  </table>
+                                 =20
+                                  <table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collaps=
+e: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                    <tr style=3D"text-size-adjust: none; -w=
+ebkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-ad=
+just: none; -webkit-font-smoothing: antialiased;">
+                                      <td class=3D"paddingRightLeft20" alig=
+n=3D"center" valign=3D"top" style=3D"font-family: 'Apercu-Bold', Arial, san=
+s-serif !important; font-size: 18px; mso-line-height-rule: exactly; line-he=
+ight: 24px; color: #FFCAE7; border-collapse: collapse !important; mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-s=
+ize-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; =
+-webkit-font-smoothing: antialiased; padding: 0 40px;">
+                                        <strong style=3D"text-size-adjust: =
+none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text=
+-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                                          <a href=3D"https://links.info.hea=
+dspace.com/uni/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRI92e7yiiPVPrKLS8eaA=
+BaeOsjg4Nhbj2KGnY3UaReYbxRtjvHXmXM-2BfNl-2FkqnSxxM-2BpWa4TeSsOZrrpbVcmTjJKN=
+1Ens-2BxYpc1-2FzDIGclO-2BIkUiIkc4IXcV4UwdcE1jkUY1i-2BpKAZF-2FyKc7yR81vIFCWP=
+lQdwffVUUruzCOZrTf0Dh9HXK5t9-2FFLBZN1aQ3BjWpoOLQtkkG53SB-2BDPZ-2Ft5UH-2BRDA=
+GmrWpwSCmvLWgTQF-2FXCfkAtL0Zf3itoypEDiQ-3D-3Dd-Gd_oP8Jf99AY6CMFljWI6KUTl8t3=
+WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogN=
+aR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2j=
+ScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU7=
+1R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BN=
+HgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16b=
+Mg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6=
+ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2=
+Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77=
+eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfDNyquMWjKmFQV0WDvxZPpd=
+lWoT2w8Kn9TFY2nngM1WaKe-2FSUjsOp-2FSc1ipGp5P0NTK5nbIX23ngv81f6l4eGgMh91B0Os=
+8uV7WF6CcrruaIwCQEc3mjKuENH9nF2nok25zi7HaIXpcWJXoaugy8989" target=3D"_blank=
+" universal=3D"true" style=3D"color: #FFCAE7; text-decoration: none; outlin=
+e: none; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-=
+size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: anti=
+aliased;">Turn on notifications =C2=BB</a>
+                                        </strong>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+               =20
+              </td>
+            </tr>
+          </table>
+                    <table bgcolor=3D"#101340" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" style=3D"border=
+-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-a=
+djust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiase=
+d;">
+            <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: =
+none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font=
+-smoothing: antialiased;">
+              <td class=3D"paddingRightLeft20" align=3D"center" valign=3D"t=
+op" style=3D"border-collapse: collapse !important; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: non=
+e; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-sm=
+oothing: antialiased; padding: 50px 40px;">
+
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !impor=
+tant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none;=
+ -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size=
+-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td align=3D"center" valign=3D"top" style=3D"font-famil=
+y: 'Apercu-Regular', Arial, sans-serif !important; font-size: 14px; mso-lin=
+e-height-rule: exactly; line-height: 18px; color: #9DA5B8; border-collapse:=
+ collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-si=
+ze-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: non=
+e; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding=
+: 0 0 30px;">
+                      Have a question? Visit our <strong style=3D"text-size=
+-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none;=
+ -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;"><a href=
+=3D"https://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhi=
+dCRFfwQM1Rus7OLZTrqZC0Gg-2FAgF6ihXL5FZcWa6-2FDXQfWnaROeE86NRjz9VlHb5QO5-2Fu=
+DdGbxEKeg-2BqxTW3I-2FTIOoaALSKoN-2BajDxDGp3VKebXQLfvf02z2NP7vZTP-2FNbcZeEOL=
+BcriCZWsFyQ-2BlatANZSTsA-2ByzqjWBLdMs-2Fpq4KXKL8nTn9-2FmrGdiTMp-2Bcw32k8V9r=
+rXUr29dIQwPBLINIH1Ffh9ROOtpH-2Bh7c1bCyOv7bO_oP8Jf99AY6CMFljWI6KUTl8t3WF50P0=
+7s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4F=
+UdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGz=
+YsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8=
+FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjO=
+P-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FF=
+bDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vE=
+AqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-=
+2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin=
+9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfCK9mTPcFN1bOMoKTMa5J5tdNAoBY=
+c2xhzU8y3ksGyW-2FIsWIwZ-2BKOjZvcxEvttXXsbqmlgFfQBR4XtGE3vJL1Cr9dwqPL88AH-2B=
+s6LArEHwo6D8cml8yMSYwOKRzr1bEevYjbuF0xzINzrjcjZZ8lQ-2Fl" target=3D"_blank" =
+style=3D"color: #FFFFFF; text-decoration: none; outline: none; text-size-ad=
+just: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -m=
+s-text-size-adjust: none; -webkit-font-smoothing: antialiased;">FAQ&nbsp;pa=
+ge</a></strong>.
+                    </td>
+                  </tr>
+                </table>
+
+                <table width=3D"160" style=3D"width: 160px; border-collapse=
+: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-s=
+ize-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: no=
+ne; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td align=3D"center" valign=3D"top" style=3D"border-col=
+lapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; t=
+ext-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjus=
+t: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; p=
+adding: 0 0 30px;">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" role=3D"presentation" style=3D"border-collapse: separat=
+e !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjus=
+t: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-t=
+ext-size-adjust: none; -webkit-font-smoothing: antialiased;">
+                        <tr style=3D"text-size-adjust: none; -webkit-text-s=
+ize-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; =
+-webkit-font-smoothing: antialiased;">
+                          <td height=3D"0" align=3D"center" valign=3D"top" =
+style=3D"height: 0; font-size: 0; line-height: 0; border-top-width: 2px; bo=
+rder-top-color: #E2DED9; border-top-style: solid; border-collapse: collapse=
+ !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust=
+: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-te=
+xt-size-adjust: none; -webkit-font-smoothing: antialiased;">&nbsp;</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !impor=
+tant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none;=
+ -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size=
+-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td align=3D"center" valign=3D"top" style=3D"border-col=
+lapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; t=
+ext-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjus=
+t: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; p=
+adding: 0 0 30px;">
+                      <table cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" role=3D"presentation" style=3D"border-collapse: collapse !important; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none; -webkit-=
+text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: =
+none; -webkit-font-smoothing: antialiased;">
+                        <tr style=3D"text-size-adjust: none; -webkit-text-s=
+ize-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; =
+-webkit-font-smoothing: antialiased;">
+                          <td align=3D"center" valign=3D"top" style=3D"font=
+-family: 'Apercu-Regular', Arial, sans-serif !important; font-size: 14px; c=
+olor: #2D2C2B; border-collapse: collapse !important; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: n=
+one; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-=
+smoothing: antialiased; padding: 0 10px;"><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCROrjaW1HydmbW006JxuBPwuA=
+BY9LBJjTI-2Fmi-2BN-2BwKpnv8Fyh4PG4KYOelhi7mgFCr52Y2YRyPFYROrGe22pCBptM5Ep-2=
+ByAC0Yzrkk92Meod35A-2BXMnxBn9R-2FbDCKEjzoBppuYi-2BhqaftpbfPcFRCXkyjWIsKl-2F=
+uRKKvoWuAqWAFo-2FFGvOGj7-2FhU3c1kXpFj75itWRvYKi4hd70JD-2BJnYPT7fvK4pb32-2Fb=
+lAn88ydQIy3p0KrYU-2BoCKnmNBNUpGG5Xw-3D-3DT5oY_oP8Jf99AY6CMFljWI6KUTl8t3WF50=
+P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R=
+4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnk=
+GzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5D=
+H8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEv=
+jOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2=
+FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3=
+vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0=
+s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHv=
+in9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfB00kAO1Sflqu4BllhCqis9FOJY=
+MgTZayf53BZnuzcf-2FH7nM51i6Jf6ELh3NBy5ggczo4K-2Begq0HDF3fJT1FkBGm3Gb7YhuUkz=
+RjTKigIByhr1RAb-2BZTINZMXz4-2FsiRtj8fp31pEJY2Z8tjjfky366R" target=3D"_blank=
+" style=3D"color: #2D2C2B; text-decoration: underline; outline: none; text-=
+size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: n=
+one; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;"><img=
+ src=3D"https://braze-images.com/appboy/communication/assets/image_assets/i=
+mages/6998934c7f22b10063ee48f0/original.png?1771606860" alt=3D"TikTok" widt=
+h=3D"20" border=3D"0" style=3D"display: block; outline: none; text-decorati=
+on: none; -ms-interpolation-mode: bicubic; text-size-adjust: none; -webkit-=
+text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: =
+none; -webkit-font-smoothing: antialiased;"></a></td>
+                          <td align=3D"center" valign=3D"top" style=3D"font=
+-family: 'Apercu-Regular', Arial, sans-serif !important; font-size: 14px; c=
+olor: #2D2C2B; border-collapse: collapse !important; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: n=
+one; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-=
+smoothing: antialiased; padding: 0 10px;"><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRONVxK0bzUPNhp8Zp-2BsQvk=
+hgnxUCTU0zNryxiDbVh8aC7nNmjq2H4o-2Ft8-2BfonB-2F7XCoDjBODuTQ7s8PiXZTURCSJkut=
+njMVGRGdpnKQiX3dXOd98IF2Eynb1JZvYHD6UhhTf-2BbNefVuytjGEGfp1E7aPRBEf7Ea5JAty=
+H-2BLCCcTyQ-2FAerjYoQPOGgOC4dHyzVbaJckrP35G4K1JBA05xczIXk7EAt39w8PrPaFW6qMp=
+GUm9AMyVPdhisstM-2BDS-2FFQA-3D-3DUPhF_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDT=
+o4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L=
+-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg=
+4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD=
+70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7=
+LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflS=
+sRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVh=
+DZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9l=
+tCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pm=
+nI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfB1KMNcJ2U6X3sWRphr85UGnvDhWlomLHqS=
+XT1Csu7VqF-2BjEwHlto3yri6O8-2Bas718chVidzCBwyK5ryU6CgQWnUln7x7m91VQuehkVyU4=
+kQJGN3yrYL8yNxpjaL6edXI-2F2BjPqoVieXmAYR706I5r5" target=3D"_blank" style=3D=
+"color: #2D2C2B; text-decoration: underline; outline: none; text-size-adjus=
+t: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-t=
+ext-size-adjust: none; -webkit-font-smoothing: antialiased;"><img src=3D"ht=
+tps://braze-images.com/appboy/communication/assets/image_assets/images/6500=
+ecbfeba7a2004c697011/original.png?1694559423" alt=3D"Instagram" width=3D"22=
+" border=3D"0" style=3D"display: block; outline: none; text-decoration: non=
+e; -ms-interpolation-mode: bicubic; text-size-adjust: none; -webkit-text-si=
+ze-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -=
+webkit-font-smoothing: antialiased;"></a></td>
+                          <td align=3D"center" valign=3D"top" style=3D"font=
+-family: 'Apercu-Regular', Arial, sans-serif !important; font-size: 14px; c=
+olor: #2D2C2B; border-collapse: collapse !important; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: n=
+one; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-=
+smoothing: antialiased; padding: 0 10px;"><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRLxStHSVfP8nBjdUkR8bqYk8=
+t7NkhVQFrU0WfThN-2B7wU8kz578H59K4RlmtUTyNgDhoysyD6-2FN15qbUS017McRuZbL-2F-2=
+Bu9zYMXG6SMhzCwhx6eBzwD8JDcTiYcEB5yw3-2B0gf4Lx7wM-2BBLnlSZ4sCWmeawuHzFaHd-2=
+F7rz3oo5ZoJuu7ocjvoYqzWJ5QGovvddqBVTEJnKX-2BR0EDEo3y7rfd-2Fo2s30fLknif8sRxs=
+Iaw2T8OPf74FXf4aXbshsPH4UBmjx0olnxe1-2BH5yzcUx-2B38Y-3DTL0b_oP8Jf99AY6CMFlj=
+WI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJ=
+TqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdb=
+EWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQ=
+lVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClV=
+Smhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3=
+sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV=
+8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS=
+-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2F=
+qmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfDMrdzWqOJdmL=
+stYPaTwKV2znSIuLsSUwiTFd1doYEUOLqx8Z9Lto1vCr7Kd2B2dm1CgQXDHn1XJ7cDU0xm02Ew-=
+2B2kdh9lMC8UNUqiL55RROwLCByIWdzKlBz20MLOel0FLAsXG33MzHDXYlcbmH8K3" target=
+=3D"_blank" style=3D"color: #2D2C2B; text-decoration: underline; outline: n=
+one; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size=
+-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialia=
+sed;"><img src=3D"https://braze-images.com/appboy/communication/assets/imag=
+e_assets/images/67ca00450daf9c0075081af6/original.png?1741291589" alt=3D"Li=
+nkedIn" width=3D"22" border=3D"0" style=3D"display: block; outline: none; t=
+ext-decoration: none; -ms-interpolation-mode: bicubic; text-size-adjust: no=
+ne; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-s=
+ize-adjust: none; -webkit-font-smoothing: antialiased;"></a></td>
+                          <td align=3D"center" valign=3D"top" style=3D"font=
+-family: 'Apercu-Regular', Arial, sans-serif !important; font-size: 14px; c=
+olor: #2D2C2B; border-collapse: collapse !important; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; text-size-adjust: none; -webkit-text-size-adjust: n=
+one; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-=
+smoothing: antialiased; padding: 0 10px;"><a href=3D"https://links.info.hea=
+dspace.com/ls/click?upn=3Du001.-2BfMiUse0piOirOCjgRUWiL4yl-2BuPt8S2X8LF3SD6=
+erjxZb7Xp0-2FUCjZBCmsucAskAU2-2Fv1ffHyQUc-2FZw6NiaZh227-2BZPYS9gSY-2FZ2d6en=
+IVaNqPOG-2FpqkRdLL61asSv4vVT9uMaOCmbsVZt3hriRu-2F43Ibr1Jna-2F6LvqsbmbiKD3q3=
+7e72DKO7JdRoSZFRo-2BNKyvzoXtvY7CUBL6B5TA-2BL8CrExGvNYeRnqtufhd3NursJ5lBqQHQ=
+gIFVe1-2BYy6pFyA7iW-2B30yxcN-2ByQ5LXZqQ-3D-3Do_c3_oP8Jf99AY6CMFljWI6KUTl8t3=
+WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogN=
+aR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2j=
+ScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU7=
+1R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BN=
+HgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16b=
+Mg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6=
+ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2=
+Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77=
+eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfA9-2Fw-2B8bAlgcrRdIH8e=
+qjvCrXjejXFk4LTcqAmVBHHGSGWeozEdwNVKBHptl4patzVaeaXVDGS-2BaGuMbabk3TKpZdlSP=
+-2F-2FjLvRWqI-2FnbPftZ3Jr8ZWa-2FBY3Tpezqv3Gg9poBbl7eAFf-2BwJRL1DTauuE" targ=
+et=3D"_blank" style=3D"color: #2D2C2B; text-decoration: underline; outline:=
+ none; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-si=
+ze-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antial=
+iased;"><img src=3D"https://braze-images.com/appboy/communication/assets/im=
+age_assets/images/6500ecc4041896004c3d3474/original.png?1694559428" alt=3D"=
+YouTube" width=3D"22" border=3D"0" style=3D"display: block; outline: none; =
+text-decoration: none; -ms-interpolation-mode: bicubic; text-size-adjust: n=
+one; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-=
+size-adjust: none; -webkit-font-smoothing: antialiased;"></a></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" role=3D"presentation" style=3D"border-collapse: collapse !impor=
+tant; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-adjust: none;=
+ -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size=
+-adjust: none; -webkit-font-smoothing: antialiased;">
+                  <tr style=3D"text-size-adjust: none; -webkit-text-size-ad=
+just: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webki=
+t-font-smoothing: antialiased;">
+                    <td align=3D"center" valign=3D"top" style=3D"font-famil=
+y: 'Apercu-Regular', Arial, sans-serif !important; font-size: 12px; mso-lin=
+e-height-rule: exactly; line-height: 18px; color: #9DA5B8; border-collapse:=
+ collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-si=
+ze-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: non=
+e; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased; padding=
+: 0;">
+                      Headspace protects and processes your personal inform=
+ation in accordance with applicable law, as described in our <a href=3D"htt=
+ps://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRJYCP=
+M7znhg4-2BToYAsecJndbblCRYAKb5TuuWJTUERq-2FKvQv-2BoEA0-2B2ChIq7L3L49YLSnQu2=
+zvU-2ByeFHJsZT7NoiBtueSJaZsjqsL7s0GulkywbRh9GEGo-2FI7GxBpZ94w-2BMnk2UPaKkqw=
+SaJETep8UWK-2B8dYcZ8b1gktQymDZy-2B4VV7agFtsZDQgVPx-2BW1jm177faeqDFvJjITclTo=
+5R-2F-2BeKvtb2saOC-2B1b-2BhXnJmpvrlolFqbHuZEeGH-2Bd85CakSAjcXeGOFr7LnEwXAL6=
+SGR4-3Dscag_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISo=
+j9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s3=
+8CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0=
+HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkss=
+TM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQg=
+ONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fw=
+jrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmW=
+rDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloK=
+TPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2F=
+WWMIPEo5-2FeGXfBghhPYfR-2B8qpet7MWitaDKK685cNdIifZcYgGoIzIeNQHYc52XXitrEnOG=
+NrsNWBVTRiDHj8frIJn-2FiIvYtvAx2iNFo94Q6V6JVZdyBhD7snHa7PshaR-2FgnumcjvwEm31=
+fsHIlGuWqB-2B573T-2BNAyev" target=3D"_blank" style=3D"color: #FFFFFF; text-=
+decoration: underline; outline: none; text-size-adjust: none; -webkit-text-=
+size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;=
+ -webkit-font-smoothing: antialiased;">Privacy Policy</a> and <a href=3D"ht=
+tps://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRJYC=
+PM7znhg4-2BToYAsecJnfsPLF7EELDMhUkNNsPlnM14obQk1-2BQsSih7Qeii2xvVQLgRBiuofe=
+F5cEXoKpPILSHbvYJsQyGNQmpdJrGieMvT6F5NrpI5MhlKsI2AlG1kkgBpq8g5-2BIf9S0IeE3F=
+vxuIiWEYPl-2FX9MM5GMEMHtFkOCurwdaIaBoklQw9Augd99ZhLLefBt1qwilpC2-2BBMCnTBzh=
+pFcFSNKUSm-2FH7x2Op0qARNu9Fln-2FV-2BqVZ6BjF8T0vkeFzN02i6uesIyzFYNw-3DreZd_o=
+P8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf=
+-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F=
+8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FD=
+nOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2=
+BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS=
+7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geL=
+a-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQ=
+TdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF=
+2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeG=
+XfCZB23j3w-2BL6u-2Fx1qn2qQvSLz9kLVY0pERpkcEQ5PWbyS6Tf80JP1vYhzyq8C1laKSgDvk=
+7WLdaqHC7OGNeMk2E09FH0KHYzZ6ZkIkq31n0jvZgc7DK-2FxZSQHjzxJU-2F3XawplnzA6FsED=
+1FUjXpREwU" target=3D"_blank" style=3D"color: #FFFFFF; text-decoration: und=
+erline; outline: none; text-size-adjust: none; -webkit-text-size-adjust: no=
+ne; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-s=
+moothing: antialiased;">Terms and&nbsp;Conditions</a>.
+                      <br style=3D"text-size-adjust: none; -webkit-text-siz=
+e-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -w=
+ebkit-font-smoothing: antialiased;">
+                      <br style=3D"text-size-adjust: none; -webkit-text-siz=
+e-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -w=
+ebkit-font-smoothing: antialiased;">
+                      =C2=A9 2026 Headspace. All rights&nbsp;reserved.
+                      <br style=3D"text-size-adjust: none; -webkit-text-siz=
+e-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -w=
+ebkit-font-smoothing: antialiased;">
+                      <a href=3D"https://links.info.headspace.com/ls/click?=
+upn=3Du001.CIwloPx8RcaoHCZlhidCRJYCPM7znhg4-2BToYAsecJnc-2FvtcjWXZAOdhLHhXI=
+RlOZ5KYWvZVOpN2guHtOIzcywr-2B5bwuQf12UZZvgEp6nhtLA2FPL0DTQE25A7TPvUmlPaWu3N=
+Apr9L6g311hO6WvewYduWR-2F5eByxtf0reY03H9H3SD6-2BarUQ8r34UGvwteA-2B47FklkwiC=
+AeS8b2EU-2B-2FxVipQB725U8w0jNUcs7gbWNA3PPfiinsdjQYcxgoTgJ-2Fluh8_oP8Jf99AY6=
+CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt4td=
+y-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVwH8g=
+HRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5JaVQ=
+FD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJVcZN=
+PHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI721=
+I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZrWju=
+tYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXypsalz=
+EjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX3pj=
+w2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfAh-2FqG=
+eaq-2BO69GaxoyHnMgtJhQJATln7mMiFd0aHR1-2FnFQMz8wY5JhGDxSHM1ur9s9-2FkTYb5dwN=
+nZfZxdnjfi-2BfiJRvm-2BfPgD-2Bhqym9C0Uh8YZOJaCHa6Akom6X4PKSB9YaMGftUPmrLl6oW=
+lSOfM63" target=3D"_blank" style=3D"color: #9DA5B8; text-decoration: none; =
+outline: none; text-size-adjust: none; -webkit-text-size-adjust: none; -moz=
+-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing=
+: antialiased;">595 Market St, San Francisco, CA 94105 United&nbsp;States</=
+a>
+                      <br style=3D"text-size-adjust: none; -webkit-text-siz=
+e-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -w=
+ebkit-font-smoothing: antialiased;">
+                      Delaware Corporation State File&nbsp;<a href=3D"https=
+://links.info.headspace.com/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRJYCPM7=
+znhg4-2BToYAsecJneqTDltzGu9a8T64BmHYDP8j9hdQf7VsyjRQe51jGDNT1zycgYnE8dq0yyN=
+pivT2eGx3q5UgWxF1hkoK-2BFADnKMOxUSVFEPzgoUxENIY7WaVxKzpmr6hGsD8bkfYdAzHyheK=
+70OQGUXqa1ROwDi3ZYQMtu4np9b8OFNChpZsC4Z22TUwBXrYRzUYLy2g5iBgAVaiviGgoPqP16q=
+ZBybNC5efezG_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICIS=
+oj9KLEimnu2pHf-2FzTt4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s=
+38CfPGAKi07-2F8igoVwH8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F=
+0HLY1ZIlhz-2FDnOwv5JaVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vks=
+sTM917YdzymaB2BNhOJVcZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQ=
+gONmZo1mwr-2BS7QuuMI721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36f=
+wjrmhX-2Bh5geLa-2FZrWjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYm=
+WrDPxs65UP3ZsQTdXypsalzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJlo=
+KTPVWQGGMyZntF2ANWmX3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2=
+FWWMIPEo5-2FeGXfCv7EEsmy-2FKCxdJMunEFlAqQGOqUKUjFV3KEX5cGdJZPm-2FtbNgB5UDod=
+OjiZfC7W83G-2BgBAF8vpRhs9kB0UXvhTMBvUIj7sOiaCcF3A-2F9u5P6v6iDB2VIU5fWHPitbT=
+JF-2FuoGQEC-2B6ljObXa-2BkgMaYQ" target=3D"_blank" style=3D"color: #9DA5B8; =
+text-decoration: none; outline: none; text-size-adjust: none; -webkit-text-=
+size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;=
+ -webkit-font-smoothing: antialiased;">#5271511</a>
+                      <br style=3D"text-size-adjust: none; -webkit-text-siz=
+e-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -w=
+ebkit-font-smoothing: antialiased;">
+                      Not a fan? <a href=3D"https://links.info.headspace.co=
+m/ls/click?upn=3Du001.CIwloPx8RcaoHCZlhidCRImw8PjAxz-2FHwVJbncN1EvcEFDCByMq=
+gSSGtFCv0N734bEvTd4NDJItvaU7L9ijUAfkmi-2FMaEaCNeAg8MnG9FooP50X-2BexbIse47ax=
+RJ1UX2FMDn2-2B9xoo6Vv8rtAcVvT8T5Go1-2BTXt8BnG9LMyY-2Fc1uawALZA-2FB7ux4TUr-2=
+Bb3K9vp5xFA9oaryXCGUf2yejt8fuo6EJfUkJvgsDftimEiWWUR7xRWAN-2BFJOtHrOOAZ9Bgo5=
+2kUQB0Xz5lcRSiNQkfwrGNv2mEbsR8eu6MLO2d80lG-2BFyfeV57W-2FZOTvGLa6xxTogK4F-2F=
+j3hqUFboe1OIV0DU-2BsxwuPadQ3go-2FWMukkfTZNYjxT2M45NVkhVDs6yWuDr0qQXf7055aTA=
+DswPnBPQWM608kiVRLQvSpfEyX02askLtWCD3MrnDIpxYqNFvnX7P6tElT85PX0bnHZCEV10Cjy=
+0sTkvn1DimejcDM9t4zIAJDnKhxmdKlF3Lv3XrDg0ZBY05GnZmSZ-2Bw-2FljYW09cjDfiG6yJq=
+DWsZtxBJkIj2YRGNLPdsj8eOBNh-2FjaKEgGza5Uh5DIgKZRCMKsrHkVT0sMseymNql8Ma3MuS9=
+e-2FqPGEBUz5x2ZVwvlhP9dEYEvoxmgymbgwRiaKi0KW3pLodJvNern1xQu5-2Byze49q8a9lyq=
+0qQTYE3mpbm-2Bkpttipy358RLkleUzojSq-2FI1X1q4d92CLJwiQ18ZHkfvDF0F3vDSQDnuDc-=
+2B-2FYPJJR7D-2BectiYN-2Bk88wpyMoMpA6noNkqSHB7GFMwMTXp-2Bp4ws-3D_GDC_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj9KLEimnu2pHf-2FzTt=
+4tdy-2BJTqSujoPogNaR0R4FUdjC2L-2F4-2BksO-2B6Dx-2BFkOp2s38CfPGAKi07-2F8igoVw=
+H8gHRIdbEWimofDH2jScnkGzYsUvNg4-2F-2Fw42io0ogDXcBvWRU8F0HLY1ZIlhz-2FDnOwv5J=
+aVQFD9LQlVEmdU8cU71R5DH8FOW0sD70tsVbsxfayY-2Fo-2Bgg2vkssTM917YdzymaB2BNhOJV=
+cZNPHClVSmhn1i-2BNHgEvjOP-2Bp7LMStnwzbGwxWkHqYbYRFzl7sQgONmZo1mwr-2BS7QuuMI=
+721I-2B3sV-2B1E16bMg-2FFbDFflSsRE3YLU-2Bx61f-2F9SA2h36fwjrmhX-2Bh5geLa-2FZr=
+WjutYtyV8116R5jqw6ABE3vEAqLFVhDZmGUcFnppX20mvRER1bcleYmWrDPxs65UP3ZsQTdXyps=
+alzEjGsS-2FMthP9l2Oji0s-2F9o9ltCbSWM-2BH7MmWy6R84WNEJloKTPVWQGGMyZntF2ANWmX=
+3pjw2-2FqmC3mvwP77eZHvin9kh5pmnI-2BZjV1W-2B5f8ePLydfN-2FWWMIPEo5-2FeGXfCQSA=
+vRImuvMH-2FPS-2FqbI1RAcMtA0-2BuYf-2BO1mnolI32cpNcnJRWojfMNdPIIJafeADaadHvDo=
+1kEjtCV-2BcI2pSwoXy-2Fa1lTyp1QKI1euRbdEiX-2BAJ7Ws0D1ieSQg773x6DYsFxOxkWdUhv=
+RGJmY1Nxe3" target=3D"_blank" style=3D"color: #FFFFFF; text-decoration: und=
+erline; outline: none; text-size-adjust: none; -webkit-text-size-adjust: no=
+ne; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-s=
+moothing: antialiased;">Unsubscribe&nbsp;here</a>.
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-c=
+ollapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+ text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adj=
+ust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: antialiased;=
+">
+    <tr style=3D"text-size-adjust: none; -webkit-text-size-adjust: none; -m=
+oz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothi=
+ng: antialiased;">
+      <td class=3D"hidden" style=3D"min-width: 600px; border-collapse: coll=
+apse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-size-ad=
+just: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -m=
+s-text-size-adjust: none; -webkit-font-smoothing: antialiased;">
+        <div class=3D"gmail" style=3D"white-space: nowrap; display: none !i=
+mportant; text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text=
+-size-adjust: none; -ms-text-size-adjust: none; -webkit-font-smoothing: ant=
+ialiased; width: 0 !important; font: 15px/0 courier;">&nbsp; &nbsp; &nbsp; =
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nb=
+sp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+      </td>
+    </tr>
+  </table>
+<img src=3D"https://links.info.headspace.com/wf/open?upn=3Du001.Q661MpjYViy=
+VqzQPRjrtRvk1egB4fY5a7G3xpm0VsbcQZTEv8vQL-2FeDU5Ynb0nRzZXsO3IapXtVoj1MQmZ7m=
+ga3iXyUVZ6VBBBPBTOp0-2BISsJn1cD-2F1qBi1Gl-2FXKMHoDMF3DTekXBZkw9op-2B3mOuMyf=
+H4WGjmAOf7O-2BmbmPnU61fg48tLUsJF5WmPwwHYlwymtL932a5jrMOl5PNBpXhh-2FmJysX7rO=
+RimSkwuhFLu6bTDDxr-2BNII-2FmYbPfb5wBKYNrmu453zhfdnQXeU6BpNUxFmw8aCcadH-2BJN=
+YYQxL8NHpTEj-2BERtm7-2F3Mge7rAaEIonIrDgqRDRS8HeKs6aUOLid86OUUT2ZPiqs7uPRvUM=
+zgDV3dE0iXDmA4efWWPIn8d0ErQxUbg5kmcXEDtt1rYpCqpPvhgzgCUvKgTBSFh68ZR-2FXbrPt=
+QPjzvRh66Vdsyu1uJiOu7GyLYNvpBmfY2Pao8t-2FBIt2QE97c0-2BRRRMr0YB4OFCKtlcwXAj9=
+YKwS8DK7t5UIGwI4r3u7PIZCkJMeUXn0GPoKPT2LRZtZREnTDxY1UGAWFzuIYhoSc4w2IaGU0Y-=
+2FsodYYwQ2jA6WKla-2BWtVz1flTyh6prqspfBzNm5qL71wLT7SoJ5VLcn8v57zsQSVflS1jS-2=
+Fr7E26cUmYniZtLEIL8odAGfu2uc13K3ENzjBU9aU4AzAUA5UjJu6eAOLb4-2FD1M756m1n2luh=
+8yaxCpF-2Bzk-2FwVzW-2FJZeDawrEE3hnRdK5XAHbSESlt-2BG2c" alt=3D"" width=3D"1"=
+ height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !import=
+ant;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impo=
+rtant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !imp=
+ortant;padding-bottom:0 !important;padding-right:0 !important;padding-left:=
+0 !important;"/></body>
+</html>
+
+--b08cc2bbf2f24535dfaecb451d46ea0401ab740170e0a95ec2858dc7221e--

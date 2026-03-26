@@ -1,0 +1,2540 @@
+Delivered-To: rzaki60@gmail.com
+Received: by 2002:a05:622a:6007:b0:509:172:59e3 with SMTP id he7csp139540qtb;
+        Sat, 21 Mar 2026 15:33:01 -0700 (PDT)
+X-Received: by 2002:ad4:5749:0:b0:89a:2fe7:91c9 with SMTP id 6a1803df08f44-89c859b5269mr131597616d6.1.1774132381696;
+        Sat, 21 Mar 2026 15:33:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1774132381; cv=none;
+        d=google.com; s=arc-20240605;
+        b=G88KxjOS9OpZEOF/UGuPKGUX8bxZUbF0XuBQ7ErP6IG3sgxWzPcMU3czRESPvEURgW
+         Xt+eCNp4FkhJb6o2AG2l1+JyzOWgqc3rN1Z0PWUwQfi0vwvZ//664Mc9I6uM8BFj4I+P
+         URF2fHKeNrFHofcYupoP6GI/hqYhOODZqqyxrRGWFF++AOY8h1jqHbWIR0a5DIPDRGl7
+         9ch6662yxQt+ZOpYcGxAsvDHj9hl7F31IiGq28Q67MFV+zAZc1CDsMctLEzQD9gkEZcP
+         E7zXEk8vjs2yoon1HTTtLM0GX4fO9Fc6SpBhUI9/Wi0QFVTRzRyNuYyflmKVCabOqexV
+         1MOQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:reply-to:subject
+         :message-id:mime-version:from:date:dkim-signature:dkim-signature;
+        bh=dcTgiZudDmqI73ZZ8l2Vb3Zv7NlEx4+Crb8gd4fk4jA=;
+        fh=w2ap4rqQ3CVex65plOh129sBl+w+2O7VqcfpnYx794M=;
+        b=U5Rr9h4DELqevBNh/+fZsyJMtaPY1N0Nz/xjuRhtBUh8zPpIWPkoLfxtYP81PkOZ7w
+         LtwbSF+M0W2ucZ6YaAvBN7kcMyTCRfxWfwpX35rsC8s2JKhXujfypJjvNZ3ClMFAFTTu
+         hs9XFNBJszsMyVnQwp/V984LZoO5cTVEF/HShl8WwLsjcAQOgesXjyNygg2cfB0B+h2i
+         yWzqmgpDGnlh5Km9w6ssV/IwCeNquEHiTcdWNJOuLmqmdsjrcjm9AV/yA53NP2aXJasr
+         JnTS+VF2NAD2kfonBE7MnymMhar7y/7QmC9WNWpndO5F62cCqAqSGVMDW8BleSmV4/hG
+         RLrw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.ro.co header.s=s1 header.b=gCY1x2oC;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CFl0yPsY;
+       spf=pass (google.com: domain of bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co designates 167.89.83.49 as permitted sender) smtp.mailfrom="bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.ro.co
+Return-Path: <bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co>
+Received: from o1604.abmail.email.ro.co (o1604.abmail.email.ro.co. [167.89.83.49])
+        by mx.google.com with ESMTPS id 6a1803df08f44-89c8535ed83si89775706d6.496.2026.03.21.15.33.00
+        for <rzaki60@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 21 Mar 2026 15:33:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co designates 167.89.83.49 as permitted sender) client-ip=167.89.83.49;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.ro.co header.s=s1 header.b=gCY1x2oC;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=CFl0yPsY;
+       spf=pass (google.com: domain of bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co designates 167.89.83.49 as permitted sender) smtp.mailfrom="bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.ro.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.ro.co;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; t=1774132379; bh=dcTgiZudDmqI73ZZ8l2Vb3Zv7NlEx4+Crb8gd4fk4jA=;
+	b=gCY1x2oCpe94iybfoITnaNxJhGGcNCLou2UfjIU01RBynDBdhYBrlTc/yje9wH2Ig+wE
+	ZVK2TMlY/2Dd99ZKBgmC0sOUX75yUDnCMu2+31Ye1DxUNCadu3AdA2FgxTaXUC2DOQSlCz
+	/KiPYZ84Jp4yGDHzuXV0ZCouEuSZRb29+0zfoaQ4mQOKn513Nxlm4zKqBQUUiorkO0gH+O
+	/9hm2W6FDX4v0AIhoPegOEFonYY+dx4dpIWDKKb5qtCQxlCJnQb/6oW/rdAn/9OSzcsM11
+	mCnQ1HU8AdCyYvpngOq9NxnrhU8i4u9f3/upKFhXrSw7cjtgQytsc+2UX/B5CoKA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; t=1774132379; bh=dcTgiZudDmqI73ZZ8l2Vb3Zv7NlEx4+Crb8gd4fk4jA=;
+	b=CFl0yPsYtbCIwkwmBbrZSOc2SUaDdLHqCMe30pfddo7qP2uK1Sf6NA5tZ4IqFneGLQ1J
+	fbAqQu32ZqJFBfWh3sRYzEq8R/eWLhDLbWzdLS8mxU96C1F8MMmJHHhwJ6/dr1B4m0knve
+	x5qNk98+HmetbU+sOGBvEXPyUMfOB6ZjM=
+Received: by recvd-7fc7665d47-6gfc5 with SMTP id recvd-7fc7665d47-6gfc5-1-69BF1C9B-96
+	2026-03-21 22:32:59.871222866 +0000 UTC m=+1048651.802693925
+Received: from OTM3ODk5NA (unknown)
+	by geopod-ismtpd-57 (SG) with HTTP
+	id Fcpok-2XTzmhbXjS0rjMaQ
+	Sat, 21 Mar 2026 22:32:59.861 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=d3ca79ad738a90d229b9526064749e1721057da2f846ca43237bda70e749
+Date: Sat, 21 Mar 2026 22:32:59 +0000 (UTC)
+From: Ro <ro@email.ro.co>
+Mime-Version: 1.0
+Message-ID: <Fcpok-2XTzmhbXjS0rjMaQ@geopod-ismtpd-57>
+Subject: Serena Williams: =?UTF-8?B?SeKAmW0=?= healthier on Ro
+Reply-To: care@email.ro.co
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2F02=2Eemailinboundprocessing=2Ecom=2Fenc=5Fuser=2Flist=5Funsubscri?=
+ =?us-ascii?Q?be=3Fd=3D%241%24dRFv%2BO4LaxLdRf0zRwOlyQ%3D?=
+ =?us-ascii?Q?%3D%24cDaKTgvO18amMYsdsLYeXZ8Am7ugn2%2B?=
+ =?us-ascii?Q?NAl0VsleUrhYMbcJ79cRpgfji4PBE%0ADKc13iY?=
+ =?us-ascii?Q?zWvuOm0j1tZAMaBF7tVSsLswPBy7KK0w7qQroka?=
+ =?us-ascii?Q?hLEkvTppxA38Fq%0ApeKaBBXo9vrEXZcpab6pIR?=
+ =?us-ascii?Q?CrZFNkiOjwpJB5uDj4zY%2FPJR%2BQFNRE%2BcJ?=
+ =?us-ascii?Q?jOChu%0A%2BYsp6FSoSBSYvQgP9XxDgUIabJ9%2?=
+ =?us-ascii?Q?BFIFfgXB%2FDUTUNk%2ByprgniMvEqlHCXEwT%0?=
+ =?us-ascii?Q?AZQXhCub0ux3xeJjNrUqeoZpfYFNo%2FfCUuHIc?=
+ =?us-ascii?Q?Vp703ho%2FO8DHaKi6%2Bfi7Zqr0%0AvmukDXnn?=
+ =?us-ascii?Q?tFJHLHGgNhUKa1uphMEsvcL7vtqX%2BcpxublWL?=
+ =?us-ascii?Q?6zOXmUpILKlxdeR%0AMQnjodeQbg4VKXMdz4isB?=
+ =?us-ascii?Q?1RZ&1=3D1=3E=2C=3Cmailto=3A4=5Fmypw246lf1xkb03pbf2d?=
+ =?us-ascii?Q?6kedg5cjzw68poo58816aqtqdvf4pa08dz=40unsu?=
+ =?us-ascii?Q?bscribe-02=2Eemailinboundprocessing=2Ecom=3Fs?=
+ =?us-ascii?Q?ubject=3DUnsubscribe%20pnrcgsq1c70b7v9kzg?=
+ =?us-ascii?Q?eekx3dw7z4q4pnjhnwovcfd&body=3DDO=5FNOT=5FDEL?=
+ =?us-ascii?Q?ETE-14ewqqkbfe7k1j7ah4lw1sbs7629hkrlpal?=
+ =?us-ascii?Q?xnberkwsc7s0zxebxtldh1hnahc1jc5ulduxmge?=
+ =?us-ascii?Q?1hoyyjx-DO=5FNOT=5FDELETE=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E8zTFA53HTtzyKnoqb2Q468rUMr84hXMQvs0Lgd7HOhP+nhVLJ5oqoKeSW?=
+ =?us-ascii?Q?9IHLIt7or47FxlIG7CFK8Q+zci5WEYdDxhYgQf9?=
+ =?us-ascii?Q?skswPSePCYe3qie2fQc7CM55iFngD+7j9m7xM=2F=2F?=
+ =?us-ascii?Q?jM=2FS8hz1N9gKCq4gacmWnHay+y00WsUiYiZSpQ4?=
+ =?us-ascii?Q?Yv8qaem5UHwSO8ncEsA+LWKVLAJbAgoxRfabZry?=
+ =?us-ascii?Q?Q=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDrjDW6011yC6XOo?=
+ =?us-ascii?Q?3uya5MXOTFy6yzJuoXW90f1ji2yrfTF+h9+DvOw?=
+ =?us-ascii?Q?zYkM12B4G0q+gEanYPRPn8J95PyCkjXGf1AF=2Fde?=
+ =?us-ascii?Q?IZ0Jm4BssV9z0QdOnYAh8Chp5cTnomNcgOcikpV?=
+ =?us-ascii?Q?O0WFwsuFfDXz=2FA07bcQIzlPXLDdOff5O0H5UpCp?=
+ =?us-ascii?Q?M6aOc6fKycnYT6Z7=2FVRuDkqDA=2F4X2BXCdvFfzHf?=
+ =?us-ascii?Q?g3YwRT8a+56fgVRmNoTA6YPA74WX0fzjtr073V4?=
+ =?us-ascii?Q?MTeBODzBAC+aS5bgIaRUpvXklmVg8JfSucnVHLW?=
+ =?us-ascii?Q?JlOjo5pzv0FX+JKrgudZIZowW46ua6MYstYcboL?=
+ =?us-ascii?Q?We7gGS2G4qG8RThv3UOpSj3sYxWqIWjAF9Kjrr0?=
+ =?us-ascii?Q?lyFgjfeTBPuhXUtQu3XR39QQclHJCuP2JDTBoii?=
+ =?us-ascii?Q?66ZLQL19w0fUFwLaUKwNV+49uSbhj6tbpsPEAdM?=
+ =?us-ascii?Q?YteJWjuf7HH3nKdZKl9E6BzU6K=2FnkI=2Ff=2FFDVp4h?=
+ =?us-ascii?Q?wGz5puTpcnB1a8UWNPrs9ZB27SPqO6OI1Dyls3z?=
+ =?us-ascii?Q?tMGgMGdLijoS?=
+To: rzaki60@gmail.com
+X-Entity-ID: u001.yyCpcyikZLV+ra4/9sOJZw==
+
+--d3ca79ad738a90d229b9526064749e1721057da2f846ca43237bda70e749
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Dive deeper into her GLP-1 journey beyond the scale. Dive deeper
+into her GLP-1 journey beyond the scale. =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F=
+ =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       Ro.Co Icon (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQrktN=
+vpV3L3vhd-2FVCCKdSqNGlteKZprAAEQ07sjEKZHU1wGEYl9rfjPrFfKKE0h3CMIXpDmUielK9k=
+-2BYU7TS-2FnjX97h9drAp1lDfZRAQAN3Rj9lfXrgGGy2rKkeaXj6HBLjdgZ1j-2BbRXXukGGQN=
+vCVMrJYgwxkgnqYW-2F-2BlfMmswT68HePXB8gSDT0fOdAB9aiu7VxesT-2BauSOMM-2F0zGT1-=
+2FIi-2BCB62Z7tXCdI-2BU8nGlMVcBCv-2Bqk8x7Fr-2BD6ZO-2Fedg-3D-3DDmxL_oP8Jf99AY=
+6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2F=
+FFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt=
+0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry2=
+7A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwb=
+mK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjG=
+MOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlP=
+fLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6i=
+d3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn=
+6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBDY0mtyONn2jesNlUER1y9f3rDRoVS82jWE-2FnbUiOU5S=
+35oK-2F4rOqFoxrFlNBaw2-2BHh3xzdFM2kXT-2B6Q2Jm4OfpPFqXmWEaPiDrsaOGdHNsPFImSs=
+LVHM-2BrfvGfbasIXFLL4DksRAdq2q60j7-2Ff0EV0-3D
+)        =20
+
+
+
+
+
+
+
+
+
+
+        Your first month on Ro
+for just $45*=E2=80=94our best price (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkCTgNGCC8l94o2VD0yRUtbzRuLOYKocWPCJjtJEUtL5A-3DSkpm_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-=
+2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAP=
+nt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNr=
+y27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsO=
+wbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSk=
+jGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXn=
+lPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO=
+6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKY=
+wn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBGLkSKJBcku2jfBzjFiLHZGj7ZEGNR0Oq4SNz-2Bq8fu=
+5Ms-2F6aBXFkzyPO7F121RdrZl1g-2FFjwM3kGpeYnOKAXrzV5lTdzTeAtZRN0coESqE7U6GSx2=
+pcYgHU9DiRDztJrZE-2F-2FdR-2F5HmFZyXK9WdEKp28-3D
+)
+
+Serena chose Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkDjeJ1kriPO3qNoZM0mYVlwedKVxIe1LtAvQc6kLCYJg-3D5wEg_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-=
+2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAP=
+nt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNr=
+y27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsO=
+wbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSk=
+jGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXn=
+lPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO=
+6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKY=
+wn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBKwVb2WU2TX8DEY8nTjLBAtNELj04-2FAx6y3Pi3Ls4-=
+2Fmzmpjj1KOR8VT6OdqTFluro9ObEgcUe-2BaDWSQiipl-2FAHWITxzMVSJ4dPFo9H1LsscQ7pK=
+auLMwmc5T0luyyp4P2M9exLk5jyAYJwqAxd1roAM-3D
+)   Serena chose Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkfYzHY0djzFaSxyNhNa2RuAvlIJyGwOBeg-2FTQaZIhyU8-3Df2Kk_oP8Jf=
+99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU=
+1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2F=
+APnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCub=
+Nry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2Br=
+sOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFD=
+SkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxX=
+XnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2=
+FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6Lwa=
+KYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBEfe-2FhnrWyfEDYTXeTfJcwIYHFQ6mVDFt3c4ZRHD=
+X3ZSbJbFsNyiwD7RrctqQbgExAy0zWUGWhyPaDgJ-2B49fSl2W5BIoRs4zwTDshakxeEXOOsV0c=
+FPDKu65DKqJvHKpB5miXYIFojS2V3RmFLMyO70-3D
+)                Healthier on Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkheILB0itlB2SJiB5TgAyiNRJY3F8xY4A9HZTUzcAphY-3D-7Go_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-=
+2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAP=
+nt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNr=
+y27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsO=
+wbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSk=
+jGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXn=
+lPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO=
+6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKY=
+wn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBAFuaGiE0HsxoFgXZN-2F1WM8frr-2BUiBHvogjB6D4O=
+lc7bUJpYq68qiHqGzO7oBzwMU4aPKWuxgwj4blNvgdcABA9runL9VqRb6JDz4k-2BaW5UBWFqqG=
+vWNRQQRTcofKexVga562rE9xOLdwDfsZVJVSKg-3D
+)   Healthier on Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybky81PlzM1Nkv2E1vIfJG193tjJgEOkESOrVWgsynEJ1Q-3Dpg11_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-=
+2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAP=
+nt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNr=
+y27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsO=
+wbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSk=
+jGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXn=
+lPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO=
+6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKY=
+wn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBJTeZZucEt5ND5w7bCHaxCgKLkjbCqVUB9fJDh9HJg0n=
+IHRyvFPRQgCRSmadkoCNVpMXzccMoxC6jCFqLuziPGRDFIZh0yKPVXa9iIq8bbb9eZMuFH0rlrm=
+Ma5PKEQphzGKqY8ZMQILOQmgO9FKN6nA-3D
+)                Chuck's feeling good with less joint pain on Ro
+| Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkyAGv8bFiua0ZH-2BiSQjxiCqDEZ9Ht9s88RyfTuJfoh-2FA-3DL6NT_oP8=
+Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9V=
+rU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-=
+2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBC=
+ubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2=
+BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYel=
+FDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aG=
+xXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b=
+-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6L=
+waKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBE-2Fxe3CnYP8r3Yfzk7AkVwWq-2FClccVTNb1q5=
+KIvTj9ga1-2B7S3gjQ8-2FCc-2B-2BuJRcxnmDTbpINoaSD55-2B-2FZR7MMy9FrLdneCCIOHDa=
+-2FVhq9asLbRfDHW8BDYXmqfvYT93u7wkso4YhnyK4yruG4EQDVwP0-3D
+)   Chuck's feeling good with less joint pain on Ro | Finish
+visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkOgNtQjqEWphaHwHH8ZzerY9aQVbMpSGMPjzv5PG2tQo-3DFnRJ_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-=
+2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAP=
+nt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNr=
+y27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsO=
+wbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSk=
+jGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXn=
+lPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO=
+6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKY=
+wn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBOmGkfkiRT0ATrW68qS1Akx2-2FDId3rENQiVetja1fw=
+IXjjfedrv4bjxlR6JXopvIczCHJ5Wo-2Bu4rmShIGWDNEoNUmWW0yU2Ib7JGbV-2BLxHPuYLq1z=
+yPGPPdQvGr02gL34n4tFgI2mlNGbyFmoSUu6yo-3D
+)                Hannah's got more energy than ever on Ro |
+Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkuAQquCgONDSpcadN1u9cr3aLRwW2I1oH-2Bk91WMbDbvI-3DUp3d_oP8Jf=
+99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU=
+1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2F=
+APnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCub=
+Nry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2Br=
+sOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFD=
+SkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxX=
+XnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2=
+FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6Lwa=
+KYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBFSHR36e-2FRTwPZy8jk2wp-2FKnt16yYCXmTOYYXT=
+N58PjYyGLWhXxZkGug9Zs4UfdAzorf6mTWPLYA-2Fov-2FIKz0FBWaUQnMY9f5C-2BkO1D1nKDj=
+IiEV6JGK-2Fgv1UvSFlTk8KweqypSGNhmBaFq-2BLPejETFU-3D
+)   Hannah's got more energy than ever on Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkoNUszZoBw6OBF7-2B0FcIbOcnHyg6C-2BJP-2Bqq-2Frn7VHwjk-3DEFz0=
+_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDU=
+LG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IW=
+qGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2Bmf=
+xUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV=
+0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIB=
+uYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkc=
+h1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRl=
+zj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzY=
+Ua6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBB2DtkX2EgUwESwDWLEfT4CbVRzxZDQ67xgZ=
+rOJIjJoFBrOwI98WOhzhh2FcwuOpmH-2Bc5emSz4CEtpnyhvxnhnkhUcQoxOrS9M02HjvanwYEg=
+L8Hfy74NabX-2FAWe539-2B2SEJLBQBK-2FKjWcKVS-2Fsk1BY-3D
+)                The GLP-1 pill, now on Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVSyfdR2dGB932CAmYfO-2FFkRPx2up6tp6=
+ysMixKtW8ga5-2BCZDrf5GRBDSd3Rlinapr48htTG3Lk9yJkpPt57hTyeY3nWhTtJllcIZM5gZ4=
+fvvH48tasKBHMTF53CoaEqsne6r-2FkL-2FrxzuQi5c-2BRPjZmX0OtdyS7ukDLy1dNbPtSW-2F=
+0HpnmjvlHcFCTnhWHNXqbF73SE-2BWt231mc0bXTWQ-2BaXHQFg5CeQxsA-2BsKAvZvMQGaKcjF=
+j7DIAl5NgASID-2B49jQBdReVtyrB9j1QL-2FcTYtgSvO8-2Fl6CXQXzCM8XRMH-2BXRHjECbfV=
+iHgaT2CAgsQZksV9M_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSD=
+FICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJw=
+TxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8Y=
+Wfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyP=
+wUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb=
+4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS=
+29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmR=
+cY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaL=
+kIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBClKXErAJr4O34khGcf=
+QdRBBmHOobg4Ve2J-2BCaPLxY-2FJ0LXO9fBl3zmxZPfQDpM0MZhg4GNr9qnCq4Ga-2FmCv9KVP=
+ggtACVMS2F0rb7MGeEAvzFfiK6LCQIEd1qgd-2FkqEnRTX4ubHHaFCN3hvGl6nd0Q-3D
+)   The GLP-1 pill, now on Ro | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkc5VXuC7GnKoF2BytQnvTAdWyXsu7sl4RE1v-2B-2F3vDtz8-3DCcf3_oP8=
+Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9V=
+rU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-=
+2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBC=
+ubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2=
+BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYel=
+FDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aG=
+xXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b=
+-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6L=
+waKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBAY4R72-2F5CVGX3u-2BO3PGoKIxXxRkuqYa-2BK=
+-2FBjBIkqA7wCf6XniZbmqkZE9eThaex-2BwLJWqwUwK7pJvdw2-2FAuWjeOzUc4cp-2F7MLedA=
+q2KVrHvR8v6KQ0FVldArYcc5YD4rkA5paz0aaBDMW8cZqo3IWk-3D
+)                Go on Ro today | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybk-2BuuhR1QMTMOK6kLkT-2BtIfwULphXPHH6GKGJd-2BxYavWM-3D4lwS_o=
+P8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG=
+9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqG=
+H-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxU=
+BCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y=
+-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuY=
+elFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1=
+aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj=
+6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa=
+6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBCS3dn-2FtmLXcMxCGWz2aj5xxLQ-2Fno8JJ4O=
+w7IOt7aTqhoGBzAvwT4UGzjvdW-2BY7V3UcjVk5xowo8d4bg-2BwtNQir1DOxSDn8Ez4opLl7B3=
+xDp7CPgukc-2FIhqp0qSAs7FOARz7VnPNochuKrDbxKz01M8-3D
+)   Go on Ro today | Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ353=
+3-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8=
+oXpmJEx0XHc5euybkMux3-2F3z48yTAUEjTJlFP0uI42HmmyJdlp0Zc25jctGQ-3DTKij_oP8Jf=
+99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU=
+1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2F=
+APnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCub=
+Nry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2Br=
+sOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFD=
+SkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxX=
+XnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2=
+FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6Lwa=
+KYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBBh06eyG5v8UpdxCEyNDRx-2FZVIEeKdgy-2BFU4zF=
+UfrPzByFi-2Bjsa8Mb344KwlABxF5i7wkwvUWoA2olcKbGcIR6n4otO14Mw8HvJMbFmXprXW7LY=
+aB27V6SgMQLwhsLhtcra6Jcv5yzw8ePi9HuMDii4-3D
+)                  *Average weight loss with GLP-1s in 1 year is
+14-20% (vs ~2-3% with diet and exercise alone). Based on studies
+in non-diabetics with obesity, or overweight plus a
+weight-related condition, with diet and exercise.
+
+=E2=80=8B
+
+**After losing weight with another GLP-1 provider, Serena chose
+Ro to continue her weight loss journey.
+
+***GLP-1 medications through Ro are prescribed for obesity or
+overweight. In clinical trials, patients who lost weight reported
+improvement in knee joint pain.
+
+*Average weight loss with GLP-1s in 1 year
+is 14-20% (vs ~2-3% with diet and exercise alone). Based on
+studies in non-diabetics with obesity, or overweight plus a
+weight-related condition, with diet and exercise.
+
+=E2=80=8B
+
+**After losing weight with another GLP-1 provider, Serena chose
+Ro to continue her weight loss journey.
+
+=E2=80=8B
+
+***GLP-1 medications through Ro are prescribed for obesity or
+overweight. In clinical trials, patients who lost weight reported
+improvement in knee joint pain.
+
+
+
+
+
+
+
+
+
+
+<strong>Important Safety Information</strong><br>See Important Safety Infor=
+mation about GLP-1 medications, including Boxed Warning, at <a href=3D"http=
+s://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpobpFu8H56V=
+rZXkKmz7hzJR0JLHGpb1KyyRFqpLEshBIx8HXtBS1e9ti9yrHgId-2FZZD-2FPe05DLV1I32jSC=
+0AUODOaogTN-2FFfEj1XNu3eQzKcI6HvqI567X-2BlWsRRXZLyVH8UviLbTjAhWO5BL-2BWyrTe=
+ae0hipjAiyP2oVlolH7Pq4-2F-2FHcXFek0kiJhuICjhFC8-2Fo-2FniLWFyz-2B6zDwnwvphRB=
+z-2BdKGkkO9SRyR-2FD5-2BeaYju85Yudi-2FDkE-2FSDAOQr-2BUPoXYwiL063Eiu2dHHGqK0T=
+0-3DR5dg_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3d=
+PyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5=
+dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q=
+-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66=
+yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561=
+J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lE=
+Xow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gc=
+dziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B61=
+0Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBCcSSNtqh7L-2FYE3acmbyAlo-2F=
+uVjYkFlteKBHPlZYsd9fdT-2FLci9qwdTPTXjSeDxlkOSaqef7VFpgp3uitlslLQi6yxIQ2oR0B=
+VR4cVYi0iR7clpi-2BG29Oi3mZwdTNbQQEPt8Hbgg3pdJZFg-2FSGlqJIk-3D  target=3D"_b=
+lank" style=3D"text-decoration:  underline; color:#1a1a1a">ro.co/safety-inf=
+o/glp1 </a>
+
+
+
+
+Sexual health=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQRL=
+s-2FB-2FIS4jPxYGSIgDwj8QJius1cXSeMJR2ShprT3hDDXDGyzctx1L8-2Fzr7iGP82uXGhlJG=
+hYG2-2FuapkcE82jeM6MnEnyFHcfhINtSHA0s-2FxSkP97R28lVwsT9-2FTpXpLjAUNxdsGf6yp=
+yNEVWvUOd7SnVx1bXXSFgufU1ObFdqcexIdSB9JZMj4KMId5zWKNQ5gBPvHM1qfgKPXQcmYo5X8=
+ysowvSZ115SnF3q8b9EmzqFkN57bOQaYbRSfTr6L2K0vvG-2BqCUVo7UcpUZbrLQ-3D57Jo_oP8=
+Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9V=
+rU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-=
+2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBC=
+ubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2=
+BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYel=
+FDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aG=
+xXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b=
+-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6L=
+waKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBPnBqcK-2BBljJTMTB2O-2F2c-2B63FqdcrQSCPp=
+FiK7btzfkaCwf8lB6hec9wXN1j62j3-2F8ROzbIh3yhSvHxohhct4IFj-2FmHldEB7TyiJtn2I-=
+2BTNh4va6tmCgN5iIokS1RSE2wnpyoOs-2B1ixs1WktFpaTisw-3D )
+ Weight loss=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoena=
+paOZaMtY0C1tAmejYNU1R4ac3JveEI4PwSa8-2FmBalDWv7ULCytd75rtXIc44w7b-2FaqDvhF-=
+2BWyWJSEkZk-2FSaSBEfOK5t1TJNKYCtAWT68WZI7rJoYiryV6tvaOibqaNdHeEYrF6y-2F-2FZ=
+bfLcEMwBV8iQdeEmo1HjlWVfFPvXauiGXSAXqYe1ArabAtGFyxSVMwhlsBru8X4dMPAbc30X5Ye=
+aw-2FaBYwwHZo9FCLDKLTWM8xmQwaqY-2BwXsoS7Vty1w-3D-3DO6I0_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBad=
+cqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azD=
+Cprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9E=
+LUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7b=
+oap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf=
+5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7k=
+XZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfD=
+H9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5K=
+F-2BH-2BqZcL5VW2WHJBOErJcqv6rk7GPwnYMy6uj5AXngwGPFOZgkAzBjtLwZ9EHL8KZUjROgn=
+cokNwZUuZa06srd921S6wN8bqp94mK4IIHhJCcp4Wq7YbX-2BdTqT-2BbWKEsCZEf4OJ6m-2B1V=
+GBWVm-2B68cA-2FEuPb-2F6NlADIZdLM-3D )
+ Fertility=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoSJm=
+ozfzLmHKVpgOjgBei-2FLQLvWvAgU3yJNp5obIgKcdZUNPNOZ5cNA59uDpX62CotRDhNoMUbT-2=
+BOEBM-2Bv7rpm-2FKDNNX7zfIpRYfLFFdfoaWlZ92eBypU-2FQ-2BCScCPaWbmEDdE1OfRF-2B5=
+-2BUWeW-2Bam4G6ye5PwsjS2eHAuNmrnvOpsZgVgrZ5p4Zgx2yVLXr2WJprH57aTIeIAWLDexye=
+hvGQHc91zCuQAM2zeVaNAHyjePP23f-2Ft0EzOG-2FEFKGZBuNA-3D-3DqcQt_oP8Jf99AY6CMF=
+ljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse=
+88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2=
+BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A93=
+1jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2=
+BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcM=
+O-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLry=
+dbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sV=
+xFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSR=
+LdGM5KF-2BH-2BqZcL5VW2WHJBFoiMcWTW8vurup1Ihc1C6dzb9wzuUBgFMgxz282D-2B9OU2uh=
+wMFJYrZp36k4EFfUxbCLNdtv5kYl4yIxpS1-2B6R2Ecr6J5u-2FQs7OCORyjG7rIs-2BjufH7eb=
+FgiWLCPs2Yr7nEnwsb9w6DSiLHKENME3pM-3D )
+ Hair loss=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoabZ=
+krGhMr5PKdQNBT1h8pYczBHK42OlTMYR1eXcRGnHSquk-2B9PE9Y8X9R0nWLxB-2FeeRcNSNxZ2=
+E6cGbY2JaR-2FQf84zBsduGq0kD0hP8uOiVfksWS8UAJLj5-2FwHgfkSD8VsTeWBf0MnqhkU5Cu=
+VhHTzCaMjSK2e76pFU6gbei-2FfFdCHjdkDcrJrYiHAXzplI2t6vT3WjeSp-2BIdxaWXwRaD-2B=
+t-2BHHQFXCrlfUkgcG0gSybZDtCYkxQTROG5b2242YxAg-3D-3DLFZg_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBad=
+cqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azD=
+Cprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9E=
+LUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7b=
+oap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf=
+5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7k=
+XZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfD=
+H9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5K=
+F-2BH-2BqZcL5VW2WHJBA5wrgfZf2QK6OKdu1i0bERqPaqZr-2BkoLIMGvIt1dlhrM5VTNITgPy=
+tGZ2KKsdDFJbyeUTDVp-2BjPUisB8TBpWKIbEEGCm2KwfMfEyJy4cznjnMVrbnYJUJZFpPajlYw=
+jxf7nOn3vlq8gIlfsIVSsUIA-3D )
+ Skin care=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoXtZ=
+X2ZUZ9v1rctEO4SwRT5zakzsTSlZBce8IiERpGi6DFlAq0al4dwbJ38GgKotuBA3juNYNnKaeFC=
+iaLazG2-2BIRgep2dGcEAkqi2-2BWZd9a1XZ0JmRxWsiGSCocFdfoYzSifiSldov0iJtk-2BUvT=
+5pk1nOJXXYZdrlgiKVOcCQQdSU19UtkpDzjlnpTnaCi558LBXAEjTo46fH2gvoggPG3WClnQDMb=
+6rmzwANtkNTVExr1V8m2720s5-2Bf6twl9XdQ-3D-3DtHgV_oP8Jf99AY6CMFljWI6KUTl8t3WF=
+50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXf=
+eDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3=
+sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCV=
+u1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61h=
+FnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI=
+-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd=
+02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBi=
+xRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2B=
+qZcL5VW2WHJBPdJxyOGKL62qDMFePmQuNpii2AZApiViR4dj2kWOzCGlDW4ZV1nAy-2FJB5zTfp=
+YVxYDoRTJtSAk7jMiYqFCAR-2FBHDUQJ7Zm9IHETFe37Tn7-2BgQuij-2FV3-2FMVC2ujSAFnKE=
+4A6VeqLddgE2LuakkarFm4-3D )
+ Daily health=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoVxd=
+MU8Hm1ZigPUvEGk-2Fz093k7gzpA62rTgws-2FI2A01DmL72Za5OhzEs5trFlkILXKf9i6opzsC=
+0trGRWVQWm6XWM1qyIYXyFZJ4ZWdoFwm-2FzT2NG4TFf74-2BhTWROQOmukdjl6wC-2F5rqTYcE=
+RbNtzdX6dWjzqM1KU5eLJ26uapTiwB78wMuBIbf6BpB2X11borZffBhtjVbz-2FlpKrCls6DNWt=
+yX6DDNojYIK-2Fd7pw0A6DQF-2BLSoNWBs1obC3RU8nIg-3D-3Db8_c_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBad=
+cqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azD=
+Cprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9E=
+LUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7b=
+oap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf=
+5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7k=
+XZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfD=
+H9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5K=
+F-2BH-2BqZcL5VW2WHJBAyYEpHKbIumRRwSaAB-2FTQ6iD1PiZPNCVWVHyOmbiz3pDry5x-2Bnc=
+l0eoqOXpzWdAsVmP3-2BZmOxemJFGsziulwQQz1AT68mR8DoCqF0sF5iIAlWwXDJv2rFDp7oYRF=
+NleWwr-2FkL7wgeukT-2BOS5hZPgPc-3D )
+
+
+&nbsp        =20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoWKv=
+7aycvuoFPkHBQwSaIy6soO04tVg4goWqSsJaBzpsMTszQzfEnbBNJlAusl6icPHzefySbrC-2Bv=
+7hOJuoA95fgWMlPV4vSb6Pfg-2FI9cH9j-2BDm0fVW9VJNu2UFnK51fSFggvmw1lInEXtKQxkK5=
+Dt-2F3y-2FD4HAuYpJXcrB0Yr-2FAceSXJpJburfLJbstfuUk2BHAiexZjpZsVRXcpqwnwO0j1O=
+U3xtn9zuoVhxhRJYMNMgBtz-2BRALUDRBYRiIEq0sxQ-3D-3DOvze_oP8Jf99AY6CMFljWI6KUT=
+l8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcq=
+QA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCp=
+rv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELU=
+QDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boa=
+p0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5m=
+NHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZ=
+YJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9=
+w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-=
+2BH-2BqZcL5VW2WHJBHhgYIpso856SIl9YwTF0iAPR4N-2BDBJ0FbVpqV6R76BkScxiGiOmRj0w=
+LcFAOC-2BVaNBV7m5TZZ0hDzfd5Qofil1IqbaTowZbXnfR4jP-2BYnpXb-2BYbIPNCkx91JYPXi=
+oq-2BNy6dDrH1qULaQLAQKxJHbao-3D )
+         =C2=A9 2026 Roman Health Ventures,
+625 Avenue of the Americas, NY, NY 10011=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoTGf=
+gva4CK1dzfbd-2FWJpubQ7GK-2FzclK9KQJeXsFW9ttEVetAtffAJlsIetpEh1nEjkBcItATyZH=
+7X3MrD3WI0Gmc20ieZagJzZ7OOJDkQpI6Bk3qbfec5vy-2FYhNVbozxwbc7iYQDDVKYGtY3EilU=
+GkmxJtc0nyHKLL3Vw4T3vz2utZ4zCFFCoDBKfqf0onHrmZb6abA92RtNgX7605lEvXGDlCYx3E1=
+VcVptnXK9D9sEhxtaWFVwhhjAOyGEjZkwWg-3D-3DNCaE_oP8Jf99AY6CMFljWI6KUTl8t3WF50=
+P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeD=
+cKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sj=
+AduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1=
+IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFn=
+Il2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2=
+FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02=
+p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixR=
+h6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZ=
+cL5VW2WHJBFTAUwwG61ANHnUVhTyJsy2Ixyzo2yoVAxTcAgE8dAdE8cutKyGufoFLkDATuAZxVj=
+80CNEhQ-2FDw6JukUd-2FNY-2FbbJ-2FlPydNNZipd7JEIyNXw4slukEy-2FjaRc-2FUuEpoJOr=
+Zo0ACqe8-2BJqkRBEMWYSoIY-3D )
+         Contact us (
+care@ro.co?Subject=3DRE:%20Serena Williams: I=E2=80=99m healthier on Ro
+)                                    This email was sent to you
+because you indicated that you'd like to receive marketing and
+promotional emails from Ro. This email is intended for the
+recipient only.
+
+Privacy Policy=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoY6Y=
+nAHLn9t-2FQiw0SJIvGhC0pj2F-2BcydP7SXQgdXFrjTjrg-2BW0U4ehDEft5IficnLZQh6Fotl=
+Uj244C4aC12FGSd5CgII3XfuGUu6LSITrNhJ9H5jJncKerQM6VAEmhVHfFJlLQrCTSCp1w6VkGb=
+mNOaJEktkrn008hTC4ZTGqb4c-2B2fgjpRti3MminYc3eeItaWc1cfzgFX1r1ylLJIbAPGlinHd=
+QSHdnigWd9bqovrqjVhBAJXtb-2Br69dBLHqB0g-3D-3DNQZa_oP8Jf99AY6CMFljWI6KUTl8t3=
+WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7g=
+XfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2=
+F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLV=
+CVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T6=
+1hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUh=
+aI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTD=
+qd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9Rq=
+BixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-=
+2BqZcL5VW2WHJBJwMMIagjOwK6WT5bVkFKZfQwh-2FvBwfTXHHyyfqRmouhuew4DlipOjRNEhaL=
+NEsxNVob2euHRAwPASVLOVJ9kHJjNiC8cA6ZPXood-2BtkSYbtFKVw8VpHyj0d02Ptro95fErg5=
+M65rl9lKwzsihg0VCs-3D )
+ Terms of Service=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQi7=
+KPhqS5paKQzvdF-2BQ-2FhcmkRcAjd0RXAqh9o0YpBMXMg7QXmb7e68mhbMXM2trh68P9PkLubn=
+XqU0q9SH1z-2Fca10UIbCgjMdudf6LPtwXa2JyO3wjr89LEun9M5dzlFWJj8t5HFMNjzhLiNlRt=
+GUzevK1742yn9pPiQK2-2F8FhTFA2Uk9IKE54Pylnjd-2BPZitHbhhRtPV83xNg16JX7ChypRFk=
+bw-2F7eDvqjpVTNOaILgezbhmWARAi5veDe-2FayFFQ-3D-3Djmw3_oP8Jf99AY6CMFljWI6KUT=
+l8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcq=
+QA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCp=
+rv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELU=
+QDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boa=
+p0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5m=
+NHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZ=
+YJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9=
+w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-=
+2BH-2BqZcL5VW2WHJBOUNoS98-2FFGyRG9aohN9zlWjJjYoHKTiJL-2FRfG6HsLMzrzbGo-2FNS=
+xxd72TQFJqWnkzLZRtH7gUiPf857cLvxelKo13UImBLcpD040-2Fui2m5WRXlKu6FUJESvlKvNc=
+stj7g-2BBrc-2BCiwo4o9-2Ffbxuf2A4-3D )
+
+
+No longer want to receive these emails?
+Unsubscribe ( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoWhBsyCsc8XiBUTXQ-2ByWhMw6nAfmoL-2BuY6Vuw8HIjj207sEFrdxRmyJH-2FLrKa=
+MddBLT0YtZ0uwWqIOjlveNBlrFjrzfmeKAGNyCx1ylhEWUJaCsCEyoX9u4YGAVu99U5B6z36sT-=
+2BJjK5Dm2VkisLIXUTpr7nYYuNlKy8mg8J3lxQeo9A-2FIl8ZoZQ2O4ju8ctfOA5hw9xWMr70E1=
+Wr2B7zD7igECg28q4tzpkXKDMkhaXQtSH5Sd-2FEVj8QmeXGcbSuA0n-2FjigfJeroqb2bpQUvW=
+NjmA5pwEFbZvgnyOOat6imj1O-2BxzghHiUUVzgeih3IAsMV-2BcrxsRdIGgwiLkxbta51SHRaO=
+A4MYQvHx46TrANaHoPxWtmOmUVLBeDze-2BGft74F6p2SuUQDSywCMOjM25KOA3TBzd8FISzfKB=
+KRWsCy1yp3HkQAsYZ1gvaRlNSV3wld3bK42F42nPSMZQL-2Ff9q5kNaHWoF-2FejYYzNZ3vyCqj=
+oeYH91yCXDw3QvxsAwuIXgu43aRyW1QqTKIt8g6aKnUeK8ElfXqaaanoni9SXTCQ8X0RTclpmJw=
+MGWSCnMPkp-2FtJvNvhqPJjFZhCX-2Ft85xfWgJJ3NW0Cbl7TivsGclis9n4RP4BHFr4Arnt6IT=
+Ay-2B4MzoJkq4j5ArR2J2C-2BgtvGgjjtBHst5qRg4XFI8mKISlCf_oP8Jf99AY6CMFljWI6KUT=
+l8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcq=
+QA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCp=
+rv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELU=
+QDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boa=
+p0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5m=
+NHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZ=
+YJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9=
+w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-=
+2BH-2BqZcL5VW2WHJBANbzoLBp4sCixFfjM3iWjBArAGl6PfUd8NT9H6MuQ049VG56HvbuE8npY=
+AkvATWDwLq56W0RefNp-2Fdl7EkmMic1Ui8YFvoSQ-2FX7uLCx76pYD8dxn9PJGAjR8TWlUTD-2=
+FZAyRyPYTBJHDogSvRcuTy-2BY-3D )
+
+
+--d3ca79ad738a90d229b9526064749e1721057da2f846ca43237bda70e749
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+ dir=3D"ltr">
+<head>
+<script type=3D"application/ld+json">
+[
+{
+"@context": "http://schema.org/",
+"@type": "Organization",
+"logo": "https://braze-images.com/appboy/communication/assets/image_assets/=
+images/62ffd784d9a5bd4c9ee9cd91/original.png?1660934020"
+},
+{
+"@context": "http://schema.org/",
+"@type": "EmailMessage",
+"subjectLine": "Serena Williams: I=E2=80=99m healthier on Ro"
+},
+{
+"@context": "http://schema.org/",
+"@type": "PromotionCard",
+"image": "https://braze-images.com/appboy/communication/assets/image_assets=
+/images/68aedc4158378b00651588c1/original.png?1756290112",
+"url": "https://ro.co/weight-loss/zepbound/?ro_ch=3Demail&ro_p=3Dbraze&ro_c=
+=3Dv&utm_source=3Dbraze&utm_medium=3Demail&utm_campaign=3Drb_mkt_acquisitio=
+n_ca_bodyCartAbandon_011626_a10&utm_content=3Dgmail_annotations_zepbound",
+
+    // Optionally, include the following PromotionCard properties:
+    "headline": "Zepbound=C2=AE in single-dose vials. See risk info at ro.c=
+o/safety
+   =20
+   =20
+"
+}]
+</script>
+<title>Serena Williams: I=E2=80=99m healthier on Ro</title>
+<!--[if !mso]><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=
+<!--<![endif]-->
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<style type=3D"text/css">
+#outlook a{padding: 0;}
+.ReadMsgBody{width: 100%;}
+.ExternalClass{width: 100%;}
+.ExternalClass *{line-height: 100%;}
+body{margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-a=
+djust: 100%;}
+table, td{border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt;}
+img{border: 0; height: auto; line-height: 100%; outline: none; text-decorat=
+ion: none; -ms-interpolation-mode: bicubic;}
+p{display: block; margin: 13px 0;}
+</style>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+.outlook-group-fix{width:100% !important;}
+</style>
+<![endif]-->
+<style type=3D"text/css">=20
+@media only screen and (max-width: 480px) {
+.dys-desktop { display: none !important; }
+div.dys-mobile { display: block !important; }
+tr.dys-mobile { display: table-row !important; }=20
+}
+</style>
+ <style type=3D"text/css">
+@media only screen and (min-width:480px) {
+.dys-column-per-100 {
+width: 100.000000% !important;
+max-width: 100.000000%;
+}
+}
+</style>
+<style type=3D"text/css">
+@media only screen and (max-width:480px) {
+ table.full-width-mobile { width: 100% !important; }
+td.full-width-mobile { width: auto !important; }
+}
+u + #body a {color: #1A1A1A;text-decoration: underline;font-size: inherit; =
+font-family: inherit; font-weight: inherit; line-height: inherit; }
+ a {color: #1A1A1A;text-decoration: underline;}
+ .white-link span {
+ color: #ffffff !important;
+ }
+ .pd-top-24 > table > tbody > tr > td {
+ padding-top:14px !important;
+ }
+ .btn-hov-dark:hover table td a {
+ background-color: #444444 !important;
+ }
+ .btn-hov-white:hover table td a {
+ background-color: #F2F2F2 !important;
+ }
+ @media only screen and (max-width:440px) {
+ .mb-pd-24 > table > tbody > tr > td {
+ padding-left: 23px !important;
+ padding-right: 23px !important;
+ }
+ .mb-pd-tb-22 > table > tbody > tr > td {
+ padding-top:28px !important;
+ padding-bottom:0px !important;
+ }
+ .mb-pd-tp > table > tbody > tr > td {
+ padding-top:28px !important;
+ }
+ .mb-pd-bm > table > tbody > tr > td {
+ padding-bottom:0px !important;
+ }
+ .mb-pd > table > tbody > tr > td {
+ padding-left: 12px !important;
+ padding-right: 12px !important;
+ }
+ .mb-headline > h2 {
+ font-size: 32px !important;
+ line-height: 38px !important;
+ }
+ .mb-pd-wrap > table > tbody > tr > td {
+ padding:0 12px !important;
+ }
+ .pd-bt-12 {
+ padding-bottom:12px !important;
+ }=20
+ .pd-bt-28 {
+ padding-bottom:28px !important;
+ }=20
+ .pd-tp-28 {
+ padding-top:28px !important;
+ }=20
+ .pd-0 {
+ padding: 0 !important;
+ }
+ .pd-lr-23 > table > tbody > tr > td {
+ padding-left:24px !important;
+ padding-right:24px !important;
+ }
+ .pd-lr-23a {
+ padding-left:24px !important;
+ padding-right:24px !important;
+ }
+ .pd-top-28 > table > tbody > tr > td {
+ padding-top:28px !important;
+ }
+ .pd-bot-24 > table > tbody > tr > td {
+ padding-bottom:0px !important;
+ }
+ .btn-fnt-14 > table > tbody > tr > td > p {
+ font-size:14px !important;
+ }
+ .btn-ipd-1224 > table > tbody > tr > td > p {
+ padding:12px 24px !important;
+ }
+ .img-wd-64 > table > tbody > tr > td {
+ width:64px !important;
+ }
+ .btn-wd > table {
+ width:100% !important;
+ }
+ .fnt-24 > h2 {
+ font-size:24px !important;
+ line-height: 30px !important;
+ }=20
+ .btn-hov-dark:hover table td a {
+ background-color: #444444 !important;
+ }
+ .btn-hov-white:hover table td a {
+ background-color: #F2F2F2 !important;
+ }
+=20
+ }
+=20
+=20
+ @media only screen and (min-width:440px) {
+ .pd-tp-24 {
+ padding-top:28px !important;
+ }=20
+ .pd-48 > table > tbody > tr > td {
+ padding: 0px 48px 8px !important;
+ }
+ .mb-vert-wrap > table > tbody > tr > td {
+ padding:8px 48px !important;
+ }
+ .fnt-20 {
+ font-size:20px !important;
+ line-height: 28px !important;
+ }=20
+ .fnt-14 {
+ font-size:14px !important;
+ line-height: 20px !important;
+ }
+ .img-200 {
+ width:200px !important;
+ line-height:200px !important;
+ }
+ .img-200 > table > tbody > tr > td {
+ width:200px !important;
+ }
+ .pd-left-16 {
+ padding-left:16px !important;
+ }
+ .btn-hov-dark:hover table td a {
+ background-color: #444444 !important;
+ }
+ .btn-hov-white:hover table td a {
+ background-color: #F2F2F2 !important;
+ }
+ }
+=20
+/* =E2=86=93=E2=86=93=E2=86=93 Add new utilities here =E2=86=93=E2=86=93=E2=
+=86=93 */
+ /* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D MASTER =
+WRAPPERS =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D */
+ .plr-23 > table > tbody > tr > td {
+ padding-left:24px !important;
+ padding-right:24px !important;
+ }
+ @media only screen and (max-width:440px) {
+ .mb-pd > table > tbody > tr > td {
+ padding-left:12px !important;
+ padding-right:12px !important;
+ }
+ .mb-pd-tp > table > tbody > tr > td { padding-top:0 !important; }
+ .mb-pd-bm > table > tbody > tr > td { padding-bottom:0 !important; }
+ .master-top > table > tbody > tr > td { padding-top:28px !important; }
+ .master-bottom > table > tbody > tr > td { padding-bottom:0px !important; =
+}
+ .block-top > table > tbody > tr > td { padding-top:0px !important; }
+ }
+ @media only screen and (min-width:440px) {
+ .master-top > table > tbody > tr > td { padding-top:28px !important; }
+ .master-bottom > table > tbody > tr > td { padding-bottom:28px !important;=
+ }
+ .block-top > table > tbody > tr > td { padding-top:28px !important; }
+ }
+ .no-margins p { margin:0 !important; }
+/* =E2=86=91=E2=86=91=E2=86=91 End new utilities =E2=86=91=E2=86=91=E2=86=
+=91 */=20
+=20
+ @media only screen and (max-width:440px) {
+ .pd-wr-top-16 > table > tbody > tr > td {
+ padding-top: 16px !important;
+ }
+ }
+=20
+</style>
+
+
+</head>
+<body id=3D"body" style=3D"background-color: #F1F1F1;">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Dive deeper into her GLP-1 journey beyond the scale.</d=
+iv>
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF </div>
+<span id=3D"dys-ph" style=3D"width:0;opacity:0;max-height:0;mso-hide:all;ov=
+erflow:hidden;float:left;display:none !important;">Dive deeper into her GLP=
+-1 journey beyond the scale.</span><span style=3D"display: none; max-height=
+: 0px; overflow: hidden;">=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+ &nbsp;</span><div style=3D"background-color: #F1F1F1;">
+ <!-- RO MASTER HEADER START-->
+=20
+ <!--ASSIGN RULES MASTER SECTION START -->
+=20
+=20
+  <!-- copy the subject line between quote marks -->
+=20
+  <!-- choose marketing or transactional or roman-->
+=20
+  <!-- choose:=20
+1. member - with logged in home link and Dunning/Renewal banner versioning
+2.lead - original ro.co page for leads
+3.edCustom - for B&B custom header link=20
+4.memberPlain - member header without Dunning/Renewal benner -->
+=20
+=20
+<!-- choose products mentioned WITH A COMMA AND SPACE AFTER EACH PRODUCT:=20
+DailyRiseGummies
+GLP1=20
+GLP1short - short 1 line ISI for Body=20
+HairSolutionRxWomen
+Latisse
+OralMinoxidilWomen
+Ozempic=20
+Plenity=20
+Saxenda=20
+Sparks=20
+Cialis
+Upneeq
+Viagra
+Wegovy
+WegovyPill
+Zepbound
+ZepboundShort
+OralMinoxidilMen
+HairSolutionRxMen
+-->
+=20
+
+
+
+
+
+
+
+
+
+
+
+<!-- this can be removed if any custom message extras are being used -->
+=20
+=20
+ <!--RO MASTER HEADER START -->
+=20
+=20
+=20
+ <!-- RO MASTER HEADER -->
+=20
+
+
+
+  <!--RO MASTER HEADER START -->
+=20
+=20
+ <!--RO MASTERHEADER CUSTOM CODE START -->
+=20
+=20
+ <!--RO MASTER HEADER LINKS -->
+=20
+ <!--MEMBER LOGGED IN LINK FOR ALL -->
+=20
+=20
+=20
+ <!--GENERAL LEAD LINK FOR ALL -->
+=20
+=20
+ <!--CUSTOM ED LINK FOR B&B -->
+=20
+=20
+=20
+
+ <!--CUSTOM ED VN 30 LINK -->
+
+ =20
+ =20
+
+
+ =20
+
+
+      <!-- NESTED ATTRIBUTES FOR RENEWAL BANNER -->
+     =20
+
+     =20
+     =20
+     =20
+     =20
+     =20
+     =20
+     =20
+
+=20
+
+ <!-- NESTED ATTRIBUTES FOR DUNNING BANNER -->
+ =20
+
+   =20
+   =20
+  =20
+    =20
+=20
+
+=20
+=20
+=20
+ <!--RO MASTER HEADER CODE END -->=20
+=20
+ <!--MEMBER HEADER -->
+=20
+ <!--MEMBER HEADER END -->
+
+
+
+ <!--MEMBER HEADER NO RENEWAL/DUNNING BANNER-->
+=20
+ <!--MEMBER HEADER PLAIN END -->
+=20
+ <!--SDF LEAD HEADER START -->
+
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd" style=3D"background-color:#ffffff;margin:0=
+px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:#f=
+fffff;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padd=
+ing:12px 24px 12px 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bo=
+ttom:0px;padding-top:0px;word-break:break-word;"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-collaps=
+e:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:56px;"><a hre=
+f=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpo=
+QrktNvpV3L3vhd-2FVCCKdSqNGlteKZprAAEQ07sjEKZHU1wGEYl9rfjPrFfKKE0h3CMIXpDmUi=
+elK9k-2BYU7TS-2FnjX97h9drAp1lDfZRAQAN3Rj9lfXrgGGy2rKkeaXj6HBLjdgZ1j-2BbRXXu=
+kGGQNvCVMrJYgwxkgnqYW-2F-2BlfMmswT68HePXB8gSDT0fOdAB9aiu7VxesT-2BauSOMM-2F0=
+zGT1-2FIi-2BCB62Z7tXCdI-2BU8nGlMVcBCv-2Bqk8x7Fr-2BD6ZO-2Fedg-3D-3Dk-1n_oP8J=
+f99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9Vr=
+U1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2=
+FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCu=
+bNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2B=
+rsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelF=
+DSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGx=
+XXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-=
+2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6Lw=
+aKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBMjWrNIIeRCW1JRiGZAToXzgj4L1d3TDKV4PboXG-=
+2BUlU9cYMN74nQiuH1esSauTVLF0DpC1O8LypnR3iCRpfdXK0cl5sYXY1DHTQENabQMnQKjZyJF=
+hhLVW5SDB2MoehbhhlTAPi8lWJOVBQKmG-2BsXc-3D" rel=3D"noopener noreferrer" sty=
+le=3D"color:#444444;text-decoration:underline;" target=3D"_blank"><span sty=
+le=3D"color:#444444;text-decoration:underline;"><img alt=3D"Ro.Co Icon" hei=
+ght=3D"auto" src=3D"https://cdn-web-assets.dyspatch.io/org_01j9q2nnbx8tcvgh=
+bzn35hcy4t/Mh27zZcURNShFADpjzNT_Logo.png" style=3D"border:none;display:bloc=
+k;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;"=
+ width=3D"56"></span></a></td></tr></tbody></table></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+=20
+ <!--SDF LEAD HEADER END -->
+=20
+=20
+ <!--BODY LEAD HEADER START -->
+
+ <!--BODY LEAD HEADER END -->
+=20
+
+
+ <!--ED VN 30 HEADER START -->
+
+ <!--ED VN 30 HEADER END -->
+=20
+
+ <!--ED BF 20 HEADER START -->
+
+ <!--ED BF 20 HEADER END -->
+=20
+=20
+ <!--RO MASTER HEADER END -->
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+ <!-- DYSPATCH PLACE HOLDER HEADER -->
+=20
+ <!-- DYSPATCH PLACE HOLDER HEADER -->
+=20
+=20
+=20
+   <!--RESUMELINK CA LINK // OV Online Visit Link -->
+
+
+
+
+
+
+
+
+
+=20
+=20
+ <!-- START MODULE 1 - Top Banner Module -->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd" style=3D"background-color:#F1FDA6;margin:0=
+px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:#F=
+1FDA6;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padd=
+ing:2px 23px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:554px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"center" style=3D"font-size:0px;padding:10px 25px;word-bre=
+ak:break-word;"><div style=3D"color:#1A1A1A;font-family:'Helvetica Neue',he=
+lvetica,arial,sans-serif;font-size:13px;line-height:20px;text-align:center;=
+"><p style=3D"margin-top:0;margin-bottom:0"><a href=3D"https://ablink.email=
+.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2Fuz=
+sL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6=
+ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv835M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4O=
+v-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcaxAmIiwtzLc2qwW8oXpmJEx0XHc5euybkCTg=
+NGCC8l94o2VD0yRUtbzRuLOYKocWPCJjtJEUtL5A-3DJjSy_oP8Jf99AY6CMFljWI6KUTl8t3WF=
+50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXf=
+eDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3=
+sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCV=
+u1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61h=
+FnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI=
+-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd=
+02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBi=
+xRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2B=
+qZcL5VW2WHJBP6yY-2Blr9oVgfv6Jxqr4Y3v0WfLI9b9qd51zKtZLqBZaN6aRYYy8fF-2Fy-2Ft=
+Lh4sma5Be2lSPXOLSLbWsmF9is-2BPcYbdeqHCOcoixTU1aCVCNU-2FPjx9jagRMEhBhaU6F1B5=
+cw1njCl8dml1Cvp-2FLTeYYw-3D" style=3D"text-decoration:none;color:#1A1A1A;">=
+<span style=3D"text-decoration:none;color:#1A1A1A;"><span style=3D"color:#1=
+a1a1a"><strong>Your first month on Ro for just $45*=E2=80=94our best price<=
+/strong></span></span></a></p></div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!-- END MODULE 1 - Top Banner Module -->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"center" styl=
+e=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"w=
+idth:600px;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUm=
+BAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH=
+2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4=
+ucPvbwJQv835M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLU=
+qwPRfkDcaxAmIiwtzLc2qwW8oXpmJEx0XHc5euybkDjeJ1kriPO3qNoZM0mYVlwedKVxIe1LtAv=
+Qc6kLCYJg-3D_PtQ_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDF=
+ICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwT=
+xDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YW=
+fci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPw=
+UohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4=
+J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS2=
+9oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRc=
+Y9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLk=
+IwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBPSuNhhjK4OsBrtmAEc1=
+Q4qV2wEHNQbmQxExli51Wmummuso8vcb-2BBeeQYhyVyh7Vf58-2FxBMF7bh2phkD00cevFhvM6=
+mvhwJ-2BUyKpg3-2BLtZXJDEseDlFJwmd2AZsycl9YTzsicr8TjhO3EiovKd7ttc-3D" rel=3D=
+"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;" ta=
+rget=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"><i=
+mg alt=3D"Serena chose Ro | Finish visit" height=3D"auto" src=3D"https://br=
+aze-images.com/appboy/communication/assets/image_assets/images/698515f74c30=
+1d00630cbe62/original.png?1770329590" style=3D"border:none;display:block;fo=
+nt-size:13px;height:auto;outline:none;text-decoration:none;width:100%;" wid=
+th=3D"600"></span></a></td></tr></tbody></table></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+=20
+ <tr class=3D"dys-desktop"><td align=3D"center" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div class=3D"dys-desktop"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px=
+;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0=
+auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv8=
+35M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcax=
+AmIiwtzLc2qwW8oXpmJEx0XHc5euybkfYzHY0djzFaSxyNhNa2RuAvlIJyGwOBeg-2FTQaZIhyU=
+8-3DEYJP_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3d=
+PyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5=
+dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q=
+-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66=
+yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561=
+J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lE=
+Xow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gc=
+dziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B61=
+0Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBCHtksF9ugAlJpn264acBY3-2Ffx=
+3DJVXMm8K-2BD-2FP0r21OGpG-2FXfhDiNufy5HpQNX99qp1b0SKglB2OLYdkY2QsfRaMf1RWZY=
+RzDQ-2B4EoAZtDfkjo6CEJDMeruzbGLhR7nxqkFvbWQt7oUKSPM6bkZiUc-3D" rel=3D"noope=
+ner noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;" target=
+=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"><img a=
+lt=3D"Serena chose Ro | Finish visit" height=3D"auto" src=3D"https://braze-=
+images.com/appboy/communication/assets/image_assets/images/698515f7d7520d00=
+64321426/original.png?1770329590" style=3D"border:none;display:block;font-s=
+ize:13px;height:auto;outline:none;text-decoration:none;width:100%;" width=
+=3D"600"></span></a></td></tr></tbody></table></div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"center" styl=
+e=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"w=
+idth:600px;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUm=
+BAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH=
+2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4=
+ucPvbwJQv835M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLU=
+qwPRfkDcaxAmIiwtzLc2qwW8oXpmJEx0XHc5euybkheILB0itlB2SJiB5TgAyiNRJY3F8xY4A9H=
+ZTUzcAphY-3DQwfS_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDF=
+ICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwT=
+xDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YW=
+fci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPw=
+UohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4=
+J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS2=
+9oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRc=
+Y9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLk=
+IwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBFh9TNFBL9sqST-2Bnv2=
+MLR-2BrmioV5UtBzaO1W6H1G8AhK6qvaYLTwKws8BFbUko8EByrCxiLJ2sHVW-2BSChiobHcY9z=
+YCQTSoMG1MfuD2HD94UyRiFeCCF-2BKYeooVa1mm-2BNjyURPOMk3gTwFjDV-2Bp6184-3D" re=
+l=3D"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;=
+" target=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;=
+"><img alt=3D"Healthier on Ro | Finish visit" height=3D"auto" src=3D"https:=
+//braze-images.com/appboy/communication/assets/image_assets/images/698515f7=
+966e770063709198/original.png?1770329590" style=3D"border:none;display:bloc=
+k;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;"=
+ width=3D"600"></span></a></td></tr></tbody></table></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+=20
+ <tr class=3D"dys-desktop"><td align=3D"center" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div class=3D"dys-desktop"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px=
+;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0=
+auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv8=
+35M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcax=
+AmIiwtzLc2qwW8oXpmJEx0XHc5euybky81PlzM1Nkv2E1vIfJG193tjJgEOkESOrVWgsynEJ1Q-=
+3DEKj4_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPy=
+ysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dp=
+b4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2=
+B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yF=
+D571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J6=
+4rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXo=
+w9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdz=
+iCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610E=
+s-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBOZb3D-2Bd8stuvVZjZUCj6AJ7NZ1p=
+9ghPNIT8YzftJ5XWDxyPak1iulOdkdwbQBrWVOWx5g1-2Blavg09x-2FbMqxvPM3lF-2FwitWZG=
+ReYyQ6RV3rJBaVEp4XAlI-2FgK2vQiQp4mFFtFdOCQYG-2Fw9ENWYz1vF0-3D" rel=3D"noope=
+ner noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;" target=
+=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"><img a=
+lt=3D"Healthier on Ro | Finish visit" height=3D"auto" src=3D"https://braze-=
+images.com/appboy/communication/assets/image_assets/images/698515f7bb349900=
+63c0cf65/original.png?1770329590" style=3D"border:none;display:block;font-s=
+ize:13px;height:auto;outline:none;text-decoration:none;width:100%;" width=
+=3D"600"></span></a></td></tr></tbody></table></div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"center" styl=
+e=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"w=
+idth:600px;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUm=
+BAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH=
+2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4=
+ucPvbwJQv835M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLU=
+qwPRfkDcaxAmIiwtzLc2qwW8oXpmJEx0XHc5euybkyAGv8bFiua0ZH-2BiSQjxiCqDEZ9Ht9s88=
+RyfTuJfoh-2FA-3Dxfeo_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbN=
+BSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzA=
+qJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2=
+B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgB=
+DyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2Fd=
+Dcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtK=
+KwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8G=
+NmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZ=
+faLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBGwohY9yoz-2Fk84=
+pl1NXVjc9rMSz5kyzhGQcaytKqgt6H8fqE-2BREKP9eVBSy6v-2FiRSl-2F6Vh0Y5jDRvAp-2B4=
+sU-2BEWJv8ZFWdCheOCaKRvmNAcqwEWppgsQT5IPuvH3VR6OsNOK3BBSXjO5zTXv1X4Raw2c-3D=
+" rel=3D"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underl=
+ine;" target=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underl=
+ine;"><img alt=3D"Chuck's feeling good with less joint pain on Ro | Finish =
+visit" height=3D"auto" src=3D"https://braze-images.com/appboy/communication=
+/assets/image_assets/images/698515f8e165db00633f3b36/original.png?177032959=
+1" style=3D"border:none;display:block;font-size:13px;height:auto;outline:no=
+ne;text-decoration:none;width:100%;" width=3D"600"></span></a></td></tr></t=
+body></table></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+=20
+ <tr class=3D"dys-desktop"><td align=3D"center" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div class=3D"dys-desktop"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px=
+;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0=
+auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv8=
+35M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcax=
+AmIiwtzLc2qwW8oXpmJEx0XHc5euybkOgNtQjqEWphaHwHH8ZzerY9aQVbMpSGMPjzv5PG2tQo-=
+3DsYZD_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPy=
+ysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dp=
+b4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2=
+B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yF=
+D571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J6=
+4rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXo=
+w9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdz=
+iCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610E=
+s-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBE1wzlGMlin80Hga07MWRPYGlPsMCp=
+-2ByAVihb-2Fk6rpzMTvHlH9SG1DdWq-2Ff85Oe4N4IKuIxH-2FrSYMnz9p1mWkJWveqFIBPurM=
+iGtc9liRFQHHCGmFj9NU4LgnRVvKwWr9VM-2BA10FHviOXU95RgROxMQ-3D" rel=3D"noopene=
+r noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;" target=3D"=
+_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"><img alt=
+=3D"Chuck's feeling good with less joint pain on Ro | Finish visit" height=
+=3D"auto" src=3D"https://braze-images.com/appboy/communication/assets/image=
+_assets/images/698515f8bf359b0063a835f3/original.png?1770329591" style=3D"b=
+order:none;display:block;font-size:13px;height:auto;outline:none;text-decor=
+ation:none;width:100%;" width=3D"600"></span></a></td></tr></tbody></table>=
+</div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"center" styl=
+e=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"w=
+idth:600px;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUm=
+BAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH=
+2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4=
+ucPvbwJQv835M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLU=
+qwPRfkDcaxAmIiwtzLc2qwW8oXpmJEx0XHc5euybkuAQquCgONDSpcadN1u9cr3aLRwW2I1oH-2=
+Bk91WMbDbvI-3DoezF_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBS=
+DFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJ=
+wTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8=
+YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDy=
+PwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDc=
+b4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKw=
+S29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNm=
+RcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfa=
+LkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBNidol8qgFhYD8upJj=
+eJ6zsc799Z52AiPyrwpQ-2BG0puH5BRSckRmE9-2FNz8QfE29UGqkC6tZeCAgJXmWQ0D7yTuwGw=
+e4tJFEIs3EJviNu1q-2B-2BC4UBY6k6IunJJr1LJSWNxJrfoizBuidcvakVm5pbLIc-3D" rel=
+=3D"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;"=
+ target=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"=
+><img alt=3D"Hannah's got more energy than ever on Ro | Finish visit" heigh=
+t=3D"auto" src=3D"https://braze-images.com/appboy/communication/assets/imag=
+e_assets/images/698515f899fb520063f475b5/original.png?1770329591" style=3D"=
+border:none;display:block;font-size:13px;height:auto;outline:none;text-deco=
+ration:none;width:100%;" width=3D"600"></span></a></td></tr></tbody></table=
+></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+=20
+ <tr class=3D"dys-desktop"><td align=3D"center" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div class=3D"dys-desktop"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px=
+;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0=
+auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv8=
+35M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcax=
+AmIiwtzLc2qwW8oXpmJEx0XHc5euybkoNUszZoBw6OBF7-2B0FcIbOcnHyg6C-2BJP-2Bqq-2Fr=
+n7VHwjk-3DeB2T_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFIC=
+ISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxD=
+L8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfc=
+i8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUo=
+hZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9=
+aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29o=
+Iks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9=
+q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIw=
+I-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBC4QNZh9ZHBDW6XJDW-2Fs=
+bD1ezkx-2FTxG1t9FeRAxBm-2Bo6sCbFWEDfjw-2BsMC1nP0Q2I1axko0A-2F9z2vUAm4OfWkw1=
+S5FBorH5jCh14r91-2FdQTdrGPyd3YYW68sijRRXelahUV9qIlOFGfWNnYGhFLHB6o-3D" rel=
+=3D"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;"=
+ target=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"=
+><img alt=3D"Hannah's got more energy than ever on Ro | Finish visit" heigh=
+t=3D"auto" src=3D"https://braze-images.com/appboy/communication/assets/imag=
+e_assets/images/698515f8513f9500630690db/original.png?1770329591" style=3D"=
+border:none;display:block;font-size:13px;height:auto;outline:none;text-deco=
+ration:none;width:100%;" width=3D"600"></span></a></td></tr></tbody></table=
+></div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"center" styl=
+e=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"w=
+idth:600px;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUm=
+BAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVSyfdR2dGB=
+932CAmYfO-2FFkRPx2up6tp6ysMixKtW8ga5-2BCZDrf5GRBDSd3Rlinapr48htTG3Lk9yJkpPt=
+57hTyeY3nWhTtJllcIZM5gZ4fvvH48tasKBHMTF53CoaEqsne6r-2FkL-2FrxzuQi5c-2BRPjZm=
+X0OtdyS7ukDLy1dNbPtSW-2F0HpnmjvlHcFCTnhWHNXqbF73SE-2BWt231mc0bXTWQ-2BaXHQFg=
+5CeQxsA-2BsKAvZvMQGaKcjFj7DIAl5NgASID-2B49jQBdReVtyrB9j1QL-2FcTYtgSvO8-2Fl6=
+CXQXzCM8XRMH-2BXRHjECbfViHgaT2CAgsQZkPGso_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s=
+1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPk=
+lTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduv=
+GKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmN=
+QXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L=
+0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVsh=
+B5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2F=
+T6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6Ch=
+nhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5V=
+W2WHJBEQPgqFtL-2B4vGp0bVj-2Fe8wUjITpf6wD3jFDuwlt45NQ-2Fii33Z10tcGFgI-2FBAEc=
+p7PJV7p-2BnSOAOaYRB1o2D-2BP4FDuANMZfmK2eOAR25T5DXPiJr9EqXIvFoiCY5afofI1qATt=
+WzvW2b-2FYOplHVAfSG8-3D" rel=3D"noopener noreferrer" style=3D"color:#1A1A1A=
+;text-decoration:underline;" target=3D"_blank"><span style=3D"color:#1A1A1A=
+;text-decoration:underline;"><img alt=3D"The GLP-1 pill, now on Ro | Finish=
+ visit" height=3D"auto" src=3D"https://braze-images.com/appboy/communicatio=
+n/assets/image_assets/images/698515f7ec5dc600637cfa2e/original.png?17703295=
+90" style=3D"border:none;display:block;font-size:13px;height:auto;outline:n=
+one;text-decoration:none;width:100%;" width=3D"600"></span></a></td></tr></=
+tbody></table></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+=20
+ <tr class=3D"dys-desktop"><td align=3D"center" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div class=3D"dys-desktop"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px=
+;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0=
+auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv8=
+35M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcax=
+AmIiwtzLc2qwW8oXpmJEx0XHc5euybkc5VXuC7GnKoF2BytQnvTAdWyXsu7sl4RE1v-2B-2F3vD=
+tz8-3Du9Ti_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj=
+3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8Kx=
+B5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF=
+2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc=
+66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv5=
+61J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5=
+lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7=
+gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B=
+610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBEwm-2FNQ5pFDe8rYHBiTJV32m=
+2l9b23SZz45X8-2FquQgYDB0y4e-2BtTsc1tzfJ5-2Bv-2BMzTzsPiHyisBkrv1t8Twa9ohRk5q=
+13WGFnLjIUxo2HK5FWTUXYQDfircbh-2FMvRkfR9ihYDoidfXQiGoYD2-2BAnjMU-3D" rel=3D=
+"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;" ta=
+rget=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"><i=
+mg alt=3D"The GLP-1 pill, now on Ro | Finish visit" height=3D"auto" src=3D"=
+https://braze-images.com/appboy/communication/assets/image_assets/images/69=
+8515f80e75600063307f48/original.png?1770329591" style=3D"border:none;displa=
+y:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:=
+100%;" width=3D"600"></span></a></td></tr></tbody></table></div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"center" styl=
+e=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><table bo=
+rder=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"w=
+idth:600px;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUm=
+BAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH=
+2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4=
+ucPvbwJQv835M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLU=
+qwPRfkDcaxAmIiwtzLc2qwW8oXpmJEx0XHc5euybk-2BuuhR1QMTMOK6kLkT-2BtIfwULphXPHH=
+6GKGJd-2BxYavWM-3DoM_d_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKK=
+bNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2F=
+zAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy=
+-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQ=
+gBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2=
+FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7B=
+tKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q=
+8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obN=
+VZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBPvdSDniud0ToI=
+Z3CgXDeXMs6OmrCgDC0IPi6ZWBwo9PLl4FRkWTg9fQfekRtIY56uLLKC7J20MRtQ8fA742tBeSA=
+YHXZiKQIcLjjA3qFj-2Fwwu1Aut-2Bqnp4-2Bn6RgGJrsIfn78T1Y4FILIPihbL8JCoM-3D" re=
+l=3D"noopener noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;=
+" target=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;=
+"><img alt=3D"Go on Ro today | Finish visit" height=3D"auto" src=3D"https:/=
+/braze-images.com/appboy/communication/assets/image_assets/images/698515f78=
+bb62b0064f38ced/original.png?1770329590" style=3D"border:none;display:block=
+;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;" =
+width=3D"600"></span></a></td></tr></tbody></table></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+=20
+ <tr class=3D"dys-desktop"><td align=3D"center" style=3D"font-size:0px;padd=
+ing:0;word-break:break-word;"><div class=3D"dys-desktop"><table border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border=
+-collapse:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:600px=
+;"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0=
+auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPvbwJQv8=
+35M8YAz4LwQ3533-2FXsLWcMoCSyvV8O4Ov-2Bsnj6omD2dsDoOqCEpAo-2F8HzLUqwPRfkDcax=
+AmIiwtzLc2qwW8oXpmJEx0XHc5euybkMux3-2F3z48yTAUEjTJlFP0uI42HmmyJdlp0Zc25jctG=
+Q-3DxxRb_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3d=
+PyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5=
+dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q=
+-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66=
+yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561=
+J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lE=
+Xow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gc=
+dziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B61=
+0Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBE7u9nqJreeqmK3bFxh4xIpE-2F5=
+gKEJBplgjHqlFf4ouKPveQY-2BBCGKX5XIYLF3rW5aR8kqFlO1I0QNxA4z0OeShWalB61biwR9O=
+VuKz4qsBagd4q0ehgNQgUF4LmZUkoewZ0QJsKwlPZUoz4benygvo-3D" rel=3D"noopener no=
+referrer" style=3D"color:#1A1A1A;text-decoration:underline;" target=3D"_bla=
+nk"><span style=3D"color:#1A1A1A;text-decoration:underline;"><img alt=3D"Go=
+ on Ro today | Finish visit" height=3D"auto" src=3D"https://braze-images.co=
+m/appboy/communication/assets/image_assets/images/698515f8bc5c82006397a8bb/=
+original.png?1770329591" style=3D"border:none;display:block;font-size:13px;=
+height:auto;outline:none;text-decoration:none;width:100%;" width=3D"600"></=
+span></a></td></tr></tbody></table></div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D DESKTOP =3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <div class=3D"dys-desktop">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#ffffff;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:28px 24px 0px=
+ 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"left" style=3D"font-size:0px;padding:0px 24px 0px 24px;wo=
+rd-break:break-word;"><div style=3D"color:#1A1A1A;font-family:'Helvetica Ne=
+ue',helvetica,arial,sans-serif;font-size:12px;line-height:16px;text-align:l=
+eft;">
+<p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1a1a1a">*Av=
+erage weight loss with GLP-1s in 1 year is 14-20% (vs ~2-3% with diet and e=
+xercise alone). Based on studies in non-diabetics with obesity, or overweig=
+ht plus a weight-related condition, with diet and exercise. </span></p>
+<p style=3D"margin-top:0;margin-bottom:0">=E2=80=8B</p>
+<p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1a1a1a">**A=
+fter losing weight with another GLP-1 provider, Serena chose Ro to continue=
+ her weight loss journey.<br><br>***GLP-1 medications through Ro are prescr=
+ibed for obesity or overweight. In clinical trials, patients who lost weigh=
+t reported improvement in knee joint pain.</span></p>
+</div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+=20
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D MOBILE =3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#ffffff;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:28px 12px 0px=
+ 12px;padding-bottom:0px;padding-left:2px;padding-right:0px;padding-top:28p=
+x;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:598px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"left" style=3D"font-size:0px;padding:0px 12px 0px 12px;wo=
+rd-break:break-word;"><div style=3D"color:#1A1A1A;font-family:'Helvetica Ne=
+ue',helvetica,arial,sans-serif;font-size:12px;line-height:16px;text-align:l=
+eft;">
+<p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1A1A1A">*Av=
+erage weight loss with GLP-1s in 1 year is 14-20% (vs ~2-3% with diet and e=
+xercise alone). Based on studies in non-diabetics with obesity, or overweig=
+ht plus a weight-related condition, with diet and exercise. </span></p>
+<p style=3D"margin-top:0;margin-bottom:0">=E2=80=8B</p>
+<p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1A1A1A">**A=
+fter losing weight with another GLP-1 provider, Serena chose Ro to continue=
+ her weight loss journey. </span></p>
+<p style=3D"margin-top:0;margin-bottom:0">=E2=80=8B</p>
+<p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1A1A1A">***=
+GLP-1 medications through Ro are prescribed for obesity or overweight. In c=
+linical trials, patients who lost weight reported improvement in knee joint=
+ pain.</span></p>
+</div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+<!--[endif]-->
+</div>
+=20
+=20
+ <!--RO MASTER FOOTER START -->
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+
+  =20
+
+<!--RO MASTER FOOTER START -->
+
+
+
+<!-- EDUCATONAL BLOCK START -->
+
+
+      <!-- EDUCATIONAL BLOCK START -->
+
+      <!-- loggedIn - "Have more questions" -->
+     =20
+
+      <!-- helpCenter - "Manage your ongoing care" -->
+     =20
+
+      <!-- EDUCATIONAL BLOCK END -->
+
+<!-- EDUCATONAL BLOCK END -->
+
+
+
+      <!--TRANSACTIONAL FOOTER START -->
+     =20
+
+      <!--TRANSACTIONAL FOOTER END -->
+
+      <!--MARKETING FOOTER START -->
+     =20
+
+      <!--ISI Section Start -->
+     =20
+
+
+      <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-outlook mb-pd-tb-0-outlook" style=3D"width:600px;" width=3D"60=
+0"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;">
+<![endif]-->
+      <div class=3D"mb-pd mb-pd-tb-0" data-visual-id=3D"Row 1" style=3D"bac=
+kground-color:#ffffff;margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" data-visual-id=3D"Row 1" role=3D"presentation" style=3D"background-c=
+olor:#ffffff;width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px; padding:24px 24px 0=
+px 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]-->
+                <div class=3D"dys-column-per-100 outlook-group-fix mb-pd" s=
+tyle=3D"direction:ltr;display:inline-block;font-size:16px;text-align:left;v=
+ertical-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+                    <tr>
+                      <td align=3D"left" class=3D"dynamic-link" style=3D"fo=
+nt-size:0px;padding: 0px 24px; word-break:break-word;">
+                        <div style=3D"color:#1a1a1a;font-family:Helvetica, =
+Arial, sans-serif;font-size:12px;line-height:16px;text-align:left;">
+                          <!-- ISI Module -->
+
+
+	=09
+	=09
+	  		=20
+<p><strong>Important Safety Information</strong><br>See Important Safety In=
+formation about GLP-1 medications, including Boxed Warning, at <a href=3D"h=
+ttps://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpobpFu8H=
+56VrZXkKmz7hzJR0JLHGpb1KyyRFqpLEshBIx8HXtBS1e9ti9yrHgId-2FZZD-2FPe05DLV1I32=
+jSC0AUODOaogTN-2FFfEj1XNu3eQzKcI6HvqI567X-2BlWsRRXZLyVH8UviLbTjAhWO5BL-2BWy=
+rTeae0hipjAiyP2oVlolH7Pq4-2F-2FHcXFek0kiJhuICjhFC8-2Fo-2FniLWFyz-2B6zDwnwvp=
+hRBz-2BdKGkkO9SRyR-2FD5-2BeaYju85Yudi-2FDkE-2FSDAOQr-2BUPpkfNdTJQmI2R-2FwXr=
+mYiYxc-3D7rB-_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICI=
+Soj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL=
+8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci=
+8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUoh=
+Zcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9a=
+Sv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oI=
+ks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q=
+6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI=
+-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBIuyTGToP0wOVX-2FQ-2FQR=
+xKGOgImgwz1ueUFfP3uWsAqZngJE9y7DWuhUKpn7t-2B8Jz52iwPPhEH05WIIZ2zEs6mXeaJNvd=
+aD2kuiboYu4JEPkX5CvHI8R5cdL0CIuiHG4rbQvzCzTJ5Haiq3deQcxqnr8-3D"  target=3D"=
+_blank" style=3D"text-decoration:  underline; color:#1a1a1a">ro.co/safety-i=
+nfo/glp1 </a></p>=20
+
+
+	=09
+
+
+
+
+
+												=09
+
+                       =20
+                     =20
+                   =20
+                  </table>
+                </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+     =20
+
+      <!--ISI Section End -->
+
+      <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-wr-top-16-outlook mb-pd-outlook" style=3D"width:600px;" width=3D"=
+600"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;">
+<![endif]-->
+      <div class=3D"pd-wr-top-24 mb-pd" style=3D"background-color:#ffffff;m=
+argin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;"=
+>
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;padding-=
+top:28px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;">
+<![endif]-->
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-lr-24-outlook mb-pd-outlook" style=3D"width:600px;" width=3D"600"=
+><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactl=
+y;">
+<![endif]-->
+                <div class=3D"pd-lr-24 mb-pd" style=3D"background-color:#ff=
+ffff;margin:0px auto;max-width:600px;">
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;wid=
+th:100%;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"direction:ltr;font-size:0px;padding:0p=
+x 48px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:504px;">
+<![endif]-->
+                          <div class=3D"dys-column-per-100 outlook-group-fi=
+x" style=3D"direction:ltr;display:inline-block;font-size:16px;text-align:le=
+ft;vertical-align:top;width:100%;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"background-color:#f2f2f2;border-col=
+lapse:separate;border-radius:16px;vertical-align:top;" width=3D"100%">
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-bottom:24px;padding-top:32px;word-break:break-wo=
+rd;">
+                                  <div style=3D"color:#000000;font-family:H=
+elvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:center;=
+">
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQRLs-2FB-2FIS4jPxYGSIgDwj8QJius1c=
+XSeMJR2ShprT3hDDXDGyzctx1L8-2Fzr7iGP82uXGhlJGhYG2-2FuapkcE82jeM6MnEnyFHcfhI=
+NtSHA0s-2FxSkP97R28lVwsT9-2FTpXpLjAUNxdsGf6ypyNEVWvUOd7SnVx1bXXSFgufU1ObFdq=
+cexIdSB9JZMj4KMId5zWKNQ5gBPvHM1qfgKPXQcmYo5X8ysowvSZ115SnF3q8b9EmzqFkN57bOQ=
+aYbRSfTr6L2K0vvG-2BqCUVo7UcpUZbrLQ-3D0_2Z_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s=
+1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPk=
+lTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduv=
+GKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmN=
+QXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L=
+0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVsh=
+B5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2F=
+T6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6Ch=
+nhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5V=
+W2WHJBP0QEmcmcVkd8g9ewb9G68jYGU4DqpFGYI3YdDvtu5ds13EVGdZle6C38hV48CiaEy5Asc=
+UjNC6BNpvndE0eW0Up25kw42ONcL7Lh8tNGaCr7d-2Bb2eK7Uir6KAUQZPG2JIJQQbrMobOgUFe=
+UR-2BitTjo-3D" style=3D"color:#828282; text-decoration:none;"><span style=
+=3D"color:#828282;text-decoration:none;"><u>Sexual health</u></span></a>&nb=
+sp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoenapaOZaMtY0C1tAmejYNU1R4ac3JveEI=
+4PwSa8-2FmBalDWv7ULCytd75rtXIc44w7b-2FaqDvhF-2BWyWJSEkZk-2FSaSBEfOK5t1TJNKY=
+CtAWT68WZI7rJoYiryV6tvaOibqaNdHeEYrF6y-2F-2FZbfLcEMwBV8iQdeEmo1HjlWVfFPvXau=
+iGXSAXqYe1ArabAtGFyxSVMwhlsBru8X4dMPAbc30X5Yeaw-2FaBYwwHZo9FCLDKLTWM8xmQwaq=
+Y-2BwXsoS7Vty1w-3D-3DpGq7_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg=
+-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVx=
+oVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgug=
+aQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyM=
+I-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9s=
+C7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuK=
+z6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5=
+obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBOaf-2BUfoX=
+-2BsPM4ov8ZXMCoT4CI3qvr-2BgwMkc5CmipXNHZQw43IboqljP0I-2Fn6fTIKqSWnDTPS1erLv=
+Wekb1fwNtjNFK3jXSXYAxeub-2Fkg7BSQRtHgDPGtQmlA9OtXLR285WPqDxu2-2BZmReRrMHBL7=
+uU-3D" style=3D"color:#828282; text-decoration:none;"><span style=3D"color:=
+#828282;text-decoration:none;"><u>Weight loss</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoSJmozfzLmHKVpgOjgBei-2FLQLvWvAgU3=
+yJNp5obIgKcdZUNPNOZ5cNA59uDpX62CotRDhNoMUbT-2BOEBM-2Bv7rpm-2FKDNNX7zfIpRYfL=
+FFdfoaWlZ92eBypU-2FQ-2BCScCPaWbmEDdE1OfRF-2B5-2BUWeW-2Bam4G6ye5PwsjS2eHAuNm=
+rnvOpsZgVgrZ5p4Zgx2yVLXr2WJprH57aTIeIAWLDexyehvGQHc91zCuQAM2zeVaNAHyjePP23f=
+-2Ft0EzOG-2FEFKGZBuNA-3D-3DRtod_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0c=
+ZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYc=
+QWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5Cyl=
+dOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNv=
+qxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV=
+9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnR=
+cL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDr=
+pzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBa=
+Y3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBA6z1=
+76zwnvy-2FpBQgFy2q-2B3MgYnf8ENBhFjMn2x8499CqjIXadr5dvKZbEfh3OVd0b3CpnWZgMod=
+QrGTWVxQtjmH221tYxM2OMNJ-2FaZTwmU6WfAFEoA4-2BW8UCItjMXuvRMuF9H6qNUgmYNCV2ZQ=
+B-2B7Q-3D" style=3D"color:#828282; text-decoration:none;"><span style=3D"co=
+lor:#828282;text-decoration:none;"><u>Fertility</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoabZkrGhMr5PKdQNBT1h8pYczBHK42OlTM=
+YR1eXcRGnHSquk-2B9PE9Y8X9R0nWLxB-2FeeRcNSNxZ2E6cGbY2JaR-2FQf84zBsduGq0kD0hP=
+8uOiVfksWS8UAJLj5-2FwHgfkSD8VsTeWBf0MnqhkU5CuVhHTzCaMjSK2e76pFU6gbei-2FfFdC=
+HjdkDcrJrYiHAXzplI2t6vT3WjeSp-2BIdxaWXwRaD-2Bt-2BHHQFXCrlfUkgcG0gSybZDtCYkx=
+QTROG5b2242YxAg-3D-3DAy8__oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg=
+-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVx=
+oVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgug=
+aQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyM=
+I-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9s=
+C7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuK=
+z6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5=
+obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBHl3ISERdP8=
+817BguzCaosT0tW4ooCTJ6qJmTYsQR7truObWBveZKsRYh-2Bnno-2Bwk-2BqvWRCgRgJotaxMO=
+J-2FatLtL-2F6CSHswMdYpFZXlH5yDGuKqnZQJK-2BVuvXX0BAT-2FtJpkz4us1M1-2BIbZsDun=
+G9Lnn8-3D" style=3D"color:#828282; text-decoration:none;"><span style=3D"co=
+lor:#828282;text-decoration:none;"><u>Hair loss</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoXtZX2ZUZ9v1rctEO4SwRT5zakzsTSlZBc=
+e8IiERpGi6DFlAq0al4dwbJ38GgKotuBA3juNYNnKaeFCiaLazG2-2BIRgep2dGcEAkqi2-2BWZ=
+d9a1XZ0JmRxWsiGSCocFdfoYzSifiSldov0iJtk-2BUvT5pk1nOJXXYZdrlgiKVOcCQQdSU19Ut=
+kpDzjlnpTnaCi558LBXAEjTo46fH2gvoggPG3WClnQDMb6rmzwANtkNTVExr1V8m2720s5-2Bf6=
+twl9XdQ-3D-3DrGbG_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSD=
+FICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJw=
+TxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8Y=
+Wfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyP=
+wUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb=
+4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS=
+29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmR=
+cY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaL=
+kIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBGmfXtwdCeU3AKRWPCg=
+-2Bd0-2BeKirC5nySbFmx4EVuTRq-2FVK3rDv9LXOmvP0sInFPRPQdKbPKfVQksn-2B39ITnkmf=
+eM8sruw8Ljh1-2FW2yerTsnm5zKBmGzQrmfuHJpqF1Ab01b1ecU11U0mDuzPIbFd1JQ-3D" sty=
+le=3D"color:#828282; text-decoration:none;"><span style=3D"color:#828282;te=
+xt-decoration:none;"><u>Skin care</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoVxdMU8Hm1ZigPUvEGk-2Fz093k7gzpA62=
+rTgws-2FI2A01DmL72Za5OhzEs5trFlkILXKf9i6opzsC0trGRWVQWm6XWM1qyIYXyFZJ4ZWdoF=
+wm-2FzT2NG4TFf74-2BhTWROQOmukdjl6wC-2F5rqTYcERbNtzdX6dWjzqM1KU5eLJ26uapTiwB=
+78wMuBIbf6BpB2X11borZffBhtjVbz-2FlpKrCls6DNWtyX6DDNojYIK-2Fd7pw0A6DQF-2BLSo=
+NWBs1obC3RU8nIg-3D-3DqdjO_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg=
+-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVx=
+oVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgug=
+aQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyM=
+I-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9s=
+C7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuK=
+z6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5=
+obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBAcPlkrEgel=
+6n0xuGIRV1A6eE9OBUrtdBNaq-2BARo57QuSAmliiXvJU1dN9HVZTekrzaaJ4fFx5v3iry8tQ0m=
+y9DlIRD0RV2KSI5b5zICC55WPtBpuZu5Dv2j39DDPZ77FF3jDyBf5UDlGUorXeNX5d8-3D" sty=
+le=3D"color:#828282; text-decoration:none;"><span style=3D"color:#828282;te=
+xt-decoration:none;"><u>Daily health</u></span></a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" class=3D"pd-lr-24a mb-=
+pd" style=3D"font-size:0px;padding:0 48px;word-break:break-word;">
+                                  <p style=3D"border-top-color:#DDDDDD;bord=
+er-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width=
+:100%;"></p>
+<!--[if mso | IE]><table align=3D'center' border=3D'0' cellpadding=3D'0' ce=
+llspacing=3D'0' role=3D'presentation' style=3D'border-top-color:#DDDDDD;bor=
+der-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;widt=
+h:408px;' width=3D'408px'><tr><td style=3D'height:0;line-height:0;'>&nbsp</=
+td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-bottom:0;padding-top:24px;word-break:break-word;=
+">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;bord=
+er-spacing:0px;">
+                                    <tbody>
+                                      <tr>
+                                        <td style=3D"width:40px;"><a href=
+=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoW=
+Kv7aycvuoFPkHBQwSaIy6soO04tVg4goWqSsJaBzpsMTszQzfEnbBNJlAusl6icPHzefySbrC-2=
+Bv7hOJuoA95fgWMlPV4vSb6Pfg-2FI9cH9j-2BDm0fVW9VJNu2UFnK51fSFggvmw1lInEXtKQxk=
+K5Dt-2F3y-2FD4HAuYpJXcrB0Yr-2FAceSXJpJburfLJbstfuUk2BHAiexZjpZsVRXcpqwnwO0j=
+1OU3xtn9zuoVhxhRJYMNMgBtz-2BRALUDRBYRiIEq0sxQ-3D-3DFF6O_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBad=
+cqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azD=
+Cprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9E=
+LUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7b=
+oap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf=
+5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7k=
+XZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfD=
+H9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5K=
+F-2BH-2BqZcL5VW2WHJBJLm6QmWbppt-2BncDuX8QRuehz7c-2FtYY2lG-2FVqAmmtAA4O-2B7M=
+IJZsLTk7YnYljp4MgMJ0YN8TRqSBg5RIRryDoCiXmV6mq6dAE2obuSZz9G6exw5QRSsCvgY-2F1=
+faaFIMbA8aEyPgQCrGohVi-2BUcvT-2FRo-3D" rel=3D"noopener noreferrer" target=
+=3D"_blank"><img height=3D"auto" src=3D"https://cdn-web-assets.dyspatch.io/=
+org_01j9q2nnbx8tcvghbzn35hcy4t/rdgmdU08R9rLPOSDPGxX_Logo%20(2).png" style=
+=3D"border:none;display:block;font-size:16px;height:auto;outline:none;text-=
+decoration:none;width:100%;" width=3D"40"></a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-top:8px;word-break:break-word;">
+                                  <div style=3D"color:#828282;font-family:H=
+elvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:center;=
+">
+                                    =C2=A9 2026 Roman Health Ventures, <br>
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoTGfgva4CK1dzfbd-2FWJpubQ7GK-2Fzcl=
+K9KQJeXsFW9ttEVetAtffAJlsIetpEh1nEjkBcItATyZH7X3MrD3WI0Gmc20ieZagJzZ7OOJDkQ=
+pI6Bk3qbfec5vy-2FYhNVbozxwbc7iYQDDVKYGtY3EilUGkmxJtc0nyHKLL3Vw4T3vz2utZ4zCF=
+FCoDBKfqf0onHrmZb6abA92RtNgX7605lEvXGDlCYx3E1VcVptnXK9D9sEhxtaWFVwhhjAOyGEj=
+ZkwWg-3D-3DiEOB_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFI=
+CISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTx=
+DL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWf=
+ci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwU=
+ohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J=
+9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29=
+oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY=
+9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkI=
+wI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBHkv0MtllWLvFZ3Cjrp41=
+9CyxSNv6LEJTU-2BrmtbG8ufI7tNHYlFa4UGmgQ-2FoOTEeoaLKAn-2BVvslZGSYX77a4hzbWXg=
+vnYtHEBfYL6YweJhPg2VZi-2B12ugqIQ7DS3k-2FsY9vQbzhPYUdJxyF2qTlbU41E-3D" style=
+=3D"color:#828282; text-decoration:none;"><span style=3D"color:#828282;text=
+-decoration:none;">625 Avenue of the Americas, NY, NY 10011</span></a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" class=3D"btn-wd" style=
+=3D"font-size:0px;padding:10px 25px;padding-bottom:32px;padding-top:24px;wo=
+rd-break:break-word;" vertical-align=3D"middle">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line=
+-height:100%;">
+                                    <tr>
+                                  =20
+                                      <td align=3D"center" bgcolor=3D"trans=
+parent" role=3D"presentation" style=3D"border:1px solid #828282;background:=
+transparent;border-radius:32px;cursor:auto;mso-padding-alt:13px 54px;" vali=
+gn=3D"middle"><a class=3D"dys-button-a" href=3D"mailto:care@ro.co?Subject=
+=3DRE:%20Serena Williams: I=E2=80=99m healthier on Ro" rel=3D"noopener nore=
+ferrer" style=3D"background:transparent;border-radius:32px;color:#828282;di=
+splay:inline-block;font-family:Helvetica, Arial, sans-serif;font-size:16px;=
+font-weight:normal;line-height:120%;margin:0;mso-padding-alt:0px;padding:13=
+px 54px;text-decoration:none;text-transform:none;" target=3D"_blank">
+                                          Contact us
+                                        </a></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+<!--[if mso | IE]>
+<![endif]-->
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-lr-24-outlook pd-bot-24-outlook" style=3D"width:600px;" width=3D"=
+600"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;">
+<![endif]-->
+                <div class=3D"pd-lr-24 pd-bot-24" style=3D"background-color=
+:#ffffff;margin:0px auto;max-width:600px;">
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;wid=
+th:100%;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"direction:ltr;font-size:0px;padding:0 =
+48px 48px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:504px;">
+<![endif]-->
+                          <div class=3D"dys-column-per-100 outlook-group-fi=
+x" style=3D"direction:ltr;display:inline-block;font-size:16px;text-align:le=
+ft;vertical-align:top;width:100%;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"=
+>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:24px 0;word-break:break-word;">
+                                  <div style=3D"color:#828282;font-family:H=
+elvetica, Arial, sans-serif;font-size:12px;line-height:16px;text-align:cent=
+er;">
+                                    This email was sent to you because you =
+indicated that you'd like to receive marketing and promotional emails from =
+Ro. This email is intended for the recipient only. <br><br><a href=3D"https=
+://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoY6YnAHLn9t=
+-2FQiw0SJIvGhC0pj2F-2BcydP7SXQgdXFrjTjrg-2BW0U4ehDEft5IficnLZQh6FotlUj244C4=
+aC12FGSd5CgII3XfuGUu6LSITrNhJ9H5jJncKerQM6VAEmhVHfFJlLQrCTSCp1w6VkGbmNOaJEk=
+tkrn008hTC4ZTGqb4c-2B2fgjpRti3MminYc3eeItaWc1cfzgFX1r1ylLJIbAPGlinHdQSHdnig=
+Wd9bqovrqjVhBAJXtb-2Br69dBLHqB0g-3D-3DIC_O_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07=
+s1iDTo4df0cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKP=
+klTSd9EdAYcQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAdu=
+vGKT2DT5CyldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDm=
+NQXmm5camNvqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2=
+L0-2BST-2FV9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVs=
+hB5TAjcYDnRcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2=
+FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6C=
+hnhdHaxDlBaY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5=
+VW2WHJBA-2F3aG843IP06yTzlkWBWxg4wBkCgiCBQLX5QbGVQhFE5m0U0GoaThZDkHukzq7165w=
+fitn8eSRe727Z8RiuUP4WfayCzxzQqphBxWPH6Ldd4RQVyyBrDvDLV-2FEVi4XDRcfHngy6OrUC=
+pckGgchO5Cc-3D" style=3D"color:#828282;"><span style=3D"color:#828282;">Pri=
+vacy&nbsp;Policy</span></a>&nbsp;&nbsp;&nbsp;<a href=3D"https://ablink.emai=
+l.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQi7KPhqS5paKQzvdF-2BQ-2F=
+hcmkRcAjd0RXAqh9o0YpBMXMg7QXmb7e68mhbMXM2trh68P9PkLubnXqU0q9SH1z-2Fca10UIbC=
+gjMdudf6LPtwXa2JyO3wjr89LEun9M5dzlFWJj8t5HFMNjzhLiNlRtGUzevK1742yn9pPiQK2-2=
+F8FhTFA2Uk9IKE54Pylnjd-2BPZitHbhhRtPV83xNg16JX7ChypRFkbw-2F7eDvqjpVTNOaILge=
+zbhmWARAi5veDe-2FayFFQ-3D-3DKY8U_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0=
+cZeON7DMKKbNBSDFICISoj3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAY=
+cQWQycg-2FzAqJwTxDL8KxB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5Cy=
+ldOXoVxoVy-2B8YWfci8GF2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camN=
+vqxQgugaQQgBDyPwUohZcc66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2F=
+V9gACyMI-2FdDcb4J9aSv561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDn=
+RcL2P9sC7BtKKwS29oIks5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQD=
+rpzHhuKz6Q8GNmRcY9q6K7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlB=
+aY3eEn5obNVZfaLkIwI-2B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBPas=
+ddnoJ6RK5skviTQZQSo-2F-2BUkT7idUDTyaVxoWFfYzlTdlMG11Dgy8lqqj6vNBtEzZlPVd-2B=
+MpSnKotx0vK5jOGyeaQqWb72jvSBhLSk7vqnPyup9hxKVGM9MYAbQhwgz9mOLF8MFbKttEzlPcV=
+sck-3D" style=3D"color:#828282;"><span style=3D"color:#828282;">Terms&nbsp;=
+of&nbsp;Service</span></a> <br><br>
+                                    No longer want to receive these emails?
+                                    <br>
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoWhBsyCsc8XiBUTXQ-2ByWhMw6nAfmoL-2=
+BuY6Vuw8HIjj207sEFrdxRmyJH-2FLrKaMddBLT0YtZ0uwWqIOjlveNBlrFjrzfmeKAGNyCx1yl=
+hEWUJaCsCEyoX9u4YGAVu99U5B6z36sT-2BJjK5Dm2VkisLIXUTpr7nYYuNlKy8mg8J3lxQeo9A=
+-2FIl8ZoZQ2O4ju8ctfOA5hw9xWMr70E1Wr2B7zD7igECg28q4tzpkXKDMkhaXQtSH5Sd-2FEVj=
+8QmeXGcbSuA0n-2FjigfJeroqb2bpQUvWNjmA5pwEFbZvgnyOOat6imj1O-2BxzghHiUUVzgeih=
+3IAsMV-2BcrxsRdIGgwiLkxbta51SHRaOA4MYQvHx46TrANaHoPxWtmOmUVLBeDze-2BGft74F6=
+p2SuUQDSywCMOjM25KOA3TBzd8FISzfKBKRWsCy1yp3HkQAsYZ1gvaRlNSV3wld3bK42F42nPSM=
+ZQL-2Ff9q5kNaHWoF-2FejYYzNZ3vyCqjoeYH91yCXDw3QvxsAwuIXgu43aRyW1QqTKIt8g6aKn=
+UeK8ElfXqaaanoni9SXTCQ8X0RTclpmJwMGWSCnMPkp-2FtJvNvhqPJjFZhCX-2Ft85xfWgJJ3N=
+W0Cbl7TivsGclis9n4RP4BHFr4Arnt6ITAy-2B4MzoJkq4j5ArR2J2C-2BgtvGgjjtBHst5qRg4=
+XFI8mKI0RHE_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISo=
+j3dPyysyYDULG9VrU1-2FFFse88CBadcqQA7gXfeDcKPklTSd9EdAYcQWQycg-2FzAqJwTxDL8K=
+xB5dpb4w2IWqGH-2FAPnt0c-2BI5azDCprv-2F3sjAduvGKT2DT5CyldOXoVxoVy-2B8YWfci8G=
+F2Q-2B-2BmfxUBCubNry27A931jVa9ELUQDLVCVu1IDmNQXmm5camNvqxQgugaQQgBDyPwUohZc=
+c66yFD571AV0Y-2BrsOwbmK-2BC0l7boap0T61hFnIl2L0-2BST-2FV9gACyMI-2FdDcb4J9aSv=
+561J64rWwIBuYelFDSkjGMOcMO-2Bgf5mNHUhaI-2FVshB5TAjcYDnRcL2P9sC7BtKKwS29oIks=
+5lEXow9Vzkch1aGxXXnlPfLrydbOz7kXZYJTDqd02p-2FT6O3zHGQDrpzHhuKz6Q8GNmRcY9q6K=
+7gcdziCPdRlzj6b-2FO6id3sVxFiYfDH9w9RqBixRh6ChnhdHaxDlBaY3eEn5obNVZfaLkIwI-2=
+B610Es-2FzYUa6LwaKYwn6dSRLdGM5KF-2BH-2BqZcL5VW2WHJBFltc8MQkWITIOGD22lIXA0vy=
+MOliKoUAqcil-2Fh20kDeiqLCJt3RqqQLo6Pw9Qm1LtVFjVYa62dWCO9L3Z48Vp71C-2BqWqzyd=
+wH-2BQdXPpIVASbr0oIsPPA9HYJ9ISlIr-2BD87Uo05u5OyUCs-2F6ol0H9Ys-3D" style=3D"=
+color:#828282;"><span style=3D"color:#828282;">Unsubscribe</span></a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+     =20
+
+      <!--MARKETING FOOTER END -->
+
+      <!--RO MASTER FOOTER END -->
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+ <!--RO MASTER FOOTER END -->
+=20
+</div>
+<img src=3D"https://ablink.email.ro.co/wf/open?upn=3Du001.Q661MpjYViyVqzQPR=
+jrtRvk1egB4fY5a7G3xpm0VsbcQZTEv8vQL-2FeDU5Ynb0nRzSiw1UoZwJ0dzyyGlmYX-2BBkge=
+EoKD6f821wwJU-2FxrKR8Ivfj-2FMUDS-2B3o4AU7v5a1qOgJQVPb3nIWenaTO2bUaaTqiwRsfb=
+1GpqiLdjMHC-2F0UTJG-2BXDlOkY-2BQrVksAlt0MKNIr-2F2vHhS6f8BrpYY463jTFnGhYq3SD=
+EPNvQjZZCk3f5Qu6W82LqvkCneqWB-2FSulbk44fAO7CMWgILBTbaiIXBv8yn3CPJ0kHwt-2FHS=
+hSQ6E7M1yGvE47IE1hEE6lzEreUy4K-2BOTJflbUn6klQSDdHMSK4kQU0bNdkRLayz8QIVUNYBH=
+WUSE-2ByCiYyJKiC39iGjzcUQjbrozwToLutZyEjt5sVX8A1UTvZj5l8Vp7WaBCp9e6ahYa7pxr=
+wcQ1OJp0nJFoBNSQHzPCi3Wl-2BaFyh1aDeS-2BTOSvMu10khoLWvlgm-2Be74VTWJsaFz37pIB=
+OE4YyEMSohaHNlkD1e51sDwHwNCbaYaWofVZABduChnFL29frRmwcSPnMi4kpVzruW6bFBsHQSY=
+LH97mWr-2F4rc22-2BnvSHi2eFf2nuwjpzW5og3phuoqSogJObnlSu5O1pKJMLHRA7QaMwYuvzw=
+KpQd9CpARzSWhADZhgl2CW3HwLYbI5WXkoKG6SwaiJDrJ0gT8blKdlhTVPF5-2BhKqMl0hYuqwK=
+DYiEFicoA6XuW-2BTEv4-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" sty=
+le=3D"height:1px !important;width:1px !important;border-width:0 !important;=
+margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !importan=
+t;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !impor=
+tant;padding-right:0 !important;padding-left:0 !important;"/></body> </html=
+>
+
+--d3ca79ad738a90d229b9526064749e1721057da2f846ca43237bda70e749--

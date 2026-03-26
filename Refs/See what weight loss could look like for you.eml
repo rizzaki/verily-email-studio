@@ -1,0 +1,2248 @@
+Delivered-To: rzaki60@gmail.com
+Received: by 2002:a05:622a:1f98:b0:509:172:59e3 with SMTP id cb24csp628125qtb;
+        Wed, 25 Mar 2026 06:40:02 -0700 (PDT)
+X-Received: by 2002:a05:6a20:7352:b0:398:b16f:7058 with SMTP id adf61e73a8af0-39c4ad64abbmr4037917637.40.1774446002208;
+        Wed, 25 Mar 2026 06:40:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1774446002; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ku1uAuBBSI2SZGPgJtXhY7D6DOseTGis26mc+IKJ/DKBGTq8bRN6k/2lxpBs79u/DY
+         w771+Oa74QwbiErqZDHC4seoHVpzeDMNmNSchFpGKMyp8pzMujRtboyjD5nggSJwUQ9P
+         Q28u4PJkR/V/57CoNE6kfPWWamqpqwWnI1faRUv3Q4m6NkjGEtW6qHrlGJSYQgLnUqIQ
+         CJM3mu9HZ5es2tM0CVPo/BVv1EWC5Y9A43nHO3EF1cwjAOMI5d8Do/g6A9GTPgwQfhPb
+         q/YGGPqXic17i4K/JOEbt4g2nRW/d1WPh2U1TF7d6r2QVe3FsIdpHAvHmntVH0P5HSTy
+         wJ/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:list-unsubscribe-post:list-unsubscribe:reply-to:subject
+         :message-id:mime-version:from:date:dkim-signature:dkim-signature;
+        bh=Z5PyxYEB7XzMf5JMng91VGUMtQUehNbaTe8dbmXxAa0=;
+        fh=w2ap4rqQ3CVex65plOh129sBl+w+2O7VqcfpnYx794M=;
+        b=lQiTJiPatZ/81yR1Q+rmuUaajYW00l7NUJtRPv7rllmVOZAsks5g+NZ2REu5DkwyeX
+         hch+GSlCDkutw7y+eoKxjz/lLrWg6utDYQK9qv59NBNOy2KhBtiYR3HdRdk9bhrb0+Jw
+         hR0IubRU1MPdLGlnJF+S+03+5nvzbj05D0MUkBzEEQp6gMLAoi9X1iocmH/Gk6IPlhiZ
+         ZHM7XMyQXRtAR4CP0e+4jCVRYPwPNdVtCMP/WiezgTSzPN9S1uWh1VZJtncuIynuLP6V
+         o+2Dylbu7EmyQqPrcuvt7oTtmbVtMLSklWHEgfQ6d8lrLBdS2FMNDjYmzibyA/+BmpIQ
+         PYow==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.ro.co header.s=s1 header.b=fLnPNPlb;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PVOZo1lI;
+       spf=pass (google.com: domain of bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co designates 167.89.83.49 as permitted sender) smtp.mailfrom="bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.ro.co
+Return-Path: <bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co>
+Received: from o1604.abmail.email.ro.co (o1604.abmail.email.ro.co. [167.89.83.49])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-c74664cf7c6si28356092a12.297.2026.03.25.06.40.01
+        for <rzaki60@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 25 Mar 2026 06:40:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co designates 167.89.83.49 as permitted sender) client-ip=167.89.83.49;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.ro.co header.s=s1 header.b=fLnPNPlb;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=PVOZo1lI;
+       spf=pass (google.com: domain of bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co designates 167.89.83.49 as permitted sender) smtp.mailfrom="bounces+9378994-a5b4-rzaki60=gmail.com@abmail.email.ro.co";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.ro.co
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.ro.co;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; t=1774446001; bh=Z5PyxYEB7XzMf5JMng91VGUMtQUehNbaTe8dbmXxAa0=;
+	b=fLnPNPlbhJMcqN5czBP8IN9BSUBS59rgfGJLebFdJ5VfU5sxPhg8/6Zl0DCpmCdhUhZP
+	KEssfSPX0Sl9hGiz4sHh2VtfH4jmL0B2eOM7oe2CfjfeDIDzilVKyILpuZ2+GyY78iptf4
+	p6uSEfRdkRM4jCJSLDa1YeMBAAadIN9tAuc5YU40jFUypdkQ4zAYncfFnSBrvt56vSMtuY
+	utmh0+M64uF97d+eIpmbiKLGocxfFDDPl9VQA5Lz7etPLICMnaxdrhRhOQ50wMUSCb5U7o
+	rPjGtSxlylDivqOvVKel5lna3HSA9uBfKq6HdCxTEnXQcjhcwgU3/gsra+joDpjw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:date:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; t=1774446001; bh=Z5PyxYEB7XzMf5JMng91VGUMtQUehNbaTe8dbmXxAa0=;
+	b=PVOZo1lILtbh7AM31ggEHF5ExwPe+QOK95hn5rhv/skfYMrrGbYoX+0XVzoFrbzoLlsT
+	GizdJi/uQXY7xJ1/env+RPC8N9pWjHk+vpodAIPLCrxrVxuKmyX2Bb+W0cLXEoLJgcvben
+	xiU2SOl7Az7p9zR7nBGe7ymI6nl7gL4vI=
+Received: by recvd-7f966798cb-9v2z7 with SMTP id recvd-7f966798cb-9v2z7-1-69C3E5B1-10
+	2026-03-25 13:40:01.085060013 +0000 UTC m=+1362297.515675327
+Received: from OTM3ODk5NA (unknown)
+	by geopod-ismtpd-7 (SG) with HTTP
+	id KVmZto1tR5uG4_EItM2eRQ
+	Wed, 25 Mar 2026 13:40:01.057 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=27d690bfb9578d6cf820c9caf3d3594c49f5254368a2ae38d637675d929f
+Date: Wed, 25 Mar 2026 13:40:01 +0000 (UTC)
+From: Ro <ro@email.ro.co>
+Mime-Version: 1.0
+Message-ID: <KVmZto1tR5uG4_EItM2eRQ@geopod-ismtpd-7>
+Subject: See what weight loss could look like for you
+Reply-To: care@email.ro.co
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2F02=2Eemailinboundprocessing=2Ecom=2Fenc=5Fuser=2Flist=5Funsubscri?=
+ =?us-ascii?Q?be=3Fd=3D%241%24e%2F2H3pVpxTf3dx8tfkblIw%3D?=
+ =?us-ascii?Q?%3D%24gvrZhnFxdkqqIjx6o7VvNwVjsBLJjW%2F?=
+ =?us-ascii?Q?XWqlRYT292Uj4dn85T00n0HXV0Zlq%0AGDdVGsL?=
+ =?us-ascii?Q?o9gtx8ZQQrET1bxiiGJ1V%2FEOqjBylUPjK4sBA?=
+ =?us-ascii?Q?6Gt%2BIot4GZHUQEDm%0ADtJqmdE5O8kTlgJVJ7?=
+ =?us-ascii?Q?FL3qPV0gf7yEeCjiQglkTso0r7Kr9OB0%2BqqME?=
+ =?us-ascii?Q?xDk04%0AYnL1PKkVpT7tzNvniD8EVSm2LJREzXA?=
+ =?us-ascii?Q?EMR7DILpAdn6rkqvOJm7gDEqRtyjR%0AIoudcCM?=
+ =?us-ascii?Q?l0RsFXTpEWSQG2RImncjwUPFzsUfvgRyAx2jYZU?=
+ =?us-ascii?Q?mHmebv9mX9MQie%0Al4zHJuh%2BLcQLFokLjRpl?=
+ =?us-ascii?Q?gNvlU3m1oxwKZe6glw%2B58fQexVSKTcOFcE7TJ?=
+ =?us-ascii?Q?umX%0AdNNzpyCGm1WAoO4RcOHkFam2&1=3D1=3E=2C=3Cma?=
+ =?us-ascii?Q?ilto=3A4=5Fmypw246lf1xkb03pbf2d6ke4kjx0r2qq?=
+ =?us-ascii?Q?3crykhqrci9mjkne34ngiy=40unsubscribe-02=2Ee?=
+ =?us-ascii?Q?mailinboundprocessing=2Ecom=3Fsubject=3DUnsub?=
+ =?us-ascii?Q?scribe%20pnrcgsq1c70b7v9kzgeekx3dw7z4q4?=
+ =?us-ascii?Q?pnjhnwovcfd&body=3DDO=5FNOT=5FDELETE-14ewr5vi?=
+ =?us-ascii?Q?xdt7on16sc8vzuhw0ipg0pjrs8drb8id4b2k9xj?=
+ =?us-ascii?Q?2d1cl23no0aseyq795ssv8t0bi0v12sxnx-DO=5FN?=
+ =?us-ascii?Q?OT=5FDELETE=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2E8zTFA53HTtzyKnoqb2Q468rUMr84hXMQvs0Lgd7HOhP+nhVLJ5oqoKeSW?=
+ =?us-ascii?Q?9IHLIt7NKT4VWf6zfMIBT25cvvhjqnIaGisyHu+?=
+ =?us-ascii?Q?gakOrr5Ax2hVcV9guaaCyXoAhbBAh8K+wRIPTjk?=
+ =?us-ascii?Q?Ass9Ql39UvyjpBY5K0xUHhvhKdtNhrL5+NEwp8o?=
+ =?us-ascii?Q?0Lhe11FmSrBhIkint2VuK3xX90nqvTs17Qh80Ux?=
+ =?us-ascii?Q?w=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDrjDW6011yC6XOo?=
+ =?us-ascii?Q?3uya5MXTsvdJvUnojl9Nic6bFpoCy9ajGviO4Tw?=
+ =?us-ascii?Q?zzE2mQz4BGSLEqK4YvoGMP3Bb2hSJwCE2Kfjr8+?=
+ =?us-ascii?Q?1encIDejVWX40aLm2J=2FaPx8YEWxAPUoxDdd+Dqa?=
+ =?us-ascii?Q?IrSmyrNyhNMH9xY22KgqRXg1JReHUvoNZg2dlwB?=
+ =?us-ascii?Q?e86annrf0gtkaT5w6NTI8gjw2GvSPf8AlgvzlHr?=
+ =?us-ascii?Q?LTEWaqRc87Qg4TctlTvUBNU=2F+DKAL4FV7T7WWou?=
+ =?us-ascii?Q?g2WcMAPQovan2CqA8vHOMj6mA93b17bAGdTeCkM?=
+ =?us-ascii?Q?=2FH=2F332IqNKFfp7Ot8p+s1ZCjo0IW6ZE4s7HPanJ?=
+ =?us-ascii?Q?EFKD+wH5Mmypu+QYFPni=2FdeZcpuQFesALzW=2FB64?=
+ =?us-ascii?Q?l635mJTC3kSydT+GfZaYl2S4md+lae3U+jsY=2FB7?=
+ =?us-ascii?Q?RzuYejQptffZ4I1BSNW+tKUL51R4MVia3q6C61=2F?=
+ =?us-ascii?Q?3Bo5ww95yjJu+c7oneSG9nP7R5b0t4eiGH+0ack?=
+ =?us-ascii?Q?ejKwub9yN17QYMnTlsHzojrZ0+aCcK0wfI+aYpX?=
+ =?us-ascii?Q?23HB+Npu7Ahg?=
+To: rzaki60@gmail.com
+X-Entity-ID: u001.yyCpcyikZLV+ra4/9sOJZw==
+
+--27d690bfb9578d6cf820c9caf3d3594c49f5254368a2ae38d637675d929f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Try our calculator and get started for $45 your first month*.
+Try our calculator and get started for $45 your first month* =CD=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =
+=CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=8F =CD=
+=8F =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       Ro.Co Icon (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpocOJvp=
+8WvvK0sUYhwuwdMDzkYCb67EQjujzNDlZMqXI1Gb2473-2B1-2BX0BIvBLa4Ys6xqczmnZq8VSQ=
+HDxJBxaGoT3DCy8dMwGjULPnZBvmSPHEfFUaqMP6OjWAMskEG5qLLpnqCMH-2BdfKjTSvtBJMe1=
+tHbnI217bTXBYqmisX9LX-2FS51zJ7lKBv98eZVz4deOU7Fz2v-2FF3tD-2BdBoAu1u6ludlVRK=
+CMckMHnthivugKrPXohWndvDFOIG-2FvWdb0e40WA-3D-3Dh2Ix_oP8Jf99AY6CMFljWI6KUTl8=
+t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLR=
+evmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgt=
+uRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBd=
+XErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8Tcy=
+SFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK0=
+2-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhk=
+qtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz=
+3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOF1QORmp0uYDr=
+UgEfK4ZVBXndEfUutvuk3OZPc4BbRBxfi-2BXSyE4KA1EYGnV-2Fl2UnSfLiICuum8WJge04fcI=
+zoUTW5qdgkeOYCTyHG-2BAurDtRWQRqKjs-2FLwDZPr6QBQcScGMQ2-2FqD4gLloxz5-2BZWnRo=
+-3D
+)        =20
+
+
+
+         Intro Offer: Get your
+first month for $45* (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzA=
+wBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiV=
+Xp2EBz2j-2FLG-2Fd3wss6QbqQgpmAKR7sQgVkWlIa9WE3JoLlwXqZOvSIQY-3Dcjc9_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1H=
+PInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgL=
+AsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA=
+7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1Rg=
+Km4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54=
+vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1s=
+MHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUN=
+DYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeI=
+GdqOFl8XPpNqNV43DlGmUu0iCaJFYNEmMOsCntTRKqeqxx-2FKeCd6pO5bw75Fketeb5ych7SHN=
+GG0giSHuuo9ujvgkKiH6tpLb0Rnw33nEgxzSiUdPLuIbkq3MqTCy8J-2BljyO3ZZeDXzM7v-2F9=
+5KC8YtCg5o-3D
+)
+
+Here's what's possible (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzA=
+wBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiV=
+Xp2EBz2j-2FLG-2FdxStVzJCJxPDoH96cASby-2BFpQpegTQ-2FfT1LF9HLJyuT4-3DT_AY_oP8=
+Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC=
+3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfB=
+QUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63S=
+ropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZu=
+m1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNC=
+Vy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1Y=
+TA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOT=
+KqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElI=
+JDeIGdqOJo4DoA0RCgEeSKsgUj4l3qD3nC0okzqtst4vRgde-2BNUx0tQPUgcIdbBAp8Hn-2BZt=
+7ZqXCPeCxSV0GW8BEDXtwZmxIl3HnH9CBgRHa1RALAlhsuBnegU-2BXpYVyE9RQ8FRWOZMRWcI9=
+i9AcX8cn9sSJfc-3D
+)                                Find out how much weight you
+could lose with our weight loss calculator, and see the potential
+of branded GLP-1 medication and healthy lifestyle changes. (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzA=
+wBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiV=
+Xp2EBz2j-2FLG-2FdtB4kgc4XqOEn9bS5pzYQqTZUHoB1Jn7AMcpELjg8zOk-3DfCgu_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1H=
+PInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgL=
+AsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA=
+7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1Rg=
+Km4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54=
+vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1s=
+MHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUN=
+DYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeI=
+GdqOEotdUHp2kdRDTUBRn90Eg52k6i-2B-2Fb-2FIKd7fM3MAfQdOwEAigVJPNFPenfmlr-2Fd-=
+2B5orA0D8JN2uNn-2Fz34TErvH05qzIIJ9Sz0Njslx2GDpfmSLtXvpyAGUnYitBov-2BoPdIShx=
+iPufzayq8NbTnWeOhM-3D
+)
+
+Find out how much weight you could lose with our weight loss
+calculator, and see the potential of branded GLP-1 medication and
+healthy lifestyle changes. (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzA=
+wBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiV=
+Xp2EBz2j-2FLG-2FdjMmfm-2Fdw1PJeYimWJdsXE09QLqsQFoOhQa1EA4Ovkyg-3D4sRN_oP8Jf=
+99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w=
+1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQU=
+gLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63Sro=
+pA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1=
+RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy=
+54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA=
+1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKq=
+UNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJD=
+eIGdqOCANtOzclKOePMsottI4KMLvtAo3exYfwBg7K6OJv2t9P0PzSMv5kiIZFV8qkZ4KtNfdO7=
+RKuc6grJGrQiKwgxNhvdvYwaZCOAgmAX7VWs3PD44RrRs6GBJg6B6nIrmqHcDcRbCAIDHsUbuTh=
+s2-2Fvyo-3D
+)
+
+Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzA=
+wBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiV=
+Xp2EBz2j-2FLG-2FdzYtlRlDuR8j8pCstkkeO8-2BmfNFtwXbwT8LZx-2BLemlVk-3DOnkq_oP8=
+Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC=
+3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfB=
+QUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63S=
+ropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZu=
+m1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNC=
+Vy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1Y=
+TA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOT=
+KqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElI=
+JDeIGdqOFB6Z878-2BQMjzVVPBdeI3DFxaFDfMTaC5u9XaWKTMPl111o6G6aeubZNBzAv0My76v=
+WtkzKzCYuRuaK6V2BehkmSFJqI-2B-2Bg2l9O5FefH4pmxUNoFz9er6IxoSd1-2FiLMIK8z70Bt=
+nCj-2BZzqBWYgSJnbw-3D
+)                                 Finish visit (
+https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7=
+WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYp=
+KXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzA=
+wBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiV=
+Xp2EBz2j-2FLG-2FdU-2FkDsMrRWFb4-2FAvyLoOJOCFz1-2FcH8ZRehig4-2F4sP0oA-3D5Huu=
+_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4g=
+gWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJx=
+pFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4o=
+L63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuA=
+QNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZ=
+eNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44=
+eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVf=
+vuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sb=
+LElIJDeIGdqOLm2OXebCeFK-2FfGYETLYfYKUcTsliGlk5wPtFvIuXbmdOX-2FZj6-2BeJpSwZ0=
+5O4PzRGtlv39huIKh6zXcYdHdF-2FGo00gVPvxI8JWXej7yZxsaeYyupJXLbnz5JjW0zS0eeglA=
+-2BbubgmdUCK6JnpuyV99o-3D
+)
+*First month is $45, then $145/month (medication not included)
+
+*First month is $45, then $145/month
+(medication not included)
+
+
+
+
+
+
+
+
+
+
+<strong>Important Safety Information</strong><br>See Important Safety Infor=
+mation about GLP-1 medications, including Boxed Warning, at <a href=3D"http=
+s://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpobpFu8H56V=
+rZXkKmz7hzJR0JLHGpb1KyyRFqpLEshBIx8HXtBS1e9ti9yrHgId-2FZZD-2FPe05DLV1I32jSC=
+0AUODOaogTN-2FFfEj1XNu3eQzKcI6HvqI567X-2BlWsRRXZLyVH8UviLbTjAhWO5BL-2BWyrTe=
+ae0hipjAiyP2oVlolH7Pq4I4esaNICzDOsw6odSP7VjgGyKz0SZ5glW6oKIJVvmX6ZZ79Jm4JO2=
+E3o-2BGlSsZJJDdrABXakmp34St6Nm5rvdz6HMHo-2Fgi0cVl-2FRwzeUvzI-3Dq8tb_oP8Jf99=
+AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1H=
+PInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgL=
+AsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA=
+7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1Rg=
+Km4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54=
+vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1s=
+MHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUN=
+DYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeI=
+GdqONafqVAwvNwGPxly4DnSwQcTKSUuFyBh3PnwH5l-2BLUIx22YD4TUMyKr3l2O5HOinZVApNb=
+Rp6mRr2Px3fqzJe8M-2BQmtzYGofXPjtGnjjWfCXdBmW71pZJ7N81k7fUdcA7oaMdVU-2B5oodH=
+8rmyCrnLkc-3D  target=3D"_blank" style=3D"text-decoration:  underline; colo=
+r:#1a1a1a">ro.co/safety-info/glp1 </a>
+
+
+
+
+Sexual health=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQRL=
+s-2FB-2FIS4jPxYGSIgDwj8QJius1cXSeMJR2ShprT3hLiNx4ZdQWANf3-2BivIvgVA1W3FiC4e=
+BC6jyTKvMMwr5n-2B0a1IqEaZvYfRiHovHuw91KOszUK2VBX0zpPXx8amqBKtQ4nMwQdOsCtM5R=
+h21RJPMAkgNJCJIc5AEIGKGOst-2B5UBfuMu9ywZ8Jh92WcpqA9pyE-2Fpdly7vX2p-2BZFwDMy=
+YXGnkRZFX-2BfdPNqCuLmniexDCF7yKwzVt1mhGajgwoSqVXbJuCMWsoai20quNdqc-3D5R1M_o=
+P8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggW=
+UC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpF=
+fBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL6=
+3SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQN=
+Zum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeN=
+NCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM=
+1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvu=
+OTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLE=
+lIJDeIGdqOPMTGqMBiavIFfXen8OJbbnt9hnvRrhUMwecmdp9Z-2FNOdWRRMRx1Bkb2piXQQ6p4=
+2lomc8QnsQTjr3og679phIqoA-2BFVNuVf9tCplK7B-2BcBAuWkhYIoyMtaaRUvQ6iep-2Fqi2A=
+HI2rbp-2BbfcKJ9um6QM-3D )
+ Weight loss=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoena=
+paOZaMtY0C1tAmejYNVD1BfSgIKI0LWyqJCwPARsRnwIPifiIJdIJzchuTIs1RFRC012e2xrdjd=
+GqFew2DzSDBrlLWA0vp0RyRQj5JN-2F-2BtWDOptzQYpGLWoI96AIrcFkahb3FuGZWFceOp-2Bc=
+6ErekguxbJoTDq0x7aWtnkEuh2qioZbBGn7TgtJPuu35Nqj0iGCasoz-2FVoM8EhyT9pzn-2FRe=
+CRklAepQWpTdapYhGcGX-2Boj3GdFdA4a8l99rU3w-3D-3DuO7j_oP8Jf99AY6CMFljWI6KUTl8=
+t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLR=
+evmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgt=
+uRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBd=
+XErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8Tcy=
+SFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK0=
+2-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhk=
+qtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz=
+3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOLUrNw2w4hEfR=
+IUWFx-2F21ILykS9-2B-2BcePqDrdYa7FlkNfw5wLc6bV-2Fxrm4pw4SDH3qWwxnNEatCVF-2B3=
+aX4JVmnylH84XO9XNOcq7ttB9EmBSQdNB2k7kN6IuhB7DAVsfikjCxEh10RbXmicT3ZIPL32c-3=
+D )
+ Fertility=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoSJm=
+ozfzLmHKVpgOjgBei-2FIboDQ8HsnRc-2FVct2pWe8mB853LRYACcZy-2BVHRgzP-2BfLasaty8=
+7eMsCy1I5ZCckU1o7aYfodGif7nXGQW-2FjH2ygxldNHwEMBkGxcWZ9z40KEdeIE6Do3xgfcRvx=
+t70e7Dz-2BCjA-2FGa8AlR2uM7Bs-2Bv-2FB8OIpXzxzwEbSMwn6wzVB7dntAKMcKL8Yws6-2Bw=
+EA8RozMXMhFGXgRsWMSkyxvXAcsBivz7fW3e8BhZ1cFi4nnbg-3D-3D8FzQ_oP8Jf99AY6CMFlj=
+WI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8i=
+V82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgv=
+WJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48=
+MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT=
+4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRh=
+PK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYzt=
+BRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36G=
+CjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOISj-=
+2FcvGZzUsp83mC87-2B-2FW6gabkdMdPVNiD1cfopE-2B3pzpK9gYRHXCZaHcBTrjzI8NJDuoRU=
+xpaAC5VyOa9lZY7mp8kTfoOWxxX2Q9k92N12lcZD-2FK9lfTWLCmFfQ3aMEsFTUPYM1yT9xAQz6=
+VDZ0LY-3D )
+ Hair loss=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoabZ=
+krGhMr5PKdQNBT1h8pY69-2F1JCfqbMtkDHnWl8fwQEpOkvhIJs4lCxvzjmOQoGn4flAPerTyN2=
+ZnBu-2B3RCdzr4kKiRZhQ0xj28qSIL7nLGNY6-2B6FyK0vaIkVDgdT-2B-2FVuf6QE8IMsh53l0=
+Vj2dI3eC09bmIfc97lsP8TATGo0LoBxmf-2Bvzy6uO5gr6bbv6E0vyN2yY2ymCyXhbZvjHajb5-=
+2F3HwvsrUbol99nVAk6v3-2FdZnaIGLQ-2Bd8uEg8D0FYvQ-3D-3DGH39_oP8Jf99AY6CMFljWI=
+6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV8=
+2ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJ=
+gfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48Mk=
+XZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4o=
+uy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK=
+60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBR=
+RAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCj=
+uYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOHlbDct=
+l6MJ927aVWZj-2BAIpWZ94rqnr6hNzVOluEIB0dWVNTBWYP-2FalHpcTIjhlOad2B4Mc28L9bg1=
+SgdHNRbNNckfZ0tvDG5IgVoTWixq6mw6RmuwAdSolMsryTULy3deiaE11Tfw3HGMUR0gqPVOs-3=
+D )
+ Skin care=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoXtZ=
+X2ZUZ9v1rctEO4SwRT5S-2BeUIeNxuJ1OQjO3VMJZP2Q7SaAlLLdIlj1JpL1ypJYwWe7AH1yBe7=
+pxJUedujVPOOjb4MV5CTvuXkYE3O3hngJ3OsvwbZtvnbRvpY921BXb-2FF68ZUBhkRGb4PdMH2y=
+nvUjooxTMl2w-2BF6KSmarVJtYw-2Bn1U-2Fna4kylYTQ4xRY1JT3wbhFhgPDKSyxh-2Fo9tTJo=
+4ZdOainijlND-2FdX-2FT2vrw9m8t8WiUlO5Alp-2BS8qYg-3D-3DiO8q_oP8Jf99AY6CMFljWI=
+6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV8=
+2ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJ=
+gfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48Mk=
+XZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4o=
+uy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK=
+60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBR=
+RAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCj=
+uYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqODYqu9f=
+iac7nihoPQTuo6CGnFy96-2FkxmYQEDQLDzyUiC3jLjJ4O3emLVaAZrV7NTHVcMdBJBzt78Xgf9=
+9oPmPxDXCZuVpCZETbtgT6FQdUGxng6CVf-2BQohGqZf5-2B5R7hx6gb2i9bC1YyxcNHeH8317A=
+-3D )
+ Daily health=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoVxd=
+MU8Hm1ZigPUvEGk-2Fz08UaoIfKMhaVcev01t-2FRl0Zn1nB59HeNq8jZfoeqx8bLONYcSTNPeb=
+Px1ydfoLfDduL2e9mxFEDlAzn6e7V8YNb3BEWgZ42jOppkjvcHkmDeHL75ei7qfpn37acMctONu=
+VQLSK9oFePUjZ6U5vkR2r0JdienWlfHMDrwI0q94XnzzSKlpSzxrCZIouRFvOdFTCSDLTeaTa-2=
+By6AJMZZGS28y1LU4ciu-2FE0ZBAfVAObzr3Q-3D-3DS9JH_oP8Jf99AY6CMFljWI6KUTl8t3WF=
+50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx=
+6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf=
+5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErz=
+XeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn=
+9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2B=
+q4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-=
+2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6k=
+SFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOI4Nj-2FRfON9EfmB=
+nBzHy51b-2BEAd-2FeCzSIrBB5Io16PnbKIejw1yGyVD0Dot-2Buiy37EMMPRdJlra8h8FBffMV=
+o6CfTpFP-2B6-2FDGhnjgkcpnpN-2BKdd6dhBtRcR6KwB5Q5yTBfeYTgbpu33FpoNS8hDqfxE-3=
+D )
+
+
+&nbsp        =20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoSgo=
+ZgoIy-2FN8FM2mSZPkkOikLJ0VfQKfwVrkxmQfbAKio2-2FgQRcaaB6VZ134-2BhaYmqKBwkRwg=
+S6vp6w3vGZF06heslzG5nd-2FIBt0poLFxp1Jj-2Bmb6ZQApjOveORAe3rxlcgkTosdlm0USvAk=
+ZkXatMBfJAJ8dWS5Q29MHz2os0Ol3XxWwGx3HuGQYj-2Fya0uo4txuYlBjg19dEeBS48FvQ0elr=
+mO2V0sh-2FQfQoOzavbNgF05L_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7D=
+MKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftND=
+vHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVu=
+PURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOU=
+uCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEv=
+RP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanB=
+zH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4y=
+t7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCO=
+lNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOO9o-2FrVj1sMQb7XrKRYFrjgs1gAjGtUzyd4ew=
+8FT-2BMFwKXkToZqSlwFzAtGciotH6tdXN71ov1DjGYgtE1rfYsDucdff3FEKCwp-2BwAT4Stlf=
+kcwnlY55tbO57bYyeK6oro-2BVM7wswZM2A-2BxrIW5J6-2Bo-3D )
+         =C2=A9 2026 Roman Health Ventures,
+625 Avenue of the Americas, NY, NY 10011=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoVEr=
+HWYW6PAZIZGWhQXw-2FoZ8bXbg7qxBvORY0r0gCI-2F-2BYcYmUyymk-2BqqPDmSZyINeakDG2J=
+Gz7ymMgi-2Bn1pjKdto5xUDS3mF2oCfeusPWq0oefVv5-2FL24q8Z-2BmnlnLEe2KZFgA4WGZW-=
+2FJ6nclhlk5m7xwXtlZKCNHQnFqFWYAtkFakOHhHPObR668wQvmj4dhE6XvcHYtNLYqLiV-2FJ1=
+NBqugvOXQCf-2Bb-2BysUw7WhizDt3n6o_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df=
+0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8a=
+NCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVv=
+h8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5t=
+m6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F=
+3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2=
+BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4Nvyz=
+PpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey=
+7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOLMNUPDIftxih5Ld8mo11ZNg53BApbU=
+ZVpf6E1bxou8q01Q5ccVA19IgHjvnJ6jD7-2FtCjmv3lDdeuyP0BYSm2k9rQemaE78YLgyUjDlA=
+Wmt1VHrXRvZUUF-2B3mGaXDDDAPQJ5A7wc-2BemHOEYcvliV1uo-3D )
+         Contact us (
+care@ro.co?Subject=3DRE:%20See what weight loss could look like for you
+)                                    This email was sent to you
+because you indicated that you'd like to receive marketing and
+promotional emails from Ro. This email is intended for the
+recipient only.
+
+Privacy Policy=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoY6Y=
+nAHLn9t-2FQiw0SJIvGhDLMGBnQfMCldj2WES-2Bi-2F0tJbesElKzOcTnC6qjMxt-2FDm13PUm=
+u42vCtYbWCw1IOL2Z5mkwPEYyeXNY20hoXzlyljVIDL77ZUD-2B3P4AHcORUBHRj3uuNTcfgO1b=
+Dbv2N5p-2FqAJEzzWqFtxdpTdwnovQqRvtvLiYG1E4FIxHPSLmbrOrvbuyrniR8aVwdw-2B0HOI=
+30gVRMtjHSG3zEfgGLYdkzS4cptQI-2BLhUNyLlMU4o8w-3D-3DQ9KF_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82Z=
+mXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgf=
+jsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ=
+8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy=
+8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60=
+NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRA=
+QYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuY=
+Hiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOPpecDusd=
+fkTi4nZYvdtZamDULDQH-2B7saXQ7ykb9Ze3hg-2BaTS7AGyjR-2BBmCJAWxUIaEavC8hB3YJas=
+NbrqYRad8hIHv77B-2FgnEy-2BZF16baYJJu2QCOhX3hKKkNpb-2B61yH7iiyAW9heHuWmN8pA4=
+sFGU-3D )
+ Terms of Service=20
+( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQi7=
+KPhqS5paKQzvdF-2BQ-2Fhdf7eBl0Z9yNQHWkkRJ8ubexSf51vmGWdCIFFeU-2FDAHqT9wfxwh3=
+1sNIlxiEbYMIKxHRz4ORSTaVtSSc2ahfrckGdkVnSPUQuh9OBD-2BJmuGGtoH0jxwVAH4u-2FCj=
+EMCcxrST5AWEjpHF8qU-2Ft9GstigfpktNrXjDXnK7qyw7gpcCbnHgOO1QHy0ueRBAlX9YJytCo=
+W50b2wiUOw-2BcOVJ-2B7E18qdbYZRcH5dzpI48XmhMKA-3D-3DXn4i_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82Z=
+mXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgf=
+jsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ=
+8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy=
+8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60=
+NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRA=
+QYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuY=
+Hiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOEdbkvMFu=
+1oT-2Fh3cnrFdfylit05SA7PLNuM8huVe6iffN4VovygAqZTdPqQmeEW6xI-2BmfpIW9ffVMNaj=
+pUi8S0Urif6Asva2zdFnEXJNrmtUWMu8WwcXVgGuwxo7fYDlMMkDOg-2B5f2-2BHlZbjmrxwVUA=
+-3D )
+
+
+No longer want to receive these emails?
+Unsubscribe ( https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQ=
+GTEWxWBpoWhBsyCsc8XiBUTXQ-2ByWhMw6nAfmoL-2BuY6Vuw8HIjj207sEFrdxRmyJH-2FLrKa=
+MddBDC7SlXo-2BaO62fQ9Rwd1s0Jw-2BiNrmKvOFFB6cDWaiWYlrK3PGF7EebqqJzEMRafCVnoQ=
+6fFco4n6XnVh1WCma7LBF7NMWeQaT1T7XU0HewI1JeGHoxwg-2FTuSyk8XEfgOPGiHveuBGkf2m=
+ijC8l7hg5uHNTYcFq2CGjqYTNlQG57SEr5YyxRICf51I7so-2BvpyNtuqpeAVKU9QsipGl8FE6p=
+7B1AiuYQZuNX8aydMOSsQiN3GnCsD5iSER2ak-2FlHfh0kMiLwV52qmu7ctVAsvaCa4iwrVC6Zc=
+Lmv1YzpiTPVx27Zk-2B-2FrfAcKCpNUnCUhyxvueqDWyxNNVNAzKVRtRQgyV59DZZZ0lLjSMnP3=
+rTPBxhUueUC58h-2Fr-2BDK8n6gwKwZpgVXz0GIFhjWcOoDhcR5yshGKRZSmlHAdndTR5Fhs1BR=
+FiUYtwqF9ev3P3O-2BBKC4NEUzXCtBJh16YX3psIdODc6Fpb9GpGXBf-2FZaq4V3YQD856W9iAW=
+0Xovl-2FVYtnTsWLryuRltybyoplsugJ7ppcGpDC98ebFNSsfHyf0bqORASYKuHwsePc5b8IHaj=
+TgMq1RdzQmcKIqbYmZsj8K8GyijrjVNh-2FHlrbbVRYI-2BJAGusGyN_oP8Jf99AY6CMFljWI6K=
+UTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82Z=
+mXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgf=
+jsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ=
+8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy=
+8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60=
+NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRA=
+QYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuY=
+Hiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOCaryXqru=
+AjCf1uu-2BPMNtEK12PAipcw4Hi48WxJmukz-2FpiEblLhsiiXxCtkcYpMl-2BL9bnljvCELy79=
+e48P52vTifwUoST1a4h0pS6hy61M8dk7FQ3n5m643qMBO2xwlDE6O3Yn1lI1ufxEejb-2B-2Bnw=
+pI-3D )
+
+
+--27d690bfb9578d6cf820c9caf3d3594c49f5254368a2ae38d637675d929f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+ dir=3D"ltr">
+<head>
+<script type=3D"application/ld+json">
+[
+{
+"@context": "http://schema.org/",
+"@type": "Organization",
+"logo": "https://braze-images.com/appboy/communication/assets/image_assets/=
+images/62ffd784d9a5bd4c9ee9cd91/original.png?1660934020"
+},
+{
+"@context": "http://schema.org/",
+"@type": "EmailMessage",
+"subjectLine": "See what weight loss could look like for you"
+},
+{
+"@context": "http://schema.org/",
+"@type": "PromotionCard",
+"image": "https://braze-images.com/appboy/communication/assets/image_assets=
+/images/68aedc4158378b00651588c1/original.png?1756290112",
+"url": "https://ro.co/weight-loss/zepbound/?ro_ch=3Demail&ro_p=3Dbraze&ro_c=
+=3Dv&utm_source=3Dbraze&utm_medium=3Demail&utm_campaign=3Drb_mkt_acquisitio=
+n_ca_bodyCartAbandon_020626_a11&utm_content=3Dgmail_annotations_zepbound",
+
+    // Optionally, include the following PromotionCard properties:
+    "headline": "Zepbound=C2=AE in single-dose vials. See risk info at ro.c=
+o/safety
+   =20
+   =20
+"
+}]
+</script>
+<title>See what weight loss could look like for you</title>
+<!--[if !mso]><meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=
+<!--<![endif]-->
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<style type=3D"text/css">
+#outlook a{padding: 0;}
+.ReadMsgBody{width: 100%;}
+.ExternalClass{width: 100%;}
+.ExternalClass *{line-height: 100%;}
+body{margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-a=
+djust: 100%;}
+table, td{border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt;}
+img{border: 0; height: auto; line-height: 100%; outline: none; text-decorat=
+ion: none; -ms-interpolation-mode: bicubic;}
+p{display: block; margin: 13px 0;}
+</style>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+.outlook-group-fix{width:100% !important;}
+</style>
+<![endif]-->
+<style type=3D"text/css">=20
+@media only screen and (max-width: 480px) {
+.dys-desktop { display: none !important; }
+div.dys-mobile { display: block !important; }
+tr.dys-mobile { display: table-row !important; }=20
+}
+</style>
+ <style type=3D"text/css">
+@media only screen and (min-width:480px) {
+.dys-column-per-100 {
+width: 100.000000% !important;
+max-width: 100.000000%;
+}
+}
+</style>
+<style type=3D"text/css">
+@media only screen and (max-width:480px) {
+ table.full-width-mobile { width: 100% !important; }
+td.full-width-mobile { width: auto !important; }
+}
+u + #body a {color: #1A1A1A;text-decoration: underline;font-size: inherit; =
+font-family: inherit; font-weight: inherit; line-height: inherit; }
+ a {color: #1A1A1A;text-decoration: underline;}
+ .white-link span {
+ color: #ffffff !important;
+ }
+ .pd-top-24 > table > tbody > tr > td {
+ padding-top:14px !important;
+ }
+ @media only screen and (max-width:440px) {
+ .mb-pd-24 > table > tbody > tr > td {
+ padding-left: 23px !important;
+ padding-right: 23px !important;
+ }
+ .mb-pd-tb-22 > table > tbody > tr > td {
+ padding-top:28px !important;
+ padding-bottom:0px !important;
+ }
+ .mb-pd-tp > table > tbody > tr > td {
+ padding-top:28px !important;
+ }
+ .mb-pd-bm > table > tbody > tr > td {
+ padding-bottom:0px !important;
+ }
+ .mb-pd > table > tbody > tr > td {
+ padding-left: 12px !important;
+ padding-right: 12px !important;
+ }
+ .mb-headline > h2 {
+ font-size: 32px !important;
+ line-height: 38px !important;
+ }
+ .mb-pd-wrap > table > tbody > tr > td {
+ padding:0 12px !important;
+ }
+ .pd-bt-12 {
+ padding-bottom:12px !important;
+ }=20
+ .pd-bt-28 {
+ padding-bottom:28px !important;
+ }=20
+ .pd-tp-28 {
+ padding-top:28px !important;
+ }=20
+ .pd-0 {
+ padding: 0 !important;
+ }
+ .pd-lr-23 > table > tbody > tr > td {
+ padding-left:24px !important;
+ padding-right:24px !important;
+ }
+ .pd-lr-23a {
+ padding-left:24px !important;
+ padding-right:24px !important;
+ }
+ .pd-top-28 > table > tbody > tr > td {
+ padding-top:28px !important;
+ }
+ .pd-bot-24 > table > tbody > tr > td {
+ padding-bottom:0px !important;
+ }
+ .btn-fnt-14 > table > tbody > tr > td > p {
+ font-size:14px !important;
+ }
+ .btn-ipd-1224 > table > tbody > tr > td > p {
+ padding:12px 24px !important;
+ }
+ .img-wd-64 > table > tbody > tr > td {
+ width:64px !important;
+ }
+ .btn-wd > table {
+ width:100% !important;
+ }
+ .fnt-24 > h2 {
+ font-size:24px !important;
+ line-height: 30px !important;
+ }=20
+ }
+=20
+ @media only screen and (min-width:440px) {
+ .pd-tp-24 {
+ padding-top:28px !important;
+ }=20
+ .pd-48 > table > tbody > tr > td {
+ padding: 0px 48px 8px !important;
+ }
+ .mb-vert-wrap > table > tbody > tr > td {
+ padding:8px 48px !important;
+ }
+ .fnt-20 {
+ font-size:20px !important;
+ line-height: 28px !important;
+ }=20
+ .fnt-14 {
+ font-size:14px !important;
+ line-height: 20px !important;
+ }
+ .img-200 {
+ width:200px !important;
+ line-height:200px !important;
+ }
+ .img-200 > table > tbody > tr > td {
+ width:200px !important;
+ }
+ .pd-left-16 {
+ padding-left:16px !important;
+ }
+ }
+=20
+/* =E2=86=93=E2=86=93=E2=86=93 Add new utilities here =E2=86=93=E2=86=93=E2=
+=86=93 */
+ /* =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D MASTER =
+WRAPPERS =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D */
+ .plr-23 > table > tbody > tr > td {
+ padding-left:24px !important;
+ padding-right:24px !important;
+ }
+ @media only screen and (max-width:440px) {
+ .mb-pd > table > tbody > tr > td {
+ padding-left:12px !important;
+ padding-right:12px !important;
+ }
+ .mb-pd-tp > table > tbody > tr > td { padding-top:0 !important; }
+ .mb-pd-bm > table > tbody > tr > td { padding-bottom:0 !important; }
+ .master-top > table > tbody > tr > td { padding-top:28px !important; }
+ .master-bottom > table > tbody > tr > td { padding-bottom:0px !important; =
+}
+ .block-top > table > tbody > tr > td { padding-top:0px !important; }
+ }
+ @media only screen and (min-width:440px) {
+ .master-top > table > tbody > tr > td { padding-top:28px !important; }
+ .master-bottom > table > tbody > tr > td { padding-bottom:28px !important;=
+ }
+ .block-top > table > tbody > tr > td { padding-top:28px !important; }
+ }
+ .no-margins p { margin:0 !important; }
+/* =E2=86=91=E2=86=91=E2=86=91 End new utilities =E2=86=91=E2=86=91=E2=86=
+=91 */=20
+=20
+ .btn-hov:hover table td {
+ background-color: #444444 !important;
+ }
+ .btn-hov:hover table td a {
+ background-color: #444444 !important;
+ }
+=20
+ @media only screen and (max-width:440px) {
+ .pd-wr-top-16 > table > tbody > tr > td {
+ padding-top: 16px !important;
+ }
+ }
+=20
+</style>
+
+
+</head>
+<body id=3D"body" style=3D"background-color: #F1F1F1;">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Try our calculator and get started for $45 your first m=
+onth*.</div>
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=
+=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =
+=EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=
+=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =
+=E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=
+=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =
+=E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=
+=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=
+=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=
+=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=
+=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =
+=CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=
+=87 =EF=BB=BF =CD=8F =E2=80=8C =C2=A0 =E2=80=87 =EF=BB=BF =CD=8F =E2=80=8C =
+=C2=A0 =E2=80=87 =EF=BB=BF </div>
+<span id=3D"dys-ph" style=3D"width:0;opacity:0;max-height:0;mso-hide:all;ov=
+erflow:hidden;float:left;display:none !important;">Try our calculator and g=
+et started for $45 your first month*</span><span style=3D"display: none; ma=
+x-height: 0px; overflow: hidden;">=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+=E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=
+=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=CD=8F=20
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD=20
+ &nbsp;</span><div style=3D"background-color: #F1F1F1;">
+=20
+
+   <!--RESUMELINK CA LINK // OV Online Visit Link -->
+
+
+
+
+
+
+
+
+
+=20
+=20
+ <!-- RO MASTER HEADER START-->
+=20
+ <!--ASSIGN RULES MASTER SECTION START -->
+=20
+=20
+  <!-- copy the subject line between quote marks -->
+=20
+  <!-- choose marketing or transactional or roman-->
+=20
+  <!-- choose member or lead or edCustom (for B&B custom header link) -->
+=20
+=20
+=20
+<!-- choose products mentioned WITH A COMMA AND SPACE AFTER EACH PRODUCT:=20
+DailyRiseGummies
+GLP1=20
+GLP1short - short 1 line ISI for Body=20
+HairSolutionRxWomen
+Latisse
+OralMinoxidilWomen
+Ozempic=20
+Plenity=20
+Saxenda=20
+Sparks=20
+Cialis
+Upneeq
+Viagra
+Wegovy
+WegovyPill
+Zepbound
+ZepboundShort
+OralMinoxidilMen
+HairSolutionRxMen
+-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- this can be removed if any custom message extras are being used -->
+=20
+=20
+ <!--RO MASTER HEADER START -->
+=20
+=20
+=20
+ <!-- RO MASTER HEADER -->
+=20
+
+
+
+  <!--RO MASTER HEADER START -->
+=20
+=20
+ <!--RO MASTERHEADER CUSTOM CODE START -->
+=20
+=20
+ <!--RO MASTER HEADER LINKS -->
+=20
+ <!--MEMBER LOGGED IN LINK FOR ALL -->
+=20
+=20
+=20
+ <!--GENERAL LEAD LINK FOR ALL -->
+=20
+=20
+ <!--CUSTOM ED LINK FOR B&B -->
+=20
+=20
+=20
+
+ <!--CUSTOM ED VN 30 LINK -->
+
+ =20
+ =20
+
+
+ =20
+
+
+      <!-- NESTED ATTRIBUTES FOR RENEWAL BANNER -->
+     =20
+
+     =20
+     =20
+     =20
+     =20
+     =20
+     =20
+     =20
+
+=20
+
+ <!-- NESTED ATTRIBUTES FOR DUNNING BANNER -->
+ =20
+
+   =20
+   =20
+  =20
+    =20
+=20
+
+=20
+=20
+=20
+ <!--RO MASTER HEADER CODE END -->=20
+=20
+ <!--MEMBER HEADER -->
+=20
+ <!--MEMBER HEADER END -->
+
+
+
+ <!--MEMBER HEADER NO RENEWAL/DUNNING BANNER-->
+=20
+ <!--MEMBER HEADER PLAIN END -->
+=20
+ <!--SDF LEAD HEADER START -->
+
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd" style=3D"background-color:#ffffff;margin:0=
+px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:#f=
+fffff;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padd=
+ing:12px 24px 12px 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"left" style=3D"font-size:0px;padding:10px 25px;padding-bo=
+ttom:0px;padding-top:0px;word-break:break-word;"><table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"border-collaps=
+e:collapse;border-spacing:0px;"><tbody><tr><td style=3D"width:56px;"><a hre=
+f=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpo=
+cOJvp8WvvK0sUYhwuwdMDzkYCb67EQjujzNDlZMqXI1Gb2473-2B1-2BX0BIvBLa4Ys6xqczmnZ=
+q8VSQHDxJBxaGoT3DCy8dMwGjULPnZBvmSPHEfFUaqMP6OjWAMskEG5qLLpnqCMH-2BdfKjTSvt=
+BJMe1tHbnI217bTXBYqmisX9LX-2FS51zJ7lKBv98eZVz4deOU7Fz2v-2FF3tD-2BdBoAu1u6lu=
+dlVRKCMckMHnthivugKrPXohWndvDFOIG-2FvWdb0e40WA-3D-3DI0E8_oP8Jf99AY6CMFljWI6=
+KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82=
+ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJg=
+fjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkX=
+Z8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ou=
+y8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK6=
+0NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRR=
+AQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCju=
+YHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOMzyulmD=
+I-2BCNN7Di94Rlsr36Wdx6hxk7wKT9bSIvLI1LHkAU-2FRqwCRM695k5zWF9ocKl3UScLESR9S5=
+trg33KphUktgCFcRp2t-2FdPeExGhV008CkQ4g-2FCrY7Wov0M0IujEDVepi1pSv-2FnPOW99ql=
+OCg-3D" rel=3D"noopener noreferrer" style=3D"color:#444444;text-decoration:=
+underline;" target=3D"_blank"><span style=3D"color:#444444;text-decoration:=
+underline;"><img alt=3D"Ro.Co Icon" height=3D"auto" src=3D"https://cdn-web-=
+assets.dyspatch.io/org_01j9q2nnbx8tcvghbzn35hcy4t/Mh27zZcURNShFADpjzNT_Logo=
+.png" style=3D"border:none;display:block;font-size:13px;height:auto;outline=
+:none;text-decoration:none;width:100%;" width=3D"56"></span></a></td></tr><=
+/tbody></table></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+=20
+ <!--SDF LEAD HEADER END -->
+=20
+=20
+ <!--BODY LEAD HEADER START -->
+
+ <!--BODY LEAD HEADER END -->
+=20
+
+
+ <!--ED VN 30 HEADER START -->
+
+ <!--ED VN 30 HEADER END -->
+=20
+
+ <!--ED BF 20 HEADER START -->
+
+ <!--ED BF 20 HEADER END -->
+=20
+=20
+ <!--RO MASTER HEADER END -->
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+ <!-- DYSPATCH PLACE HOLDER HEADER -->
+=20
+ <!-- DYSPATCH PLACE HOLDER HEADER -->
+=20
+=20
+=20
+=20
+ <!-- START MODULE 1 - Top Banner Module -->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=3D=
+"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd" style=3D"background-color:#F1FDA6;margin:0=
+px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:#F=
+1FDA6;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padd=
+ing:2px 23px;padding-bottom:2px;padding-left:24px;padding-right:24px;paddin=
+g-top:2px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"center" style=3D"font-size:0px;padding:10px 25px;word-bre=
+ak:break-word;"><div style=3D"color:#1A1A1A;font-family:'Helvetica Neue',he=
+lvetica,arial,sans-serif;font-size:14px;line-height:20px;text-align:center;=
+"><p style=3D"margin-top:0;margin-bottom:0"><a href=3D"https://ablink.email=
+.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2Fuz=
+sL-2F2hh83FyTKKumnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6=
+ebNSwko5Kr8SshrJO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzAwBNsixDc8hzfLzdsq6yO=
+QA7SMjM6iaHAhtoX-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiVXp2EBz2j-2FLG-2Fd3ws=
+s6QbqQgpmAKR7sQgVkWlIa9WE3JoLlwXqZOvSIQY-3DlvL9_oP8Jf99AY6CMFljWI6KUTl8t3WF=
+50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx=
+6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf=
+5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErz=
+XeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn=
+9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2B=
+q4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-=
+2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6k=
+SFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOKsOAgvYL68pp4cUE=
+MwO7EIE13ZTi-2BMFIKMHsoBzM1IcVhXaiA5PLD54w7icZ5jF2wV53agEfe9ZqLJxY1SWzlS4sD=
+c9EpuVAQwFINXVO1A9Z8DhqCewC4gTv0Mat2QGRgg72l4hS5qT5pXKoqPiyIM-3D" style=3D"=
+text-decoration:none;color:#1A1A1A;"><span style=3D"text-decoration:none;co=
+lor:#1A1A1A;"><span style=3D"color:#1a1a1a">Intro Offer: Get your first mon=
+th for $45*</span></span></a></p></div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!-- END MODULE 1 - Top Banner Module -->
+=20
+ <!-- IMAGE -->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"center" style=3D"font-size:0px;padding:0;word-break:break=
+-word;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" style=3D"border-collapse:collapse;border-spacing:0px;"><tbody><t=
+r><td style=3D"width:600px;"><a href=3D"https://ablink.email.ro.co/ls/click=
+?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKK=
+umnOIqVqyBdmaZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8Sshr=
+JO9AGnXDpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzAwBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhto=
+X-2FxHPYGL51PoixYXBzGua1l6CDqTCyrwkiMqiVXp2EBz2j-2FLG-2FdxStVzJCJxPDoH96cAS=
+by-2BFpQpegTQ-2FfT1LF9HLJyuT4-3DhyLx_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo=
+4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3=
+n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzb=
+eVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnU=
+x5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF=
+-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tO=
+u-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4N=
+vyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zf=
+oey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOBl2UFx9h-2BzSEk5y1u9Ap9ET5a=
+due3-2FmEzw7TEA4noaf35LclOf30gw-2BzJHFsmYwt6faBAHnX2UX9THj8Bfw7h7-2FOd-2BlL=
+ChVFBVD6YrMdNZtyjtvQCZWgiD2nbEF9p0XEJ2WmljMqqArZhZvO0PRPm8-3D" rel=3D"noope=
+ner noreferrer" style=3D"color:#1A1A1A;text-decoration:underline;" target=
+=3D"_blank"><span style=3D"color:#1A1A1A;text-decoration:underline;"><img a=
+lt=3D"Here's what's possible" height=3D"auto" src=3D"https://braze-images.c=
+om/appboy/communication/assets/image_assets/images/65aaf880702856004cdd09cb=
+/original.gif?1705703552" style=3D"border:none;display:block;font-size:13px=
+;height:auto;outline:none;text-decoration:none;width:100%;" width=3D"600"><=
+/span></a></td></tr></tbody></table></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-lr-24-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"pd-lr-24" style=3D"background-color:#ffffff;margi=
+n:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:=
+#ffffff;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;pa=
+dding:0px 24px 0px 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <!-- Outlook-only spacer (28px) -->
+ <tr><td><div>
+ <!--[if mso]>
+ <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+ <tr>
+ <td height=3D"28" style=3D"line-height:28px;mso-line-height-rule:exactly;f=
+ont-size:0;">=C2=A0</td>
+ </tr>
+ </table>
+ <![endif]-->
+ </div></td></tr>
+ <!-- All other clients -->
+ <tr><td style=3D"font-size:0px;padding:0px 12px 0px 12px;word-break:break-=
+word;"><div style=3D"height:28px;line-height:28px;">=E2=80=8A</div></td></t=
+r>
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D MOBILE =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <!-- Keep sides from row; no extra inner padding -->
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td align=3D"left" style=
+=3D"font-size:0px;padding:0;word-break:break-word;"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;"><div styl=
+e=3D"color:#1a1a1a;font-family:'Helvetica Neue',helvetica,arial,sans-serif;=
+font-size:16px;line-height:22px;text-align:left;"><p style=3D"margin-top:0;=
+margin-bottom:0"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.=
+7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVqyBdm=
+aZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXDpFur=
+XUQ4ucPmWfcXHzNf5kmYh4dcImzAwBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPYGL51=
+PoixYXBzGua1l6CDqTCyrwkiMqiVXp2EBz2j-2FLG-2FdtB4kgc4XqOEn9bS5pzYQqTZUHoB1Jn=
+7AMcpELjg8zOk-3DxQgE_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbN=
+BSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk=
+3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvp=
+hSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRA=
+eWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xB=
+nCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7pr=
+JyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOi=
+R91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-=
+2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOKs3H0oHw2ZsiE1qCcHd3kRBBn46kaMAVohjI9s1w5Wk=
+rB3UIwDR4-2FZPGx8kwhQ6w4-2BHT6-2Frnr-2FUKg8vi4dn8OTuLO4Yi5X8Y2vKbZc2C6Mo-2B=
+wCSIfR7-2FuDlvogw0C9PsgDrs5QLAcowHSstPYU4ZzY-3D" style=3D"text-decoration:n=
+one;color:#1A1A1A;"><span style=3D"text-decoration:none;color:#1A1A1A;"><sp=
+an style=3D"color:#1a1a1a">Find out how much weight you could lose with our=
+ weight loss calculator, and see the potential of branded GLP-1 medication =
+and healthy lifestyle changes.</span></span></a></p></div></div>
+<!--[endif]-->
+</div></td></tr>
+=20
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D DESKTOP =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <!-- Keep sides from row; no extra inner padding -->
+ <tr class=3D"dys-desktop"><td align=3D"left" style=3D"font-size:0px;paddin=
+g:0px 24px 0px 24px;word-break:break-word;"><div class=3D"dys-desktop"><div=
+ style=3D"color:#1a1a1a;font-family:'Helvetica Neue',helvetica,arial,sans-s=
+erif;font-size:16px;line-height:22px;text-align:left;"><p style=3D"margin-t=
+op:0;margin-bottom:0"><a href=3D"https://ablink.email.ro.co/ls/click?upn=3D=
+u001.7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqV=
+qyBdmaZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnX=
+DpFurXUQ4ucPmWfcXHzNf5kmYh4dcImzAwBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHP=
+YGL51PoixYXBzGua1l6CDqTCyrwkiMqiVXp2EBz2j-2FLG-2FdjMmfm-2Fdw1PJeYimWJdsXE09=
+QLqsQFoOhQa1EA4Ovkyg-3D1GPd_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON=
+7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZft=
+NDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQ=
+VuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4j=
+OUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChG=
+EvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwa=
+nBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG=
+4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7c=
+COlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOKWgDTA5xaNGoexzlVlgZb53IBeFk0F-2BmCT=
+3tG4-2FhAXAwF7xZyUTzQu1pX3IQHEqwt7c5JyA2zvpTF-2FozOD9Qz04bzPRN4l6rmZ-2Bc0OR=
+wAmuk95AVLpnpSSTZwDzeabAr-2FYrUzftArH9NzhDZQqe06M-3D" style=3D"text-decorat=
+ion:none;color:#1A1A1A;"><span style=3D"text-decoration:none;color:#1A1A1A;=
+"><span style=3D"color:#1a1a1a">Find out how much weight you could lose wit=
+h our weight loss calculator, and see the potential of branded GLP-1 medica=
+tion and healthy lifestyle changes.</span></span></a></p></div></div></td><=
+/tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+=20
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D DESKTOP =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <div class=3D"dys-desktop">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#ffffff;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0px 24px;padd=
+ing-bottom:0px;padding-left:24px;padding-right:24px;padding-top:0px;text-al=
+ign:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <!-- Outlook-only spacer -->
+ <tr><td><div>
+ <!--[if mso]>
+ <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+ <tr>
+ <td height=3D"28"=20
+ style=3D"line-height:28px;mso-line-height-rule:exactly;font-size:0;">
+ =C2=A0
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </div></td></tr>
+ <!-- All other clients -->
+ <tr><td style=3D"font-size:0px;padding:0;word-break:break-word;"><div styl=
+e=3D"height:28px;line-height:28px;">=E2=80=8A</div></td></tr>
+ <tr><td align=3D"left" class=3D"btn-hov btn-wd" style=3D"font-size:0px;pad=
+ding:10px 25px;padding-bottom:0;padding-top:0;word-break:break-word;" verti=
+cal-align=3D"middle"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"border-collapse:separate;line-height:100%;=
+"><tr><td align=3D"center" bgcolor=3D"#1A1A1A" role=3D"presentation" style=
+=3D"border:1px solid #1A1A1A;border-color:#1A1A1A;background:#1A1A1A;border=
+-radius:9999px;cursor:auto;mso-padding-alt:13px 32px;" valign=3D"middle"><a=
+ class=3D"dys-button-a" href=3D"https://ablink.email.ro.co/ls/click?upn=3Du=
+001.7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVq=
+yBdmaZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXD=
+pFurXUQ4ucPmWfcXHzNf5kmYh4dcImzAwBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPY=
+GL51PoixYXBzGua1l6CDqTCyrwkiMqiVXp2EBz2j-2FLG-2FdzYtlRlDuR8j8pCstkkeO8-2Bmf=
+NFtwXbwT8LZx-2BLemlVk-3DFU0w_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeO=
+N7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZf=
+tNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6u=
+QVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4=
+jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVCh=
+GEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBw=
+anBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVck=
+G4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7=
+cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOLuOgs6uodq-2FdRAnHuCoNSyLy4RDxxqCmI=
+hVv0RziQkjqcq-2FoH9COzQMsbiQPdNFJHXYms9nbEtnosKcidUaJm3wi8KoBv5-2F6foTS1V8i=
+vTlsfsYvBXnVdeclVJRI-2B2RrQgXoe-2FnmK71GIJMplWHICw-3D" rel=3D"noopener nore=
+ferrer" style=3D"background:#1A1A1A;border-radius:9999px;color:#FFFFFF;disp=
+lay:inline-block;font-family:'Helvetica Neue',helvetica,arial,sans-serif;fo=
+nt-size:16px;font-weight:500;line-height:24px;margin:0;mso-padding-alt:0px;=
+padding:13px 32px;text-decoration:none;text-transform:none;" target=3D"_bla=
+nk">Finish visit</a></td></tr></table></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+=20
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D MOBILE =3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#ffffff;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0px 12px;padd=
+ing-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-alig=
+n:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <!-- Outlook-only spacer -->
+ <tr><td><div>
+ <!--[if mso]>
+ <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+ <tr>
+ <td height=3D"28"=20
+ style=3D"line-height:28px;mso-line-height-rule:exactly;font-size:0;">
+ =C2=A0
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ </div></td></tr>
+ <!-- All other clients -->
+ <tr><td style=3D"font-size:0px;padding:0;word-break:break-word;"><div styl=
+e=3D"height:28px;line-height:28px;">=E2=80=8A</div></td></tr>
+ <tr><td align=3D"left" class=3D"btn-hov btn-wd" style=3D"font-size:0px;pad=
+ding:10px 25px;padding-bottom:0;padding-top:0;word-break:break-word;" verti=
+cal-align=3D"middle"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"border-collapse:separate;line-height:100%;=
+"><tr><td align=3D"center" bgcolor=3D"#1A1A1A" role=3D"presentation" style=
+=3D"border:1px solid #1A1A1A;border-color:#1A1A1A;background:#1A1A1A;border=
+-radius:9999px;cursor:auto;mso-padding-alt:13px 32px;" valign=3D"middle"><a=
+ class=3D"dys-button-a" href=3D"https://ablink.email.ro.co/ls/click?upn=3Du=
+001.7OUmBAxzip-2BQGTEWxWBpoYWBH7WQ5ByYfr8EKneK3-2FuzsL-2F2hh83FyTKKumnOIqVq=
+yBdmaZMH2E43bqHaT0auWOn7dYD6SBYpKXLkcC2T1qJgE-2BFAl6ebNSwko5Kr8SshrJO9AGnXD=
+pFurXUQ4ucPmWfcXHzNf5kmYh4dcImzAwBNsixDc8hzfLzdsq6yOQA7SMjM6iaHAhtoX-2FxHPY=
+GL51PoixYXBzGua1l6CDqTCyrwkiMqiVXp2EBz2j-2FLG-2FdU-2FkDsMrRWFb4-2FAvyLoOJOC=
+Fz1-2FcH8ZRehig4-2F4sP0oA-3D4AOe_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0=
+cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aN=
+CiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh=
+8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm=
+6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3=
+sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2B=
+tDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzP=
+pVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7=
+YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOOTXcp5xpoTER5tfzoGMKsLzr84F45YR=
+C6tSJyTu8wA1Co69N1akUQQmdiHxhVupiPPf95DVlP5GIU-2FIAir4cVoB8bBrOrCZuG5zzENcU=
+W9HwfNUNo0QtLIgTCwS6w6RRf-2FPpYc-2FFt8RvPTvdkIRnrE-3D" rel=3D"noopener nore=
+ferrer" style=3D"background:#1A1A1A;border-radius:9999px;color:#FFFFFF;disp=
+lay:inline-block;font-family:'Helvetica Neue',helvetica,arial,sans-serif;fo=
+nt-size:16px;font-weight:500;line-height:24px;margin:0;mso-padding-alt:0px;=
+padding:13px 32px;text-decoration:none;text-transform:none;" target=3D"_bla=
+nk">Finish visit</a></td></tr></table></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+<!--[endif]-->
+</div>
+=20
+ <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#FFFFFF;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:0;text-align:=
+center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+=20
+ <!-- Mobile version -->
+=20
+ <tr class=3D"dys-mobile" style=3D"display:none;"><td class=3D"mb-pd-tp" st=
+yle=3D"font-size:0px;padding:0px 0px 0px 0px;word-break:break-word;" vertic=
+al-align=3D"top"><div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-tp-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd-tp" style=3D"background-color:#ffffff;margi=
+n:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:=
+#ffffff;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;pa=
+dding:0px 0px 0px 0px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td style=3D"font-size:0px;padding:0px;word-break:break-word;"><div st=
+yle=3D"height:0px;line-height:0px;">=E2=80=8A</div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+<!--[endif]-->
+</div></td></tr>
+=20
+ <!-- Desktop version -->
+=20
+ <tr class=3D"dys-desktop"><td class=3D"mb-pd-tp" style=3D"font-size:0px;pa=
+dding:28px 0px 0px 0px;padding-bottom:0px;padding-left:0px;padding-right:0p=
+x;padding-top:0px;word-break:break-word;" vertical-align=3D"top"><div class=
+=3D"dys-desktop">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-tp-outlook" style=3D"width:600px;" width=3D"600"><tr><td style=
+=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+<![endif]--><div class=3D"mb-pd-tp" style=3D"background-color:#ffffff;margi=
+n:0px auto;max-width:600px;"><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"background-color:=
+#ffffff;width:100%;"><tbody><tr><td style=3D"direction:ltr;font-size:0px;pa=
+dding:28px 0px 0px 0px;padding-bottom:0px;padding-left:0px;padding-right:0p=
+x;padding-top:0px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:600px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td style=3D"font-size:0px;padding:0px;word-break:break-word;"><div st=
+yle=3D"height:0px;line-height:0px;">=E2=80=8A</div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div></td></tr>
+=20
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D DESKTOP =3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <div class=3D"dys-desktop">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#ffffff;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:28px 24px 0px=
+ 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"left" style=3D"font-size:0px;padding:0px 24px 0px 24px;wo=
+rd-break:break-word;"><div style=3D"color:#1A1A1A;font-family:'Helvetica Ne=
+ue',helvetica,arial,sans-serif;font-size:12px;line-height:16px;text-align:l=
+eft;"><p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1A1A1=
+A">*First month is $45, then $145/month (medication not included)</span></p=
+></div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+=20
+ <!-- =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D MOBILE =3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D -->
+=20
+ <div>
+<!--[if !mso]--><div class=3D"dys-mobile" style=3D"display:none;">
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"width:600px;" width=3D"600"><tr><td style=3D"line-height:0px;font-si=
+ze:0px;mso-line-height-rule:exactly;">
+<![endif]--><div style=3D"background-color:#ffffff;margin:0px auto;max-widt=
+h:600px;"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;=
+"><tbody><tr><td style=3D"direction:ltr;font-size:0px;padding:28px 24px 0px=
+ 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:576px;">
+<![endif]--><div class=3D"dys-column-per-100 outlook-group-fix" style=3D"di=
+rection:ltr;display:inline-block;font-size:13px;text-align:left;vertical-al=
+ign:top;width:100%;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+ <tr><td align=3D"left" style=3D"font-size:0px;padding:0px 12px 0px 12px;wo=
+rd-break:break-word;"><div style=3D"color:#1A1A1A;font-family:'Helvetica Ne=
+ue',helvetica,arial,sans-serif;font-size:12px;line-height:16px;text-align:l=
+eft;"><p style=3D"margin-top:0;margin-bottom:0"><span style=3D"color:#1A1A1=
+A">*First month is $45, then $145/month (medication not included)</span></p=
+></div></td></tr>
+ </table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</td></tr></tbody></table></div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+</div>
+<!--[endif]-->
+</div>
+=20
+=20
+ <!--RO MASTER FOOTER START -->
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+
+  =20
+
+<!--RO MASTER FOOTER START -->
+
+
+
+<!-- EDUCATONAL BLOCK START -->
+
+
+      <!-- EDUCATIONAL BLOCK START -->
+
+      <!-- loggedIn - "Have more questions" -->
+     =20
+
+      <!-- helpCenter - "Manage your ongoing care" -->
+     =20
+
+      <!-- EDUCATIONAL BLOCK END -->
+
+<!-- EDUCATONAL BLOCK END -->
+
+
+
+      <!--TRANSACTIONAL FOOTER START -->
+     =20
+
+      <!--TRANSACTIONAL FOOTER END -->
+
+      <!--MARKETING FOOTER START -->
+     =20
+
+      <!--ISI Section Start -->
+     =20
+
+
+      <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"mb-pd-outlook mb-pd-tb-0-outlook" style=3D"width:600px;" width=3D"60=
+0"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;">
+<![endif]-->
+      <div class=3D"mb-pd mb-pd-tb-0" data-visual-id=3D"Row 1" style=3D"bac=
+kground-color:#ffffff;margin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" data-visual-id=3D"Row 1" role=3D"presentation" style=3D"background-c=
+olor:#ffffff;width:100%;">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px; padding:24px 24px 0=
+px 24px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:552px;">
+<![endif]-->
+                <div class=3D"dys-column-per-100 outlook-group-fix mb-pd" s=
+tyle=3D"direction:ltr;display:inline-block;font-size:16px;text-align:left;v=
+ertical-align:top;width:100%;">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" r=
+ole=3D"presentation" style=3D"vertical-align:top;" width=3D"100%">
+                    <tr>
+                      <td align=3D"left" class=3D"dynamic-link" style=3D"fo=
+nt-size:0px;padding: 0px 24px; word-break:break-word;">
+                        <div style=3D"color:#1a1a1a;font-family:Helvetica, =
+Arial, sans-serif;font-size:12px;line-height:16px;text-align:left;">
+                          <!-- ISI Module -->
+
+
+	=09
+	=09
+	  		=20
+<p><strong>Important Safety Information</strong><br>See Important Safety In=
+formation about GLP-1 medications, including Boxed Warning, at <a href=3D"h=
+ttps://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpobpFu8H=
+56VrZXkKmz7hzJR0JLHGpb1KyyRFqpLEshBIx8HXtBS1e9ti9yrHgId-2FZZD-2FPe05DLV1I32=
+jSC0AUODOaogTN-2FFfEj1XNu3eQzKcI6HvqI567X-2BlWsRRXZLyVH8UviLbTjAhWO5BL-2BWy=
+rTeae0hipjAiyP2oVlolH7Pq4I4esaNICzDOsw6odSP7VjgGyKz0SZ5glW6oKIJVvmX6ZZ79Jm4=
+JO2E3o-2BGlSsZJJDdrABXakmp34St6Nm5rvd3K5tnoXSPvvZo1tjk8xfFk-3DecMw_oP8Jf99A=
+Y6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HP=
+InulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLA=
+soAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7=
+Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgK=
+m4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54v=
+AUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sM=
+Hh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUND=
+YEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIG=
+dqOFDbMHKpXEyZDgXddHsFDe6NTMGtShS79GhSzbiwk1Ctp1eHs0iKtZ76SocBaKYr8bS06XDvt=
+XvBaXqqR5gBQh5y-2FfTDlUujvZ3os3B09yF-2FXvrA3sUXpaDhr0op0QrjbN46yxZtyo730Kye=
+TJ-2FyY94-3D"  target=3D"_blank" style=3D"text-decoration:  underline; colo=
+r:#1a1a1a">ro.co/safety-info/glp1 </a></p>=20
+
+
+	=09
+
+
+
+
+
+												=09
+
+                       =20
+                     =20
+                   =20
+                  </table>
+                </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+     =20
+
+      <!--ISI Section End -->
+
+      <!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-wr-top-16-outlook mb-pd-outlook" style=3D"width:600px;" width=3D"=
+600"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;">
+<![endif]-->
+      <div class=3D"pd-wr-top-24 mb-pd" style=3D"background-color:#ffffff;m=
+argin:0px auto;max-width:600px;">
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;width:100%;"=
+>
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;padding:0px;padding-=
+top:28px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exac=
+tly;">
+<![endif]-->
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-lr-24-outlook mb-pd-outlook" style=3D"width:600px;" width=3D"600"=
+><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:exactl=
+y;">
+<![endif]-->
+                <div class=3D"pd-lr-24 mb-pd" style=3D"background-color:#ff=
+ffff;margin:0px auto;max-width:600px;">
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;wid=
+th:100%;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"direction:ltr;font-size:0px;padding:0p=
+x 48px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:504px;">
+<![endif]-->
+                          <div class=3D"dys-column-per-100 outlook-group-fi=
+x" style=3D"direction:ltr;display:inline-block;font-size:16px;text-align:le=
+ft;vertical-align:top;width:100%;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"background-color:#f2f2f2;border-col=
+lapse:separate;border-radius:16px;vertical-align:top;" width=3D"100%">
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-bottom:24px;padding-top:32px;word-break:break-wo=
+rd;">
+                                  <div style=3D"color:#000000;font-family:H=
+elvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:center;=
+">
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoQRLs-2FB-2FIS4jPxYGSIgDwj8QJius1c=
+XSeMJR2ShprT3hLiNx4ZdQWANf3-2BivIvgVA1W3FiC4eBC6jyTKvMMwr5n-2B0a1IqEaZvYfRi=
+HovHuw91KOszUK2VBX0zpPXx8amqBKtQ4nMwQdOsCtM5Rh21RJPMAkgNJCJIc5AEIGKGOst-2B5=
+UBfuMu9ywZ8Jh92WcpqA9pyE-2Fpdly7vX2p-2BZFwDMyYXGnkRZFX-2BfdPNqCuLmniexDCF7y=
+KwzVt1mhGajgwoSqVXbJuCMWsoai20quNdqc-3Do2Xm_oP8Jf99AY6CMFljWI6KUTl8t3WF50P0=
+7s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3=
+CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZ=
+z4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGI=
+VijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2t=
+VXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr=
+5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7s=
+rgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXC=
+X4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOFS6xsVnDLtxYuIPBu40m=
+U-2FBWIZoJiC0gPnfJbwzIIV7qXYCcu1j0YWq-2FgQs91-2FZcIlOinOLYRF8PAHJwPCoQ2jBI8=
+b7H3OMtY4d7w3Ya0mRwx6LZ6X1MjatkMbjB5hivmAplLhPyJ6BF-2B6HT3EfZI0-3D" style=
+=3D"color:#828282; text-decoration:none;"><span style=3D"color:#828282;text=
+-decoration:none;"><u>Sexual health</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoenapaOZaMtY0C1tAmejYNVD1BfSgIKI0L=
+WyqJCwPARsRnwIPifiIJdIJzchuTIs1RFRC012e2xrdjdGqFew2DzSDBrlLWA0vp0RyRQj5JN-2=
+F-2BtWDOptzQYpGLWoI96AIrcFkahb3FuGZWFceOp-2Bc6ErekguxbJoTDq0x7aWtnkEuh2qioZ=
+bBGn7TgtJPuu35Nqj0iGCasoz-2FVoM8EhyT9pzn-2FReCRklAepQWpTdapYhGcGX-2Boj3GdFd=
+A4a8l99rU3w-3D-3D-a8c_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKb=
+NBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSA=
+k3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURv=
+phSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwR=
+AeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1x=
+BnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7p=
+rJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EO=
+iR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW=
+-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOIDDJajwjEFK84uRfKwBw3T8GBjeDcGrDpHH6N5x5vu=
+ajaQdG117wS41QqrzHdXuBITt0XR-2BRsjX0RR7rTQjv7GPbDBMLnrlKgi8-2BzOmRFmExpakXl=
+na1Y4udxno3ed2vBQK4QBPy-2FqAFM1tjGj9A48-3D" style=3D"color:#828282; text-de=
+coration:none;"><span style=3D"color:#828282;text-decoration:none;"><u>Weig=
+ht loss</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoSJmozfzLmHKVpgOjgBei-2FIboDQ8HsnR=
+c-2FVct2pWe8mB853LRYACcZy-2BVHRgzP-2BfLasaty87eMsCy1I5ZCckU1o7aYfodGif7nXGQ=
+W-2FjH2ygxldNHwEMBkGxcWZ9z40KEdeIE6Do3xgfcRvxt70e7Dz-2BCjA-2FGa8AlR2uM7Bs-2=
+Bv-2FB8OIpXzxzwEbSMwn6wzVB7dntAKMcKL8Yws6-2BwEA8RozMXMhFGXgRsWMSkyxvXAcsBiv=
+z7fW3e8BhZ1cFi4nnbg-3D-3DT9dQ_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZe=
+ON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZ=
+ftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6=
+uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH=
+4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVC=
+hGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDB=
+wanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVc=
+kG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN=
+7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOPgYGjE5Rjet2alDTUwzOALsdQrRhYAMBYw=
+bPRCMGHLqMLSYr9KnVU0b4veANmJqWRM-2BC5KmcY3QIwyRNq8Q9izFzhmLIf05Ld0HfMb4BLm-=
+2FguXbzwBuz6owaTkZMxEjT8J882QV66-2BLpE9vWkKC8aM-3D" style=3D"color:#828282;=
+ text-decoration:none;"><span style=3D"color:#828282;text-decoration:none;"=
+><u>Fertility</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoabZkrGhMr5PKdQNBT1h8pY69-2F1JCfqb=
+MtkDHnWl8fwQEpOkvhIJs4lCxvzjmOQoGn4flAPerTyN2ZnBu-2B3RCdzr4kKiRZhQ0xj28qSIL=
+7nLGNY6-2B6FyK0vaIkVDgdT-2B-2FVuf6QE8IMsh53l0Vj2dI3eC09bmIfc97lsP8TATGo0LoB=
+xmf-2Bvzy6uO5gr6bbv6E0vyN2yY2ymCyXhbZvjHajb5-2F3HwvsrUbol99nVAk6v3-2FdZnaIG=
+LQ-2Bd8uEg8D0FYvQ-3D-3D53tB_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON=
+7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZft=
+NDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQ=
+VuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4j=
+OUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChG=
+EvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwa=
+nBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG=
+4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7c=
+COlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOE2bZCEDJ08p7cjDPnEo5cOla3J-2FwyNDnYf=
+lK1CKxeVWXoAMIBctsJcq-2FRkSUbIB5HSKqQZD54rRyeBlzTIrK1j4Kc9XRB9r11GPrZ6ahe-2=
+FnzrJhfZxK4z4tf6VagPOEgicaglWvCOpXejM2anyYgME-3D" style=3D"color:#828282; t=
+ext-decoration:none;"><span style=3D"color:#828282;text-decoration:none;"><=
+u>Hair loss</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoXtZX2ZUZ9v1rctEO4SwRT5S-2BeUIeNxu=
+J1OQjO3VMJZP2Q7SaAlLLdIlj1JpL1ypJYwWe7AH1yBe7pxJUedujVPOOjb4MV5CTvuXkYE3O3h=
+ngJ3OsvwbZtvnbRvpY921BXb-2FF68ZUBhkRGb4PdMH2ynvUjooxTMl2w-2BF6KSmarVJtYw-2B=
+n1U-2Fna4kylYTQ4xRY1JT3wbhFhgPDKSyxh-2Fo9tTJo4ZdOainijlND-2FdX-2FT2vrw9m8t8=
+WiUlO5Alp-2BS8qYg-3D-3DNhnR_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON=
+7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZft=
+NDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQ=
+VuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4j=
+OUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChG=
+EvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwa=
+nBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG=
+4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7c=
+COlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOJb7FQI34CoRlzNwADWb-2FYSD7f-2BdAmptg=
+w-2BYQbXsnKL-2BDwNIib6u-2BRakPo0zXVHcblVZPyWLOvAMDbtEUqzlBu9Eq8j9-2BGZvBK2A=
+LWdI2OL2X-2FWQE9oQNGzX685yz-2F4J41rjvBKkSLqykd9K7Wev-2BPg-3D" style=3D"colo=
+r:#828282; text-decoration:none;"><span style=3D"color:#828282;text-decorat=
+ion:none;"><u>Skin care</u></span></a>&nbsp;&nbsp;
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoVxdMU8Hm1ZigPUvEGk-2Fz08UaoIfKMha=
+Vcev01t-2FRl0Zn1nB59HeNq8jZfoeqx8bLONYcSTNPebPx1ydfoLfDduL2e9mxFEDlAzn6e7V8=
+YNb3BEWgZ42jOppkjvcHkmDeHL75ei7qfpn37acMctONuVQLSK9oFePUjZ6U5vkR2r0JdienWlf=
+HMDrwI0q94XnzzSKlpSzxrCZIouRFvOdFTCSDLTeaTa-2By6AJMZZGS28y1LU4ciu-2FE0ZBAfV=
+AObzr3Q-3D-3D3JuQ_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSD=
+FICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bo=
+lYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw=
+8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWe=
+d4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCR=
+IP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyC=
+H5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91=
+bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ=
+7A82QBK2rQVvpb4sbLElIJDeIGdqOGjzWp2HpQaIc8cYxuLV4erp4drciup5myf4wMeIiPr8OTq=
+LbgD0CC-2B-2BEJjPBEovELXpwgDYLLwJGR8uimz5nAMhc83mDKLmaTSNRYry84284oSsr8sm11=
+t9Rl-2Bb-2Fda0KLH9X3IZVge5CJGpnjoN7EA-3D" style=3D"color:#828282; text-deco=
+ration:none;"><span style=3D"color:#828282;text-decoration:none;"><u>Daily =
+health</u></span></a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" class=3D"pd-lr-24a mb-=
+pd" style=3D"font-size:0px;padding:0 48px;word-break:break-word;">
+                                  <p style=3D"border-top-color:#DDDDDD;bord=
+er-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width=
+:100%;"></p>
+<!--[if mso | IE]><table align=3D'center' border=3D'0' cellpadding=3D'0' ce=
+llspacing=3D'0' role=3D'presentation' style=3D'border-top-color:#DDDDDD;bor=
+der-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;widt=
+h:408px;' width=3D'408px'><tr><td style=3D'height:0;line-height:0;'>&nbsp</=
+td></tr></table><![endif]-->
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-bottom:0;padding-top:24px;word-break:break-word;=
+">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"border-collapse:collapse;bord=
+er-spacing:0px;">
+                                    <tbody>
+                                      <tr>
+                                        <td style=3D"width:40px;"><a href=
+=3D"https://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoS=
+goZgoIy-2FN8FM2mSZPkkOikLJ0VfQKfwVrkxmQfbAKio2-2FgQRcaaB6VZ134-2BhaYmqKBwkR=
+wgS6vp6w3vGZF06heslzG5nd-2FIBt0poLFxp1Jj-2Bmb6ZQApjOveORAe3rxlcgkTosdlm0USv=
+AkZkXatMBfJAJ8dWS5Q29MHz2os0Ol3XxWwGx3HuGQYj-2Fya0uo4txuYlBjg19dEeBS48FvQ0e=
+lrmO2V0sh-2FQfQoOzavbNgRcgl_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON=
+7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZft=
+NDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQ=
+VuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4j=
+OUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChG=
+EvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwa=
+nBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG=
+4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7c=
+COlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOH1vzNElUDC7et-2FLafpTaPU6NezMgV4B2Ya=
+HU8-2BYAIzWaj8ZWmA8heaKwwVj6bCmQRgEX9IWLfCiwTU9yM-2B5eNtcf21p6dyeUFkpLj-2Bd=
+MvmJD4Wxfm-2FX1iSUtj7-2F-2F51TEgj-2B0XRpKZCi8r-2Fb4mRkwFY-3D" rel=3D"noopen=
+er noreferrer" target=3D"_blank"><img height=3D"auto" src=3D"https://cdn-we=
+b-assets.dyspatch.io/org_01j9q2nnbx8tcvghbzn35hcy4t/rdgmdU08R9rLPOSDPGxX_Lo=
+go%20(2).png" style=3D"border:none;display:block;font-size:16px;height:auto=
+;outline:none;text-decoration:none;width:100%;" width=3D"40"></a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:10px 25px;padding-top:8px;word-break:break-word;">
+                                  <div style=3D"color:#828282;font-family:H=
+elvetica, Arial, sans-serif;font-size:16px;line-height:1;text-align:center;=
+">
+                                    =C2=A9 2026 Roman Health Ventures, <br>
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoVErHWYW6PAZIZGWhQXw-2FoZ8bXbg7qxB=
+vORY0r0gCI-2F-2BYcYmUyymk-2BqqPDmSZyINeakDG2JGz7ymMgi-2Bn1pjKdto5xUDS3mF2oC=
+feusPWq0oefVv5-2FL24q8Z-2BmnlnLEe2KZFgA4WGZW-2FJ6nclhlk5m7xwXtlZKCNHQnFqFWY=
+AtkFakOHhHPObR668wQvmj4dhE6XvcHYtNLYqLiV-2FJ1NBqugvOXQCf-2Bb-2BysUw7WhizDtR=
+d0L_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVO=
+R4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10t=
+jJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGl=
+k4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wr=
+suAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6w=
+GgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0U=
+O44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5j=
+OVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb=
+4sbLElIJDeIGdqOHa-2BuA5fw-2B-2B9eAo2dpB8jWkXNqhu00vY7WTKR4x6I22pXWNJ-2Byg9V=
+KUVxFN6doI-2BvGwG5MqXMwGrf5zX1xVtj7WBYUDlsvzXSSli5v5T9XdRhw2wRmKMHq3repXCqs=
+OXhDWX6PQUJWp13DVL57wddvw-3D" style=3D"color:#828282; text-decoration:none;=
+"><span style=3D"color:#828282;text-decoration:none;">625 Avenue of the Ame=
+ricas, NY, NY 10011</span></a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align=3D"center" class=3D"btn-wd" style=
+=3D"font-size:0px;padding:10px 25px;padding-bottom:32px;padding-top:24px;wo=
+rd-break:break-word;" vertical-align=3D"middle">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line=
+-height:100%;">
+                                    <tr>
+                                  =20
+                                      <td align=3D"center" bgcolor=3D"trans=
+parent" role=3D"presentation" style=3D"border:1px solid #828282;background:=
+transparent;border-radius:32px;cursor:auto;mso-padding-alt:13px 54px;" vali=
+gn=3D"middle"><a class=3D"dys-button-a" href=3D"mailto:care@ro.co?Subject=
+=3DRE:%20See what weight loss could look like for you" rel=3D"noopener nore=
+ferrer" style=3D"background:transparent;border-radius:32px;color:#828282;di=
+splay:inline-block;font-family:Helvetica, Arial, sans-serif;font-size:16px;=
+font-weight:normal;line-height:120%;margin:0;mso-padding-alt:0px;padding:13=
+px 54px;text-decoration:none;text-transform:none;" target=3D"_blank">
+                                          Contact us
+                                        </a></td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+<!--[if mso | IE]>
+<![endif]-->
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"pd-lr-24-outlook pd-bot-24-outlook" style=3D"width:600px;" width=3D"=
+600"><tr><td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:ex=
+actly;">
+<![endif]-->
+                <div class=3D"pd-lr-24 pd-bot-24" style=3D"background-color=
+:#ffffff;margin:0px auto;max-width:600px;">
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" role=3D"presentation" style=3D"background-color:#ffffff;wid=
+th:100%;">
+                    <tbody>
+                      <tr>
+                        <td style=3D"direction:ltr;font-size:0px;padding:0 =
+48px 48px;text-align:center;vertical-align:top;">
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0"><tr><td style=3D"vertical-align:top;width:504px;">
+<![endif]-->
+                          <div class=3D"dys-column-per-100 outlook-group-fi=
+x" style=3D"direction:ltr;display:inline-block;font-size:16px;text-align:le=
+ft;vertical-align:top;width:100%;">
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" role=3D"presentation" style=3D"vertical-align:top;" width=3D"100%"=
+>
+                              <tr>
+                                <td align=3D"center" style=3D"font-size:0px=
+;padding:24px 0;word-break:break-word;">
+                                  <div style=3D"color:#828282;font-family:H=
+elvetica, Arial, sans-serif;font-size:12px;line-height:16px;text-align:cent=
+er;">
+                                    This email was sent to you because you =
+indicated that you'd like to receive marketing and promotional emails from =
+Ro. This email is intended for the recipient only. <br><br><a href=3D"https=
+://ablink.email.ro.co/ls/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoY6YnAHLn9t=
+-2FQiw0SJIvGhDLMGBnQfMCldj2WES-2Bi-2F0tJbesElKzOcTnC6qjMxt-2FDm13PUmu42vCtY=
+bWCw1IOL2Z5mkwPEYyeXNY20hoXzlyljVIDL77ZUD-2B3P4AHcORUBHRj3uuNTcfgO1bDbv2N5p=
+-2FqAJEzzWqFtxdpTdwnovQqRvtvLiYG1E4FIxHPSLmbrOrvbuyrniR8aVwdw-2B0HOI30gVRMt=
+jHSG3zEfgGLYdkzS4cptQI-2BLhUNyLlMU4o8w-3D-3DKgxA_oP8Jf99AY6CMFljWI6KUTl8t3W=
+F50P07s1iDTo4df0cZeON7DMKKbNBSDFICISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevm=
+x6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsxxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRc=
+f5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXEr=
+zXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4JyX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFH=
+n9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2=
+Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL=
+-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTLGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6=
+kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82QBK2rQVvpb4sbLElIJDeIGdqOPOBS-2F2om16H32=
+nSIOSG8vpuIZ3hGr73XMvzjVrfNiN5z5t0sb2rM53WurKPpBy4egWBH9r-2FpdHsIXsHJ7SVYMx=
+aylDFC2RvQFBeOLpfjdorSKR1i4jCJmEudtesdaNi1u7YPAZHi-2F7J3TiLzGfmqR8-3D" styl=
+e=3D"color:#828282;"><span style=3D"color:#828282;">Privacy&nbsp;Policy</sp=
+an></a>&nbsp;&nbsp;&nbsp;<a href=3D"https://ablink.email.ro.co/ls/click?upn=
+=3Du001.7OUmBAxzip-2BQGTEWxWBpoQi7KPhqS5paKQzvdF-2BQ-2Fhdf7eBl0Z9yNQHWkkRJ8=
+ubexSf51vmGWdCIFFeU-2FDAHqT9wfxwh31sNIlxiEbYMIKxHRz4ORSTaVtSSc2ahfrckGdkVnS=
+PUQuh9OBD-2BJmuGGtoH0jxwVAH4u-2FCjEMCcxrST5AWEjpHF8qU-2Ft9GstigfpktNrXjDXnK=
+7qyw7gpcCbnHgOO1QHy0ueRBAlX9YJytCoW50b2wiUOw-2BcOVJ-2B7E18qdbYZRcH5dzpI48Xm=
+hMKA-3D-3DzUHg_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFIC=
+ISojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYs=
+xxvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8Tu=
+ZMdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4J=
+yX-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1=
+djQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p=
+7s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHT=
+LGh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A8=
+2QBK2rQVvpb4sbLElIJDeIGdqOFVew-2BPBV3f5oa1vZ-2FqDmakRutD6J1q-2Fmmt40SvTI-2F=
+zpIUbBjriSpYrI9DoHhT85wZqTAgr71hcJDOQc9C-2BqlbZhX65foIpdOViygYSQBmvDTVVW8Mt=
+lC4xb65W-2B8vr7ltSllFF4elvlxTm2Z2WAlao-3D" style=3D"color:#828282;"><span s=
+tyle=3D"color:#828282;">Terms&nbsp;of&nbsp;Service</span></a> <br><br>
+                                    No longer want to receive these emails?
+                                    <br>
+                                    <a href=3D"https://ablink.email.ro.co/l=
+s/click?upn=3Du001.7OUmBAxzip-2BQGTEWxWBpoWhBsyCsc8XiBUTXQ-2ByWhMw6nAfmoL-2=
+BuY6Vuw8HIjj207sEFrdxRmyJH-2FLrKaMddBDC7SlXo-2BaO62fQ9Rwd1s0Jw-2BiNrmKvOFFB=
+6cDWaiWYlrK3PGF7EebqqJzEMRafCVnoQ6fFco4n6XnVh1WCma7LBF7NMWeQaT1T7XU0HewI1Je=
+GHoxwg-2FTuSyk8XEfgOPGiHveuBGkf2mijC8l7hg5uHNTYcFq2CGjqYTNlQG57SEr5YyxRICf5=
+1I7so-2BvpyNtuqpeAVKU9QsipGl8FE6p7B1AiuYQZuNX8aydMOSsQiN3GnCsD5iSER2ak-2FlH=
+fh0kMiLwV52qmu7ctVAsvaCa4iwrVC6ZcLmv1YzpiTPVx27Zk-2B-2FrfAcKCpNUnCUhyxvueqD=
+WyxNNVNAzKVRtRQgyV59DZZZ0lLjSMnP3rTPBxhUueUC58h-2Fr-2BDK8n6gwKwZpgVXz0GIFhj=
+WcOoDhcR5yshGKRZSmlHAdndTR5Fhs1BRFiUYtwqF9ev3P3O-2BBKC4NEUzXCtBJh16YX3psIdO=
+Dc6Fpb9GpGXBf-2FZaq4V3YQD856W9iAW0Xovl-2FVYtnTsWLryuRltybyoplsugJ7ppcGpDC98=
+ebFNSsfHyf0bqORASYKuHwsePc5b8IHajTgMq1RdzQmcKIqbYmZsj8K8GyijrjVNh-2FHlrbbVR=
+YI-2BJAGuVHew_oP8Jf99AY6CMFljWI6KUTl8t3WF50P07s1iDTo4df0cZeON7DMKKbNBSDFICI=
+SojQD98FVOR4ggWUC3w1HPInulG8iV82ZmXLRevmx6dY3CAPLyW3n8aNCiZftNDvHSAk3bolYsx=
+xvk1IQd10tjJxpFfBQUgLAsoAjUgvWJgfjsgtuRcf5iEZz4EMEzbeVvh8d6uQVuPURvphSw8TuZ=
+MdUemnKAGlk4oL63SropA7Lc2Xu48MkXZ8fBdXErzXeGIVijZSnUx5tm6JH4jOUuCwRAeWed4Jy=
+X-2BTnj3wrsuAQNZum1RgKm4JqPDT4ouy8TcySFHn9V2tVXWZPUF-2F3sVChGEvRP1xBnCRIP1d=
+jQ5ReWpp6wGgZeNNCVy54vAUiUcRhPK60NWK02-2Bq4Vr5fYE4tOu-2BtDBwanBzH7prJyCH5p7=
+s76-2B8J0UO44eM1YTA1sMHh0KYztBRRAQYhkqtL-2B7srgxmy4NvyzPpVckG4yt7EOiR91bHTL=
+Gh4vM0oB5jOVfvuOTKqUNDYEct36GCjuYHiyz3H6kSFXCX4l68zfoey7YLN7cCOlNpW-2BQ7A82=
+QBK2rQVvpb4sbLElIJDeIGdqOA9K-2BWcOHoCMhA9s-2B4d4PHwkdkxnFGrJd02pbVPUKtfvrV-=
+2BU3VtkzqlTwak9EhRJU4j-2FwIdQt6CvX2Sdkr2Ue-2BGycDhyC6iJHVhYfa-2FYQOcpgTEN0m=
+dB2rtrUNWMOoY3xXkiUpcTwjV0QtpQ11kZw8w-3D" style=3D"color:#828282;"><span st=
+yle=3D"color:#828282;">Unsubscribe</span></a>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!--[if mso | IE]>
+</td></tr></table>
+<![endif]-->
+     =20
+
+      <!--MARKETING FOOTER END -->
+
+      <!--RO MASTER FOOTER END -->
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+=20
+ <!--RO MASTER FOOTER END -->
+=20
+</div>
+<img src=3D"https://ablink.email.ro.co/wf/open?upn=3Du001.Q661MpjYViyVqzQPR=
+jrtRvk1egB4fY5a7G3xpm0VsbcQZTEv8vQL-2FeDU5Ynb0nRzfmR04nPFUmQOfKuoOGXBp-2BMG=
+KnEYhylry-2BsnFbOsoOeXWTYwPvBKtbOwuKdxqc8pu40aRmdoAzWH7N8lZmgGJHE1kPpyNnlPP=
+qISYZSQX3-2F24nYGTL5e4fXqyF83EOCGuWFW-2FUTqWFCJfjZFHRu1wfOmopFKWk66jsvl8Xyw=
+ZiOe4HUVUBa9oXDJACkwccs4zHBCFMpIS5DkRbVo-2FkW6UfXhH-2FugeKEh5P9VEecXUofQwWI=
+QUV6zigTORtJIsJqa1oqW0sb8Ar1pfamzAdo2DYl5V2RlmGhdq-2FM7zGI-2FGcOLSzIzBE-2B1=
+Fn3uB8VHdH5CM4h3jE85Yj-2BrQIrKMjlxDyzc2M-2B6AZQvIOuTxvVz9LiqLktIWmPAgqgFIBH=
+ZzT9ZZ2eiq14OQ0tUnbBPO0mi8iJdwYjEhW6-2Fdhsvy9BmpiZRPGdCYv84sTFNY2YUSPLrmoy3=
+kdraLE66I8Igmf9tCpV1CIlZMk7o7CJxyIVzbKH63sCxqNKvQXC-2B9b4P5Tq-2BNxijm9spbs6=
+6A7Q1EPMPKzU-2FJyruYR4NqffC5N9gLCcI-2FKbZXJSHQFzl7yxq-2FvNQxYQky1GhmK0fN6PF=
+VjBXd6MC7bWeR9Vx-2FxKxlaROxkwaaWZPfHeOPKdOlRb0Cs8XJSWhJdHoQB-2B40RUun13W3-2=
+FNhJnpVoZdIp6qblGThrOk-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" s=
+tyle=3D"height:1px !important;width:1px !important;border-width:0 !importan=
+t;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !import=
+ant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !imp=
+ortant;padding-right:0 !important;padding-left:0 !important;"/></body> </ht=
+ml>
+
+--27d690bfb9578d6cf820c9caf3d3594c49f5254368a2ae38d637675d929f--
