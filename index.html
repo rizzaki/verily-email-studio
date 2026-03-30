@@ -145,6 +145,7 @@ input,textarea,select { font:inherit; color:inherit; }
 .canvas-scroll { flex:1; height:0; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; padding:calc(var(--bar-h) + 12px) var(--sp-5) var(--sp-8); }
 #canvas { width:375px; margin:0 auto; background:var(--surface); border-radius:var(--r-xl); border:none; box-shadow:var(--shadow-canvas); min-height:400px; position:relative; overflow:hidden; transition:width var(--t-mid); }
 #canvas.desktop { width:600px; }
+#canvas.dark-mode { box-shadow:0 4px 24px rgba(0,0,0,0.2),0 2px 8px rgba(0,0,0,0.1); }
 .canvas-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:var(--sp-12) var(--sp-8); gap:var(--sp-4); text-align:center; min-height:300px; }
 .canvas-empty-icon { display:flex; align-items:center; justify-content:center; }
 @keyframes spin-slow { 0%,100% { transform:rotate(0deg); } 25% { transform:rotate(5deg); } 75% { transform:rotate(-5deg); } }
@@ -307,6 +308,11 @@ select.field-in { min-height:24px; appearance:none; -webkit-appearance:none; bac
     <div class="segment-ctrl" role="radiogroup" aria-label="Canvas view mode">
       <button class="seg-btn active" data-w="mobile" role="radio" aria-checked="true" aria-label="Mobile view"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></button>
       <button class="seg-btn" data-w="desktop" role="radio" aria-checked="false" aria-label="Desktop view"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></button>
+    </div>
+    <div style="width:1px;height:20px;background:var(--border);margin:0 8px;flex-shrink:0;"></div>
+    <div class="segment-ctrl" role="radiogroup" aria-label="Email color mode">
+      <button class="seg-btn active" data-color="light" role="radio" aria-checked="true" title="Light mode" aria-label="Light mode"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+      <button class="seg-btn" data-color="dark" role="radio" aria-checked="false" title="Dark mode" aria-label="Dark mode"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
     </div>
   </div>
   <div class="topbar-right">
@@ -484,6 +490,11 @@ select.field-in { min-height:24px; appearance:none; -webkit-appearance:none; bac
         <button class="seg-btn active" data-preview="mobile" title="Mobile" role="radio" aria-checked="true" aria-label="Mobile preview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></button>
         <button class="seg-btn" data-preview="desktop" title="Desktop" role="radio" aria-checked="false" aria-label="Desktop preview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></button>
       </div>
+      <div style="width:1px;height:20px;background:var(--border);margin:0 8px;flex-shrink:0;"></div>
+      <div class="segment-ctrl" role="radiogroup" aria-label="Preview color mode">
+        <button class="seg-btn active" data-previewcolor="light" role="radio" aria-checked="true" title="Light mode" aria-label="Light mode preview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button>
+        <button class="seg-btn" data-previewcolor="dark" role="radio" aria-checked="false" title="Dark mode" aria-label="Dark mode preview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+      </div>
     </div>
     <div class="preview-topbar-right">
       <button class="btn-play-container" id="preview-done" title="Done" aria-label="Done, close preview" style="width:auto;padding:0 14px;gap:6px;font-size:14px;font-weight:500;font-family:var(--font-sys);">Done</button>
@@ -520,6 +531,7 @@ let histIdx     = -1;
 let idCtr       = 0;
 let _canvasEmptyHTML = null;
 let viewMode    = 'mobile';
+let colorMode   = 'light';
 
 const EMAIL_CONFIG_DEFAULTS = {
   subject: '', preheader: '', width: 600,
@@ -528,6 +540,56 @@ const EMAIL_CONFIG_DEFAULTS = {
   linkColor: '#1c1c1e'
 };
 let emailConfig = Object.assign({}, EMAIL_CONFIG_DEFAULTS);
+
+/* ─── Dark/Light Palette ─────────────────────────────────────── */
+const PALETTE = {
+  light: {
+    bg: '#ffffff',
+    emailBg: '#f2f2f7',
+    text: '#000000',
+    textDark: '#1c1c1e',
+    textSecondary: '#61605d',
+    textMuted: '#636366',
+    textStat: '#181817',
+    surface: '#f2f2f7',
+    surfaceAlt: '#f0f5f4',
+    surfaceWarm: '#f9f7f4',
+    surfacePromo: '#e0ebe9',
+    border: '#e0e0e0',
+    borderSubtle: 'rgba(24,24,23,0.08)',
+    borderMedium: 'rgba(24,24,23,0.15)',
+    borderStrong: 'rgba(24,24,23,0.45)',
+    dividerColor: '#dddcdb',
+    link: '#000',
+    linkUnderline: '#000',
+    ctaBg: '#000',
+    ctaText: '#fff',
+    footerText: '#000',
+  },
+  dark: {
+    bg: '#2c2c2e',
+    emailBg: '#1a1a1a',
+    text: '#f2f2f7',
+    textDark: '#f2f2f7',
+    textSecondary: '#c7c7cc',
+    textMuted: '#aeaeb2',
+    textStat: '#e5e5ea',
+    surface: '#3a3a3c',
+    surfaceAlt: '#3a3a3c',
+    surfaceWarm: '#3a3a3c',
+    surfacePromo: '#48484a',
+    border: '#48484a',
+    borderSubtle: 'rgba(255,255,255,0.08)',
+    borderMedium: 'rgba(255,255,255,0.15)',
+    borderStrong: 'rgba(255,255,255,0.35)',
+    dividerColor: '#48484a',
+    link: '#6ac4dc',
+    linkUnderline: '#6ac4dc',
+    ctaBg: '#f2f2f7',
+    ctaText: '#1c1c1e',
+    footerText: '#e5e5ea',
+  }
+};
 
 /* ─── Defaults ───────────────────────────────────────────────── */
 const DEFAULTS = {
@@ -746,7 +808,8 @@ function uid() { return 'b' + (++idCtr); }
 function renderCanvas() {
   if (_inlineEditing) return;
   const cv = document.getElementById('canvas');
-  cv.style.background = emailConfig.contentBg;
+  const c = PALETTE[colorMode];
+  cv.style.background = colorMode === 'dark' ? c.bg : emailConfig.contentBg;
   cv.style.fontFamily = emailConfig.fontFamily;
   if (!_canvasEmptyHTML) {
     const empEl = document.getElementById('canvas-empty');
@@ -1051,16 +1114,51 @@ function buildOutlookEmailTables(blocks) {
     `<!--[if mso]></td></tr></table><![endif]--></td></tr></table>`;
 }
 
-function buildOutlookEmailDocument(blocks) {
+function buildOutlookEmailDocument(blocks, forceDarkMode) {
   const ec = emailConfig;
   const bodyInner = buildOutlookEmailTables(blocks);
-  const preheader = ec.preheader ? `<span style="display:none!important;font-size:1px;color:${ec.bgColor};line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">${eh(ec.preheader)}</span>` : '';
+  const preheader = ec.preheader ? `<span style="display:none!important;font-size:1px;color:${forceDarkMode ? '#1a1a1a' : ec.bgColor};line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">${eh(ec.preheader)}</span>` : '';
+  const darkRules = `
+  body,.em-body{background-color:#1a1a1a!important;}
+  .em-content,.em-wrap{background-color:#2c2c2e!important;}
+  td[bgcolor="#ffffff"]{background-color:#2c2c2e!important;}
+  td[bgcolor="#e8e8e0"]{background-color:#3a3a3c!important;}
+  td[bgcolor="#e0e0e0"]{background-color:#48484a!important;}
+  td[bgcolor="#f0f7f5"]{background-color:#2c2c2e!important;}
+  td[bgcolor="#f2f2f7"]{background-color:#3a3a3c!important;}
+  td[bgcolor="#f0f5f4"]{background-color:#2c2c2e!important;}
+  td[bgcolor="#f9f7f4"]{background-color:#3a3a3c!important;}
+  td[bgcolor="#dddcdb"]{background-color:#48484a!important;}
+  td[bgcolor="#e0ebe9"]{background-color:#48484a!important;}
+  .em-bf-card,.em-bf-card td{background-color:#3a3a3c!important;}
+  table[bgcolor="#f0f5f4"]{background-color:#3a3a3c!important;}
+  table[bgcolor="#f9f7f4"]{background-color:#3a3a3c!important;}
+  div[style*="color:#1c1c1e"],div[style*="color:#000000"],div[style*="color:black"],
+  td[style*="color:#1c1c1e"],span[style*="color:#1c1c1e"],
+  p[style*="color:#1c1c1e"]{color:#f2f2f7!important;}
+  div[style*="color:#444444"],div[style*="color:#3a3a3c"],
+  div[style*="color:#61605d"],p[style*="color:#61605d"],
+  td[style*="color:#61605d"],a[style*="color:#61605d"],
+  span[style*="color:#61605d"]{color:#c7c7cc!important;}
+  div[style*="color:#636366"],div[style*="color:#555555"],
+  td[style*="color:#636366"]{color:#aeaeb2!important;}
+  div[style*="color:#181817"],span[style*="color:#181817"]{color:#e5e5ea!important;}
+  div[style*="color:#888888"]{color:#8e8e93!important;}
+  td[bgcolor="#000000"]{background-color:#f2f2f7!important;}
+  .em-btn{color:#1c1c1e!important;}
+  .em-promo-cta{color:#1c1c1e!important;}
+  .em-bf-cta{color:#c7c7cc!important;border-color:rgba(255,255,255,0.35)!important;}
+  a{color:#6ac4dc!important;}
+  .em-btn,.em-promo-cta{color:#1c1c1e!important;}
+  td[height="1"][bgcolor="#e0e0e0"]{background-color:#48484a!important;}
+  td[height="1"][bgcolor="#dddcdb"]{background-color:#48484a!important;}
+  .em-wrap{border-color:#48484a!important;}`;
   const emailStyles = `<style type="text/css">
-body{margin:0!important;padding:0!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:${ec.bgColor};}
+:root{color-scheme:light dark;}
+body{margin:0!important;padding:0!important;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:${forceDarkMode ? '#1a1a1a' : ec.bgColor};}
 table,td{border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;}
 img{border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;max-width:100%;height:auto;}
 a{text-decoration:underline;color:${ec.linkColor};}
-/* Mobile responsive — targets iPhone-class screens */
 @media only screen and (max-width:414px){
   .em-wrap{width:100%!important;min-width:100%!important;}
   .em-hero{height:140px!important;}
@@ -1106,43 +1204,37 @@ a{text-decoration:underline;color:${ec.linkColor};}
   div[style*="font-size:72px"]{font-size:48px!important;}
   div[style*="font-size:18px"]{font-size:16px!important;line-height:22px!important;}
 }
-/* Dark mode overrides for Apple Mail, Outlook.com, Gmail */
-@media (prefers-color-scheme:dark){
-  body,.em-body{background-color:#1a1a1a!important;}
-  .em-content{background-color:#2c2c2e!important;}
-  td[bgcolor="#ffffff"]{background-color:#2c2c2e!important;}
-  td[bgcolor="#e8e8e0"]{background-color:#3a3a3c!important;}
-  td[bgcolor="#e0e0e0"]{background-color:#48484a!important;}
-  td[bgcolor="#f0f7f5"]{background-color:#2c2c2e!important;}
-  td[bgcolor="#f2f2f7"]{background-color:#3a3a3c!important;}
-  td[bgcolor="#f0f5f4"]{background-color:#2c2c2e!important;}
-  td[bgcolor="#f9f7f4"]{background-color:#3a3a3c!important;}
-  td[bgcolor="#dddcdb"]{background-color:#48484a!important;}
-  .em-bf-card,.em-bf-card td{background-color:#3a3a3c!important;}
-  div[style*="color:#1c1c1e"],div[style*="color:#000000"],div[style*="color:black"],
-  td[style*="color:#1c1c1e"],span[style*="color:#1c1c1e"],
-  p[style*="color:#1c1c1e"]{color:#f2f2f7!important;}
-  div[style*="color:#444444"],div[style*="color:#3a3a3c"],
-  div[style*="color:#61605d"],p[style*="color:#61605d"],
-  td[style*="color:#61605d"]{color:#c7c7cc!important;}
-  div[style*="color:#636366"],div[style*="color:#555555"],
-  td[style*="color:#636366"]{color:#aeaeb2!important;}
-  div[style*="color:#888888"]{color:#8e8e93!important;}
-  a{color:#6ac4dc!important;}
+${forceDarkMode ? darkRules : ''}
+@media (prefers-color-scheme:dark){${darkRules}
 }
 [data-ogsc] td[bgcolor="#ffffff"]{background-color:#2c2c2e!important;}
+[data-ogsc] td[bgcolor="#000000"]{background-color:#f2f2f7!important;}
+[data-ogsc] .em-btn,[data-ogsc] .em-promo-cta{color:#1c1c1e!important;}
+[data-ogsc] .em-bf-card,[data-ogsc] .em-bf-card td{background-color:#3a3a3c!important;}
+[data-ogsc] table[bgcolor="#f0f5f4"]{background-color:#3a3a3c!important;}
+[data-ogsc] table[bgcolor="#f9f7f4"]{background-color:#3a3a3c!important;}
+[data-ogsc] td[bgcolor="#f9f7f4"]{background-color:#3a3a3c!important;}
+[data-ogsc] td[bgcolor="#f2f2f7"]{background-color:#3a3a3c!important;}
+[data-ogsc] td[bgcolor="#e0e0e0"]{background-color:#48484a!important;}
+[data-ogsc] td[bgcolor="#dddcdb"]{background-color:#48484a!important;}
+[data-ogsc] a{color:#6ac4dc!important;}
 </style>`;
-  return `<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="x-apple-disable-message-reformatting"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="color-scheme" content="light dark"/><meta name="supported-color-schemes" content="light dark"/><meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no"/><title>Email</title><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->${emailStyles}</head><body class="em-body" style="margin:0;padding:0;background-color:${ec.bgColor};-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">${preheader}${bodyInner}</body></html>`;
+  const bgColor = forceDarkMode ? '#1a1a1a' : ec.bgColor;
+  return `<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="x-apple-disable-message-reformatting"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="color-scheme" content="light dark"/><meta name="supported-color-schemes" content="light dark"/><meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no"/><title>Email</title><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->${emailStyles}</head><body class="em-body" style="margin:0;padding:0;background-color:${bgColor};-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">${preheader}${bodyInner}</body></html>`;
 }
 
 function renderBlock(b) {
   const d = b.data;
   const mob = viewMode === 'mobile';
   const px = mob ? '20px' : '52px';
+  const c = PALETTE[colorMode];
+  const isDark = colorMode === 'dark';
+  const placeholderStroke = isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)';
+  const placeholderStrokeFaint = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)';
   switch (b.type) {
 
     case 'header': return `
-      <div style="background:#ffffff;padding:${mob?'24px 20px 16px':'48px 52px 28px'};">
+      <div style="background:${c.bg};padding:${mob?'24px 20px 16px':'48px 52px 28px'};">
         <div style="height:${mob?'60':'92'}px;display:flex;align-items:center;">
           ${d.logoVisible!==false ? `<div>${ME_LOGO_IMG}</div>` : ''}
         </div>
@@ -1155,24 +1247,24 @@ function renderBlock(b) {
       const ctaPad = mob ? '12px 24px' : '15px 32px';
       const ctaFs = mob ? '14px' : '16px';
       return `
-      <div style="background:#ffffff;padding:${mob?'24px 20px':'36px 52px'};text-align:${ta};">
-        ${d.headline ? `<div data-editable="headline" style="font-family:'Poppins',sans-serif;font-size:${headFs};font-weight:400;color:#000000;margin-bottom:${ta==='center'?'24px':'28px'};line-height:${ta==='center'?'1.25':'normal'}">${eh(d.headline)}</div>` : ''}
-        ${d.body ? `<div data-editable="body" style="font-size:${bodyFs};color:#61605d;line-height:${mob?'22':'24'}px;margin-bottom:${mob?'24':'28'}px;font-family:'Inter',Arial,sans-serif">${eh(d.body)}</div>` : ''}
-        ${d.ctaText ? `<div><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#000;color:#fff;font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;line-height:1.5"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
+      <div style="background:${c.bg};padding:${mob?'24px 20px':'36px 52px'};text-align:${ta};">
+        ${d.headline ? `<div data-editable="headline" style="font-family:'Poppins',sans-serif;font-size:${headFs};font-weight:400;color:${c.text};margin-bottom:${ta==='center'?'24px':'28px'};line-height:${ta==='center'?'1.25':'normal'}">${eh(d.headline)}</div>` : ''}
+        ${d.body ? `<div data-editable="body" style="font-size:${bodyFs};color:${c.textSecondary};line-height:${mob?'22':'24'}px;margin-bottom:${mob?'24':'28'}px;font-family:'Inter',Arial,sans-serif">${eh(d.body)}</div>` : ''}
+        ${d.ctaText ? `<div><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:${c.ctaBg};color:${c.ctaText};font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;line-height:1.5"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
       </div>`;
     }
 
     case 'body': return `
-      <div style="background:#ffffff;padding:0 ${px} ${mob?'24':'36'}px;">
-        <div data-editable="paragraph" style="font-size:${mob?'16':'18'}px;color:#61605d;line-height:${mob?'22':'24'}px;font-family:'Inter',Arial,sans-serif;text-align:left">${eh(d.paragraph||'')}</div>
+      <div style="background:${c.bg};padding:0 ${px} ${mob?'24':'36'}px;">
+        <div data-editable="paragraph" style="font-size:${mob?'16':'18'}px;color:${c.textSecondary};line-height:${mob?'22':'24'}px;font-family:'Inter',Arial,sans-serif;text-align:left">${eh(d.paragraph||'')}</div>
       </div>`;
 
     case 'divider': {
-      const dColor = d.dividerColor || '#e0e0e0';
+      const dColor = isDark ? c.border : (d.dividerColor || '#e0e0e0');
       const dThick = parseInt(d.dividerThickness) || 1;
       const dMargin = parseInt(d.dividerMargin) || 0;
       return `
-      <div style="background:#ffffff;padding:${dMargin}px ${px};">
+      <div style="background:${c.bg};padding:${dMargin}px ${px};">
         <div style="height:${dThick}px;background:${dColor}"></div>
       </div>`;
     }
@@ -1181,20 +1273,20 @@ function renderBlock(b) {
       const ctaPad = mob ? '12px 24px' : '15px 32px';
       const ctaFs = mob ? '14px' : '16px';
       return `
-      <div style="background:#ffffff;padding:0 ${px} ${mob?'24':'36'}px;text-align:left;">
-        ${d.ctaText ? `<a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#000;color:#fff;font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;line-height:1.5"><span data-editable="ctaText">${eh(d.ctaText)}</span></a>` : ''}
+      <div style="background:${c.bg};padding:0 ${px} ${mob?'24':'36'}px;text-align:left;">
+        ${d.ctaText ? `<a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:${c.ctaBg};color:${c.ctaText};font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;line-height:1.5"><span data-editable="ctaText">${eh(d.ctaText)}</span></a>` : ''}
       </div>`;
     }
 
     case 'footer': return `
-      <div style="background:#ffffff;padding:0 ${px} ${mob?'20':'27'}px;text-align:left;">
+      <div style="background:${c.bg};padding:0 ${px} ${mob?'20':'27'}px;text-align:left;">
         <div style="margin-bottom:${mob?'20':'28'}px;">
-          <div style="font-size:${mob?'13':'14'}px;font-weight:700;color:#000;font-family:Arial,Helvetica,sans-serif;line-height:${mob?'20':'24'}px">Questions?</div>
-          <div style="font-size:${mob?'13':'14'}px;color:#000;font-family:Arial,Helvetica,sans-serif;line-height:${mob?'20':'24'}px">Email: <a href="mailto:${ea(d.contactEmail||'support@verilyme.com')}" style="color:#000;text-decoration:underline"><span data-editable="contactEmail">${eh(d.contactEmail||'support@verilyme.com')}</span></a></div>
-          <div style="font-size:${mob?'13':'14'}px;color:#000;font-family:Arial,Helvetica,sans-serif;line-height:${mob?'20':'24'}px"><span data-editable="contactHours">${eh(d.contactHours||'')}</span></div>
+          <div style="font-size:${mob?'13':'14'}px;font-weight:700;color:${c.footerText};font-family:Arial,Helvetica,sans-serif;line-height:${mob?'20':'24'}px">Questions?</div>
+          <div style="font-size:${mob?'13':'14'}px;color:${c.footerText};font-family:Arial,Helvetica,sans-serif;line-height:${mob?'20':'24'}px">Email: <a href="mailto:${ea(d.contactEmail||'support@verilyme.com')}" style="color:${c.link};text-decoration:underline"><span data-editable="contactEmail">${eh(d.contactEmail||'support@verilyme.com')}</span></a></div>
+          <div style="font-size:${mob?'13':'14'}px;color:${c.footerText};font-family:Arial,Helvetica,sans-serif;line-height:${mob?'20':'24'}px"><span data-editable="contactHours">${eh(d.contactHours||'')}</span></div>
         </div>
-        ${d.disclaimers ? `<div data-editable="disclaimers" style="font-size:${mob?'11':'12'}px;color:#000;line-height:1.5;margin-bottom:${mob?'20':'28'}px;font-family:Arial,Helvetica,sans-serif">${eh(d.disclaimers)}</div>` : ''}
-        ${d.address ? `<div data-editable="address" style="font-size:${mob?'11':'12'}px;color:#000;line-height:1.5;font-family:Arial,Helvetica,sans-serif">${eh(d.address)}</div>` : ''}
+        ${d.disclaimers ? `<div data-editable="disclaimers" style="font-size:${mob?'11':'12'}px;color:${c.footerText};line-height:1.5;margin-bottom:${mob?'20':'28'}px;font-family:Arial,Helvetica,sans-serif">${eh(d.disclaimers)}</div>` : ''}
+        ${d.address ? `<div data-editable="address" style="font-size:${mob?'11':'12'}px;color:${c.footerText};line-height:1.5;font-family:Arial,Helvetica,sans-serif">${eh(d.address)}</div>` : ''}
       </div>`;
     // ── HERO IMAGE: full-width photo with teal overlay ──────────
     case 'heroImage': {
@@ -1222,16 +1314,16 @@ function renderBlock(b) {
       const headTop = mob ? '48px' : '93px';
       const headW = mob ? '80%' : '65%';
       const hasImg = !!d.imageSrc;
-      const headline = d.headline ? `<div data-editable="headline" style="position:absolute;top:${headTop};left:50%;transform:translateX(-50%);width:${headW};font-family:'Poppins',sans-serif;font-size:${headFs};font-weight:400;color:#000000;text-align:center;line-height:normal;z-index:1">${eh(d.headline)}</div>` : '';
+      const headline = d.headline ? `<div data-editable="headline" style="position:absolute;top:${headTop};left:50%;transform:translateX(-50%);width:${headW};font-family:'Poppins',sans-serif;font-size:${headFs};font-weight:400;color:${c.text};text-align:center;line-height:normal;z-index:1">${eh(d.headline)}</div>` : '';
       if (hasImg) {
         return `<div style="width:100%;height:${mobH}px;position:relative;overflow:hidden;">
           ${headline}
           <img src="${ea(d.imageSrc)}" alt="${ea(d.imageAlt||'')}" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>`;
       }
-      return `<div style="width:100%;height:${mobH}px;position:relative;overflow:hidden;background:#f2f2f7;display:flex;align-items:center;justify-content:center;">
+      return `<div style="width:100%;height:${mobH}px;position:relative;overflow:hidden;background:${c.surface};display:flex;align-items:center;justify-content:center;">
         ${headline}
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1.5" style="position:relative;z-index:0"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="${placeholderStroke}" stroke-width="1.5" style="position:relative;z-index:0"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
       </div>`;
     }
 
@@ -1240,9 +1332,9 @@ function renderBlock(b) {
       const ctaPad = mob ? '12px 24px' : '15px 32px';
       const ctaFs = mob ? '14px' : '16px';
       return `
-      <div style="background:#ffffff;padding:0 ${px} ${mob?'24':'36'}px;text-align:center;">
-        ${d.body ? `<div data-editable="body" style="font-size:${mob?'16':'18'}px;color:#61605d;line-height:${mob?'22':'24'}px;margin-bottom:${mob?'32':'47'}px;font-family:'Inter',Arial,sans-serif;text-align:center">${eh(d.body)}</div>` : ''}
-        ${d.ctaText ? `<div><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#000;color:#fff;font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;line-height:1.5"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
+      <div style="background:${c.bg};padding:0 ${px} ${mob?'24':'36'}px;text-align:center;">
+        ${d.body ? `<div data-editable="body" style="font-size:${mob?'16':'18'}px;color:${c.textSecondary};line-height:${mob?'22':'24'}px;margin-bottom:${mob?'32':'47'}px;font-family:'Inter',Arial,sans-serif;text-align:center">${eh(d.body)}</div>` : ''}
+        ${d.ctaText ? `<div><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:${c.ctaBg};color:${c.ctaText};font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif;line-height:1.5"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
       </div>`;
     }
 
@@ -1253,13 +1345,13 @@ function renderBlock(b) {
       const padStyle = br ? (mob ? 'padding:0 16px;' : 'padding:0 24px;') : '';
       const placeholderH = mob ? '200px' : '280px';
       if (d.src) {
-        return `<div style="width:100%;overflow:hidden;font-size:0;line-height:0;${padStyle}background:#ffffff;">
+        return `<div style="width:100%;overflow:hidden;font-size:0;line-height:0;${padStyle}background:${c.bg};">
           <img src="${ea(d.src)}" alt="${ea(d.alt||'')}" style="width:100%;display:block;object-fit:cover;${brStyle}">
         </div>`;
       }
-      return `<div style="width:100%;${padStyle}background:#ffffff;">
-        <div style="height:${placeholderH};background:#f2f2f7;display:flex;align-items:center;justify-content:center;${brStyle}overflow:hidden;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.2)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      return `<div style="width:100%;${padStyle}background:${c.bg};">
+        <div style="height:${placeholderH};background:${c.surface};display:flex;align-items:center;justify-content:center;${brStyle}overflow:hidden;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="${placeholderStroke}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
         </div>
       </div>`;
     }
@@ -1270,54 +1362,54 @@ function renderBlock(b) {
       const sz = parseInt(d.iconSize)||50;
       const mobSz = mob ? Math.min(sz, 40) : sz;
       const iconBox = mob ? '64px' : '104px';
-      const headingHtml = d.heading ? `<div data-editable="heading" style="font-family:'Poppins',sans-serif;font-size:${mob?'20':'24'}px;font-weight:500;color:#000;line-height:${mob?'28':'24'}px;margin-bottom:8px;">${eh(d.heading)}</div>` : '';
+      const headingHtml = d.heading ? `<div data-editable="heading" style="font-family:'Poppins',sans-serif;font-size:${mob?'20':'24'}px;font-weight:500;color:${c.text};line-height:${mob?'28':'24'}px;margin-bottom:8px;">${eh(d.heading)}</div>` : '';
       const rowsHtml = rows.map((r, ri) => {
         const icon = r.icon
           ? `<img src="${ea(r.icon)}" alt="" style="width:${mobSz}px;height:${mobSz}px;object-fit:cover;display:block;">`
-          : `<div style="width:${mobSz}px;height:${mobSz}px;border-radius:${Math.round(mobSz/2)}px;background:#f0f5f4;flex-shrink:0"></div>`;
+          : `<div style="width:${mobSz}px;height:${mobSz}px;border-radius:${Math.round(mobSz/2)}px;background:${c.surfaceAlt};flex-shrink:0"></div>`;
         return `<div style="display:flex;align-items:center;gap:${mob?'12':'10'}px;">
           <div style="flex-shrink:0;width:${iconBox};height:${iconBox};display:flex;align-items:center;justify-content:center">${icon}</div>
-          <div data-editable="rows.${ri}.text" style="flex:1;font-size:${mob?'15':'18'}px;color:#61605d;line-height:${mob?'21':'24'}px;font-family:'Inter',Arial,sans-serif">${eh(r.text)}</div>
+          <div data-editable="rows.${ri}.text" style="flex:1;font-size:${mob?'15':'18'}px;color:${c.textSecondary};line-height:${mob?'21':'24'}px;font-family:'Inter',Arial,sans-serif">${eh(r.text)}</div>
         </div>`;
       }).join('');
-      return `<div style="background:#ffffff;padding:0 ${px} ${mob?'24':'36'}px;">${headingHtml}${rowsHtml}</div>`;
+      return `<div style="background:${c.bg};padding:0 ${px} ${mob?'24':'36'}px;">${headingHtml}${rowsHtml}</div>`;
     }
 
     // ── PROMO CARD: rounded card with image + text + CTA ─────────
     case 'promoCard': {
-      const bg = d.bgColor||'#f0f5f4';
+      const bg = isDark ? c.surfaceAlt : (d.bgColor||'#f0f5f4');
       const ctaPad = mob ? '12px 24px' : '15px 32px';
       const ctaFs = mob ? '14px' : '16px';
       if (mob) {
         const img = d.imageSrc
           ? `<img src="${ea(d.imageSrc)}" alt="${ea(d.imageAlt||'')}" style="width:100%;max-height:180px;object-fit:cover;display:block;border-radius:12px;">`
-          : `<div style="width:100%;height:140px;background:#e0ebe9;border-radius:12px;display:flex;align-items:center;justify-content:center">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9abfc4" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          : `<div style="width:100%;height:140px;background:${c.surfacePromo};border-radius:12px;display:flex;align-items:center;justify-content:center">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="${isDark ? '#6ac4dc' : '#9abfc4'}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
             </div>`;
-        return `<div style="background:#ffffff;padding:0 12px 24px;">
+        return `<div style="background:${c.bg};padding:0 12px 24px;">
           <div style="background:${bg};border-radius:20px;padding:20px;margin:0 auto;">
             ${img}
             <div style="padding-top:16px;display:flex;flex-direction:column;gap:8px;">
-              ${d.heading ? `<div data-editable="heading" style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:500;color:#000;line-height:22px">${eh(d.heading)}</div>` : ''}
-              ${d.body ? `<div data-editable="body" style="font-size:15px;color:#61605d;line-height:21px;font-family:'Inter',Arial,sans-serif">${eh(d.body)}</div>` : ''}
-              ${d.ctaText ? `<div style="padding-top:8px"><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#000;color:#fff;font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
+              ${d.heading ? `<div data-editable="heading" style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:500;color:${c.text};line-height:22px">${eh(d.heading)}</div>` : ''}
+              ${d.body ? `<div data-editable="body" style="font-size:15px;color:${c.textSecondary};line-height:21px;font-family:'Inter',Arial,sans-serif">${eh(d.body)}</div>` : ''}
+              ${d.ctaText ? `<div style="padding-top:8px"><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:${c.ctaBg};color:${c.ctaText};font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
             </div>
           </div>
         </div>`;
       }
       const img = d.imageSrc
         ? `<img src="${ea(d.imageSrc)}" alt="${ea(d.imageAlt||'')}" style="width:113px;max-height:245px;object-fit:cover;display:block;border-radius:8px;">`
-        : `<div style="width:113px;height:245px;background:#e0ebe9;border-radius:8px;display:flex;align-items:center;justify-content:center">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9abfc4" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        : `<div style="width:113px;height:245px;background:${c.surfacePromo};border-radius:8px;display:flex;align-items:center;justify-content:center">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="${isDark ? '#6ac4dc' : '#9abfc4'}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </div>`;
-      return `<div style="background:#ffffff;padding:0 24px 36px;">
+      return `<div style="background:${c.bg};padding:0 24px 36px;">
         <div style="background:${bg};border-radius:24px;padding:48px;display:flex;align-items:center;gap:28px;max-width:552px;margin:0 auto;">
           <div style="flex-shrink:0">${img}</div>
           <div style="flex:1;display:flex;flex-direction:column;gap:8px;justify-content:center;">
-            ${d.heading ? `<div data-editable="heading" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:500;color:#000;line-height:24px">${eh(d.heading)}</div>` : ''}
-            ${d.body ? `<div data-editable="body" style="font-size:18px;color:#61605d;line-height:24px;font-family:'Inter',Arial,sans-serif">${eh(d.body)}</div>` : ''}
+            ${d.heading ? `<div data-editable="heading" style="font-family:'Poppins',sans-serif;font-size:18px;font-weight:500;color:${c.text};line-height:24px">${eh(d.heading)}</div>` : ''}
+            ${d.body ? `<div data-editable="body" style="font-size:18px;color:${c.textSecondary};line-height:24px;font-family:'Inter',Arial,sans-serif">${eh(d.body)}</div>` : ''}
             <div style="flex:1"></div>
-            ${d.ctaText ? `<div><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:#000;color:#fff;font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
+            ${d.ctaText ? `<div><a href="${ea(d.ctaUrl||'#')}" style="display:inline-block;background:${c.ctaBg};color:${c.ctaText};font-size:${ctaFs};font-weight:500;padding:${ctaPad};border-radius:100px;text-decoration:none;font-family:'Inter',sans-serif"><span data-editable="ctaText">${eh(d.ctaText)}</span></a></div>` : ''}
           </div>
         </div>
       </div>`;
@@ -1333,17 +1425,17 @@ function renderBlock(b) {
       const cardsHtml = steps.map((s, i) => {
         const img = s.imageSrc
           ? `<img src="${ea(s.imageSrc)}" alt="${ea(s.imageAlt||'')}" style="max-width:${imgW};max-height:${imgH};object-fit:contain;display:block;">`
-          : `<div style="width:${placeholderW};height:${placeholderH};background:#f2f2f7;border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`;
-        const divider = i < steps.length - 1 ? `<div style="height:1px;background:rgba(0,0,0,0.08);margin:${mob?'16':'24'}px 0"></div>` : '';
+          : `<div style="width:${placeholderW};height:${placeholderH};background:${c.surface};border-radius:12px;display:flex;align-items:center;justify-content:center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="${placeholderStrokeFaint}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>`;
+        const divider = i < steps.length - 1 ? `<div style="height:1px;background:${c.borderSubtle};margin:${mob?'16':'24'}px 0"></div>` : '';
         return `<div style="display:flex;align-items:center;justify-content:space-between;padding:${mob?'16px 0':'25px 36px 25px 0'};border-radius:${mob?'16':'24'}px;overflow:hidden;">
           <div style="flex:1;min-width:0;">
-            <div data-editable="steps.${i}.label" style="font-family:'Inter',Arial,sans-serif;font-size:${mob?'14':'16'}px;font-weight:600;color:#61605d;line-height:1.5;letter-spacing:0.04px;margin-bottom:${mob?'6':'10'}px">${eh(s.label||'')}</div>
-            <div data-editable="steps.${i}.title" style="font-family:'Poppins',sans-serif;font-size:${mob?'24':'36'}px;font-weight:500;color:#000000;line-height:1.33">${eh(s.title||'')}</div>
+            <div data-editable="steps.${i}.label" style="font-family:'Inter',Arial,sans-serif;font-size:${mob?'14':'16'}px;font-weight:600;color:${c.textSecondary};line-height:1.5;letter-spacing:0.04px;margin-bottom:${mob?'6':'10'}px">${eh(s.label||'')}</div>
+            <div data-editable="steps.${i}.title" style="font-family:'Poppins',sans-serif;font-size:${mob?'24':'36'}px;font-weight:500;color:${c.text};line-height:1.33">${eh(s.title||'')}</div>
           </div>
           <div style="flex-shrink:0;margin-left:${mob?'16':'24'}px">${img}</div>
         </div>${divider}`;
       }).join('');
-      return `<div style="background:#ffffff;padding:0 ${px} ${mob?'24':'36'}px;">${cardsHtml}</div>`;
+      return `<div style="background:${c.bg};padding:0 ${px} ${mob?'24':'36'}px;">${cardsHtml}</div>`;
     }
 
     // ── BRANDED FOOTER: links card + logo + address + contact btn ─
@@ -1352,14 +1444,14 @@ function renderBlock(b) {
       const normalizedLinks = rawLinks.map(l => typeof l === 'object' ? l : {label:l, url:'#'});
       const linkFs = mob ? '13px' : '14px';
       const addrFs = mob ? '13px' : '14px';
-      return `<div style="background:#ffffff;padding:${mob?'12px 16px':'17px 52px'};">
-        <div style="background:#f9f7f4;border-radius:${mob?'16':'24'}px;padding:${mob?'24px 20px':'38px 31px'};text-align:center;">
-          ${normalizedLinks.length ? `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:${mob?'16':'20'}px;line-height:${mob?'20':'24'}px">${normalizedLinks.map((l,li)=>`<a href="${ea(l.url||'#')}" style="font-size:${linkFs};color:#61605d;text-decoration:underline;font-family:Arial,Helvetica,sans-serif"><span data-editable="links.${li}.label">${eh(l.label)}</span></a>`).join('')}</div>` : ''}
-          <div style="height:1px;background:rgba(24,24,23,0.15);margin:${mob?'12':'16'}px 0"></div>
-          ${d.logoVisible!==false ? `<div style="margin:${mob?'12':'16'}px 0"><img src="${FOOTER_LOGO_DATA_URL}" alt="Verily Me" height="${mob?'20':'24'}" style="display:inline-block;object-fit:contain;"></div>` : ''}
-          ${d.companyName ? `<div data-editable="companyName" style="font-size:${addrFs};color:#61605d;line-height:${mob?'20':'24'}px;font-family:Arial,Helvetica,sans-serif">${eh(d.companyName)}</div>` : ''}
-          ${d.address ? `<div data-editable="address" style="font-size:${addrFs};color:#61605d;line-height:${mob?'20':'24'}px;font-family:Arial,Helvetica,sans-serif;margin-bottom:${mob?'16':'20'}px">${eh(d.address)}</div>` : ''}
-          ${d.contactLabel ? `<a href="${ea(d.contactUrl||'#')}" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(24,24,23,0.45);border-radius:999px;padding:${mob?'12px 20px':'16px 24px'};font-size:${mob?'14':'16'}px;font-weight:500;color:#61605d;text-decoration:none;font-family:'Inter',Arial,sans-serif;letter-spacing:0.16px"><span data-editable="contactLabel">${eh(d.contactLabel)}</span></a>` : ''}
+      return `<div style="background:${c.bg};padding:${mob?'12px 16px':'17px 52px'};">
+        <div style="background:${c.surfaceWarm};border-radius:${mob?'16':'24'}px;padding:${mob?'24px 20px':'38px 31px'};text-align:center;">
+          ${normalizedLinks.length ? `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:${mob?'16':'20'}px;line-height:${mob?'20':'24'}px">${normalizedLinks.map((l,li)=>`<a href="${ea(l.url||'#')}" style="font-size:${linkFs};color:${c.textSecondary};text-decoration:underline;font-family:Arial,Helvetica,sans-serif"><span data-editable="links.${li}.label">${eh(l.label)}</span></a>`).join('')}</div>` : ''}
+          <div style="height:1px;background:${c.borderMedium};margin:${mob?'12':'16'}px 0"></div>
+          ${d.logoVisible!==false ? `<div style="margin:${mob?'12':'16'}px 0"><img src="${FOOTER_LOGO_DATA_URL}" alt="Verily Me" height="${mob?'20':'24'}" style="display:inline-block;object-fit:contain;${isDark ? 'filter:brightness(10);' : ''}"></div>` : ''}
+          ${d.companyName ? `<div data-editable="companyName" style="font-size:${addrFs};color:${c.textSecondary};line-height:${mob?'20':'24'}px;font-family:Arial,Helvetica,sans-serif">${eh(d.companyName)}</div>` : ''}
+          ${d.address ? `<div data-editable="address" style="font-size:${addrFs};color:${c.textSecondary};line-height:${mob?'20':'24'}px;font-family:Arial,Helvetica,sans-serif;margin-bottom:${mob?'16':'20'}px">${eh(d.address)}</div>` : ''}
+          ${d.contactLabel ? `<a href="${ea(d.contactUrl||'#')}" style="display:inline-flex;align-items:center;gap:8px;border:1px solid ${c.borderStrong};border-radius:999px;padding:${mob?'12px 20px':'16px 24px'};font-size:${mob?'14':'16'}px;font-weight:500;color:${c.textSecondary};text-decoration:none;font-family:'Inter',Arial,sans-serif;letter-spacing:0.16px"><span data-editable="contactLabel">${eh(d.contactLabel)}</span></a>` : ''}
         </div>
       </div>`;
     }
@@ -1372,25 +1464,25 @@ function renderBlock(b) {
       const statMin = mob ? '108px' : '148px';
       const cardsHtml = items.map((it, ii) => {
         const iconSvg = STAT_ICONS[it.iconSvg] || STAT_ICONS.clipboard;
-        return `<div style="background:#f9f7f4;border-radius:${mob?'12':'16'}px;padding:${mob?'12':'16'}px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;min-height:${statMin};">
+        return `<div style="background:${c.surfaceWarm};border-radius:${mob?'12':'16'}px;padding:${mob?'12':'16'}px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;min-height:${statMin};">
           <div style="display:flex;flex-direction:column;justify-content:space-between;height:${statH};">
-            <div data-editable="items.${ii}.label" style="font-family:'Inter',Arial,sans-serif;font-size:${mob?'13':'14'}px;font-weight:400;color:#61605d;line-height:1.44;">${eh(it.label||'')}</div>
-            <div data-editable="items.${ii}.value" style="font-family:'Poppins',sans-serif;font-size:${statFs};font-weight:300;color:#181817;line-height:1.25;letter-spacing:-0.36px;">${eh(it.value||'0')}</div>
+            <div data-editable="items.${ii}.label" style="font-family:'Inter',Arial,sans-serif;font-size:${mob?'13':'14'}px;font-weight:400;color:${c.textSecondary};line-height:1.44;">${eh(it.label||'')}</div>
+            <div data-editable="items.${ii}.value" style="font-family:'Poppins',sans-serif;font-size:${statFs};font-weight:300;color:${c.textStat};line-height:1.25;letter-spacing:-0.36px;">${eh(it.value||'0')}</div>
           </div>
           <div style="flex-shrink:0;display:flex;align-items:center;justify-content:center;padding:0 ${mob?'16':'30'}px;">${iconSvg}</div>
         </div>`;
       }).join('');
-      return `<div style="background:#ffffff;padding:${mob?'20px 20px':'31px 52px'};">${cardsHtml ? `<div style="display:flex;flex-direction:column;gap:8px;">${cardsHtml}</div>` : ''}</div>`;
+      return `<div style="background:${c.bg};padding:${mob?'20px 20px':'31px 52px'};">${cardsHtml ? `<div style="display:flex;flex-direction:column;gap:8px;">${cardsHtml}</div>` : ''}</div>`;
     }
 
     // ── BADGE: centered notification pill ────────────────────────
     case 'badge': {
       const bc = d.borderColor || '#f6edc5';
       const iconSvg = STAT_ICONS[d.iconSvg] || STAT_ICONS.bell;
-      return `<div style="background:#ffffff;padding:${mob?'12px 20px':'16px 52px'};text-align:center;">
+      return `<div style="background:${c.bg};padding:${mob?'12px 20px':'16px 52px'};text-align:center;">
         <div style="display:inline-flex;align-items:center;gap:8px;border:4px solid ${bc};border-radius:999px;padding:8px 16px 8px 8px;">
           <div style="flex-shrink:0;width:26px;height:26px;display:flex;align-items:center;justify-content:center;">${iconSvg}</div>
-          <span data-editable="text" style="font-family:'Inter',sans-serif;font-size:${mob?'16':'18'}px;font-weight:500;color:#000;line-height:1.33;white-space:nowrap;">${eh(d.text||'')}</span>
+          <span data-editable="text" style="font-family:'Inter',sans-serif;font-size:${mob?'16':'18'}px;font-weight:500;color:${c.text};line-height:1.33;white-space:nowrap;">${eh(d.text||'')}</span>
         </div>
       </div>`;
     }
@@ -1402,21 +1494,21 @@ function renderBlock(b) {
       const placeholderH = mob ? '180px' : '230px';
       const img = d.imageSrc
         ? `<img src="${ea(d.imageSrc)}" alt="${ea(d.imageAlt||'')}" style="max-width:${imgMaxW};max-height:${mob?'180':'230'}px;object-fit:contain;display:block;margin:0 auto;">`
-        : `<div style="width:${placeholderW};height:${placeholderH};background:#f2f2f7;border-radius:${mob?'20':'32'}px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.15)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        : `<div style="width:${placeholderW};height:${placeholderH};background:${c.surface};border-radius:${mob?'20':'32'}px;margin:0 auto;display:flex;align-items:center;justify-content:center;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="${placeholderStrokeFaint}" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </div>`;
-      return `<div style="background:#ffffff;padding:${mob?'24px 20px':'48px'};text-align:center;">
+      return `<div style="background:${c.bg};padding:${mob?'24px 20px':'48px'};text-align:center;">
         <div style="border-radius:${mob?'16':'24'}px;padding:${mob?'16':'32'}px 0 ${mob?'8':'16'}px;">
           ${img}
           <div style="padding:${mob?'12':'16'}px 0;">
-            ${d.headline ? `<div data-editable="headline" style="font-family:'Poppins',sans-serif;font-size:${mob?'16':'18'}px;font-weight:500;color:#000;line-height:1.33;margin-bottom:8px;">${eh(d.headline)}</div>` : ''}
-            ${d.subtitle ? `<div data-editable="subtitle" style="font-family:'Inter',Arial,sans-serif;font-size:${mob?'13':'14'}px;font-weight:400;color:#61605d;line-height:1.43;">${eh(d.subtitle)}</div>` : ''}
+            ${d.headline ? `<div data-editable="headline" style="font-family:'Poppins',sans-serif;font-size:${mob?'16':'18'}px;font-weight:500;color:${c.text};line-height:1.33;margin-bottom:8px;">${eh(d.headline)}</div>` : ''}
+            ${d.subtitle ? `<div data-editable="subtitle" style="font-family:'Inter',Arial,sans-serif;font-size:${mob?'13':'14'}px;font-weight:400;color:${c.textSecondary};line-height:1.43;">${eh(d.subtitle)}</div>` : ''}
           </div>
         </div>
       </div>`;
     }
 
-    default: return `<div style="padding:20px;background:#f9f9fb;text-align:center;color:#aeaeb2">${b.type}</div>`;
+    default: return `<div style="padding:20px;background:${c.surface};text-align:center;color:${c.textMuted}">${b.type}</div>`;
   }
 }
 
@@ -2073,13 +2165,27 @@ document.getElementById('block-search').addEventListener('input', function() {
 })();
 
 /* ─── Width toggle ───────────────────────────────────────────── */
-document.querySelectorAll('.topbar-center .seg-btn').forEach(btn => {
+document.querySelectorAll('.topbar-center .seg-btn[data-w]').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.topbar-center .seg-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+    document.querySelectorAll('.topbar-center .seg-btn[data-w]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
     btn.classList.add('active');
     btn.setAttribute('aria-checked', 'true');
     viewMode = btn.dataset.w === 'desktop' ? 'desktop' : 'mobile';
-    document.getElementById('canvas').className = viewMode === 'desktop' ? 'desktop' : '';
+    const cv = document.getElementById('canvas');
+    cv.className = (viewMode === 'desktop' ? 'desktop' : '') + (colorMode === 'dark' ? ' dark-mode' : '');
+    renderCanvas();
+  });
+});
+
+/* ─── Color mode toggle (editor) ────────────────────────────── */
+document.querySelectorAll('.topbar-center .seg-btn[data-color]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.topbar-center .seg-btn[data-color]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    colorMode = btn.dataset.color === 'dark' ? 'dark' : 'light';
+    const cv = document.getElementById('canvas');
+    cv.className = (viewMode === 'desktop' ? 'desktop' : '') + (colorMode === 'dark' ? ' dark-mode' : '');
     renderCanvas();
   });
 });
@@ -2104,6 +2210,7 @@ document.addEventListener('keydown', (e) => {
 
 /* ─── Preview ────────────────────────────────────────────────── */
 let previewMode = 'mobile';
+let previewColorMode = 'light';
 
 function buildVmailChrome(emailHtml, mode) {
   const ec = emailConfig;
@@ -2152,7 +2259,7 @@ function buildIphoneFrame(innerHtml) {
 
 function renderPreview() {
   const wrap = document.getElementById('preview-device-wrap');
-  const fullDoc = buildOutlookEmailDocument(blocks);
+  const fullDoc = buildOutlookEmailDocument(blocks, previewColorMode === 'dark');
   const vmailHtml = buildVmailChrome('', previewMode);
 
   if (previewMode === 'mobile') {
@@ -2195,18 +2302,34 @@ function releaseFocusTrap() {
 }
 
 document.getElementById('preview-btn').addEventListener('click', () => {
+  previewColorMode = colorMode;
+  document.querySelectorAll('.preview-topbar-center .seg-btn[data-previewcolor]').forEach(b => {
+    b.classList.toggle('active', b.dataset.previewcolor === previewColorMode);
+    b.setAttribute('aria-checked', b.dataset.previewcolor === previewColorMode ? 'true' : 'false');
+  });
   renderPreview();
   const modal = document.getElementById('preview-modal');
   modal.classList.add('open');
   trapFocus(modal);
 });
 
-document.querySelectorAll('.preview-topbar-center .seg-btn').forEach(btn => {
+document.querySelectorAll('.preview-topbar-center .seg-btn[data-preview]').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.preview-topbar-center .seg-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+    document.querySelectorAll('.preview-topbar-center .seg-btn[data-preview]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
     btn.classList.add('active');
     btn.setAttribute('aria-checked', 'true');
     previewMode = btn.dataset.preview;
+    renderPreview();
+  });
+});
+
+/* ─── Color mode toggle (preview) ───────────────────────────── */
+document.querySelectorAll('.preview-topbar-center .seg-btn[data-previewcolor]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.preview-topbar-center .seg-btn[data-previewcolor]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+    btn.classList.add('active');
+    btn.setAttribute('aria-checked', 'true');
+    previewColorMode = btn.dataset.previewcolor === 'dark' ? 'dark' : 'light';
     renderPreview();
   });
 });
